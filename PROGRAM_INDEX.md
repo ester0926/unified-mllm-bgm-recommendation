@@ -1,6 +1,6 @@
 # 程式索引
 
-這份文件用來快速說明本 repo 內每個主要程式的用途。建議新進學弟妹先看 [README.md](README.md)、[DATA.md](DATA.md)、[LTP_PIPELINE.md](LTP_PIPELINE.md)，再回到本文件查找各程式負責的實驗步驟。
+這份文件用來快速說明本 repo 內每個主要程式的用途。建議後續研究者或實驗室成員先看 [README.md](README.md)、[DATA.md](DATA.md)、[LTP_PIPELINE.md](LTP_PIPELINE.md)，再回到本文件查找各程式負責的實驗步驟。
 
 執行訓練或評估前，請先依照 [DATA.md](DATA.md) 放好外部資料，並依照 [CHECKPOINTS.md](CHECKPOINTS.md) 放好模型權重。完整重現順序請看 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)。
 

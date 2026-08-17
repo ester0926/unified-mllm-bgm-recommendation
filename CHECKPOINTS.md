@@ -1,10 +1,10 @@
-# Checkpoint 與大型檔案說明
+# Checkpoint 與大型檔案管理
 
-模型權重、LTP cache 與 MuseChat features 不放入 GitHub。這個 repo 只保存程式、說明文件與小型摘要結果。
+模型權重、LTP cache 與 MuseChat features 未納入 Git 版本控制。本 repository 僅保存程式、設定、流程文件與小型摘要結果。
 
-## 不要直接 commit 的檔案
+## 版本控制範圍
 
-以下檔案通常很大，請不要直接上傳到 GitHub：
+以下類型屬於大型或可再生檔案，預設由 `.gitignore` 排除：
 
 ```text
 adapter_model.safetensors
@@ -19,11 +19,11 @@ ranking_head.pt
 *.safetensors
 ```
 
-完整 checkpoint 可改用 Git LFS、GitHub Release、Zenodo、Google Drive 或實驗室 NAS 保存。
+若需公開大型檔案，可使用 GitHub Release、Zenodo、Google Drive 或實驗室 NAS，並提供 checksum 方便後續研究者確認檔案一致性。
 
-## 預期 checkpoint 放置方式
+## 預期 checkpoint 結構
 
-若要重現 `exp_01` 至 `exp_07`，請把權重放在下列位置：
+重現 `exp_01` 至 `exp_07` 時，預期 checkpoint 放置於：
 
 ```text
 checkpoints/exp_01/best/
@@ -35,7 +35,7 @@ checkpoints/exp_06/best/
 checkpoints/exp_07/best/
 ```
 
-每個 `best/` 資料夾通常需要：
+每個 `best/` 資料夾通常包含：
 
 ```text
 adapter_model.safetensors
@@ -52,4 +52,4 @@ config or README file
 results/analysis/v21_reproducibility_manifest.json
 ```
 
-這個 manifest 可用來追蹤 LTP cache、User Profiling 輸出、checkpoint 與分析結果的來源。若未來要公開大型檔案，建議另外產生 `CHECKSUMS.txt`，並把 checksum 與下載連結一起放在 GitHub Release 或 README 中。
+該 manifest 可用來追蹤 LTP cache、User Profiling 輸出、checkpoint 與分析結果的來源。若公開大型檔案，建議同時提供 `CHECKSUMS.txt`，記錄檔名、大小、checksum 與下載位置。
