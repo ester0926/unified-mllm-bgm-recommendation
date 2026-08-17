@@ -1,0 +1,481 @@
+﻿sample_idx,video_id,gt_music_id,preference_variant,positive_hits,negative_hits,n_positive_hits,n_negative_hits,alignment_score,is_aligned,has_conflict,ESS_from_original,generated_text,llm_is_aligned,llm_has_conflict,llm_alignment_strength,llm_reason,llm_raw,rule_is_aligned,rule_has_conflict,agree_is_aligned,agree_has_conflict
+1395,ufnqxvG8TZ4,ufnqxvG8TZ4_t4zXT4mcPUI,cf_lyrical_piano,acoustic;calm;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.7142857142857143,"I suggest checking out 'Zwoardduel' by Samoerai. It's a track from their album 'Zwoardduel'. The song combines elements of Hip-Hop, electronic, rock, and indie with a touch of pop. It has a slow tempo and a soothing acoustic sound that could create a calm and sentimental atmosphere for your video.",1,1,moderate,"The explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.","{
+  ""is_aligned"": true,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""moderate"",
+  ""reason"": ""The explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.""
+}",1,1,1,1
+3936,brSk7jSBrUo,brSk7jSBrUo_Uf0v56xKJtU,cf_lyrical_piano,acoustic;calm;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.7301587301587302,"I suggest checking out 'Kiss Your Ass Goodbye' by Sheek Louch. It's a track from the album 'Kiss Your Ass Goodbye' and features a mix of Hip-Hop, electronic, rock, and pop genres. The song has a slow tempo and a soothing acoustic texture, which can create a calm and sentimental mood for your video.",0,1,moderate,"The explanation mentions electronic and hip-hop genres, which conflict with the user's preference for lyrical piano music.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The explanation mentions electronic and hip-hop genres, which conflict with the user's preference for lyrical piano music.""
+}",1,1,0,1
+1603,l3IbMrnSJtM,l3IbMrnSJtM_1JLiGvkrL0s,cf_lyrical_piano,acoustic;calm;gentle;melody;sentimental;slow;soft,,7,0,7,1,0,0.7936507936507937,"In that case, I recommend '太陽と月' by Shoko Furukawa & Albert Takagi. This track is a beautiful song with lyrics that express the love between a mother and her child. It has a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood that would be perfect for your video.",1,0,strong,"The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.""
+}",1,0,1,1
+1528,lXhW9YQhkEU,lXhW9YQhkEU_tGlKac8RVS4,cf_lyrical_piano,acoustic;calm;gentle;melody;sentimental;slow;soft,electronic,7,1,6,1,1,0.6935483870967742,"In that case, I recommend 'Morning Sun' by Strange Talk. This track has a perfect blend of electronic, rock, and pop elements, with a touch of indie influence. The lyrics are captivating and the music has a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood. It's a great choice for your video.",1,0,strong,"The recommendation 'Morning Sun' by Strange Talk matches the counterfactual preference for lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation 'Morning Sun' by Strange Talk matches the counterfactual preference for lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.""
+}",1,1,1,0
+4053,RtN6hQUg_8A,RtN6hQUg_8A_uASCrVnpPG0,cf_lyrical_piano,,beat;dance;electronic;techno,0,4,-4,0,1,0.734375,"Allow me to recommend 'Scary Monsters and Nice Sprites' by Skrillex. It's a track from his album 'Scary Monsters and Nice Sprites'. This song combines electronic and dance elements with a touch of rock and indie influences. It has a fast-paced techno beat and a loud sound, which may not align with your preferences.",0,1,weak,"The recommendation features electronic and techno elements, which conflict with the user's preference for soft acoustic texture and slow tempo.","{
+  ""is_aligned"": false,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""weak"",
+  ""reason"": ""The recommendation features electronic and techno elements, which conflict with the user's preference for soft acoustic texture and slow tempo.""
+}",0,1,1,1
+3673,h5Dl5y6er04,h5Dl5y6er04_rHV4SRg0aSU,cf_lyrical_piano,lyrical;piano;sentimental;slow,,4,0,4,1,0,0.703125,"Allow me to recommend 'Ezra' by David R Black. It's a track from his album 'Ezra'. The song combines elements of rock, indie, and alternative with a touch of punk. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,0,1,1
+916,kqK-Ovwua30,kqK-Ovwua30_OdsKCY4_gc0,cf_lyrical_piano,lyrical;piano;sentimental;slow,electronic,4,1,3,1,1,0.6101694915254237,"Allow me to recommend 'Tree of Life' by Rix. It's a track from their album 'Tree of Life'. This song combines elements of rock, pop, and indie with a touch of electronic and jazz influences. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",1,0,strong,The recommendation matches the user's preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the user's preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,1,1,0
+2088,ZRntURxcjYg,ZRntURxcjYg_dapK0eqVQQU,cf_lyrical_piano,emotional;lyrical;piano;slow,,4,0,4,1,0,0.47916666666666663,"Allow me to recommend 'Sakuramitsutsuki' by SPYAIR. It's a track from their album 'Sakuramitsutsuki'. The song combines elements of rock, indie, and alternative with a touch of pop. It has a slow tempo and features lyrical piano, which creates a soothing and emotional atmosphere.",1,0,strong,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm sentimental mood.""
+}",1,0,1,1
+3048,LAzK2fmfNoU,LAzK2fmfNoU_M5qG-NBjRck,cf_lyrical_piano,lyrical;piano;sentimental;slow,dance;electronic,4,2,2,1,1,0.4821428571428571,"Allow me to recommend 'No Way Home' by Richard Durand. It's a track from his album 'No Way Home'. This song combines elements of dance, electronic, and pop genres with a touch of rock. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,1,1,0
+1083,IzsgBQQmV5w,IzsgBQQmV5w_-bpv_MI1RFY,cf_lyrical_piano,acoustic;calm;gentle;lyrical;melody;piano;sentimental;slow;soft,electronic;hip-hop,9,2,7,1,1,0.7313432835820896,"I understand your preference for lyrical piano background music with a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood. In that case, I recommend 'Dans Ma Téte' by Jhr. This track combines elements of Hip-Hop, electronic, pop, and rock genres, with a touch of indie and alternative influences. It has a relaxing and introspective vibe that could complement your video.",0,1,weak,"The recommendation 'Dans Ma Téte' by Jhr. has electronic and hip-hop elements, which conflict with the user's preference for acoustic and calm music.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""weak"",
+""reason"": ""The recommendation 'Dans Ma Téte' by Jhr. has electronic and hip-hop elements, which conflict with the user's preference for acoustic and calm music.""
+}",1,1,0,1
+1333,sZNtPlWq5gI,sZNtPlWq5gI_tl_4Jx7umvs,cf_lyrical_piano,lyrical;piano,,2,0,2,1,0,0.9375,"In that case, I recommend 'Lyrical Piano Background Music - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",1,0,strong,The generated recommendation matches the counterfactual preference's lyrical and piano music characteristics.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated recommendation matches the counterfactual preference's lyrical and piano music characteristics.""
+}",1,0,1,1
+780,5ZVQ6_Hd4zc,5ZVQ6_Hd4zc_58ip325ZOu8,cf_lyrical_piano,acoustic;calm;gentle;lyrical;melody;piano;sentimental;slow;soft,,9,0,9,1,0,0.8333333333333334,I suggest you consider the track 'Love Is A Beautiful Thing' by The Sounds. It's a beautiful song with lyrical piano and a slow tempo. The track has a soft acoustic texture and a gentle melody that can create a calm and sentimental mood for your video.,1,0,strong,"The generated explanation matches the counterfactual preference in terms of lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.""
+}",1,0,1,1
+457,_MV0BuKm0VE,_MV0BuKm0VE_xbzDeFsKwfY,cf_lyrical_piano,,beat;dance;electronic;energetic;techno,0,5,-5,0,1,0.54,"Allow me to recommend 'S.O.T.U.' by Nicky Romero featuring Fast Eddie. It's a track from the album 'S.O.T.U.' and combines elements of electronic, dance, and pop genres. The song has a techno and fast-paced beat, which aligns well with the energetic vibe you're looking for.",0,1,weak,"The recommendation features electronic and techno elements, which conflict with the user's preference for lyrical piano music.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""weak"",
+""reason"": ""The recommendation features electronic and techno elements, which conflict with the user's preference for lyrical piano music.""
+}",0,1,1,1
+2648,rSAbaOw7tNY,rSAbaOw7tNY_R6_kdKj7mJ0,cf_lyrical_piano,acoustic;gentle;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.7068965517241379,"In that case, I recommend 'All Night Long' by Uno Feat. This track combines elements of Hip-Hop, electronic, rock, pop, and indie genres. It has a slow tempo and a soothing acoustic texture, creating a gentle and sentimental mood. It's a perfect fit for your video.",1,0,strong,The recommendation matches the counterfactual preference's lyrical piano music with slow tempo and gentle melody.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference's lyrical piano music with slow tempo and gentle melody.""
+}",1,1,1,0
+3711,xSAt_9AARZg,xSAt_9AARZg_qJbtrYcfTfo,cf_lyrical_piano,acoustic;calm;gentle;lyrical;melody;piano;sentimental;slow;soft,,9,0,9,1,0,0.8,"In Your Arms by Christina Ross is a beautiful track that fits your preferences. It has a lyrical piano background with a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood. This song is perfect for creating a romantic atmosphere in your video.",1,0,strong,The generated explanation matches the counterfactual user preference in terms of musical elements and atmosphere.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual user preference in terms of musical elements and atmosphere.""
+}",1,0,1,1
+1753,dfMrsrzxZxc,dfMrsrzxZxc_FL9Vv_mEwN8,cf_lyrical_piano,acoustic;calm;lyrical;piano;sentimental;slow,hip-hop,6,1,5,1,1,0.6833333333333333,"Allow me to recommend 'Why Me' by Krizz Kaliko. It's a track from his album 'Kickin' Rhymes'. The song combines elements of Hip-Hop, R&B, and pop with a slow tempo and a soothing acoustic sound. It has a lyrical piano background and a calm, sentimental mood that could be a fitting choice for your video.",1,0,strong,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm mood.""
+}",1,1,1,0
+3905,H-W68B4KTVI,H-W68B4KTVI_ulxuGZNxbA0,cf_lyrical_piano,acoustic;emotional;piano;slow,electronic,4,1,3,1,1,0.6949152542372881,I suggest you consider the track 'Love Is Alive' by Linda. It's a pop and electronic song with elements of rock and indie. The song has a slow tempo and features a piano and acoustic guitar. It has a soothing and emotional vibe that could be a fitting choice for your video.,1,0,strong,The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and emotional vibe.,"{
+  ""is_aligned"": true,
+  ""has_conflict"": false,
+  ""alignment_strength"": ""strong"",
+  ""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and emotional vibe.""
+}",1,1,1,0
+4025,BSA-zYdJkw8,BSA-zYdJkw8_jO8zlog3yfo,cf_lyrical_piano,acoustic;calm;gentle;melody;sentimental;slow;soft,,7,0,7,1,0,0.6935483870967742,"Allow me to recommend 'I Love You' by Jonathan McReynolds. It's a track from his album 'Walking In The Light Vol'. The song combines elements of pop, R&B, and soul with a touch of rock. It has a slow tempo, soft acoustic texture, and a gentle melody that creates a calm and sentimental mood.",1,0,strong,"The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.""
+}",1,0,1,1
+806,3O3gFRSiBC4,3O3gFRSiBC4_ygio6cVZmec,cf_lyrical_piano,lyrical;piano;sentimental;slow,dance;electronic;hip-hop,4,3,1,1,1,0.6271186440677966,"Allow me to recommend 'Hush (Catz 'n Dogz 2013 Remix)' by Thomas Schumacher. It's a track from the album 'Hush (Catz 'n Dogz 2013 Remix)'. This song combines elements of electronic, dance, and pop genres with a touch of Hip-Hop. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,1,1,0
+839,_0kWPBMmYEU,_0kWPBMmYEU_p21n2iGmd_s,cf_lyrical_piano,lyrical;piano;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.6666666666666667,"In that case, I recommend 'Love Is' by J.R. featuring J.R. It's a track from the album 'Love Is' and combines elements of Hip-Hop, pop, and rock with soul and electronic influences. The song has a slow tempo and features lyrical piano, which creates a soothing and sentimental atmosphere.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,1,1,0
+3645,fpPHM9g7doo,fpPHM9g7doo_gXmN3m7GpEk,cf_lyrical_piano,emotional;lyrical;piano;sentimental;slow,dance;electronic,5,2,3,1,1,0.6333333333333333,"Allow me to recommend 'London'o Phone' by Nav Sidhu. It's a track from the album 'London'o Phone'. This song combines elements of pop, electronic, and dance with a touch of rock. It has a slow tempo and features lyrical piano, which aligns well with the emotional and sentimental mood you're looking for.",1,0,strong,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,1,1,0
+869,omK0RvdNINg,omK0RvdNINg_5PbXu0pQnQ0,cf_lyrical_piano,acoustic;calm;gentle;melody;sentimental;slow,electronic,6,1,5,1,1,0.8125,"I suggest you consider the track 'Love Is In The Air' by John Paul Young. It's a pop and electronic song with a slow tempo and a soothing acoustic sound. The track has a gentle melody and a calm sentimental mood, which could be a fitting choice for your video.",1,0,strong,"The generated explanation matches the counterfactual preference in terms of tempo, acoustic texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, acoustic texture, melody, and mood.""
+}",1,1,1,0
+1311,CSvBwXlOQPY,CSvBwXlOQPY_iZOXwI35PZY,cf_lyrical_piano,acoustic;calm;gentle;lyrical;melody;piano;sentimental;slow;soft,,9,0,9,1,0,0.7307692307692308,I recommend 'EL CHAMAKITO' by LA EMINENCIA. It's a track with lyrical piano background music and a slow tempo. The song has a soft acoustic texture and a gentle melody that creates a calm and sentimental mood. It's a perfect choice for your video.,1,0,strong,"The generated explanation matches the counterfactual preference in terms of lyrical piano music, slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of lyrical piano music, slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.""
+}",1,0,1,1
+307,DL3dhkazIc8,DL3dhkazIc8_tQjxTUSkOqs,cf_lyrical_piano,acoustic;calm;lyrical;piano;sentimental;slow,electronic;hip-hop,6,2,4,1,1,0.6181818181818182,"Allow me to recommend 'Sick Perfect Banger' by Redhooknoodles. It's a hip-hop track with electronic and rock influences. The song has a slow tempo and features lyrical piano, which aligns well with your preferences. The acoustic elements and the calm and sentimental mood of the music make it a fitting choice for your video.",1,1,moderate,"The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the preference for acoustic texture due to electronic influences.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the preference for acoustic texture due to electronic influences.""
+}",1,1,1,1
+4148,HdVY4pBsahU,HdVY4pBsahU_12WBWg1BAmU,cf_lyrical_piano,acoustic;calm;gentle;slow;soft,electronic;hip-hop,5,2,3,1,1,0.6271186440677966,"Allow me to recommend 'Survive Life' by FRESH. It's a track from the album 'Survive Life' and combines elements of hip-hop, electronic, and indie genres. The song has a slow tempo and a soft acoustic texture, which creates a gentle and calm atmosphere. It was released in 2014 and may contain the specific elements you are looking for.",1,0,strong,"The recommendation matches the counterfactual preference's tempo, texture, and mood, aligning with the desired lyrical piano music characteristics.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference's tempo, texture, and mood, aligning with the desired lyrical piano music characteristics.""
+}",1,1,1,0
+3256,cqoeZEweGy4,cqoeZEweGy4_HYgZR5EiTsM,cf_lyrical_piano,acoustic;piano;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.6346153846153846,I suggest you consider the track 'Uradi pravu stvar' by I. It's a hip-hop and pop song with electronic and rock influences. The song has a slow tempo and features a piano and acoustic elements. It has a soothing and sentimental vibe that could be a fitting choice for your video.,1,1,moderate,"The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with the preference for soft acoustic texture due to electronic and rock influences.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with the preference for soft acoustic texture due to electronic and rock influences.""
+}",1,1,1,1
+1835,i14CO18tEJA,i14CO18tEJA_wyDJKPE1cII,cf_lyrical_piano,acoustic;calm;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.7540983606557377,"I suggest checking out the track 'L'amour est un oiseau' by M.A.R.S. It's a hip-hop and electronic song with elements of rock and pop. The track has a slow tempo and a soothing acoustic texture, which can create a calm and sentimental atmosphere for your video.",1,1,moderate,"The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.""
+}",1,1,1,1
+1269,KGmsoYvx7ng,KGmsoYvx7ng_s6CDWoTZi68,cf_lyrical_piano,acoustic;slow,electronic,2,1,1,1,1,0.42307692307692313,"Allow me to recommend 'Under World' by A＆D. It's a track from their album 'Under World'. This song combines elements of rock, metal, and alternative with a touch of electronic and indie influences. It has a slow tempo and a soothing acoustic sound that could be a fitting choice for your video.",1,0,strong,The recommendation matches the counterfactual preference for slow tempo and acoustic texture.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for slow tempo and acoustic texture.""
+}",1,1,1,0
+2378,2WzHhtkF8JM,2WzHhtkF8JM_0Y1v5HCWz6M,cf_lyrical_piano,acoustic;slow,dance;electronic,2,2,0,0,1,0.6607142857142857,"Allow me to recommend 'I Love You' by 2AM. It's a track from their album '2010 2AM 1st Mini Album'. The song combines elements of pop, dance, and electronic genres with a focus on female vocals. It has a slow tempo and a soothing acoustic texture that could be a fitting choice for your video.",1,1,moderate,"The recommendation matches the slow tempo and acoustic texture preferences, but conflicts with the lyrical piano music preference due to the electronic genre.","{
+  ""is_aligned"": true,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""moderate"",
+  ""reason"": ""The recommendation matches the slow tempo and acoustic texture preferences, but conflicts with the lyrical piano music preference due to the electronic genre.""
+}",0,1,0,1
+1698,lgBOgKr-HJo,lgBOgKr-HJo_tA5vcZ7CJyI,cf_lyrical_piano,piano;sentimental;slow,,3,0,3,1,0,0.5094339622641509,"Allow me to recommend 'Papa Noel' by Stromae vs Wham. It's a track from the album 'Papa Noel' and combines elements of pop, jazz, and rock with a touch of soul. The song features a piano and has a slow tempo, which creates a soothing and sentimental atmosphere.",1,0,strong,The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and sentimental mood.""
+}",1,0,1,1
+3003,0J808gIog1o,0J808gIog1o_PoJFn_RIdkg,cf_lyrical_piano,emotional,electronic;techno,1,2,-1,0,1,0.5283018867924528,"Allow me to recommend 'Kimi no sobade' by Sayaka Shionoya. It's a track from her album 'Kimi no sobade'. The song combines elements of pop, electronic, and rock with a focus on female vocals. It has a techno influence and a powerful and emotional sound that could be a fitting choice for your video.",0,1,moderate,"The recommendation includes electronic and techno elements, which conflict with the user's preference for soft acoustic texture.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation includes electronic and techno elements, which conflict with the user's preference for soft acoustic texture.""
+}",0,1,1,1
+1455,XXgtN7TA1V8,XXgtN7TA1V8_LqTg77a6R9I,cf_lyrical_piano,emotional;piano;slow,hip-hop,3,1,2,1,1,0.6727272727272727,"Allow me to recommend 'Дежавю' by Just name. It's a track from their album 'Дежавю'. The song combines elements of Hip-Hop, R&B, and pop with a slow tempo and a piano-driven sound. It has a soothing and emotional vibe that could be a perfect fit for your video.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional vibe.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional vibe.""
+}",1,1,1,0
+3052,3fFKAJXuLEM,3fFKAJXuLEM_emMlEvTKAN8,cf_lyrical_piano,acoustic;calm;gentle;lyrical;melody;piano;sentimental;slow;soft,,9,0,9,1,0,0.6666666666666667,"I recommend 'SO FAR AWAY' by PIT featuring BIG FITZ DA POET. It's a track with lyrical piano background music that aligns with your preferences. The song has a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood.",1,0,strong,"The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.""
+}",1,0,1,1
+2609,iwxzc2MlkRg,iwxzc2MlkRg_UB7-5vH_veA,cf_lyrical_piano,emotional;lyrical;piano;sentimental;slow,,5,0,5,1,0,0.5333333333333333,"Allow me to recommend 'Chora Brother' by Mahalo. It's a track from their album 'Chora Brother'. The song combines elements of rock, pop, and indie with a touch of alternative. It has a slow tempo and features lyrical piano, which aligns well with the emotional and sentimental mood you're looking for.",1,0,strong,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",1,0,1,1
+2688,7Rd-wFSnrTY,7Rd-wFSnrTY_a1_I0dYcqos,cf_lyrical_piano,lyrical;piano;sentimental;slow,electronic;hip-hop,4,2,2,1,1,0.6140350877192983,"Allow me to recommend 'Drop Da Tint' by Gunplay. It's a track from the album 'Dreams' and combines elements of Hip-Hop, electronic, and rock with a touch of pop. The song has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",1,0,strong,"The recommendation includes lyrical piano music and a slow tempo, aligning with the user's preference for sentimental and calming music.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation includes lyrical piano music and a slow tempo, aligning with the user's preference for sentimental and calming music.""
+}",1,1,1,0
+2216,GavrpKnU4Hc,GavrpKnU4Hc_T7QYuPMt_68,cf_lyrical_piano,acoustic;emotional;lyrical;piano;slow,,5,0,5,1,0,0.5272727272727273,"Allow me to recommend 'Gratidão' by Dunamis. It's a track from their album 'Gratidão'. The song combines elements of rock, pop, and indie with a touch of alternative and acoustic. It has a slow tempo and features a piano, which can create a lyrical and emotional atmosphere for your video.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional atmosphere.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional atmosphere.""
+}",1,0,1,1
+3563,O8k8XT6gLzI,O8k8XT6gLzI_cgKt90e0500,cf_lyrical_piano,acoustic;piano;slow,,3,0,3,1,0,0.4821428571428571,"Allow me to recommend 'ひとり' by LOSTAGE. It's a track from their album 'ひとり'. The song combines elements of rock, indie, and alternative with a focus on guitar and piano. It has a slow tempo and a soothing acoustic sound that could be a fitting choice for your video.",1,0,strong,The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and soft acoustic texture.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and soft acoustic texture.""
+}",1,0,1,1
+2172,sBTkevwy9xo,sBTkevwy9xo_i8Q6ZmEVZxI,cf_lyrical_piano,acoustic;calm;piano;sentimental;slow,electronic,5,1,4,1,1,0.5666666666666667,"Allow me to recommend 'Louder Than Words' by ES Posthumus. It's a track from their album 'Louder Than Words'. This song combines elements of rock, electronic, and alternative genres with a focus on piano and vocals. It has a slow tempo and a soothing acoustic texture that can create a calm and sentimental atmosphere for your video.",1,0,strong,The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and calm sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and calm sentimental mood.""
+}",1,1,1,0
+2011,FVVJNFvoRNg,FVVJNFvoRNg_YAkJaQTIZts,cf_lyrical_piano,emotional;piano;slow,dance;electronic;hip-hop,3,3,0,0,1,0.6415094339622642,"Allow me to recommend 'Shayni' by Elji. It's a track from the album 'Shayni' and combines elements of Hip-Hop, electronic, dance, pop, and rock. The song has a slow tempo and features a piano in the background, creating a soothing and emotional atmosphere.",1,1,moderate,"The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the desire for soft acoustic texture and gentle melody due to the presence of dance and electronic elements.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the desire for soft acoustic texture and gentle melody due to the presence of dance and electronic elements.""
+}",0,1,0,1
+1207,ItV4NVU0u6I,ItV4NVU0u6I_Ldq1rh8OYuc,cf_lyrical_piano,acoustic;slow,,2,0,2,1,0,0.3877551020408163,"Allow me to recommend 'Nuestra Vida' by Nada Que Objetar. It's a track from their album 'Nuestra Vida'. The song combines elements of rock, indie, and alternative with a focus on guitar and vocals. It has a slow tempo and a soothing acoustic sound that could be a fitting choice for your video.",1,0,moderate,The recommendation includes acoustic and slow elements that align with the user's preference for lyrical piano music with a slow tempo.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation includes acoustic and slow elements that align with the user's preference for lyrical piano music with a slow tempo.""
+}",1,0,1,1
+4087,khe8nWxLC6A,khe8nWxLC6A_GM5NClxKzV4,cf_upbeat_electronic,beat;dance;electronic;modern;pop,,5,0,5,1,0,0.5490196078431373,"In that case, I recommend 'Show My Soul' by Troy Nathans feat. It's a track from the album 'Show My Soul' and combines elements of Hip-Hop, pop, electronic, and rock. The song has a fast-paced beat and a modern dance vibe that could be a perfect fit for your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a modern dance/pop feeling.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a modern dance/pop feeling.""
+}",1,0,1,1
+1322,pgoDe__Fm-Y,pgoDe__Fm-Y_vf4LLox2GTE,cf_upbeat_electronic,beat;beats;bright;dance;electronic;energetic;modern;pop;rhythm;upbeat,,10,0,10,1,0,0.7377049180327868,"In that case, I recommend 'High Hopes' by Kodaline. This track is from their album 'High Hopes' and it perfectly captures the upbeat electronic background music you're looking for. It has a bright mood, clear rhythm, energetic beats, and a modern dance or pop feeling.",1,0,strong,The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+777,T56LFxaEJV8,T56LFxaEJV8_H5Nn-SIDfWo,cf_upbeat_electronic,beat;beats;bright;dance;electronic;energetic;modern;pop;rhythm;upbeat,,10,0,10,1,0,0.5,"In that case, I recommend 'Lovely Fire' by Stefano Ercolino. This track combines elements of rock, pop, and electronic music, creating a catchy and upbeat sound. It has a bright mood, clear rhythm, energetic beats, and a modern dance or pop feel. It's a perfect choice for your video.",1,0,strong,"The generated explanation matches the counterfactual preference in terms of genre (electronic), mood (bright), and rhythm (energetic)","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of genre (electronic), mood (bright), and rhythm (energetic)""
+}",1,0,1,1
+1698,lgBOgKr-HJo,lgBOgKr-HJo_tA5vcZ7CJyI,cf_upbeat_electronic,beat;beats;dance;electronic;energetic;modern;pop;rhythm;upbeat,,9,0,9,1,0,0.65,"In that case, I recommend 'Papa Noel' by Stromae vs Wham. This track combines elements of pop, electronic, and dance genres, creating a vibrant and energetic sound. It has a clear rhythm and catchy beats that will add a modern and upbeat feel to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2325,gHavEbG_MWg,gHavEbG_MWg_BkB1s1VJe44,cf_upbeat_electronic,beat;dance;electronic;energetic;pop;tempo,,6,0,6,1,0,0.5660377358490566,"In that case, I recommend 'Dmack & Freshkid From The Back' by Dj Taj. This track combines elements of Hip-Hop, electronic, dance, pop, and rock. It has a fast tempo and a catchy beat that will give your video a lively and energetic feel.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1060,D8B7F9T1eZM,D8B7F9T1eZM_z08BQP7eZX4,cf_upbeat_electronic,beat;bright;dance;electronic;pop,,5,0,5,1,0,0.6470588235294117,"In that case, I recommend 'Pssst' by Die Lollipops. This track is from their album 'Pssst' and offers a perfect blend of electronic, dance, and pop genres. It has a catchy beat and a bright mood that will add energy to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2786,PTVlbhZBOqA,PTVlbhZBOqA_dz_0TGTKutg,cf_upbeat_electronic,beat;electronic;energetic;pop,melody,4,1,3,1,1,0.7169811320754718,"In that case, I recommend 'Mama Dice' by Efe Yerom. This track combines elements of Hip-Hop, pop, electronic, and rock genres. It has a fast-paced beat and a catchy melody that will give your video a lively and energetic feel.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+  ""is_aligned"": true,
+  ""has_conflict"": false,
+  ""alignment_strength"": ""strong"",
+  ""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,1,1,0
+2060,vJ4se76h4pg,vJ4se76h4pg_E4o8oOlzTAQ,cf_upbeat_electronic,beat;beats;energetic;modern;rhythm,,5,0,5,1,0,0.711864406779661,"In that case, I would recommend 'EMBRUJADA' by DESPISTAOS. This track is part of their album 'EMBRUJADA' and offers a perfect blend of rock, indie, and alternative genres. It has a fast-paced rhythm and energetic beats that will give your video a lively and modern feel.",1,0,strong,The recommendation matches the upbeat electronic music with bright mood and energetic rhythm preferred by the user.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the upbeat electronic music with bright mood and energetic rhythm preferred by the user.""
+}",1,0,1,1
+358,4ldBWUbiDTM,4ldBWUbiDTM_bs9xnYfKAQA,cf_upbeat_electronic,bright;dance;electronic;energetic;modern;pop;rhythm,,7,0,7,1,0,0.7096774193548387,"In that case, I would recommend 'Mentimi' by La Crus. This track combines elements of rock, pop, and electronic music, creating a catchy and energetic sound. It has a bright mood and clear rhythm, making it perfect for a video with a modern dance or pop feel.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+3952,hlhgYkDKqn4,hlhgYkDKqn4_jKBmrIgG-Nw,cf_upbeat_electronic,bright;electronic;pop;rhythm,,4,0,4,1,0,0.609375,"In that case, I recommend 'La Tierra del Olvido' by Carlos Vives ft Varios Artistas. This track combines rock, pop, and electronic elements with a touch of indie and alternative influences. It has a fast-paced rhythm and a bright mood that will add energy to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2749,zGEmF3Mj7dY,zGEmF3Mj7dY_mmr9I60GWnw,cf_upbeat_electronic,electronic;energetic;pop;rhythm;tempo,,5,0,5,1,0,0.7966101694915254,"In that case, I would recommend 'Traicionera' by Gerardo Gómez. This track has a pop and rock sound with electronic and indie influences. It has a fast tempo and a catchy rhythm that will give your video a lively and energetic feel.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1489,8Ej4PzaoqpU,8Ej4PzaoqpU_A84hNilKxFM,cf_upbeat_electronic,beat;bright;dance;electronic;energetic;pop,,6,0,6,1,0,0.5283018867924528,"In that case, I recommend 'True Story' by Young Legend featuring Kyle Bent. This track combines elements of Hip-Hop, electronic, dance, pop, and rock genres. It has a fast-paced beat and a bright mood that will give your video a lively and energetic feel.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1105,K0kCJKdYWik,K0kCJKdYWik_tAZtZfm0MnY,cf_upbeat_electronic,beat;bright;dance;electronic;pop,,5,0,5,1,0,0.6122448979591837,"In that case, I would recommend 'Njoo' by Wakamba Wawili. This track combines elements of Hip-Hop, electronic, R&B, pop, and dance genres. It has a fast-paced beat and a bright mood that will add energy to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1083,IzsgBQQmV5w,IzsgBQQmV5w_-bpv_MI1RFY,cf_upbeat_electronic,bright;electronic;energetic;modern;pop;rhythm,,6,0,6,1,0,0.7017543859649122,"In that case, I would recommend 'Dans Ma Téte' by Jhr. This track combines elements of Hip-Hop, electronic, pop, and rock genres, creating a unique and energetic sound. It has a bright mood and clear rhythm, which will add a lively and modern feel to your video.",1,0,strong,The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+1240,Tqo1UOK1I44,Tqo1UOK1I44_skTcQLUZKEA,cf_upbeat_electronic,bright;dance;electronic;energetic;modern;pop;rhythm,,7,0,7,1,0,0.7321428571428572,"In that case, I recommend 'Somos' by Los Pinguinos. This track combines rock, electronic, and indie elements, creating a unique and energetic sound. It has a bright mood and clear rhythm, perfect for a video with a modern dance or pop feel.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1207,ItV4NVU0u6I,ItV4NVU0u6I_Ldq1rh8OYuc,cf_upbeat_electronic,electronic;energetic;modern;pop,,4,0,4,1,0,0.6666666666666667,"In that case, I would recommend 'Nuestra Vida' by Nada Que Objetar. This track falls under the rock, indie, alternative, and pop genres, and it has a fast-paced and energetic sound with electronic elements. It will give your video a lively and modern feel.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a modern dance/pop feeling.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a modern dance/pop feeling.""
+}",1,0,1,1
+2850,ecIjuCuj0Fc,ecIjuCuj0Fc_N9m9huNTwpA,cf_upbeat_electronic,electronic;pop,,2,0,2,1,0,0.6981132075471699,"In that case, I recommend 'Enamorada' by Cynthia. This track combines pop, rock, and electronic elements with a touch of indie and alternative influences. The vocals are female, which adds a unique and captivating sound to the music. It's a perfect choice for your video.",1,0,strong,The recommendation 'Enamorada' by Cynthia matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation 'Enamorada' by Cynthia matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+323,7KnEzXBwovQ,7KnEzXBwovQ_VdzigTcir9U,cf_upbeat_electronic,beat;dance;electronic;energetic;modern;pop,melody,6,1,5,1,1,0.7321428571428572,"In that case, I recommend '너 때문에' by 2PM. This track combines elements of pop, dance, electronic, and rock genres. It has a fast-paced beat and a catchy melody that will create an energetic and modern vibe for your video.",1,0,strong,"The recommendation matches the upbeat electronic music with a bright mood and energetic rhythm, aligning well with the user's preference.","{
+  ""is_aligned"": true,
+  ""has_conflict"": false,
+  ""alignment_strength"": ""strong"",
+  ""reason"": ""The recommendation matches the upbeat electronic music with a bright mood and energetic rhythm, aligning well with the user's preference.""
+}",1,1,1,0
+3471,hxub0S_4u8Q,hxub0S_4u8Q_S53iYzSn4p8,cf_upbeat_electronic,beat;beats;electronic;energetic;modern;pop;rhythm,,7,0,7,1,0,0.6226415094339622,"In that case, I suggest 'Barbra Streisand (Radio Edit)' by Duck Sauce. This track combines electronic and hip-hop elements to create a vibrant and energetic sound. It has a clear rhythm and energetic beats that will add a modern and pop feel to your video.",1,0,strong,The generated explanation matches the counterfactual preference's upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2242,sCbKPeDTPVU,sCbKPeDTPVU_IHuI6bHQzAo,cf_upbeat_electronic,beat;beats;dance;electronic;energetic;modern;pop;rhythm;upbeat,,9,0,9,1,0,0.6727272727272727,"In that case, I recommend 'Drunk Love 2014' by Keaira LaShae. This track combines elements of pop, dance, and electronic music, creating a vibrant and energetic atmosphere. It has a clear rhythm and catchy beats that will add a modern and upbeat feel to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1601,8_VrafS-ldU,8_VrafS-ldU_gze0sjhxZ7Q,cf_upbeat_electronic,beat;dance;electronic;energetic;pop;tempo,,6,0,6,1,0,0.5294117647058824,"In that case, I recommend 'Le temps d4une danse' by Lasconi featuring Mamarie. This track combines elements of Hip-Hop, electronic, dance, pop, and electro genres. It has a fast tempo and a catchy beat that will give your video a lively and energetic feel.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2609,iwxzc2MlkRg,iwxzc2MlkRg_UB7-5vH_veA,cf_upbeat_electronic,beat;beats;bright;dance;electronic;energetic;modern;pop;rhythm;upbeat,,10,0,10,1,0,0.7121212121212122,"In that case, I recommend 'Chora Brother' by Mahalo. This track combines elements of rock, pop, and electronic music, creating an upbeat and energetic sound. It has a bright mood, clear rhythm, and energetic beats that will give your video a modern dance or pop feel.",1,0,strong,The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+3754,GI6_MCrDl6o,GI6_MCrDl6o_fYEhUcWefXY,cf_upbeat_electronic,beat;beats;dance;electronic;energetic;modern;pop;tempo;upbeat,,9,0,9,1,0,0.5689655172413793,"In that case, I recommend 'I Could Be The One' by Avicii vs Nicky Romero. This track is a perfect fit for your video as it combines electronic, dance, and pop genres with a fast tempo and energetic beats. It has a modern and upbeat sound that will create a vibrant atmosphere for your video.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a modern dance/pop feeling.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a modern dance/pop feeling.""
+}",1,0,1,1
+3494,9EO4nBIe-yA,9EO4nBIe-yA_RUjHBwO0EgM,cf_upbeat_electronic,beat;dance;electronic;modern;pop;upbeat,,6,0,6,1,0,0.5227272727272727,"In that case, I would recommend 'Sunny Day' by ストロベリー・スパンキー. This track is from their album 'Sunny Day' and offers a perfect blend of electronic, rock, indie, and pop genres. It has a catchy and upbeat sound with a modern dance and pop feel. It's a great choice for your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a modern dance/pop feel.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a modern dance/pop feel.""
+}",1,0,1,1
+2897,51UTOkFidXQ,51UTOkFidXQ_OdEiMr-oOIs,cf_upbeat_electronic,bright;dance;electronic;pop;tempo,,5,0,5,1,0,0.5185185185185186,"In that case, I recommend 'This Makes Sense' by Uniqplan. This track is from their album 'This Makes Sense' and it perfectly fits your preferences. It has a catchy electronic sound with elements of rock and indie. The song has a fast tempo and a bright mood, making it ideal for a dance or pop video.",1,0,strong,The explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+2368,pQdbNvEAmo0,pQdbNvEAmo0_GOkwlQbLNiM,cf_upbeat_electronic,beat;beats;bright;dance;electronic;energetic;modern;pop;rhythm,,9,0,9,1,0,0.676923076923077,"In that case, I recommend 'Summertime Sadness' by Lana Del Rey. This track is a perfect fit for your video as it combines electronic, pop, and rock elements with a female vocalist. It has a bright mood, clear rhythm, energetic beats, and a modern dance or pop feeling.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2223,gZ4g2c5vZec,gZ4g2c5vZec_-c_1948S2sA,cf_upbeat_electronic,beat;dance;electronic;energetic;pop;tempo,,6,0,6,1,0,0.6470588235294117,"In that case, I recommend 'HotBoy' by YAMAMAS featuring Baby King. This track combines elements of Hip-Hop, electronic, dance, pop, and electro genres. It has a fast tempo and a catchy beat that will give your video a lively and energetic feel.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+3052,3fFKAJXuLEM,3fFKAJXuLEM_emMlEvTKAN8,cf_upbeat_electronic,beat;bright;dance;electronic;pop,,5,0,5,1,0,0.5961538461538461,"In that case, I recommend 'SO FAR AWAY' by PIT featuring BIG FITZ DA POET. This track combines elements of Hip-Hop, electronic, pop, and dance genres. It has a fast-paced beat and a bright mood that will add energy to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+2648,rSAbaOw7tNY,rSAbaOw7tNY_R6_kdKj7mJ0,cf_upbeat_electronic,bright;dance;electronic;energetic;pop;tempo,,6,0,6,1,0,0.7543859649122807,"In that case, I recommend 'All Night Long' by Uno Feat. This track combines electronic, Hip-Hop, and dance genres with a touch of pop. It has a fast tempo and a bright mood that will give your video a lively and energetic feel.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+1333,sZNtPlWq5gI,sZNtPlWq5gI_tl_4Jx7umvs,cf_upbeat_electronic,beat;dance;electronic;energetic;modern;pop,melody,6,1,5,1,1,0.6875,"In that case, I would recommend 'I'm a Celebrity' by The Wombats. This track is a perfect fit for your video as it combines elements of Hip-Hop, electronic, rock, pop, and dance. It has a fast-paced beat and a catchy melody that will add an energetic and modern vibe to your video.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,1,1,0
+54,_8YWB9SlUFU,_8YWB9SlUFU_QP5qHCe9FP4,cf_upbeat_electronic,pop;tempo,slow,2,1,1,1,1,0.41463414634146345,"In that case, I would recommend 'Youth' by Daughter. This track has a beautiful and melancholic sound with female vocals. It falls under the genres of indie, rock, and pop, and it has a slow tempo. It would be a perfect fit for your video.",0,1,weak,"The recommendation is for a melancholic track with slow tempo, which conflicts with the user's preference for upbeat electronic music.","{
+  ""is_aligned"": false,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""weak"",
+  ""reason"": ""The recommendation is for a melancholic track with slow tempo, which conflicts with the user's preference for upbeat electronic music.""
+}",1,1,0,1
+4180,KDOK211mTgA,KDOK211mTgA_A4RbtN9IarQ,cf_upbeat_electronic,electronic;energetic;modern;pop,,4,0,4,1,0,0.5357142857142857,"I recommend 'Vem Adorar' by Ministério Soma. It's a track from their album 'Vem Adorar'. This song combines elements of rock, pop, and electronic music, with a focus on guitar and drums. It has a fast-paced and energetic sound, perfect for creating a lively and modern atmosphere in your video.",1,0,strong,The recommendation matches the user's preference for upbeat electronic music with a modern dance/pop feeling.,"{
+  ""is_aligned"": true,
+  ""has_conflict"": false,
+  ""alignment_strength"": ""strong"",
+  ""reason"": ""The recommendation matches the user's preference for upbeat electronic music with a modern dance/pop feeling.""
+}",1,0,1,1
+2682,bnuOm-tHi9U,bnuOm-tHi9U_mk-5w3Di0jk,cf_upbeat_electronic,electronic;modern;pop,melody,3,1,2,1,1,0.7222222222222222,"In that case, I recommend '街' by Permanent Fish. This track has a pop and rock sound with electronic and indie influences. It features female vocals and a catchy melody that will add a lively and modern feel to your video.",1,0,strong,The recommendation matches the upbeat electronic music with bright mood and modern dance/pop feeling specified in the counterfactual preference.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the upbeat electronic music with bright mood and modern dance/pop feeling specified in the counterfactual preference.""
+}",1,1,1,0
+4147,5cE75y2eQRw,5cE75y2eQRw_MtAwCNqg2jY,cf_upbeat_electronic,beat;beats;bright;dance;energetic;modern;pop,,7,0,7,1,0,0.6417910447761195,"In that case, I would recommend 'Me Leva Pra Casa' by Aran e Ariel. This track has a rock and pop sound with indie and alternative influences. It features guitar and male vocals, which add a unique touch to the music. The energetic beats and bright mood make it perfect for a video with a modern dance or pop feel.",1,0,strong,The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+1528,lXhW9YQhkEU,lXhW9YQhkEU_tGlKac8RVS4,cf_upbeat_electronic,beat;beats;bright;dance;electronic;energetic;modern;pop;rhythm,,9,0,9,1,0,0.7619047619047619,"In that case, I recommend 'Morning Sun' by Strange Talk. This track is from their album 'Morning Sun' and it perfectly fits your preferences. It has a catchy electronic sound with a bright mood, clear rhythm, energetic beats, and a modern dance or pop feeling. It's a great choice for your video.",1,0,strong,The generated explanation matches the counterfactual preference in terms of upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+256,JOUczfMaLTE,JOUczfMaLTE_F91pQy19-j0,cf_upbeat_electronic,beat;bright;dance;electronic;energetic;pop,,6,0,6,1,0,0.6481481481481481,"In that case, I would recommend 'Fe' by Juaninacka. This track combines elements of Hip-Hop, electronic, dance, pop, and rock genres. It has a fast-paced beat and a bright mood that will give your video a lively and energetic feel.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+910,5lKPjuBuYDc,5lKPjuBuYDc_KjSks1ZBt_U,cf_upbeat_electronic,dance;electronic;energetic;modern;pop;rhythm;tempo,,7,0,7,1,0,0.5593220338983051,"In that case, I would recommend 'I Gotta Feeling' by The Black Eyed Peas. This track is a perfect fit for your video as it falls under the electronic, dance, pop, and rock genres. It has a fast tempo and a catchy rhythm that will create an energetic and modern atmosphere.",1,0,strong,The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1
+3514,6FE8jlwBGJs,6FE8jlwBGJs_T5V0hhZ3IVg,cf_upbeat_electronic,energetic;pop,,2,0,2,1,0,0.6491228070175439,"In that case, I recommend 'One More Day' by Go With Me. This track has a rock and pop sound with indie and alternative influences. It features guitar and male vocals, creating a catchy and energetic vibe. The song was released in 2012 and is part of the album 'One More Day'.",0,1,moderate,"The recommendation does not match the upbeat electronic music preference, but has some pop elements.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation does not match the upbeat electronic music preference, but has some pop elements.""
+}",1,0,0,0
+2088,ZRntURxcjYg,ZRntURxcjYg_dapK0eqVQQU,cf_upbeat_electronic,beat;beats;bright;electronic;energetic;pop,,6,0,6,1,0,0.5192307692307692,"In that case, I would recommend 'Sakuramitsutsuki' by SPYAIR. This track is from their album 'Sakuramitsutsuki' and offers a perfect blend of rock, indie, alternative, and pop genres. It has a fast-paced electronic sound with a bright mood and energetic beats, making it a great choice for your video.",1,0,strong,The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's upbeat electronic music with bright mood and energetic rhythm.""
+}",1,0,1,1
+562,Tl7ZXX6wbRE,Tl7ZXX6wbRE_rKoU3ekYQ-I,cf_upbeat_electronic,beat;bright;electronic;pop,,4,0,4,1,0,0.4347826086956522,"In that case, I recommend 'If I Hit The Lotto' by Rayzr. This track combines elements of Hip-Hop, electronic, and rock genres with a touch of pop. It has a fast-paced beat and a bright mood that will add energy to your video.",1,0,strong,The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for upbeat electronic music with a bright mood and energetic rhythm.""
+}",1,0,1,1

@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+~$*
+
+# Local environments and secrets
+.env
+.env.*
+venv/
+.venv/
+env/
+
+# Logs and transient outputs
+logs/
+tmp/
+*.log
+.codex_work/
+.codex_audit*/
+
+# Large datasets and generated features
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.safetensors
+
+# Media files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.mp3
+*.wav
+*.flac
+*.m4a
+
+# Model/data directories distributed separately
+checkpoints/**
+!checkpoints/README.md
+cache/**
+!cache/README.md
+data/**
+!data/README.md

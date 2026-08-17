@@ -1,0 +1,22 @@
+{
+  "input_csv": "<project_root>/checkpoints\\faithfulness_analysis\\counterfactual_generations_top1.csv",
+  "n_generation_rows": 1200,
+  "n_claims": 5387,
+  "unsupported_claims": 2139,
+  "unsupported_claim_rate": 0.39706701317987747,
+  "judge": "rule_based_keyword_v2_metadata_aware",
+  "source_counts": {
+    "metadata-supported": 1606,
+    "unsupported": 1142,
+    "audio-supported": 1897,
+    "general-supported": 383,
+    "prompt-supported": 177,
+    "preference-supported": 155,
+    "video-supported": 27
+  },
+  "created_at": "2026-06-05T00:59:40",
+  "outputs": {
+    "csv": "<project_root>/checkpoints\\faithfulness_analysis\\claim_annotations_top1_v2.csv",
+    "jsonl": "<project_root>/checkpoints\\faithfulness_analysis\\claim_annotations_top1_v2.jsonl"
+  }
+}

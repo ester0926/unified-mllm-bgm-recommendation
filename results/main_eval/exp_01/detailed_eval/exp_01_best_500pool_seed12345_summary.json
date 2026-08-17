@@ -1,0 +1,65 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "checkpoint_dir": "<project_root>/checkpoints\\exp_01\\best",
+  "ltp_mode": "hybrid",
+  "active_modalities": [
+    "video",
+    "ltp",
+    "text",
+    "music"
+  ],
+  "pool_size": 500,
+  "prompt_variant": "original",
+  "prompt_variant_rule": {
+    "purpose": "MuseChat-aligned baseline prompt used by the main experiments.",
+    "construction_rules": [
+      "Reuse dataset.build_prompt() exactly.",
+      "Training uses Candidate: [MUSIC] without title injection.",
+      "Inference may inject Candidate: title by artist; [MUSIC].",
+      "No explicit faithfulness or unsupported-claim constraints are added."
+    ]
+  },
+  "result_tag": "seed12345",
+  "candidate_pool_seed": 12345,
+  "max_samples": null,
+  "max_gen_samples": null,
+  "started_at": "2026-05-27T19:25:38",
+  "finished_at": "2026-05-28T07:31:07",
+  "ranking": {
+    "recall@1": 0.3131985731272295,
+    "recall@5": 0.6646848989298454,
+    "recall@10": 0.8059453032104638,
+    "median_rank": 3.0,
+    "mean_rank": 7.958382877526754,
+    "num_samples": 4205,
+    "pool_size": 500,
+    "scoring": "pointwise Plan B ([RANK] token readout) + random tiebreak",
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42,
+    "candidate_pool_seed": 12345,
+    "n_allequal_scores": 0,
+    "pct_allequal": 0.0,
+    "avg_score_range": 30.173776560816272,
+    "avg_score_std": 7.157072192621855
+  },
+  "generation": {
+    "n_generated": 4205,
+    "n_valid": 4205,
+    "fallback_count": 0,
+    "fallback_rate": 0.0,
+    "inject_title": true,
+    "bertscore_precision": 0.7860190272331238,
+    "bertscore_recall": 0.7647145986557007,
+    "bertscore_f1": 0.7746615409851074,
+    "infolm_ab_divergence": 1.3851357698440552,
+    "infolm_l2_distance": 0.13701122999191284,
+    "infolm_fisher_rao": 1.1470731496810913
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_seed12345_ranking_samples.csv",
+    "generation_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_seed12345_generation_samples.csv",
+    "merged_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_seed12345_samples_merged.csv",
+    "merged_jsonl": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_seed12345_samples_merged.jsonl"
+  }
+}

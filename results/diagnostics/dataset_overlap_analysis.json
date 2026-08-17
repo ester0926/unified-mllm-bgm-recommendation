@@ -1,0 +1,73 @@
+{
+  "pair_key_structure": {
+    "format": "{target_music_id(11)}_{candidate_music_id(11)}",
+    "pair_key_colon_11": "target_music_id = GT music = video_id",
+    "pair_key_12_end": "candidate_music_id = training negative",
+    "split_group_key": "pair_key[:11] (target_music_id)"
+  },
+  "split_counts": {
+    "train": 75673,
+    "val": 4204,
+    "test": 4205
+  },
+  "task1_gt_overlap": {
+    "label": "GT (target_music_id = pair_key[:11])",
+    "train_unique_ids": 75673,
+    "test_unique_ids": 4205,
+    "item_overlap": 0,
+    "item_overlap_pct": 0.0,
+    "title_train": 75172,
+    "title_test": 4181,
+    "title_overlap": 23,
+    "title_overlap_pct": 0.6,
+    "artist_train": 62835,
+    "artist_test": 4066,
+    "artist_overlap": 955,
+    "artist_overlap_pct": 23.5,
+    "album_train": 1,
+    "album_test": 0,
+    "album_overlap": 0,
+    "album_overlap_pct": 0.0
+  },
+  "task2_candidate_overlap": {
+    "label": "Candidate (candidate_music_id = pair_key[12:])",
+    "train_unique_ids": 23301,
+    "test_unique_ids": 3461,
+    "item_overlap": 2846,
+    "item_overlap_pct": 82.2,
+    "title_train": 23131,
+    "title_test": 3445,
+    "title_overlap": 2832,
+    "title_overlap_pct": 82.2,
+    "artist_train": 20941,
+    "artist_test": 3332,
+    "artist_overlap": 2808,
+    "artist_overlap_pct": 84.3,
+    "album_train": 0,
+    "album_test": 0,
+    "album_overlap": 0,
+    "album_overlap_pct": 0.0
+  },
+  "task3_candidate_disjoint": {
+    "train_unique_candidate_ids": 23301,
+    "test_total_pairs": 4205,
+    "group_a_candidate_disjoint_unseen": {
+      "n": 627,
+      "R@1": 33.01,
+      "R@5": 68.26,
+      "R@10": 83.09,
+      "MR": 7.8
+    },
+    "group_b_candidate_overlap_seen": {
+      "n": 3578,
+      "R@1": 30.24,
+      "R@5": 66.07,
+      "R@10": 79.32,
+      "MR": 8.0
+    },
+    "gap_R@1_A_minus_B": 2.77,
+    "gap_R@5_A_minus_B": 2.19,
+    "gap_R@10_A_minus_B": 3.77,
+    "interpretation": "A near-zero gap (|ΔR@1|, |ΔR@10| ≤ 5pp) shows the model generalises to unseen candidates without candidate-memorisation."
+  }
+}

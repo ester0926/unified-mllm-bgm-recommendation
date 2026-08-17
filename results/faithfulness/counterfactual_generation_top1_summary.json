@@ -1,0 +1,36 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "pool_size": 500,
+  "ranking_source_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_ranking_samples.csv",
+  "generation_mode": "top1_counterfactual_modality_removal",
+  "n_samples": 200,
+  "n_rows": 1200,
+  "conditions": [
+    "full",
+    "wo_video",
+    "wo_audio_feature_only",
+    "wo_audio_all",
+    "wo_prompt",
+    "wo_ltp"
+  ],
+  "condition_descriptions": {
+    "full": "all modalities available; generation is conditioned on ranked Top-1 music",
+    "wo_video": "video feature is zeroed; generation is conditioned on ranked Top-1 music",
+    "wo_audio_feature_only": "Top-1 music feature is zeroed, but Top-1 title/artist metadata is kept",
+    "wo_audio_all": "Top-1 music feature is zeroed and Top-1 title/artist metadata injection is disabled",
+    "wo_prompt": "text prompt feature and user text are removed; Top-1 title/artist metadata is kept",
+    "wo_ltp": "long-term preference feature is zeroed; Top-1 title/artist metadata is kept"
+  },
+  "sample_seed": 20260516,
+  "prompt_variant": "original",
+  "inject_title": true,
+  "fallback_count": 0,
+  "missing_top1_count": 0,
+  "started_at": "2026-06-03T20:21:35",
+  "finished_at": "2026-06-03T21:44:13",
+  "outputs": {
+    "csv": "<project_root>/checkpoints\\faithfulness_analysis\\counterfactual_generations_top1.csv",
+    "jsonl": "<project_root>/checkpoints\\faithfulness_analysis\\counterfactual_generations_top1.jsonl"
+  }
+}

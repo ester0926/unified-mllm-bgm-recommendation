@@ -1,0 +1,649 @@
+﻿judge_task,sample_idx,video_id,condition,claim_text,generated_text,llm_support_source,llm_is_supported,llm_reason,llm_raw,human_label,human_notes,llm_is_aligned,llm_has_conflict,llm_alignment_strength,top1_reference_text,llm_is_metadata_supported,llm_unsupported_aspects
+feature_erasure,2455,gRKzFMRviAs,full,It has a fast-paced techno beat,"Certainly! I recommend 'Dance With Me' by D.J. Antoine. It's a track from the album 'Dance With Me'. This song combines elements of electronic, house, and pop with a touch of rock. It has a fast-paced techno beat and a catchy melody that could add a dynamic and energetic vibe to your video.",audio-supported,1,Claim is supported by the description of the song's genre and tempo.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and tempo.""
+}",,,,,,,,
+feature_erasure,3256,cqoeZEweGy4,full,It was released in 2012,"Certainly! How about 'Uradi pravu stvar' by I? It's a track from their album 'Uradi pravu stvar'. The song combines hip-hop, R&B, and soul elements with electronic and pop influences. It was released in 2012 and could add a unique touch to your video.",audio-supported,1,Claim is supported by the song's metadata and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the song's metadata and genre information.""
+}",,,,,,,,
+feature_erasure,313,z7Dy7s5tg2o,full,It's a track from his album 'Sunshine'.,"Certainly! How about 'Sunshine' by Danny Avila? It's a track from his album 'Sunshine'. This song combines elements of dance, electronic, pop, and house music. It has a catchy beat and a vibrant energy that could be a fitting choice for your video.",audio-supported,1,Claim is supported by the music sound and genre information provided.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre information provided.""
+}",,,,,,,,
+feature_erasure,1897,bTOju_n8BJ4,full,This track has a dance,Certainly! I would recommend 'My life is mine' by Miriam Reyes. This track has a dance and electronic sound with female vocals. It's part of the album 'My life is mine' and offers a catchy and energetic vibe that would be perfect for your video.,audio-supported,1,Claim is supported by the music sound and genre mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre mentioned in the explanation.""
+}",,,,,,,,
+feature_erasure,3587,K7KMRBoqQUg,full,"This song combines elements of electronic, pop","Allow me to recommend 'Shooting Star' by Owl City. It's a track from their album 'Shooting Star'. This song combines elements of electronic, pop, and indie genres, which aligns well with Owl City's distinctive style. It has a fast tempo and a catchy melody that can add energy to your video.",audio-supported,1,Claim relies on music genre and style information from the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from the audio modality.""
+}",,,,,,,,
+feature_erasure,685,SSmTgwp15FQ,full,"In that case, I would recommend 'Why God Made Love Songs' by Joel Crouse.","In that case, I would recommend 'Why God Made Love Songs' by Joel Crouse. This track has a pop sound with elements of rock, indie, and alternative. It also has a touch of 80s influence, which adds a nostalgic feel to the music. It's a perfect fit for your video.",audio-supported,1,"Recommendation based on music genre, sound, and nostalgic feel.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation based on music genre, sound, and nostalgic feel.""
+}",,,,,,,,
+feature_erasure,3819,qIJqSGTpfA0,full,The song has a unique,"Allow me to recommend 'Shining Crane' by dESEO. It's a track from their album 'Shining Crane'. It combines elements of indie, pop, and dance with electronic beats and a fast-paced tempo. The song has a unique and catchy sound that could be a fitting choice for your video.",audio-supported,1,"The claim relies on the song's unique sound and tempo, which can be inferred from its audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the song's unique sound and tempo, which can be inferred from its audio features.""
+}",,,,,,,,
+feature_erasure,2813,TFAyPoHmcBQ,full,This track has a rock,"In that case, I would recommend 'Let's Get By' by Paddy Clegg. This track has a rock and indie sound with elements of alternative and indie rock. It's a catchy and energetic song that will add a unique touch to your video.",audio-supported,1,The claim is supported by the music sound and genre mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim is supported by the music sound and genre mentioned in the explanation.""
+}",,,,,,,,
+feature_erasure,1950,XS7C6uA8H7Y,full,I would recommend 'Planos impossiveis' by Manu Gavassi.,"Certainly! I would recommend 'Planos impossiveis' by Manu Gavassi. This track is a pop song with female vocals. It has a catchy melody and a positive message, which would be a great fit for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",,,,,,,,
+feature_erasure,839,_0kWPBMmYEU,full,pop with female vocals,"Allow me to recommend 'I'm Alive' by J.R. featuring J.R. & The Soul Survivors. It's a track from their album 'I'm Alive'. The song combines elements of hip-hop, soul, and pop with female vocals and drum beats. It was released in 2010 and has a catchy and energetic vibe that could be a fitting choice for your video.",audio-supported,1,Claim is supported by the description of the song's genre and vocals.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and vocals.""
+}",,,,,,,,
+feature_erasure,2882,1yNEohtQSW8,full,alternative with female vocals.,"Allow me to recommend 'Vivre à en crever' by Mozart Opera Rock. It's a track from their album 'Vivre à en crever'. The song combines elements of rock, pop, and alternative with female vocals. It was released in 2005 and may contain the specific elements you're looking for.",audio-supported,1,Claim is supported by the description of the song's genre and vocals.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and vocals.""
+}",,,,,,,,
+feature_erasure,323,7KnEzXBwovQ,full,"This song combines elements of hip-hop, pop","Certainly! I recommend '너 때문에' by 2PM. It's a track from their album 'HOTTEST EVERYWHERE'. This song combines elements of hip-hop, pop, and electronic music, which aligns well with the Korean music scene. It has a catchy beat and features male vocals, which adds a unique touch to the track.",audio-supported,1,Claim is supported by the description of music genre and style in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of music genre and style in the explanation.""
+}",,,,,,,,
+feature_erasure,780,5ZVQ6_Hd4zc,full,ambient with chillout vibes.,"Allow me to recommend 'Sunshine' by Breezewax. It's a track from their album 'Sunshine'. It combines elements of electronic, indie, and ambient with chillout vibes. The song features female vocals, which could be a fitting choice for your video.",audio-supported,1,"The explanation mentions 'chillout vibes' and 'female vocals', which are audio-related features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions 'chillout vibes' and 'female vocals', which are audio-related features.""
+}",,,,,,,,
+feature_erasure,3915,4Q4VQyHfiPI,full,It's a track from their album 'Se siente el party'.,"Allow me to recommend 'Se siente el party' by Jhon KPO & Edsson. It's a track from their album 'Se siente el party'. It combines elements of electronic, pop, and Hip-Hop with catchy vocals and a beat-driven sound. It was released in 2013 and may contain the specific elements you're looking for.",audio-supported,1,Claim is supported by the music sound and genre information provided.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre information provided.""
+}",,,,,,,,
+feature_erasure,3003,0J808gIog1o,full,"In that case, I would recommend 'Kimi no sobade' by Sayaka Shionoya.","In that case, I would recommend 'Kimi no sobade' by Sayaka Shionoya. This track has a strong electronic and pop influence, with a powerful female vocal. It's part of the album 'Kimi no sobade' and would be a great fit for your video.",audio-supported,1,Recommendation depends on music genre and style mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation depends on music genre and style mentioned in the explanation.""
+}",,,,,,,,
+feature_erasure,3129,TcfxyMRLVRg,full,"The song combines elements of pop, rock","Allow me to recommend '懸崖上的玫瑰' by 陳妍希. It's a track from her album '懸崖上的玫瑰'. The song combines elements of pop, rock, and indie with a touch of folk. It features Michelle Chen's distinctive female vocals, which aligns well with your preferences.",audio-supported,1,"The claim references music genre and style, which are audio-based features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references music genre and style, which are audio-based features.""
+}",,,,,,,,
+feature_erasure,1240,Tqo1UOK1I44,full,Allow me to recommend 'Generación 12' by Generación 12.,"Allow me to recommend 'Generación 12' by Generación 12. It's a track from their album 'Generación 12'. It combines elements of rock, indie, and alternative with electronic beats that could be a fitting choice for your video. It also has indie rock and drum influences that you mentioned.",audio-supported,1,Recommendation relies on music genre and style mentioned in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre and style mentioned in the audio modality.""
+}",,,,,,,,
+feature_erasure,2673,6I0Dv46ZgZE,full,Allow me to recommend 'The Last Goodbye' by The Rasmus.,"Allow me to recommend 'The Last Goodbye' by The Rasmus. It's a track from their album 'The Last Goodbye'. The song combines elements of rock, indie, and alternative with a touch of metal. It has a slow and melodic sound with guitar-driven melodies. The track was released in 2012 and could be a fitting choice for your video.",audio-supported,1,"Claim relies on music genre, sound, and artist information.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre, sound, and artist information.""
+}",,,,,,,,
+feature_erasure,3463,Ga9vrr_fB-k,full,It has a fast-paced beat,"Certainly! How about 'Never Fear Dem' by Advance? It's a track from their album 'Never Fear Dem'. This song combines elements of Hip-Hop, electronic, and dance music. It has a fast-paced beat and a catchy rhythm that could add a dynamic touch to your video.",audio-supported,1,Claim is supported by the description of the song's rhythm and tempo.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's rhythm and tempo.""
+}",,,,,,,,
+feature_erasure,256,JOUczfMaLTE,full,It's a track from his album 'Fe'.,"Allow me to recommend 'Fe' by Juaninacka. It's a track from his album 'Fe'. It combines elements of hip-hop, electronic, and rock genres, with a chillout vibe. The song was released in 2012 and has a unique blend of genres that could be a fitting choice for your video.",audio-supported,1,"The claim references the song's album title 'Fe', which is audio-related information.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references the song's album title 'Fe', which is audio-related information.""
+}",,,,,,,,
+feature_erasure,1322,pgoDe__Fm-Y,wo_audio_all,"It combines elements of pop, rock","Allow me to recommend 'Kodaline' by Kodaline. It's a track from their album 'Kodaline'. It combines elements of pop, rock, and indie with female vocalists, which could be a fitting choice for your video. It has a techno and fast-paced sound too.",audio-supported,1,Claim is supported by the presence of music genre and style information in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the presence of music genre and style information in the audio modality.""
+}",,,,,,,,
+feature_erasure,2254,Fr2ZASMNaa0,wo_audio_all,It was released in 2014,"Allow me to recommend 'DJ Caique - 'Aqui Eu' by Dj Caique. It's a track from his album 'DJ Caique'. It combines elements of hip-hop, electronic, and rock with indie and male vocal influences that could be a fitting choice for your video. It was released in 2014 and has a unique style that aligns with your preferences.",audio-supported,1,The release year is mentioned in the audio metadata.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The release year is mentioned in the audio metadata.""
+}",,,,,,,,
+feature_erasure,4087,khe8nWxLC6A,wo_audio_all,"It combines elements of hip-hop, electronic","Allow me to recommend 'Troy Nathans - The Best of Troy Nathans'. It's a track from his album 'The Best of Troy Nathans'. It combines elements of hip-hop, electronic, and pop with a focus on vocal and guitar. It was released in 2012 and may contain the specific elements you want.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",,,,,,,,
+feature_erasure,1528,lXhW9YQhkEU,wo_audio_all,a catchy title that will appeal to fans of electronic,"Certainly, I recommend 'Electronic and 80s Influences' by The Chainsmokers. It's an electronic track that combines elements of rock, pop, and 80s with a touch of electronic and 80s influences. It has a fast-paced techno-beat and a catchy title that will appeal to fans of electronic and 80s influences.",audio-supported,1,"The claim relies on the music's title and genre, which are audio-based features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the music's title and genre, which are audio-based features.""
+}",,,,,,,,
+feature_erasure,2688,7Rd-wFSnrTY,wo_audio_all,"Although I don't have much information about this specific track, it aligns with your interest in hip hop","I suggest checking out 'Gunplay' by Gunplay. It's a track that combines elements of hip hop, electronic, and rock genres. Although I don't have much information about this specific track, it aligns with your interest in hip hop and electronic music.",audio-supported,1,"Claim relies on the user's interest in hip hop music, which is inferred from audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the user's interest in hip hop music, which is inferred from audio features.""
+}",,,,,,,,
+feature_erasure,215,yyaNJKJ6y6k,wo_audio_all,dance feel to it.,"In that case, I would recommend 'Electronic and Dance' by Lady Gaga. This track is a perfect fit for your video, as it has an electronic and dance feel to it. It's a great choice for a music video that needs a bit of an electronic and dance vibe.",audio-supported,1,Claim relies on the music's genre and style to infer a 'dance feel' without relying on visual cues.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the music's genre and style to infer a 'dance feel' without relying on visual cues.""
+}",,,,,,,,
+feature_erasure,3963,Wu8w5gYs6ZI,wo_audio_all,It's a track from Vinyl Therapy's album 'The Best of the Best'.,"Allow me to recommend 'Vinyl Therapy - The Best of the Best'. It's a track from Vinyl Therapy's album 'The Best of the Best'. It combines elements of hip-hop, electronic, and jazz with a chillout vibe that could be a fitting choice for your video. It was released in 2012 and has a unique style that incorporates elements of soul and jazz.",audio-supported,1,Claim is supported by audio features and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by audio features and genre information.""
+}",,,,,,,,
+feature_erasure,2813,TFAyPoHmcBQ,wo_audio_all,"indie vibe, which aligns with your preferences.","In that case, I would recommend 'Rock and Indie' by The Vaccines. This track has a rock and indie vibe, which aligns with your preferences. It falls under the genres of rock, indie, and alternative, with elements of electronic and pop. It's a great choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",,,,,,,,
+feature_erasure,3754,GI6_MCrDl6o,wo_audio_all,"It combines elements of hip-hop, electronic","Allow me to recommend 'Avicii' by Avicii. It's a track from their album 'Avicii'. It combines elements of hip-hop, electronic, and pop with female vocalists. It has a techno and fast-paced electronic beats that could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",,,,,,,,
+feature_erasure,1311,CSvBwXlOQPY,wo_audio_all,"Although I don't have specific information about this track, it aligns with the hip-hop","I suggest 'Hip-Hop' by Kendrick Lamarre. It's a track that combines elements of hip-hop, electronic, and ambient music. Although I don't have specific information about this track, it aligns with the hip-hop and ambient elements you're looking for.",audio-supported,1,Claim relies on music genre and style information from the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from the audio modality.""
+}",,,,,,,,
+feature_erasure,357,aXgXFr89wpY,wo_audio_all,"It's a track that combines elements of hip-hop, rock","Allow me to recommend 'Hip Hop' by The Hip Hop. It's a track that combines elements of hip-hop, rock, and electronic beats with male vocals. Although I don't have specific information about the track name, album name, or artists, it aligns well with your preferences for hip-hop, rock, and electronic beats with male vocals.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",,,,,,,,
+feature_erasure,1036,YhFYuZyr5Yo,wo_audio_all,"Certainly, I recommend 'The Charlatans - 'The Charlatans' by The Charlatans.","Certainly, I recommend 'The Charlatans - 'The Charlatans' by The Charlatans. It's a track from their album 'The Charlatans'. The song combines elements of rock, indie, and alternative with a touch of electronic and techno influences. It has a fast-paced and loud sound with a mix of guitar and drums, which could be a fitting choice for your video.",audio-supported,1,"Recommendation relies on music genre, style, and sound characteristics.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre, style, and sound characteristics.""
+}",,,,,,,,
+feature_erasure,3605,Iyy9VDuS3oM,wo_audio_all,"It's a track by ARTMATA, a collective of artists, musicians","Allow me to recommend 'ARTMATA - A.R.T.M.A.'. It's a track by ARTMATA, a collective of artists, musicians, and activists. It combines elements of indie, alternative, and electronic music with a focus on drums. It was released in 2012 and has a unique style that could be a fitting choice for your video.",audio-supported,1,Claim relies on music metadata and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music metadata and genre information.""
+}",,,,,,,,
+feature_erasure,3463,Ga9vrr_fB-k,wo_audio_all,I suggest checking out 'Hip-Hop' by M.I.T.,"I suggest checking out 'Hip-Hop' by M.I.T. It's a track that combines elements of Hip-Hop with electronic and dance music. Although I don't have specific information about the track name, album name, or artists, it aligns with the Hip-Hop genre and could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",,,,,,,,
+feature_erasure,2316,Z9ry7JQTl6g,wo_audio_all,has a techno sound too.,"Allow me to recommend 'I'm Gonna Be (500 Miles High)' by Stuart Wilson. It's a track from his album 'I'm Gonna Be (500 Miles High)'. It combines elements of pop, soul, and electronic with a catchy beat that could be a fitting choice for your video. It features female vocals and has a techno sound too.",audio-supported,1,Claim relies on the description of the song's sound and genre.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the description of the song's sound and genre.""
+}",,,,,,,,
+feature_erasure,215,yyaNJKJ6y6k,wo_audio_all,"This track is a perfect fit for your video, as it has an electronic","In that case, I would recommend 'Electronic and Dance' by Lady Gaga. This track is a perfect fit for your video, as it has an electronic and dance feel to it. It's a great choice for a music video that needs a bit of an electronic and dance vibe.",audio-supported,1,Claim relies on the music genre and style mentioned in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the music genre and style mentioned in the audio modality.""
+}",,,,,,,,
+feature_erasure,3290,6fAbkc0sdtA,wo_audio_all,It has a techno,"Certainly, I recommend 'Chillout' by The Chillout Crew. It's a track that combines elements of Hip-Hop, electronic, and rock with chillout vibes and female vocalists. It has a techno and fast-paced beat that could be a fitting choice for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",,,,,,,,
+feature_erasure,1615,M7GS21LLo3o,wo_audio_all,It's a track from their album 'I'm Not Sorry'.,"I understand this recommendation. In that case, I would like to recommend 'I'm Not Sorry' by The Stereo MCs. It's a track from their album 'I'm Not Sorry'. It combines elements of pop, rock, and folk with female vocals, which could be a fitting choice for your video.",audio-supported,1,The recommendation is based on the music sound and genre mentioned in the input.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The recommendation is based on the music sound and genre mentioned in the input.""
+}",,,,,,,,
+feature_erasure,839,_0kWPBMmYEU,wo_audio_all,"Although I don't have specific information about the track name, album name, or artists, it aligns well with your preferences for hip-hop, soul","Allow me to recommend 'Hip Hop' by T.I.C. It's a track that combines elements of hip-hop, soul, and pop with electronic beats and female vocals. Although I don't have specific information about the track name, album name, or artists, it aligns well with your preferences for hip-hop, soul, and pop with electronic beats and female vocals.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",,,,,,,,
+feature_erasure,2711,YJtkZTx7fmE,wo_audio_all,"In that case, I would recommend 'Soulful - Indie Vibe - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Ind","In that case, I would recommend 'Soulful - Indie Vibe - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Ind",audio-supported,1,Recommendation relies on music genre and style (Indie Vibe) for the wedding playlist.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre and style (Indie Vibe) for the wedding playlist.""
+}",,,,,,,,
+preference_counterfactual,1395,ufnqxvG8TZ4,,,"I suggest checking out 'Zwoardduel' by Samoerai. It's a track from their album 'Zwoardduel'. The song combines elements of Hip-Hop, electronic, rock, and indie with a touch of pop. It has a slow tempo and a soothing acoustic sound that could create a calm and sentimental atmosphere for your video.",,,"The explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.","{
+  ""is_aligned"": true,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""moderate"",
+  ""reason"": ""The explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.""
+}",,,1,1,moderate,,,
+preference_counterfactual,3936,brSk7jSBrUo,,,"I suggest checking out 'Kiss Your Ass Goodbye' by Sheek Louch. It's a track from the album 'Kiss Your Ass Goodbye' and features a mix of Hip-Hop, electronic, rock, and pop genres. The song has a slow tempo and a soothing acoustic texture, which can create a calm and sentimental mood for your video.",,,"The explanation mentions electronic and hip-hop genres, which conflict with the user's preference for lyrical piano music.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The explanation mentions electronic and hip-hop genres, which conflict with the user's preference for lyrical piano music.""
+}",,,0,1,moderate,,,
+preference_counterfactual,1603,l3IbMrnSJtM,,,"In that case, I recommend '太陽と月' by Shoko Furukawa & Albert Takagi. This track is a beautiful song with lyrics that express the love between a mother and her child. It has a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood that would be perfect for your video.",,,"The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,1528,lXhW9YQhkEU,,,"In that case, I recommend 'Morning Sun' by Strange Talk. This track has a perfect blend of electronic, rock, and pop elements, with a touch of indie influence. The lyrics are captivating and the music has a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood. It's a great choice for your video.",,,"The recommendation 'Morning Sun' by Strange Talk matches the counterfactual preference for lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation 'Morning Sun' by Strange Talk matches the counterfactual preference for lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,4053,RtN6hQUg_8A,,,"Allow me to recommend 'Scary Monsters and Nice Sprites' by Skrillex. It's a track from his album 'Scary Monsters and Nice Sprites'. This song combines electronic and dance elements with a touch of rock and indie influences. It has a fast-paced techno beat and a loud sound, which may not align with your preferences.",,,"The recommendation features electronic and techno elements, which conflict with the user's preference for soft acoustic texture and slow tempo.","{
+  ""is_aligned"": false,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""weak"",
+  ""reason"": ""The recommendation features electronic and techno elements, which conflict with the user's preference for soft acoustic texture and slow tempo.""
+}",,,0,1,weak,,,
+preference_counterfactual,3673,h5Dl5y6er04,,,"Allow me to recommend 'Ezra' by David R Black. It's a track from his album 'Ezra'. The song combines elements of rock, indie, and alternative with a touch of punk. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",,,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,916,kqK-Ovwua30,,,"Allow me to recommend 'Tree of Life' by Rix. It's a track from their album 'Tree of Life'. This song combines elements of rock, pop, and indie with a touch of electronic and jazz influences. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",,,The recommendation matches the user's preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the user's preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,2088,ZRntURxcjYg,,,"Allow me to recommend 'Sakuramitsutsuki' by SPYAIR. It's a track from their album 'Sakuramitsutsuki'. The song combines elements of rock, indie, and alternative with a touch of pop. It has a slow tempo and features lyrical piano, which creates a soothing and emotional atmosphere.",,,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,3048,LAzK2fmfNoU,,,"Allow me to recommend 'No Way Home' by Richard Durand. It's a track from his album 'No Way Home'. This song combines elements of dance, electronic, and pop genres with a touch of rock. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",,,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,1083,IzsgBQQmV5w,,,"I understand your preference for lyrical piano background music with a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood. In that case, I recommend 'Dans Ma Téte' by Jhr. This track combines elements of Hip-Hop, electronic, pop, and rock genres, with a touch of indie and alternative influences. It has a relaxing and introspective vibe that could complement your video.",,,"The recommendation 'Dans Ma Téte' by Jhr. has electronic and hip-hop elements, which conflict with the user's preference for acoustic and calm music.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""weak"",
+""reason"": ""The recommendation 'Dans Ma Téte' by Jhr. has electronic and hip-hop elements, which conflict with the user's preference for acoustic and calm music.""
+}",,,0,1,weak,,,
+preference_counterfactual,1333,sZNtPlWq5gI,,,"In that case, I recommend 'Lyrical Piano Background Music - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",,,The generated recommendation matches the counterfactual preference's lyrical and piano music characteristics.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated recommendation matches the counterfactual preference's lyrical and piano music characteristics.""
+}",,,1,0,strong,,,
+preference_counterfactual,780,5ZVQ6_Hd4zc,,,I suggest you consider the track 'Love Is A Beautiful Thing' by The Sounds. It's a beautiful song with lyrical piano and a slow tempo. The track has a soft acoustic texture and a gentle melody that can create a calm and sentimental mood for your video.,,,"The generated explanation matches the counterfactual preference in terms of lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of lyrical piano music with slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,457,_MV0BuKm0VE,,,"Allow me to recommend 'S.O.T.U.' by Nicky Romero featuring Fast Eddie. It's a track from the album 'S.O.T.U.' and combines elements of electronic, dance, and pop genres. The song has a techno and fast-paced beat, which aligns well with the energetic vibe you're looking for.",,,"The recommendation features electronic and techno elements, which conflict with the user's preference for lyrical piano music.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""weak"",
+""reason"": ""The recommendation features electronic and techno elements, which conflict with the user's preference for lyrical piano music.""
+}",,,0,1,weak,,,
+preference_counterfactual,2648,rSAbaOw7tNY,,,"In that case, I recommend 'All Night Long' by Uno Feat. This track combines elements of Hip-Hop, electronic, rock, pop, and indie genres. It has a slow tempo and a soothing acoustic texture, creating a gentle and sentimental mood. It's a perfect fit for your video.",,,The recommendation matches the counterfactual preference's lyrical piano music with slow tempo and gentle melody.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference's lyrical piano music with slow tempo and gentle melody.""
+}",,,1,0,strong,,,
+preference_counterfactual,3711,xSAt_9AARZg,,,"In Your Arms by Christina Ross is a beautiful track that fits your preferences. It has a lyrical piano background with a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood. This song is perfect for creating a romantic atmosphere in your video.",,,The generated explanation matches the counterfactual user preference in terms of musical elements and atmosphere.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual user preference in terms of musical elements and atmosphere.""
+}",,,1,0,strong,,,
+preference_counterfactual,1753,dfMrsrzxZxc,,,"Allow me to recommend 'Why Me' by Krizz Kaliko. It's a track from his album 'Kickin' Rhymes'. The song combines elements of Hip-Hop, R&B, and pop with a slow tempo and a soothing acoustic sound. It has a lyrical piano background and a calm, sentimental mood that could be a fitting choice for your video.",,,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and calm mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,3905,H-W68B4KTVI,,,I suggest you consider the track 'Love Is Alive' by Linda. It's a pop and electronic song with elements of rock and indie. The song has a slow tempo and features a piano and acoustic guitar. It has a soothing and emotional vibe that could be a fitting choice for your video.,,,The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and emotional vibe.,"{
+  ""is_aligned"": true,
+  ""has_conflict"": false,
+  ""alignment_strength"": ""strong"",
+  ""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and emotional vibe.""
+}",,,1,0,strong,,,
+preference_counterfactual,4025,BSA-zYdJkw8,,,"Allow me to recommend 'I Love You' by Jonathan McReynolds. It's a track from his album 'Walking In The Light Vol'. The song combines elements of pop, R&B, and soul with a touch of rock. It has a slow tempo, soft acoustic texture, and a gentle melody that creates a calm and sentimental mood.",,,"The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,806,3O3gFRSiBC4,,,"Allow me to recommend 'Hush (Catz 'n Dogz 2013 Remix)' by Thomas Schumacher. It's a track from the album 'Hush (Catz 'n Dogz 2013 Remix)'. This song combines elements of electronic, dance, and pop genres with a touch of Hip-Hop. It has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",,,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,839,_0kWPBMmYEU,,,"In that case, I recommend 'Love Is' by J.R. featuring J.R. It's a track from the album 'Love Is' and combines elements of Hip-Hop, pop, and rock with soul and electronic influences. The song has a slow tempo and features lyrical piano, which creates a soothing and sentimental atmosphere.",,,The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,3645,fpPHM9g7doo,,,"Allow me to recommend 'London'o Phone' by Nav Sidhu. It's a track from the album 'London'o Phone'. This song combines elements of pop, electronic, and dance with a touch of rock. It has a slow tempo and features lyrical piano, which aligns well with the emotional and sentimental mood you're looking for.",,,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,869,omK0RvdNINg,,,"I suggest you consider the track 'Love Is In The Air' by John Paul Young. It's a pop and electronic song with a slow tempo and a soothing acoustic sound. The track has a gentle melody and a calm sentimental mood, which could be a fitting choice for your video.",,,"The generated explanation matches the counterfactual preference in terms of tempo, acoustic texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, acoustic texture, melody, and mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,1311,CSvBwXlOQPY,,,I recommend 'EL CHAMAKITO' by LA EMINENCIA. It's a track with lyrical piano background music and a slow tempo. The song has a soft acoustic texture and a gentle melody that creates a calm and sentimental mood. It's a perfect choice for your video.,,,"The generated explanation matches the counterfactual preference in terms of lyrical piano music, slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of lyrical piano music, slow tempo, soft acoustic texture, gentle melody, and calm sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,307,DL3dhkazIc8,,,"Allow me to recommend 'Sick Perfect Banger' by Redhooknoodles. It's a hip-hop track with electronic and rock influences. The song has a slow tempo and features lyrical piano, which aligns well with your preferences. The acoustic elements and the calm and sentimental mood of the music make it a fitting choice for your video.",,,"The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the preference for acoustic texture due to electronic influences.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the preference for acoustic texture due to electronic influences.""
+}",,,1,1,moderate,,,
+preference_counterfactual,4148,HdVY4pBsahU,,,"Allow me to recommend 'Survive Life' by FRESH. It's a track from the album 'Survive Life' and combines elements of hip-hop, electronic, and indie genres. The song has a slow tempo and a soft acoustic texture, which creates a gentle and calm atmosphere. It was released in 2014 and may contain the specific elements you are looking for.",,,"The recommendation matches the counterfactual preference's tempo, texture, and mood, aligning with the desired lyrical piano music characteristics.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference's tempo, texture, and mood, aligning with the desired lyrical piano music characteristics.""
+}",,,1,0,strong,,,
+preference_counterfactual,3256,cqoeZEweGy4,,,I suggest you consider the track 'Uradi pravu stvar' by I. It's a hip-hop and pop song with electronic and rock influences. The song has a slow tempo and features a piano and acoustic elements. It has a soothing and sentimental vibe that could be a fitting choice for your video.,,,"The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with the preference for soft acoustic texture due to electronic and rock influences.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with the preference for soft acoustic texture due to electronic and rock influences.""
+}",,,1,1,moderate,,,
+preference_counterfactual,1835,i14CO18tEJA,,,"I suggest checking out the track 'L'amour est un oiseau' by M.A.R.S. It's a hip-hop and electronic song with elements of rock and pop. The track has a slow tempo and a soothing acoustic texture, which can create a calm and sentimental atmosphere for your video.",,,"The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music and slow tempo, but conflicts with electronic and hip-hop elements.""
+}",,,1,1,moderate,,,
+preference_counterfactual,1269,KGmsoYvx7ng,,,"Allow me to recommend 'Under World' by A＆D. It's a track from their album 'Under World'. This song combines elements of rock, metal, and alternative with a touch of electronic and indie influences. It has a slow tempo and a soothing acoustic sound that could be a fitting choice for your video.",,,The recommendation matches the counterfactual preference for slow tempo and acoustic texture.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for slow tempo and acoustic texture.""
+}",,,1,0,strong,,,
+preference_counterfactual,2378,2WzHhtkF8JM,,,"Allow me to recommend 'I Love You' by 2AM. It's a track from their album '2010 2AM 1st Mini Album'. The song combines elements of pop, dance, and electronic genres with a focus on female vocals. It has a slow tempo and a soothing acoustic texture that could be a fitting choice for your video.",,,"The recommendation matches the slow tempo and acoustic texture preferences, but conflicts with the lyrical piano music preference due to the electronic genre.","{
+  ""is_aligned"": true,
+  ""has_conflict"": true,
+  ""alignment_strength"": ""moderate"",
+  ""reason"": ""The recommendation matches the slow tempo and acoustic texture preferences, but conflicts with the lyrical piano music preference due to the electronic genre.""
+}",,,1,1,moderate,,,
+preference_counterfactual,1698,lgBOgKr-HJo,,,"Allow me to recommend 'Papa Noel' by Stromae vs Wham. It's a track from the album 'Papa Noel' and combines elements of pop, jazz, and rock with a touch of soul. The song features a piano and has a slow tempo, which creates a soothing and sentimental atmosphere.",,,The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,3003,0J808gIog1o,,,"Allow me to recommend 'Kimi no sobade' by Sayaka Shionoya. It's a track from her album 'Kimi no sobade'. The song combines elements of pop, electronic, and rock with a focus on female vocals. It has a techno influence and a powerful and emotional sound that could be a fitting choice for your video.",,,"The recommendation includes electronic and techno elements, which conflict with the user's preference for soft acoustic texture.","{
+""is_aligned"": false,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation includes electronic and techno elements, which conflict with the user's preference for soft acoustic texture.""
+}",,,0,1,moderate,,,
+preference_counterfactual,1455,XXgtN7TA1V8,,,"Allow me to recommend 'Дежавю' by Just name. It's a track from their album 'Дежавю'. The song combines elements of Hip-Hop, R&B, and pop with a slow tempo and a piano-driven sound. It has a soothing and emotional vibe that could be a perfect fit for your video.",,,The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional vibe.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional vibe.""
+}",,,1,0,strong,,,
+preference_counterfactual,3052,3fFKAJXuLEM,,,"I recommend 'SO FAR AWAY' by PIT featuring BIG FITZ DA POET. It's a track with lyrical piano background music that aligns with your preferences. The song has a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood.",,,"The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference in terms of tempo, texture, melody, and mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,2609,iwxzc2MlkRg,,,"Allow me to recommend 'Chora Brother' by Mahalo. It's a track from their album 'Chora Brother'. The song combines elements of rock, pop, and indie with a touch of alternative. It has a slow tempo and features lyrical piano, which aligns well with the emotional and sentimental mood you're looking for.",,,The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation aligns well with the counterfactual preference for lyrical piano music with a slow tempo and sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,2688,7Rd-wFSnrTY,,,"Allow me to recommend 'Drop Da Tint' by Gunplay. It's a track from the album 'Dreams' and combines elements of Hip-Hop, electronic, and rock with a touch of pop. The song has a slow tempo and features lyrical piano, which can create a soothing and sentimental atmosphere for your video.",,,"The recommendation includes lyrical piano music and a slow tempo, aligning with the user's preference for sentimental and calming music.","{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation includes lyrical piano music and a slow tempo, aligning with the user's preference for sentimental and calming music.""
+}",,,1,0,strong,,,
+preference_counterfactual,2216,GavrpKnU4Hc,,,"Allow me to recommend 'Gratidão' by Dunamis. It's a track from their album 'Gratidão'. The song combines elements of rock, pop, and indie with a touch of alternative and acoustic. It has a slow tempo and features a piano, which can create a lyrical and emotional atmosphere for your video.",,,The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional atmosphere.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and emotional atmosphere.""
+}",,,1,0,strong,,,
+preference_counterfactual,3563,O8k8XT6gLzI,,,"Allow me to recommend 'ひとり' by LOSTAGE. It's a track from their album 'ひとり'. The song combines elements of rock, indie, and alternative with a focus on guitar and piano. It has a slow tempo and a soothing acoustic sound that could be a fitting choice for your video.",,,The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and soft acoustic texture.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The generated explanation matches the counterfactual preference's lyrical piano music with slow tempo and soft acoustic texture.""
+}",,,1,0,strong,,,
+preference_counterfactual,2172,sBTkevwy9xo,,,"Allow me to recommend 'Louder Than Words' by ES Posthumus. It's a track from their album 'Louder Than Words'. This song combines elements of rock, electronic, and alternative genres with a focus on piano and vocals. It has a slow tempo and a soothing acoustic texture that can create a calm and sentimental atmosphere for your video.",,,The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and calm sentimental mood.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""strong"",
+""reason"": ""The recommendation matches the counterfactual preference for lyrical piano music with slow tempo and calm sentimental mood.""
+}",,,1,0,strong,,,
+preference_counterfactual,2011,FVVJNFvoRNg,,,"Allow me to recommend 'Shayni' by Elji. It's a track from the album 'Shayni' and combines elements of Hip-Hop, electronic, dance, pop, and rock. The song has a slow tempo and features a piano in the background, creating a soothing and emotional atmosphere.",,,"The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the desire for soft acoustic texture and gentle melody due to the presence of dance and electronic elements.","{
+""is_aligned"": true,
+""has_conflict"": true,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation aligns with the preference for lyrical piano music and slow tempo, but conflicts with the desire for soft acoustic texture and gentle melody due to the presence of dance and electronic elements.""
+}",,,1,1,moderate,,,
+preference_counterfactual,1207,ItV4NVU0u6I,,,"Allow me to recommend 'Nuestra Vida' by Nada Que Objetar. It's a track from their album 'Nuestra Vida'. The song combines elements of rock, indie, and alternative with a focus on guitar and vocals. It has a slow tempo and a soothing acoustic sound that could be a fitting choice for your video.",,,The recommendation includes acoustic and slow elements that align with the user's preference for lyrical piano music with a slow tempo.,"{
+""is_aligned"": true,
+""has_conflict"": false,
+""alignment_strength"": ""moderate"",
+""reason"": ""The recommendation includes acoustic and slow elements that align with the user's preference for lyrical piano music with a slow tempo.""
+}",,,1,0,moderate,,,
+metadata_consistency,204,sCXisjAoIhc,,It's part of the Fast and Furious soundtrack and would be a great fit for your video.,"In that case, I would recommend 'This Is the Game' by Volcano & The New Radio Standard. This track combines elements of hip-hop, rock, and alternative genres, creating a unique and energetic sound. It's part of the Fast and Furious soundtrack and would be a great fit for your video.",,,"The candidate metadata/reference does not mention the Fast and Furious soundtrack, so the claim is unsupported.","{
+""is_metadata_supported"": false,
+""unsupported_aspects"": [""It's part of the Fast and Furious soundtrack""],
+""reason"": ""The candidate metadata/reference does not mention the Fast and Furious soundtrack, so the claim is unsupported.""
+}",,,,,,"Absolutely! If you're looking for a rock and punk vibe, I would suggest 'This Is the Game' by Volcano & The New Radio Standard. This track is part of their album 'Graffiti Symphony' and combines elements of Hip-Hop, rock, punk, metal, and alternative, creating a high-energy and dynamic sound that will perfectly complement your video.",0,It's part of the Fast and Furious soundtrack
+metadata_consistency,13,tu-n5fUfjc4,,"The song combines elements of hip-hop, electronic, indie, and rock genres.","Allow me to recommend 'En Attendant JOY&PAIN' by Yojee. It's a track from his album 'JOY&PAIN'. The song combines elements of hip-hop, electronic, indie, and rock genres. It has a unique blend of styles that could be a fitting choice for your video.",,,"The candidate metadata/reference text mentions combining elements of hip-hop, rock, and indie music, which aligns with the generated explanation claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference text mentions combining elements of hip-hop, rock, and indie music, which aligns with the generated explanation claim.""
+}",,,,,,"I suggest you check out 'JIIW HD' by Fata EL PResidente. It's a track from his album 'IQRA 2014' and combines elements of hip-hop, rock, and indie music. This track might be a fitting choice to incorporate Fata EL PResidente's unique style into your video.",1,
+metadata_consistency,1661,KiRLPw1NfC0,,"It's a track from the album 'Kaash' and combines elements of rock, electronic, and classical music.","Certainly! How about 'Kaash' by Siddharth Basrur? It's a track from the album 'Kaash' and combines elements of rock, electronic, and classical music. The song features female vocals and has a unique blend of genres that could add a touch of elegance and sophistication to your video.",,,"The candidate metadata/reference text mentions rock and electronic elements, which aligns with the claim's description of combining these genres.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference text mentions rock and electronic elements, which aligns with the claim's description of combining these genres.""
+}",,,,,,"I apologize, but I couldn't find any specific classical-based fusion music for your video. However, Al Bairre's track 'We Move On' does have rock and electronic elements that might give your video the energy and vibe you're looking for.",1,
+metadata_consistency,2384,hxJHHBh1ajI,,"It has a fast-paced beat and male vocals, which could add an energetic and unique touch to your video.","Certainly! How about 'Mou Fafé' by Sound Boy Flex? It's a track from their album 'Mou Fafé'. The song combines elements of hip-hop, electronic, and pop with indie and rock influences. It has a fast-paced beat and male vocals, which could add an energetic and unique touch to your video.",,,"The claim is supported by the metadata as it mentions 'fast-paced beat' and 'male vocals', which are mentioned in the candidate track metadata/reference.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata as it mentions 'fast-paced beat' and 'male vocals', which are mentioned in the candidate track metadata/reference.""
+}",,,,,,"Allow me to recommend 'MOU FAFE' by Sound Boy Flex. It's a track that combines elements of hip-hop, electronic, and rock genres. This song has a unique indie sound that could be a fitting choice for your video. It was released in 2013 and may contain the specific elements you're looking for.",1,
+metadata_consistency,40,ldHV3ewjZxQ,,"This song combines elements of rock, metal, and experimental genres, which aligns well with My Ticket Home's distinctive style.","Certainly! How about 'My Ticket Home' by My Ticket Home? It's a track from their album 'The Quiet Storm'. This song combines elements of rock, metal, and experimental genres, which aligns well with My Ticket Home's distinctive style. It has a fast-paced and loud sound, with a touch of electronic influence.",,,The candidate track metadata/reference supports the claim by mentioning metal and rock influences in 'Yellow Light Of Death' by HAILMARY.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference supports the claim by mentioning metal and rock influences in 'Yellow Light Of Death' by HAILMARY.""
+}",,,,,,"Allow me to recommend 'Yellow Light Of Death' by HAILMARY. It's a track with experimental and ambient elements combined with metal and rock influences. While there is no specific information available about the album or recording details, it aligns with your interest in electronic and fast-paced rock with techno and drum elements.",1,
+metadata_consistency,3167,U74wIa28C8M,,The song features male vocals and was released in 2012.,"Allow me to recommend 'Sin Ti' by Los Pepes. It's a track from their album 'Sin Ti'. It combines elements of punk, indie rock, and alternative with a focus on guitar and drums. The song features male vocals and was released in 2012. It may contain the specific elements you're looking for.",,,No release date information provided in the metadata/reference text.,"{
+""is_metadata_supported"": false,
+""unsupported_aspects"": [""release date""],
+""reason"": ""No release date information provided in the metadata/reference text.""
+}",,,,,,"Allow me to recommend a track from Abandon Mute called 'These Days'. It's an indie rock and alternative song with electronic influences. Unfortunately, I do not have any additional information about the track such as the album or release date.",0,release date
+metadata_consistency,229,ZfNcFf4e_fM,,This track has a classic rock sound with elements of indie and alternative.,"In that case, I would recommend 'Walk To The Other Side' by Jaap Reesema. This track has a classic rock sound with elements of indie and alternative. It features meaningful lyrics that can add depth to your video.",,,"The candidate track metadata/reference text explicitly mentions 'classic rock' and 'indie elements', which aligns with the music-detail claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference text explicitly mentions 'classic rock' and 'indie elements', which aligns with the music-detail claim.""
+}",,,,,,"In that case, I would recommend 'Walk To The Other Side' by Jaap Reesema. This track combines classic rock and indie elements with a pop touch. It features Jaap Reesema's captivating vocals and has a timeless sound. It would be a great fit for your video.",1,
+metadata_consistency,3618,DaDhDiYMDfI,,This track combines Hip-Hop and electronic elements with a touch of experimental and rock influences.,"In that case, I would recommend 'B.O.B. (Bring Out The Best)' by Next Calibre. This track combines Hip-Hop and electronic elements with a touch of experimental and rock influences. It's a great choice if you're looking for something a bit more unique and edgy.",,,The claim accurately summarizes the track's genre-bending style and influences mentioned in the metadata.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim accurately summarizes the track's genre-bending style and influences mentioned in the metadata.""
+}",,,,,,"Allow me to recommend 'Hip Hop' by Next Calibre. It's a track from their EP 'EP-isodes'. The song combines elements of hip-hop, electronic, and rock with experimental and indie influences. It features a fast-paced techno beat and has a loud and energetic sound. The male vocals add a unique touch to the track.",1,
+metadata_consistency,3245,AEiLLBv49Po,,"It combines elements of rock, electronic, and experimental music with jazz influences.","Allow me to recommend 'EOB' by EOB. It's a track from their album 'EOB'. It combines elements of rock, electronic, and experimental music with jazz influences. The song features male vocals and was released in 2011. It may contain the specific elements you want.",,,The claim is supported by the metadata's mention of electronic and rock styles with blues influences.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata's mention of electronic and rock styles with blues influences.""
+}",,,,,,"Allow me to recommend 'Outlook Festival 2011 Highlights' by deadcloud. It's a video highlighting their performance at the Outlook Festival in Croatia. Although there is no specific track mentioned, deadcloud is known for their electronic, Hip-Hop, and rock style with blues influences. This aligns well with the elements you are looking for in your video, especially the electronic and rock components.",1,
+metadata_consistency,2692,FdDkWU32fDo,,The song has a catchy and energetic vibe that could be a fitting choice for your music video.,"Allow me to recommend 'That Kind of Guy' by Tony Terry. It's a track from his album 'That Kind of Guy'. It combines elements of 90s pop, Hip-Hop, and electronic music with a strong focus on drums. The song has a catchy and energetic vibe that could be a fitting choice for your music video.",,,"The candidate track metadata/reference explicitly describes the song's energetic vibe, supporting the claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference explicitly describes the song's energetic vibe, supporting the claim.""
+}",,,,,,Let me suggest 'That Kind of Guy' by Tony Terry. It's a 90s pop and Hip-Hop track with electronic and drum influences. The music video was released in 1991 and captures the essence of that era. It aligns well with the elements you're looking for in your project.,1,
+metadata_consistency,99,zEFEOnXKWuc,,It has a fast-paced and energetic sound that could be a fitting choice for your video.,"Certainly! I recommend 'The Light' by Peter Hook And The Light. It's a track from their album 'The Light'. This song combines elements of indie rock, punk, and alternative genres. It has a fast-paced and energetic sound that could be a fitting choice for your video.",,,"The candidate metadata directly supports the claim with terms 'fast-paced' and 'energetic', indicating a fitting choice for the video.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata directly supports the claim with terms 'fast-paced' and 'energetic', indicating a fitting choice for the video.""
+}",,,,,,"Allow me to recommend 'Moving On' by The Hangovern. It's a track from their EP and falls under the genres of rock, indie, and alternative. The song has indie rock and punk influences, with a guitar and drum-driven sound. It's a fast-paced track that also has elements of pop, which could provide the energetic and catchy vibe you're looking for in your video.",1,
+metadata_consistency,437,ppFEqjMHC_M,,"It combines elements of indie rock, pop, and alternative with a focus on vocals and guitar.","Allow me to recommend 'Flying' by Recess Monkey. It's a track from their album 'Flying'. It combines elements of indie rock, pop, and alternative with a focus on vocals and guitar. This song could be a fitting choice for your video.",,,"The claim is supported by the metadata's mention of indie rock, pop, and guitar-focused sound.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata's mention of indie rock, pop, and guitar-focused sound.""
+}",,,,,,"Allow me to recommend 'Flying' by Recess Monkey. It's an indie rock track with elements of pop. Although there is no specific description available for this track, it aligns well with your preferences of indie, rock, and pop genres. The song has a guitar-focused sound which adds a nice touch to the overall composition.",1,
+metadata_consistency,15,JNKpf4DLzJ0,,"It features guitar and male vocals, which adds to its distinctive sound.","Allow me to recommend 'The Light' by Matt Joe Gow & the Dead Leaves. It's a track from their album 'The Light'. This song combines elements of country, folk, and indie music, creating a unique blend of genres. It features guitar and male vocals, which adds to its distinctive sound.",,,The claim is supported by the presence of 'acoustic guitar' in the metadata.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the presence of 'acoustic guitar' in the metadata.""
+}",,,,,,"Allow me to recommend 'The Light' by Matt Joe Gow & the Dead Leaves. It's a track from their album 'The Messenger' and blends elements of rock, country, folk, and indie with a touch of pop. The song features acoustic guitar, soothing vocals, and a slow-paced rhythm, creating a melodic and heartfelt atmosphere that aligns well with the country, folk, and indie styles you're interested in.",1,
+metadata_consistency,3055,PaRTwvsFXVo,,It's a soulful track with elements of R&B and pop.,"Allow me to recommend 'Sweeter Than Honey' by Shar Carillo. It's a soulful track with elements of R&B and pop. The song features female vocals and guitar, which can add a touch of emotion and depth to your dance video.",,,The claim is supported by the presence of R&B and soulful elements in the track description.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the presence of R&B and soulful elements in the track description.""
+}",,,,,,"Let me recommend 'Sweeter Than Honey' by Shar Carillo. It's a soulful R&B track with female vocals. Although there is no specific information about the guitar, it's possible that the song may contain guitar elements. The song has a dance-worthy vibe and was performed by Shar Carillo in 2012.",1,
+metadata_consistency,309,zb0QgGrsKgE,,It has a chillout vibe that could be a fitting choice for your video.,"Allow me to recommend 'Money' by Money. It's a track from the album 'Money' by Money. The song combines elements of hip-hop, electronic, and soul, with a female vocalist. It has a chillout vibe that could be a fitting choice for your video.",,,"The candidate track metadata/reference explicitly mentions 'alternative' and 'indie vibe', which aligns with the claim's description of a 'chillout vibe'.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference explicitly mentions 'alternative' and 'indie vibe', which aligns with the claim's description of a 'chillout vibe'.""
+}",,,,,,"Allow me to recommend 'Whatever Doesn't Kill You Simply Makes You Stranger'. It's a track by Smash Moody from the album of the same name. The song combines hip-hop, rock, and electronic elements, creating a unique blend of genres. It has an alternative and indie vibe with elements of electronic beats and strong vocals.",1,
+metadata_consistency,717,RHs7VJAZbEM,,"This song combines elements of hip-hop, R&B, and electronic music with soulful vocals.","I suggest checking out 'I Don't Deserve You' by Lloyd Banks feat;. It's a track from Saint's album 'I Don't Deserve You'. This song combines elements of hip-hop, R&B, and electronic music with soulful vocals. It could be a fitting choice for your video.",,,"The claim is supported by the metadata, which mentions hip-hop, R&B, and soul elements, matching the claim's description.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata, which mentions hip-hop, R&B, and soul elements, matching the claim's description.""
+}",,,,,,"Certainly! I recommend 'I Don't Deserve You' by Lloyd Banks feat. Jeremih. It's a hip-hop track with soulful vocals by Jeremih. The song is from Lloyd Banks' album 'H.F.M. 2' and it combines elements of hip-hop, R&B, and soul. This track could be a fitting choice for your video as it incorporates the elements you're looking for.",1,
+metadata_consistency,1364,NIJp5pcEVlY,,"It's part of the album 'Insurgentes' and offers a blend of Hip-Hop, soul, R&B, and pop genres.","In that case, I would recommend 'Insurgentes' by Crack Family ft; 213. This track has a soulful and chilled-out vibe, perfect for creating a relaxed atmosphere in your video. It's part of the album 'Insurgentes' and offers a blend of Hip-Hop, soul, R&B, and pop genres.",,,"The claim is supported by the metadata/reference text, which mentions 'Insurgentes' and similar genres.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata/reference text, which mentions 'Insurgentes' and similar genres.""
+}",,,,,,"In that case, I would recommend 'Insurgentes' by Crack Family ft. Engendros Del Pantano. This track combines elements of Hip-Hop, soul, R&B, chillout, and pop, giving it a soulful and relaxed feel. It's part of the album 'La Familia, Cap. 1'.",1,
+metadata_consistency,1545,4iR772WszA4,,"It combines elements of rnb, dance, and electronic beats with a pop influence.","Allow me to recommend 'Soldado Callejero' by Ñengo Flow ft Nely El Arma Secreta. It's a track from their album 'Soldado Callejero'. It combines elements of rnb, dance, and electronic beats with a pop influence. It was released in 2013 and may contain the specific elements you're looking for.",,,"The claim is supported by the metadata, which explicitly mentions electronic beats and combines elements of hip-hop, electronic, dance, rnb, and pop.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata, which explicitly mentions electronic beats and combines elements of hip-hop, electronic, dance, rnb, and pop.""
+}",,,,,,"Allow me to recommend 'Soldado Callejero' by Ñengo Flow ft Nely El Arma Secreta. It's a track from Ñengo Flow's album 'Soldado Callejero' and combines elements of hip-hop, electronic and dance with rnb and pop influences. The song features electronic beats and has a catchy and energetic vibe that could be a fitting choice for your video. It was produced by Dany DJ Canal and has a reggaeton influence as well.",1,
+metadata_consistency,1792,zi8GfzxmaII,,"It's a track that combines hip-hop with rock, indie, and electronic elements.","Sure! How about 'Szczęście' by K.A.S.A.? It's a track that combines hip-hop with rock, indie, and electronic elements. Although I don't have much information about the specific album or artists, the song itself should provide the desired blend of genres for your video.",,,"The candidate track metadata/reference text mentions a combination of hip-hop, electronic, rock, pop, and indie elements, which supports the music-detail claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference text mentions a combination of hip-hop, electronic, rock, pop, and indie elements, which supports the music-detail claim.""
+}",,,,,,"I suggest considering the track '八空' from 高槻POSSE's 1st album '[I don't care]Trailer'. Although I don't have specific information about the track, based on the description you provided, it seems to have a combination of hip-hop, electronic, rock, pop, and indie elements. This could be a suitable choice to incorporate those genres into your video.",1,
+metadata_consistency,2490,B4gTBmc4iCg,,"It's a track by Nucklez that combines elements of electronic, indie, and pop with a dance and beat-focused sound.","Allow me to recommend 'Nucklez - Bosso'. It's a track by Nucklez that combines elements of electronic, indie, and pop with a dance and beat-focused sound. It was released in 2012 and may contain the specific elements you're looking for.",,,"The candidate track metadata/reference does not mention indie as a genre, which is present in the generated explanation claim.","{
+""is_metadata_supported"": false,
+""unsupported_aspects"": [""indie""],
+""reason"": ""The candidate track metadata/reference does not mention indie as a genre, which is present in the generated explanation claim.""
+}",,,,,,"Sure! How about 'Bosso' by HHP? It's a track from their album 'Lekoko Entertainment'. It combines elements of Hip-Hop, electronic, and dance with a touch of rock and pop. This song may provide the specific style and vibe you're looking for.",0,indie
+metadata_consistency,2045,CWHF6mSZFs4,,It has a fast-paced beat and synth elements that could add a dynamic and energetic touch to your video.,"13hor Velvet Sick's 'Give Me 5' is a track that combines hip-hop, electronic, dance, and R&B genres. It has a fast-paced beat and synth elements that could add a dynamic and energetic touch to your video.",,,"The candidate metadata/reference provides a general description of the track's genre mix, which supports the claim about the dynamic and energetic touch.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference provides a general description of the track's genre mix, which supports the claim about the dynamic and energetic touch.""
+}",,,,,,"I suggest you consider 'Give Me 5' by Beretta 13hor Velvet Sick. It's a track with a mix of hip-hop, electronic, dance, R&B, and pop genres. Although I don't have much information about this specific track, it might be worth exploring for your video.",1,
+metadata_consistency,3843,PO7CEdnDnVY,,"This song has a heavy and alternative rock sound, which aligns well with your preferences.","100% Certainly! I suggest you consider 'Psycho' by System Of A Down. It's a track from their album 'Psycho' and it falls under the genres of rock, metal, alternative, and hard rock. This song has a heavy and alternative rock sound, which aligns well with your preferences.",,,"The candidate track metadata/reference text explicitly mentions 'alternative rock' and 'rock', which aligns with the music-detail claim.","Here is the JSON response:
+
+{
+  ""is_metadata_supported"": true,
+  ""unsupported_aspects"": [],
+  ""reason"": ""The candidate track metadata/reference text explicitly mentions 'alternative rock' and 'rock', which aligns with the music-detail claim.""
+}",,,,,,"Certainly! How about 'Psycho' by System Of A Down? Although I don't have much information about this track's album or artists, it is classified as alternative rock and punk, which aligns with your preferences. It falls under the rock genre and has a fast-paced and energetic sound, making it a suitable choice for your video.",1,
+metadata_consistency,2991,iZpM0Weq5P0,,The song features male vocals and was released in 2014.,"Allow me to recommend 'N'Krê' by To Semedo. It's a track from his album 'N'Krê'. It combines elements of R&B, pop, and soul with electronic beats that could be a fitting choice for your video. The song features male vocals and was released in 2014.",,,"The candidate metadata/reference supports the claim about male vocals. The release year '2015' in the album title does not match the claimed release year '2014', but this is an unsupported aspect.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference supports the claim about male vocals. The release year '2015' in the album title does not match the claimed release year '2014', but this is an unsupported aspect.""
+}",,,,,,"Allow me to recommend 'N´Krê' by To Semedo. It's a track from his 'LOUDER 2015' album. It combines elements of R&B, soul, and electronic music with a focus on male vocals. It may be a fitting choice for your video.",1,
+metadata_consistency,4123,hjSKLM7xcqk,,It's a track from her album 'Tempo de Voltar'.,"Allow me to recommend 'Tempo de Voltar' by Arianne. It's a track from her album 'Tempo de Voltar'. The song combines elements of rock, pop, and alternative with female vocals. It has a guitar-focused sound and could be a fitting choice for your video.",,,The claim 'It's a track from her album Tempo de Voltar' is directly supported by the metadata/reference text.,"Here is the JSON response:
+
+{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim 'It's a track from her album Tempo de Voltar' is directly supported by the metadata/reference text.""
+}",,,,,,"Allow me to recommend 'Tempo de Voltar' by Arianne. It's a track from her album 'Tempo de Voltar'. The song combines elements of pop, rock, and alternative genres with Arianne's unique indie style and powerful female vocals. It can add a touch of individuality and depth to your video.",1,
+metadata_consistency,3168,h4jyESSZwKs,,The song has a chillout vibe and features female vocals.,Sure! How about 'Heavy Water' by Les Twins? It's an electronic track with ambient and experimental influences. The song has a chillout vibe and features female vocals. It could add a unique and atmospheric touch to your video.,,,"The candidate metadata/reference does not mention 'chillout vibe' or 'female vocals', which are claimed to be present in the track.","{
+""is_metadata_supported"": false,
+""unsupported_aspects"": [""The song has a chillout vibe and features female vocals.""],
+""reason"": ""The candidate metadata/reference does not mention 'chillout vibe' or 'female vocals', which are claimed to be present in the track.""
+}",,,,,,"I suggest using 'Heavy Water' by Les Twins. It's an ambient and experimental electronic track that could bring a unique and atmospheric vibe to your video. The song has a slow tempo and synth-driven sound, which aligns well with the ambient and experimental genres.",0,The song has a chillout vibe and features female vocals.
+metadata_consistency,1196,A356ur2w6xg,,It's a dance and pop song with electronic and house influences.,100% In Love - Pop Radio Mix by Tommy Vee is a track that perfectly fits your description. It's a dance and pop song with electronic and house influences. The energetic beats and catchy melodies make it a great choice for your video.,,,"The candidate track metadata/reference text explicitly mentions 'dance', 'electronic', and 'pop' genres, which align with the music-detail claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference text explicitly mentions 'dance', 'electronic', and 'pop' genres, which align with the music-detail claim.""
+}",,,,,,"In that case, I would recommend 'Tommy Vee - Lovely [Pop Radio Mix]' by Andrea T Mendoza. This track has a pop sound with a 90s vibe, perfect for your video. It's part of the album 'Lovely' and captures the essence of the 90s electronic and dance music scene.",1,
+metadata_consistency,299,QfHTaVIZwNY,,"The song combines electronic, indie, and pop elements, which aligns well with Lucas e Renault's distinctive style.","100% Sure! I recommend 'Vou Te Contar' by Lucas e Renault. It's a track from their album 'Vou Te Contar'. The song combines electronic, indie, and pop elements, which aligns well with Lucas e Renault's distinctive style. It was released in 2014 and has a catchy and energetic vibe that could be a great fit for your video.",,,"The candidate metadata/reference text explicitly mentions electronic, pop, and indie elements, which aligns with the generated explanation claim.","Here is the JSON response:
+
+{
+  ""is_metadata_supported"": true,
+  ""unsupported_aspects"": [],
+  ""reason"": ""The candidate metadata/reference text explicitly mentions electronic, pop, and indie elements, which aligns with the generated explanation claim.""
+}",,,,,,"Allow me to recommend 'Regresa A Mi'. It's a track from Tiki's debut album 'Discoteca'. It combines elements of electronic, pop, and indie with a synth-driven sound. It was released in 2013 and may contain the specific elements you're looking for in your video.",1,
+metadata_consistency,3173,XS20_kaQraI,,"It combines elements of rock, indie, and alternative with female vocals.","Allow me to recommend 'crushcrushcrush' by Paramore. It's a track from their album 'crushcrushcrush'. It combines elements of rock, indie, and alternative with female vocals. It was recorded in 2011, which may contain the specific elements you want.",,,"The claim is supported by the metadata, which explicitly mentions elements of rock, indie, and alternative with female vocals.","Here is the JSON response:
+
+{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata, which explicitly mentions elements of rock, indie, and alternative with female vocals.""
+}",,,,,,"Allow me to recommend 'crushcrushcrush' by Paramore. It's a track covered by Luna Comet featuring Nathan Mendonça. Although I don't have much information about this specific cover, Paramore's original version is classified as rock, indie, and alternative with female vocals. It may have the specific elements you're looking for.",1,
+metadata_consistency,2840,eHbjTVpW9iI,,"This track is part of the album 'She Drives Me Crazy' and offers a blend of hip-hop, R&B, electronic, pop, and soul.","100% Certainly! If you're looking for a hip-hop and R&B vibe, I would recommend 'She Drives Me Crazy' by Fargo featuring L. This track is part of the album 'She Drives Me Crazy' and offers a blend of hip-hop, R&B, electronic, pop, and soul. It has a catchy beat and smooth vocals that will add a great vibe to your video.",,,The candidate metadata/reference text matches the genres and influences mentioned in the claim.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference text matches the genres and influences mentioned in the claim.""
+}",,,,,,"Certainly! How about 'She Drives Me Crazy' by Fargo featuring L.J? It's a hip-hop and R&B track with electronic, pop, and soul elements. Although I don't have much information about the track, it could be a fitting choice for your video, considering the genres and influences you mentioned.",1,
+metadata_consistency,2063,ZOz25jPaxt0,,It was released in 2013 and has a powerful and energetic sound.,"100% Certainly! I recommend 'The Unseen' by Medeia. It's a track from their album 'The Unseen'. The song combines elements of metal, rock, heavy metal, and hard rock, which aligns well with the heavy and intense vibe you're looking for. It was released in 2013 and has a powerful and energetic sound.",,,"The candidate track metadata/reference text does not explicitly mention the release year, but it does describe the song's sound as 'powerful and intense', which supports the claim of a powerful and energetic sound.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference text does not explicitly mention the release year, but it does describe the song's sound as 'powerful and intense', which supports the claim of a powerful and energetic sound.""
+}",,,,,,"Certainly! I recommend 'The Unseen' by Medeia. It's a hard-hitting classic from their album 'Cult'. The track combines heavy metal, rock, and experimental elements, which can give your video a powerful and intense atmosphere. It was recorded by Zzopmusic / OP Komonen, Matti Erikkilä, and Anssi Lautjärvi.",1,
+metadata_consistency,897,5y7ol8biH7Y,,It's a dance and electronic track with a pop influence.,100% Sure! I recommend 'Hot' by INNA. It's a dance and electronic track with a pop influence. The song has a catchy beat and energetic vibe that would complement your video nicely.,,,"The candidate metadata/reference text explicitly mentions dance, electronic, and pop elements, supporting the music-detail claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference text explicitly mentions dance, electronic, and pop elements, supporting the music-detail claim.""
+}",,,,,,"Allow me to recommend 'Start Without You' by Alexandra Burke. It's a remix track with a Stonebridge Clubstrumental version. The song combines elements of dance, pop, and house with electronic beats and features Alexandra Burke's vocals. It may be a fitting choice for your dance video.",1,
+metadata_consistency,2988,rBYAJdsah2k,,It's a track from their album 'ARGUMENT SOUL'.,"Allow me to recommend 'ARGUMENT SOUL' by ARGUMENT SOUL. It's a track from their album 'ARGUMENT SOUL'. It combines elements of punk, rock, and metal with fast-paced techno beats that could be a fitting choice for your video. It was released in 2012 which may contain the specific elements you want.",,,"The candidate track metadata/reference mentions 'Ex Infernis', but the generated explanation claim refers to a different album title","{
+""is_metadata_supported"": false,
+""unsupported_aspects"": [""album title 'ARGUMENT SOUL' does not match the provided album title 'Ex Infernis'""],
+""reason"": ""The candidate track metadata/reference mentions 'Ex Infernis', but the generated explanation claim refers to a different album title""
+}",,,,,,"Allow me to recommend 'Bolest' by P.U.M. It's a track from their album 'Ex Infernis'. The song is classified as metal, punk, and rock with instrumental elements. Although the description of the video doesn't provide much information, the heavy metal and alternative influences in the track could be a fitting choice for your video.",0,album title 'ARGUMENT SOUL' does not match the provided album title 'Ex Infernis'
+metadata_consistency,2165,SEaqjvCQSgM,,"This song falls under the genres of metal, rock, heavy metal, and experimental.","Sure! How about 'Injustice' by Through My Eyes? It's a track from their album 'Injustice'. This song falls under the genres of metal, rock, heavy metal, and experimental. It has a fast-paced and loud sound with elements of techno and drums. It could be a fitting choice for your video.",,,"The candidate track metadata/reference mentions the band's heavy metal and punk sound, which supports the claim that the song falls under the genres of metal.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate track metadata/reference mentions the band's heavy metal and punk sound, which supports the claim that the song falls under the genres of metal.""
+}",,,,,,"Certainly! I suggest checking out 'Injustice' by Through My Eyes. Although I couldn't find much information about this specific track, Through My Eyes is known for their heavy metal and punk sound. This track might have the elements you're looking for.",1,
+metadata_consistency,2623,7fBi4fS1PkI,,It's an electronic track with rock and indie influences.,"Allow me to recommend 'Forever-371' by J. It's an electronic track with rock and indie influences. The song features a blend of electronic beats, guitar, and loud sounds, which could be a fitting choice for your video.",,,"The candidate metadata/reference text explicitly mentions electronic, indie, and alternative genres, which supports the music-detail claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata/reference text explicitly mentions electronic, indie, and alternative genres, which supports the music-detail claim.""
+}",,,,,,"In that case, I would recommend 'Forever-371' by J.D Beatz from the album 'Content ID'. This track by ShadowKey ft. Little Thieves offers a perfect combination of electronic, pop, indie, and alternative genres. The music has a synth-driven sound and a catchy melody that will give your video a vibrant and modern feel.",1,
+metadata_consistency,3139,68ak49vz7IQ,,"The song has a fast-paced techno sound with loud drums, which aligns well with the energetic and dynamic vibe you're looking for.","Certainly! I recommend 'E.T.' by Katy Perry. It's a track from her album 'E.T.' and combines elements of electronic, rock, and pop genres. The song has a fast-paced techno sound with loud drums, which aligns well with the energetic and dynamic vibe you're looking for.",,,The claim is supported by the metadata's description of the song as having a 'fast-paced techno beat' and incorporating electronic sounds.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata's description of the song as having a 'fast-paced techno beat' and incorporating electronic sounds.""
+}",,,,,,"Sure! How about 'Le Destin' by AUTOMAT? It's an electronic track with elements of pop, dance, and indie rock. The song has a fast-paced techno beat and incorporates electronic sounds that could add an energetic and dynamic element to your video. You can find more information about AUTOMAT and their music on their website.",1,
+metadata_consistency,3630,M6o2nS_ahs0,,"It combines elements of acoustic, folk, and indie with a slow and vocal-focused sound.","Allow me to recommend 'Het is een feest' by Ramon Plakke. It's a track from his album 'Het is een feest'. It combines elements of acoustic, folk, and indie with a slow and vocal-focused sound. It could be a fitting choice for your video.",,,The claim is supported by the metadata as it accurately describes the track's genre and style.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata as it accurately describes the track's genre and style.""
+}",,,,,,"Allow me to recommend 'Alles' by Ramon Plakke. It's a track from Ramon's album 'Ons leven'. It combines elements of indie, acoustic, and folk music with slow and vocal influences. The song has a calm and introspective vibe that could be a suitable choice for your video.",1,
+metadata_consistency,1408,H9GKWHzXDLo,,"It combines elements of pop, rock, and house with electronic beats that could be a fitting choice for your video.","Allow me to recommend 'Senza di te' by Fly Project. It's a track from their album 'Senza di te'. It combines elements of pop, rock, and house with electronic beats that could be a fitting choice for your video.",,,"The claim mentions 'house' which is not present in the metadata, but it does match with 'electronic' and 'pop'","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [""pop;rock""],
+""reason"": ""The claim mentions 'house' which is not present in the metadata, but it does match with 'electronic' and 'pop'""
+}",,,,,,"Allow me to recommend 'Весь день' by МАЯКОВСКИЙ. It's a dance track with electronic and pop influences. Although I don't have much information about the specific elements you mentioned, 'Весь день' could be a fitting choice for your video.",1,pop;rock
+metadata_consistency,15,JNKpf4DLzJ0,,"The song has a mix of guitar, drums, and vocals, which create a unique and captivating sound.","Certainly! I recommend 'The Light' by Matt Joe Gow & the Dead Leaves. It's a track that combines elements of country, folk, and indie rock. The song has a mix of guitar, drums, and vocals, which create a unique and captivating sound. It's a great choice if you're looking for a blend of different genres in your video.",,,"The claim is supported by the metadata's mention of 'acoustic guitar' and 'soothing vocals', which align with the presence of guitar and vocals in the claim.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata's mention of 'acoustic guitar' and 'soothing vocals', which align with the presence of guitar and vocals in the claim.""
+}",,,,,,"Allow me to recommend 'The Light' by Matt Joe Gow & the Dead Leaves. It's a track from their album 'The Messenger' and blends elements of rock, country, folk, and indie with a touch of pop. The song features acoustic guitar, soothing vocals, and a slow-paced rhythm, creating a melodic and heartfelt atmosphere that aligns well with the country, folk, and indie styles you're interested in.",1,
+metadata_consistency,940,Y5oxVPZog2Q,,It's a country and folk-inspired track with elements of rock and pop.,Certainly! How about 'Tu Esi Ir Sito Gana' by Atika? It's a country and folk-inspired track with elements of rock and pop. The song features female vocals and has a guitar-driven sound. It could be a fitting choice for your video.,,,"The claim is supported by the metadata's mention of folk and rock elements, which align with the candidate track's genre description.","{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The claim is supported by the metadata's mention of folk and rock elements, which align with the candidate track's genre description.""
+}",,,,,,"Allow me to recommend 'Tu Esi Ir Sito Gana' by Atika. It's an acoustic track with elements of rock, folk, and indie. The song features male vocals with singing style, which gives it a unique and soulful sound. It was recorded by Atika and could be a fitting choice for your video.",1,
+metadata_consistency,4171,E4L9SS2jfNk,,The female vocals and the positive lyrics will bring a sense of joy and hope to your video.,"In that case, I would recommend 'No te voy a Perdonar' by Karen Martello. This track is part of the album 'No te voy a Perdonar' and offers a blend of pop, rock, country, and folk genres. The female vocals and the positive lyrics will bring a sense of joy and hope to your video.",,,The candidate metadata directly supports the claim about female vocals and positive lyrics.,"{
+""is_metadata_supported"": true,
+""unsupported_aspects"": [],
+""reason"": ""The candidate metadata directly supports the claim about female vocals and positive lyrics.""
+}",,,,,,"Allow me to recommend 'No te voy a Perdonar' by Karen Martello. It's a track produced by Yasmil Marrufo and features Karen's powerful vocals. The song combines elements of rock, pop, country, and jazz, which could be a fitting choice for your video. It's a heartfelt track that will resonate with the audience.",1,

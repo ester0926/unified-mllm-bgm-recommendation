@@ -1,0 +1,85 @@
+{
+  "human_n_faithfulness": 100,
+  "human_n_metadata": 100,
+  "annotator": "semantic-LLM (Claude 3.5)",
+  "results": {
+    "faith_human_vs_rule": {
+      "task": "Feature-Erasure Faithfulness",
+      "vs": "Rule-based",
+      "n": 100,
+      "agreement": 0.99,
+      "kappa": 0.9776,
+      "human_pos_rate": 0.67,
+      "auto_pos_rate": 0.66,
+      "tp": 66,
+      "tn": 33,
+      "fp": 0,
+      "fn": 1
+    },
+    "meta_human_vs_rule": {
+      "task": "Metadata Consistency",
+      "vs": "Rule-based",
+      "n": 100,
+      "agreement": 0.59,
+      "kappa": 0.18,
+      "human_pos_rate": 0.91,
+      "auto_pos_rate": 0.5,
+      "tp": 50,
+      "tn": 9,
+      "fp": 0,
+      "fn": 41
+    },
+    "faith_rule_vs_llm_original": {
+      "task": "Feature-Erasure Faithfulness (120 rows)",
+      "vs": "LLM vs Rule original",
+      "n": 120,
+      "agreement": 0.6083,
+      "kappa": 0.1248,
+      "human_pos_rate": 0.5583,
+      "auto_pos_rate": 0.95,
+      "tp": 67,
+      "tn": 6,
+      "fp": 47,
+      "fn": 0
+    },
+    "meta_rule_vs_llm_original": {
+      "task": "Metadata Consistency (119 rows)",
+      "vs": "LLM vs Rule original",
+      "n": 119,
+      "agreement": 0.4454,
+      "kappa": 0.1413,
+      "human_pos_rate": 0.2857,
+      "auto_pos_rate": 0.8403,
+      "tp": 34,
+      "tn": 19,
+      "fp": 66,
+      "fn": 0
+    },
+    "faith_human_vs_llm": {
+      "task": "Feature-Erasure Faithfulness",
+      "vs": "LLM-as-a-Judge",
+      "n": 2,
+      "agreement": 0.5,
+      "kappa": 0.0,
+      "human_pos_rate": 0.5,
+      "auto_pos_rate": 1.0,
+      "tp": 1,
+      "tn": 0,
+      "fp": 1,
+      "fn": 0
+    },
+    "meta_human_vs_llm": {
+      "task": "Metadata Consistency",
+      "vs": "LLM-as-a-Judge",
+      "n": 2,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "human_pos_rate": 1.0,
+      "auto_pos_rate": 1.0,
+      "tp": 2,
+      "tn": 0,
+      "fp": 0,
+      "fn": 0
+    }
+  }
+}

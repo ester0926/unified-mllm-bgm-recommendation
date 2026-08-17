@@ -1,0 +1,6 @@
+﻿condition,top1_changed_rate,generated_text_changed_rate
+no_explicit,0.72,
+no_implicit,0.925,
+no_explicit_norm,0.72,0.96
+no_implicit_norm,0.925,0.955
+no_both,1.0,

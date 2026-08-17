@@ -1,0 +1,22 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "n_samples": 200,
+  "n_rows": 600,
+  "preference_variants": {
+    "original": null,
+    "cf_upbeat_electronic": "I prefer upbeat electronic background music with a bright mood, clear rhythm, energetic beats, and a modern dance or pop feeling.",
+    "cf_lyrical_piano": "I prefer lyrical piano background music with a slow tempo, soft acoustic texture, gentle melody, and a calm sentimental mood."
+  },
+  "sample_seed": 20260516,
+  "prompt_variant": "original",
+  "inject_title": true,
+  "fallback_count": 0,
+  "scope_note": "This is a prompt-level preference sensitivity test because text features are precomputed.",
+  "started_at": "2026-05-23T15:17:36",
+  "finished_at": "2026-05-23T15:34:01",
+  "outputs": {
+    "csv": "<project_root>/checkpoints\\faithfulness_analysis\\preference_counterfactual_generations.csv",
+    "jsonl": "<project_root>/checkpoints\\faithfulness_analysis\\preference_counterfactual_generations.jsonl"
+  }
+}

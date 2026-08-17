@@ -1,0 +1,972 @@
+{
+  "generated_at": "2026-07-29T15:52:11",
+  "inputs": {
+    "claim_csv": "<project_root>/results\\faithfulness\\claim_annotations_top1_v2.csv",
+    "generation_csv": "<project_root>/results\\faithfulness\\counterfactual_generations_top1.csv",
+    "external_metadata": "<user_profiling_root>/dataset\\music_metadata_simple\\music_metadata_enriched.json"
+  },
+  "method": {
+    "L1": "母句還原後以既有 classify_claim() 重判，區分斷句假影與真正不可歸屬",
+    "L2": "教授指定六類 + 斷句假影 / 規則漏判兩類方法學桶，規則互斥且固定順序",
+    "L3": "曲風與具名實體對照 (a) top1_reference_text+title+artist (b) musicnn 標籤",
+    "caveat": "musicnn 標籤含雜訊，查無支持一律歸為『不支持』，僅具名實體完全查無者升級為『可能幻覺』並送人工複核"
+  },
+  "bucket_labels": {
+    "E7_degenerate_generation": "生成崩潰（退化輸出）",
+    "E0_clause_split_artifact": "斷句碎片（標註流程假影）",
+    "E0b_rule_miss_verified": "規則漏判但有證據支持",
+    "E1_preference_unsupported": "偏好不支持",
+    "E2_metadata_unsupported": "音樂元資料不支持",
+    "E3_video_unsupported": "影片內容不支持",
+    "E4_vague_generic": "一般性空泛描述／主觀陳述",
+    "E5_multi_source_ambiguous": "多來源無法區分",
+    "E6_likely_hallucination": "可能幻覺"
+  },
+  "ucr_bounds": [
+    {
+      "condition": "full",
+      "n_claims": 1090,
+      "unsupported_claims_reported": 143,
+      "UCR_reported": 0.13119266055045872,
+      "no_source_claims": 143,
+      "degenerate_claims": 0,
+      "split_artifact_claims": 109,
+      "verified_rule_miss_claims": 16,
+      "genuine_unattributable_claims": 18,
+      "UCR_L1_reported_upper": 0.13119266055045872,
+      "UCR_L2_sentence_level": 0.031192660550458717,
+      "UCR_L3_verification_adjusted": 0.01651376146788991,
+      "artifact_share_of_no_source": 0.8741258741258742,
+      "degenerate_share_of_no_source": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "n_claims": 1015,
+      "unsupported_claims_reported": 798,
+      "UCR_reported": 0.7862068965517242,
+      "no_source_claims": 170,
+      "degenerate_claims": 0,
+      "split_artifact_claims": 119,
+      "verified_rule_miss_claims": 14,
+      "genuine_unattributable_claims": 37,
+      "UCR_L1_reported_upper": 0.7862068965517242,
+      "UCR_L2_sentence_level": 0.6689655172413793,
+      "UCR_L3_verification_adjusted": 0.6551724137931034,
+      "artifact_share_of_no_source": 0.7823529411764706,
+      "degenerate_share_of_no_source": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "n_claims": 953,
+      "unsupported_claims_reported": 516,
+      "UCR_reported": 0.5414480587618048,
+      "no_source_claims": 163,
+      "degenerate_claims": 0,
+      "split_artifact_claims": 121,
+      "verified_rule_miss_claims": 16,
+      "genuine_unattributable_claims": 26,
+      "UCR_L1_reported_upper": 0.5414480587618048,
+      "UCR_L2_sentence_level": 0.4144805876180483,
+      "UCR_L3_verification_adjusted": 0.39769150052465896,
+      "artifact_share_of_no_source": 0.8404907975460123,
+      "degenerate_share_of_no_source": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "n_claims": 329,
+      "unsupported_claims_reported": 328,
+      "UCR_reported": 0.9969604863221885,
+      "no_source_claims": 328,
+      "degenerate_claims": 328,
+      "split_artifact_claims": 0,
+      "verified_rule_miss_claims": 0,
+      "genuine_unattributable_claims": 0,
+      "UCR_L1_reported_upper": 0.9969604863221885,
+      "UCR_L2_sentence_level": 0.9969604863221885,
+      "UCR_L3_verification_adjusted": 0.9969604863221885,
+      "artifact_share_of_no_source": 0.0,
+      "degenerate_share_of_no_source": 1.0
+    },
+    {
+      "condition": "wo_prompt",
+      "n_claims": 1061,
+      "unsupported_claims_reported": 188,
+      "UCR_reported": 0.177191328934967,
+      "no_source_claims": 176,
+      "degenerate_claims": 0,
+      "split_artifact_claims": 156,
+      "verified_rule_miss_claims": 7,
+      "genuine_unattributable_claims": 13,
+      "UCR_L1_reported_upper": 0.177191328934967,
+      "UCR_L2_sentence_level": 0.030160226201696512,
+      "UCR_L3_verification_adjusted": 0.0235626767200754,
+      "artifact_share_of_no_source": 0.9261363636363636,
+      "degenerate_share_of_no_source": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "n_claims": 939,
+      "unsupported_claims_reported": 166,
+      "UCR_reported": 0.17678381256656017,
+      "no_source_claims": 162,
+      "degenerate_claims": 0,
+      "split_artifact_claims": 125,
+      "verified_rule_miss_claims": 15,
+      "genuine_unattributable_claims": 22,
+      "UCR_L1_reported_upper": 0.17678381256656017,
+      "UCR_L2_sentence_level": 0.043663471778487756,
+      "UCR_L3_verification_adjusted": 0.027689030883919063,
+      "artifact_share_of_no_source": 0.8641975308641975,
+      "degenerate_share_of_no_source": 0.0
+    }
+  ],
+  "composition": [
+    {
+      "condition": "full",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "full",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n": 109,
+      "share_of_no_source": 0.7622377622377622,
+      "share_of_all_claims": 0.1
+    },
+    {
+      "condition": "full",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n": 16,
+      "share_of_no_source": 0.11188811188811189,
+      "share_of_all_claims": 0.014678899082568808
+    },
+    {
+      "condition": "full",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "full",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n": 1,
+      "share_of_no_source": 0.006993006993006993,
+      "share_of_all_claims": 0.0009174311926605505
+    },
+    {
+      "condition": "full",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n": 1,
+      "share_of_no_source": 0.006993006993006993,
+      "share_of_all_claims": 0.0009174311926605505
+    },
+    {
+      "condition": "full",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n": 14,
+      "share_of_no_source": 0.0979020979020979,
+      "share_of_all_claims": 0.012844036697247707
+    },
+    {
+      "condition": "full",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "full",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n": 2,
+      "share_of_no_source": 0.013986013986013986,
+      "share_of_all_claims": 0.001834862385321101
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n": 119,
+      "share_of_no_source": 0.7,
+      "share_of_all_claims": 0.11724137931034483
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n": 14,
+      "share_of_no_source": 0.08235294117647059,
+      "share_of_all_claims": 0.013793103448275862
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n": 13,
+      "share_of_no_source": 0.07647058823529412,
+      "share_of_all_claims": 0.012807881773399015
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n": 5,
+      "share_of_no_source": 0.029411764705882353,
+      "share_of_all_claims": 0.0049261083743842365
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n": 19,
+      "share_of_no_source": 0.11176470588235295,
+      "share_of_all_claims": 0.0187192118226601
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n": 121,
+      "share_of_no_source": 0.7423312883435583,
+      "share_of_all_claims": 0.12696747114375656
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n": 16,
+      "share_of_no_source": 0.09815950920245399,
+      "share_of_all_claims": 0.016789087093389297
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n": 5,
+      "share_of_no_source": 0.03067484662576687,
+      "share_of_all_claims": 0.005246589716684155
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n": 7,
+      "share_of_no_source": 0.04294478527607362,
+      "share_of_all_claims": 0.007345225603357817
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n": 2,
+      "share_of_no_source": 0.012269938650306749,
+      "share_of_all_claims": 0.002098635886673662
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n": 12,
+      "share_of_no_source": 0.0736196319018405,
+      "share_of_all_claims": 0.012591815320041973
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n": 328,
+      "share_of_no_source": 1.0,
+      "share_of_all_claims": 0.9969604863221885
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n": 156,
+      "share_of_no_source": 0.8863636363636364,
+      "share_of_all_claims": 0.1470311027332705
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n": 7,
+      "share_of_no_source": 0.03977272727272727,
+      "share_of_all_claims": 0.006597549481621112
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n": 1,
+      "share_of_no_source": 0.005681818181818182,
+      "share_of_all_claims": 0.000942507068803016
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n": 2,
+      "share_of_no_source": 0.011363636363636364,
+      "share_of_all_claims": 0.001885014137606032
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n": 10,
+      "share_of_no_source": 0.056818181818181816,
+      "share_of_all_claims": 0.00942507068803016
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n": 125,
+      "share_of_no_source": 0.7716049382716049,
+      "share_of_all_claims": 0.13312034078807242
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n": 15,
+      "share_of_no_source": 0.09259259259259259,
+      "share_of_all_claims": 0.01597444089456869
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n": 6,
+      "share_of_no_source": 0.037037037037037035,
+      "share_of_all_claims": 0.006389776357827476
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n": 0,
+      "share_of_no_source": 0.0,
+      "share_of_all_claims": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n": 6,
+      "share_of_no_source": 0.037037037037037035,
+      "share_of_all_claims": 0.006389776357827476
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n": 4,
+      "share_of_no_source": 0.024691358024691357,
+      "share_of_all_claims": 0.004259850905218318
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n": 6,
+      "share_of_no_source": 0.037037037037037035,
+      "share_of_all_claims": 0.006389776357827476
+    }
+  ],
+  "sentence_level_composition": [
+    {
+      "condition": "full",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "full",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n_sentences": 105,
+      "share": 0.7894736842105263
+    },
+    {
+      "condition": "full",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n_sentences": 13,
+      "share": 0.09774436090225563
+    },
+    {
+      "condition": "full",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "full",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n_sentences": 1,
+      "share": 0.007518796992481203
+    },
+    {
+      "condition": "full",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n_sentences": 1,
+      "share": 0.007518796992481203
+    },
+    {
+      "condition": "full",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n_sentences": 11,
+      "share": 0.08270676691729323
+    },
+    {
+      "condition": "full",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "full",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n_sentences": 2,
+      "share": 0.015037593984962405
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n_sentences": 112,
+      "share": 0.7671232876712328
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n_sentences": 8,
+      "share": 0.0547945205479452
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n_sentences": 8,
+      "share": 0.0547945205479452
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n_sentences": 2,
+      "share": 0.0136986301369863
+    },
+    {
+      "condition": "wo_audio_all",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n_sentences": 16,
+      "share": 0.1095890410958904
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n_sentences": 112,
+      "share": 0.7832167832167832
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n_sentences": 12,
+      "share": 0.08391608391608392
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n_sentences": 2,
+      "share": 0.013986013986013986
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n_sentences": 4,
+      "share": 0.027972027972027972
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n_sentences": 1,
+      "share": 0.006993006993006993
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n_sentences": 12,
+      "share": 0.08391608391608392
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n_sentences": 286,
+      "share": 1.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_ltp",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n_sentences": 151,
+      "share": 0.9041916167664671
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n_sentences": 7,
+      "share": 0.041916167664670656
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n_sentences": 1,
+      "share": 0.005988023952095809
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n_sentences": 1,
+      "share": 0.005988023952095809
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_prompt",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n_sentences": 7,
+      "share": 0.041916167664670656
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E7_degenerate_generation",
+      "bucket_label": "生成崩潰（退化輸出）",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E0_clause_split_artifact",
+      "bucket_label": "斷句碎片（標註流程假影）",
+      "n_sentences": 120,
+      "share": 0.821917808219178
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E0b_rule_miss_verified",
+      "bucket_label": "規則漏判但有證據支持",
+      "n_sentences": 11,
+      "share": 0.07534246575342465
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E1_preference_unsupported",
+      "bucket_label": "偏好不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E2_metadata_unsupported",
+      "bucket_label": "音樂元資料不支持",
+      "n_sentences": 4,
+      "share": 0.0273972602739726
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E3_video_unsupported",
+      "bucket_label": "影片內容不支持",
+      "n_sentences": 0,
+      "share": 0.0
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E4_vague_generic",
+      "bucket_label": "一般性空泛描述／主觀陳述",
+      "n_sentences": 3,
+      "share": 0.02054794520547945
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E5_multi_source_ambiguous",
+      "bucket_label": "多來源無法區分",
+      "n_sentences": 2,
+      "share": 0.0136986301369863
+    },
+    {
+      "condition": "wo_video",
+      "bucket": "E6_likely_hallucination",
+      "bucket_label": "可能幻覺",
+      "n_sentences": 6,
+      "share": 0.0410958904109589
+    }
+  ],
+  "primary_condition": "full",
+  "n_review_rows": 363,
+  "n_needs_human_review": 83,
+  "degenerate_by_condition": {
+    "full": [
+      0,
+      200
+    ],
+    "wo_audio_all": [
+      3,
+      200
+    ],
+    "wo_audio_feature_only": [
+      4,
+      200
+    ],
+    "wo_ltp": [
+      200,
+      200
+    ],
+    "wo_prompt": [
+      0,
+      200
+    ],
+    "wo_video": [
+      2,
+      200
+    ]
+  },
+  "degeneracy_thresholds": {
+    "min_tokens": 10,
+    "max_type_token_ratio": 0.35,
+    "max_top_token_share": 0.25,
+    "max_mean_token_len": 2.5
+  }
+}

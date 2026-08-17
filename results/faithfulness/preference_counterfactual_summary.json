@@ -1,0 +1,30 @@
+{
+  "created_at": "2026-05-23T15:34:02",
+  "input_csv": "<project_root>/checkpoints\\faithfulness_analysis\\preference_counterfactual_generations.csv",
+  "scope_note": "Prompt-level preference sensitivity; precomputed text features are unchanged.",
+  "by_variant": {
+    "cf_upbeat_electronic": {
+      "n": 200,
+      "aligned_rate": 0.995,
+      "conflict_rate": 0.055,
+      "avg_positive_hits": 6.06,
+      "avg_negative_hits": 0.06,
+      "avg_alignment_score": 6.0,
+      "avg_ESS_from_original": 0.6380140423048062
+    },
+    "cf_lyrical_piano": {
+      "n": 200,
+      "aligned_rate": 0.92,
+      "conflict_rate": 0.6,
+      "avg_positive_hits": 5.035,
+      "avg_negative_hits": 1.1,
+      "avg_alignment_score": 3.935,
+      "avg_ESS_from_original": 0.6369211034290143
+    }
+  },
+  "outputs": {
+    "csv": "<project_root>/checkpoints\\faithfulness_analysis\\preference_counterfactual_analysis.csv",
+    "json": "<project_root>/checkpoints\\faithfulness_analysis\\preference_counterfactual_summary.json",
+    "markdown": "<project_root>/checkpoints\\faithfulness_analysis\\preference_counterfactual_summary.md"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "created_at": "2026-06-05T01:35:51",
+  "pool_size": 500,
+  "candidate_pool_seed": 20260315,
+  "split_seed": 42,
+  "n_test": 4205,
+  "baselines": {
+    "random_500pool": {
+      "n": 4205,
+      "pool_size": 500,
+      "recall_at_1": 0.002853745541022592,
+      "recall_at_5": 0.011414982164090369,
+      "recall_at_10": 0.019500594530321047,
+      "median_rank": 249,
+      "mean_rank": 251.4435196195006
+    },
+    "audio_ast_similarity": {
+      "n": 4205,
+      "pool_size": 500,
+      "recall_at_1": 0.008323424494649227,
+      "recall_at_5": 0.04256837098692033,
+      "recall_at_10": 0.07110582639714626,
+      "median_rank": 110,
+      "mean_rank": 151.52223543400714
+    },
+    "video_audio_embedding_similarity": {
+      "n": 4205,
+      "pool_size": 500,
+      "recall_at_1": 0.0016646848989298453,
+      "recall_at_5": 0.008323424494649227,
+      "recall_at_10": 0.01807372175980975,
+      "median_rank": 264,
+      "mean_rank": 258.5224732461356
+    }
+  }
+}

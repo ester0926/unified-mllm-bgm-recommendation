@@ -1,0 +1,16 @@
+[MAIN]
+# scripts.* 需由專案根目錄解析
+init-hook = "import sys; sys.path.insert(0, '.')"
+ignore = __pycache__,tmp,cache
+
+[MESSAGES CONTROL]
+# wrong-import-position（C0413）：與 .flake8 的 E402 同一件事——
+#   專案每支腳本都先做 sys.path bootstrap 再 import scripts.*，屬刻意設計。
+# unused-import（W0611）刻意保留啟用，那是真正的缺陷訊號。
+disable =
+    wrong-import-position,
+    invalid-name,
+    line-too-long
+
+[FORMAT]
+max-line-length = 120

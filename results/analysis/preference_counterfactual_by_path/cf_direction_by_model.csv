@@ -1,0 +1,13 @@
+﻿exp,model,cf_variant,n,direction_accuracy,net_direction_accuracy,prompt_echo_rate,title_drift_rate,text_change_rate
+exp_01,Hybrid LTP,pooled,400,0.9725,0.9175,0.8001266435775253,0.01,1.0
+exp_01,Hybrid LTP,cf_upbeat_electronic,200,0.955,0.935,0.7646718440688289,0.0,1.0
+exp_01,Hybrid LTP,cf_lyrical_piano,200,0.99,0.9,0.8357605077302047,0.02,1.0
+exp_02,Explicit-only LTP,pooled,400,0.77,0.73,0.8917170270654432,0.0675,1.0
+exp_02,Explicit-only LTP,cf_upbeat_electronic,200,0.84,0.82,0.828320059202412,0.015,1.0
+exp_02,Explicit-only LTP,cf_lyrical_piano,200,0.7,0.64,0.9754915917415916,0.12,1.0
+exp_03,Implicit-only LTP,pooled,400,0.8325,0.8075,0.8396703779312474,0.1225,1.0
+exp_03,Implicit-only LTP,cf_upbeat_electronic,200,0.935,0.91,0.7326937718897518,0.015,1.0
+exp_03,Implicit-only LTP,cf_lyrical_piano,200,0.73,0.705,0.9854809573987657,0.23,1.0
+exp_04,No-LTP,pooled,400,0.88,0.83,0.8264546353977248,0.0675,1.0
+exp_04,No-LTP,cf_upbeat_electronic,200,0.895,0.87,0.7589037238271932,0.055,1.0
+exp_04,No-LTP,cf_lyrical_piano,200,0.865,0.79,0.9029863039978646,0.08,1.0

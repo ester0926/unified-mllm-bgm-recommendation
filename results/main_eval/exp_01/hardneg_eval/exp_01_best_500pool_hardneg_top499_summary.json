@@ -1,0 +1,57 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "checkpoint_dir": "<project_root>/checkpoints\\exp_01\\best",
+  "ltp_mode": "hybrid",
+  "active_modalities": [
+    "video",
+    "ltp",
+    "text",
+    "music"
+  ],
+  "pool_size": 500,
+  "pool_type": "hard_negative_cosim",
+  "top_k_hard": 499,
+  "hardneg_seed": 42,
+  "max_samples": null,
+  "started_at": "2026-07-04T12:22:38",
+  "finished_at": "2026-07-04T18:46:16",
+  "ranking": {
+    "recall@1": 0.02116527942925089,
+    "recall@5": 0.09583828775267539,
+    "recall@10": 0.16123662306777645,
+    "median_rank": 51.0,
+    "mean_rank": 78.26825208085613,
+    "num_samples": 4205,
+    "pool_size": 500,
+    "pool_type": "hard_negative_cosim",
+    "top_k_hard": 499,
+    "hardneg_seed": 42,
+    "scoring": "pointwise [RANK] token + cosine-sim hard negatives",
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42,
+    "n_allequal_scores": 0,
+    "pct_allequal": 0.0,
+    "n_random_fill": 0,
+    "avg_score_range": 17.42786936357387,
+    "avg_score_std": 3.2212938538629574,
+    "avg_neg_cosim": 0.8688636446892152,
+    "max_neg_cosim": 0.9253209209470488
+  },
+  "comparison_vs_random_pool": {
+    "random_pool_R@1": 0.3065398335315101,
+    "random_pool_R@5": 0.6639714625445897,
+    "random_pool_R@10": 0.7988109393579073,
+    "random_pool_MR": 3.0,
+    "hardneg_pool_R@1": 0.02116527942925089,
+    "hardneg_pool_R@5": 0.09583828775267539,
+    "hardneg_pool_R@10": 0.16123662306777645,
+    "hardneg_pool_MR": 51.0,
+    "delta_R@1_hardneg_minus_random": -0.2853745541022592,
+    "delta_R@5_hardneg_minus_random": -0.5681331747919143,
+    "delta_R@10_hardneg_minus_random": -0.6375743162901308
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/results\\main_eval\\exp_01\\hardneg_eval\\exp_01_best_500pool_hardneg_top499_ranking_samples.csv"
+  }
+}

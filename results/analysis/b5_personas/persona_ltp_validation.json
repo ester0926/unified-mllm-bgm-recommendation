@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-07-26T22:10:10",
+  "n_personas": 24,
+  "n_vectors": 144,
+  "deviation_scaling": {
+    "global_mean_norm": 19.379669189453125,
+    "target_deviation_norm": 6.965886116027832,
+    "note": "Persona = μ + dev × (d*/‖dev‖)；方向由曲目決定，僅將偏差幅度還原至真實分布尺度（前二階動差對齊）"
+  },
+  "real_pairwise_cos_median": 0.8847875595092773,
+  "real_ltp_norm_p5_p95": [
+    19.230731391906737,
+    22.07526960372925
+  ],
+  "real_ltp_norm_median": 20.680538177490234,
+  "persona_norm_median": 20.82620906829834,
+  "share_norm_in_range": 0.9027777777777778,
+  "cos_to_nearest_real_min": 0.9403066635131836,
+  "cos_to_nearest_real_median": 0.9660888910293579,
+  "pairwise_cos_between_personas": {
+    "median": 0.9052363634109497,
+    "max": 0.9797534942626953,
+    "min": 0.818893551826477
+  },
+  "counterfactual_cos_to_matched": {
+    "cf_tempo": {
+      "median": 0.923254132270813,
+      "min": 0.8553369045257568,
+      "n": 24
+    },
+    "cf_energy": {
+      "median": 0.9121312499046326,
+      "min": 0.8349962830543518,
+      "n": 24
+    },
+    "cf_vocal": {
+      "median": 0.9069248139858246,
+      "min": 0.8293084502220154,
+      "n": 24
+    },
+    "cf_popularity": {
+      "median": 0.9348202347755432,
+      "min": 0.834280788898468,
+      "n": 24
+    },
+    "cf_consistency": {
+      "median": 0.9288643896579742,
+      "min": 0.8418756127357483,
+      "n": 24
+    }
+  }
+}

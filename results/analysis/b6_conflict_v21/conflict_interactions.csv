@@ -1,0 +1,5 @@
+﻿metric,contrast,difference_in_differences,ci_low,ci_high,significant
+persona_fit,(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突,-0.1269097222222222,-0.2772222222222222,0.04819444444444435,False
+video_fit,(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突,0.07466177545418808,-0.04057237144432599,0.17698694992253183,False
+R@1,(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突,-0.00416666666666668,-0.1375,0.17499999999999993,False
+MRR,(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突,0.02425224807595011,-0.1045876776526895,0.1835321306221297,False

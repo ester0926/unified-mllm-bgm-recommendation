@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-07-27T19:36:49",
+  "top_k_saved": 10,
+  "ltp_conditions": [
+    "matched",
+    "shuffled",
+    "random",
+    "cf_tempo",
+    "cf_energy",
+    "cf_vocal",
+    "cf_popularity",
+    "cf_consistency"
+  ],
+  "no_ltp_model": "exp_04",
+  "generation_conditions": [
+    "matched",
+    "no_ltp",
+    "random",
+    "shuffled"
+  ],
+  "n_personas": 24,
+  "n_queries_per_persona": 20,
+  "candidate_pool_seed": 20260315,
+  "summaries": [
+    {
+      "condition": "matched",
+      "n": 480,
+      "recall@1": 0.03958333333333333,
+      "recall@5": 0.1625,
+      "recall@10": 0.23333333333333334,
+      "MRR": 0.11304367002589696,
+      "median_rank": 40.0,
+      "generated": true,
+      "fallback_rate": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_matched.csv"
+    },
+    {
+      "condition": "shuffled",
+      "n": 480,
+      "recall@1": 0.041666666666666664,
+      "recall@5": 0.14791666666666667,
+      "recall@10": 0.21666666666666667,
+      "MRR": 0.10354585472687725,
+      "median_rank": 40.5,
+      "generated": true,
+      "fallback_rate": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_shuffled.csv"
+    },
+    {
+      "condition": "random",
+      "n": 480,
+      "recall@1": 0.029166666666666667,
+      "recall@5": 0.12291666666666666,
+      "recall@10": 0.17916666666666667,
+      "MRR": 0.08476082322917318,
+      "median_rank": 53.5,
+      "generated": true,
+      "fallback_rate": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_random.csv"
+    },
+    {
+      "condition": "cf_tempo",
+      "n": 480,
+      "recall@1": 0.0625,
+      "recall@5": 0.16458333333333333,
+      "recall@10": 0.2708333333333333,
+      "MRR": 0.13035684325204522,
+      "median_rank": 30.0,
+      "generated": false,
+      "fallback_rate": null,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_cf_tempo.csv"
+    },
+    {
+      "condition": "cf_energy",
+      "n": 480,
+      "recall@1": 0.04791666666666667,
+      "recall@5": 0.15625,
+      "recall@10": 0.25833333333333336,
+      "MRR": 0.11960449766102675,
+      "median_rank": 30.0,
+      "generated": false,
+      "fallback_rate": null,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_cf_energy.csv"
+    },
+    {
+      "condition": "cf_vocal",
+      "n": 480,
+      "recall@1": 0.04375,
+      "recall@5": 0.12708333333333333,
+      "recall@10": 0.22291666666666668,
+      "MRR": 0.10415239661056894,
+      "median_rank": 40.0,
+      "generated": false,
+      "fallback_rate": null,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_cf_vocal.csv"
+    },
+    {
+      "condition": "cf_popularity",
+      "n": 480,
+      "recall@1": 0.05625,
+      "recall@5": 0.16666666666666666,
+      "recall@10": 0.25625,
+      "MRR": 0.12402193886683646,
+      "median_rank": 37.0,
+      "generated": false,
+      "fallback_rate": null,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_cf_popularity.csv"
+    },
+    {
+      "condition": "cf_consistency",
+      "n": 480,
+      "recall@1": 0.035416666666666666,
+      "recall@5": 0.15208333333333332,
+      "recall@10": 0.22916666666666666,
+      "MRR": 0.10846234757744316,
+      "median_rank": 34.0,
+      "generated": false,
+      "fallback_rate": null,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_cf_consistency.csv"
+    },
+    {
+      "condition": "no_ltp",
+      "n": 480,
+      "recall@1": 0.17916666666666667,
+      "recall@5": 0.47291666666666665,
+      "recall@10": 0.6041666666666666,
+      "MRR": 0.32134100149155764,
+      "median_rank": 6.0,
+      "generated": true,
+      "fallback_rate": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_no_ltp.csv"
+    }
+  ],
+  "scope_limit": "Persona LTP 由既有 LTP 向量組合並經偏差尺度校正而得，未走完整 Stage 3–5 管線；驗證的是模型對偏好向量的可控性。"
+}

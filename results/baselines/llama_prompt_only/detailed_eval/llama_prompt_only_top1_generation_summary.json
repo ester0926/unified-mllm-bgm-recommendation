@@ -1,0 +1,17 @@
+{
+  "created_at": "2026-06-05T07:24:12",
+  "baseline": "llama_prompt_only_top1_generation",
+  "base_model": "meta-llama/Llama-2-7b-hf",
+  "source_exp": "exp_01",
+  "source_tag": "top1_prompt_original",
+  "pool_size": 500,
+  "n": 4205,
+  "n_valid": 4147,
+  "title_or_artist_consistency_rate": 0.3705112960760999,
+  "bertscore_precision": 0.5870603919029236,
+  "bertscore_recall": 0.5411806106567383,
+  "bertscore_f1": 0.5600117444992065,
+  "infolm_ab_divergence": 6.2992682456970215,
+  "infolm_l2_distance": 0.3516351878643036,
+  "infolm_fisher_rao": 2.680204153060913
+}

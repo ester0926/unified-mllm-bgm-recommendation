@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-07-29T19:57:04",
+  "decision": "reuse_existing_exp04_noltp_and_attach_v21_candidate_pool_ids",
+  "justification": "exp_04 does not consume Persona vectors; v2 and v21 use identical sample indices/order and candidate-pool construction. Rebuilt histories cannot change No-LTP ranking or generation.",
+  "verified_identity_fields": [
+    "sample_idx",
+    "video_id",
+    "gt_pair_key",
+    "persona_id"
+  ],
+  "rows": 480,
+  "pool_size": 500,
+  "source": {
+    "path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v2\\persona_v2_no_ltp.csv",
+    "sha256": "45101b76436339f03f87085f19b899de1c6c3d686a812aa1628a165f119a0c43"
+  },
+  "pool_reference": {
+    "path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v21\\persona_v2_matched.csv",
+    "sha256": "806432c2cb7b1f2f17dc2895c84b47a4f0c164204062646a24b0dd4fd602ec44"
+  },
+  "output": {
+    "path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v21\\persona_v2_no_ltp.csv",
+    "sha256": "5772387c7aa1c6e2b060fd4c8cebf19ef3a6ed228694d985a3c903f8e61f0474"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "checkpoint_dir": "<project_root>/checkpoints\\exp_01\\best",
+  "ltp_mode": "hybrid",
+  "active_modalities": [
+    "video",
+    "ltp",
+    "text",
+    "music"
+  ],
+  "pool_size": 100,
+  "prompt_variant": "original",
+  "result_tag": "pool100",
+  "max_samples": null,
+  "max_gen_samples": null,
+  "started_at": "2026-05-13T01:00:42",
+  "finished_at": "2026-05-13T07:54:29",
+  "ranking": {
+    "recall@1": 0.5838287752675386,
+    "recall@5": 0.9131985731272295,
+    "recall@10": 0.973602853745541,
+    "median_rank": 1.0,
+    "mean_rank": 2.3750297265160523,
+    "num_samples": 4205,
+    "pool_size": 100,
+    "scoring": "pointwise Plan B ([RANK] token readout) + random tiebreak",
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42,
+    "n_allequal_scores": 0,
+    "pct_allequal": 0.0,
+    "avg_score_range": 28.982079229003325,
+    "avg_score_std": 7.302675235625822
+  },
+  "generation": {
+    "n_generated": 4205,
+    "n_valid": 4204,
+    "fallback_count": 1,
+    "fallback_rate": 0.00023781212841854935,
+    "inject_title": true,
+    "bertscore_precision": 0.7860276699066162,
+    "bertscore_recall": 0.7647334933280945,
+    "bertscore_f1": 0.7746754288673401,
+    "infolm_ab_divergence": 1.3846646547317505,
+    "infolm_l2_distance": 0.13697920739650726,
+    "infolm_fisher_rao": 1.1468162536621094
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_100pool_pool100_ranking_samples.csv",
+    "generation_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_100pool_pool100_generation_samples.csv",
+    "merged_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_100pool_pool100_samples_merged.csv",
+    "merged_jsonl": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_100pool_pool100_samples_merged.jsonl"
+  }
+}

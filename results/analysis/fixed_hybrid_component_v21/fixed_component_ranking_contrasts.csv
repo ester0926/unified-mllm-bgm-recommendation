@@ -1,0 +1,21 @@
+﻿comparison,metric,difference,ci_low,ci_high,significant
+full - no_explicit,recall@1,0.135,0.07,0.2,True
+full - no_explicit,recall@5,0.195,0.13,0.26,True
+full - no_explicit,recall@10,0.165,0.10487500000000004,0.23,True
+full - no_explicit,mrr,0.14966756886921634,0.10200142130828302,0.19928099936989507,True
+full - no_implicit,recall@1,0.26,0.2,0.325,True
+full - no_implicit,recall@5,0.555,0.48,0.63,True
+full - no_implicit,recall@10,0.63,0.555,0.7,True
+full - no_implicit,mrr,0.36600258814070474,0.3149173826764342,0.4170420870861336,True
+full - no_explicit_norm,recall@1,0.13,0.07,0.195,True
+full - no_explicit_norm,recall@5,0.2,0.135,0.265,True
+full - no_explicit_norm,recall@10,0.175,0.115,0.24,True
+full - no_explicit_norm,mrr,0.14688456911058587,0.09933640739565514,0.19666058231646774,True
+full - no_implicit_norm,recall@1,0.26,0.2,0.325,True
+full - no_implicit_norm,recall@5,0.555,0.48,0.63,True
+full - no_implicit_norm,recall@10,0.63,0.555,0.7,True
+full - no_implicit_norm,mrr,0.36599648182747657,0.3149076293419973,0.4170387020923947,True
+full - no_both,recall@1,0.275,0.21,0.345,True
+full - no_both,recall@5,0.635,0.565,0.7001249999999981,True
+full - no_both,recall@10,0.735,0.67,0.795,True
+full - no_both,mrr,0.41964614019624513,0.36515055332681695,0.47444006195580984,True

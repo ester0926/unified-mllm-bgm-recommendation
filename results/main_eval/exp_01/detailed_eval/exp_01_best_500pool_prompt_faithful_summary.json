@@ -1,0 +1,65 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "checkpoint_dir": "<project_root>/checkpoints\\exp_01\\best",
+  "ltp_mode": "hybrid",
+  "active_modalities": [
+    "video",
+    "ltp",
+    "text",
+    "music"
+  ],
+  "pool_size": 500,
+  "prompt_variant": "faithful",
+  "prompt_variant_rule": {
+    "purpose": "Model-specific faithful multimodal prompt for explanation faithfulness tests.",
+    "construction_rules": [
+      "Instruction block is 100-140 English words.",
+      "Explicitly maps video, music, text prompt, and LTP claims to their available sources.",
+      "Forbid visual, audio, prompt, or long-term preference claims when the corresponding modality is absent.",
+      "Require concise explanations grounded only in available inputs."
+    ]
+  },
+  "result_tag": "prompt_faithful",
+  "candidate_pool_seed": 20260315,
+  "max_samples": null,
+  "max_gen_samples": null,
+  "started_at": "2026-05-25T13:11:38",
+  "finished_at": "2026-05-26T05:07:53",
+  "ranking": {
+    "recall@1": 0.26848989298454223,
+    "recall@5": 0.6230677764565993,
+    "recall@10": 0.7671819262782402,
+    "median_rank": 3.0,
+    "mean_rank": 9.119143876337693,
+    "num_samples": 4205,
+    "pool_size": 500,
+    "scoring": "pointwise Plan B ([RANK] token readout) + random tiebreak",
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42,
+    "candidate_pool_seed": 20260315,
+    "n_allequal_scores": 0,
+    "pct_allequal": 0.0,
+    "avg_score_range": 26.48053616264062,
+    "avg_score_std": 6.024434970108422
+  },
+  "generation": {
+    "n_generated": 4205,
+    "n_valid": 4205,
+    "fallback_count": 0,
+    "fallback_rate": 0.0,
+    "inject_title": true,
+    "bertscore_precision": 0.7765935063362122,
+    "bertscore_recall": 0.7568367123603821,
+    "bertscore_f1": 0.766048789024353,
+    "infolm_ab_divergence": 2.839186906814575,
+    "infolm_l2_distance": 0.20397740602493286,
+    "infolm_fisher_rao": 1.757014274597168
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_faithful_ranking_samples.csv",
+    "generation_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_faithful_generation_samples.csv",
+    "merged_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_faithful_samples_merged.csv",
+    "merged_jsonl": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_faithful_samples_merged.jsonl"
+  }
+}

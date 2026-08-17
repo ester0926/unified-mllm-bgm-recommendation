@@ -1,0 +1,289 @@
+{
+  "schema": "v21-experiment-provenance-1",
+  "project_root": "<project_root>",
+  "environment": {
+    "python": "3.11.14 | packaged by conda-forge | (main, Oct 22 2025, 22:35:28) [MSC v.1944 64 bit (AMD64)]",
+    "executable": "<user_home>/anaconda3\\envs\\ollama\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": {
+      "version": "2.11.0.dev20251222+cu128",
+      "cuda_version": "12.8",
+      "cuda_available": true,
+      "gpu": "NVIDIA GeForce RTX 5090"
+    }
+  },
+  "git": {
+    "commit": "unavailable",
+    "status_porcelain": "unavailable"
+  },
+  "inputs_and_checkpoints": [
+    {
+      "path": "<project_root>/cache\\ltp_hybrid.npy",
+      "exists": true,
+      "size_bytes": 86169728,
+      "mtime_ns": 1774582780000000000,
+      "sha256": "bceb89c7d4cdc6361b6271685b2c8a2ebb4a95070761c29359d3e58e6e18c8e5"
+    },
+    {
+      "path": "<project_root>/cache\\ltp_hybrid_ids.json",
+      "exists": true,
+      "size_bytes": 1262250,
+      "mtime_ns": 1774582780000000000,
+      "sha256": "9e81ba46524e462bada0d978521f9eb0832172ff36eb43cc0a5bc6fbc536850d"
+    },
+    {
+      "path": "<project_root>/cache\\ltp_explicit_only.npy",
+      "exists": true,
+      "size_bytes": 86169728,
+      "mtime_ns": 1775478928000000000,
+      "sha256": "43d696dc2165e03cae52b6872255b9e92d7257b50bbaa5ab7140d03081563359"
+    },
+    {
+      "path": "<project_root>/cache\\ltp_explicit_only_ids.json",
+      "exists": true,
+      "size_bytes": 1262250,
+      "mtime_ns": 1775478928000000000,
+      "sha256": "9e81ba46524e462bada0d978521f9eb0832172ff36eb43cc0a5bc6fbc536850d"
+    },
+    {
+      "path": "<project_root>/cache\\ltp_implicit_only.npy",
+      "exists": true,
+      "size_bytes": 86169728,
+      "mtime_ns": 1775997896000000000,
+      "sha256": "2f0aef86d0ed595e46c42f34c103b27bec7257fba92907ba125a3d2df2ca0921"
+    },
+    {
+      "path": "<project_root>/cache\\ltp_implicit_only_ids.json",
+      "exists": true,
+      "size_bytes": 1262250,
+      "mtime_ns": 1775997896000000000,
+      "sha256": "9e81ba46524e462bada0d978521f9eb0832172ff36eb43cc0a5bc6fbc536850d"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\b5_personas_v21\\persona_specs.json",
+      "exists": true,
+      "size_bytes": 80636,
+      "mtime_ns": 1785309758000000000,
+      "sha256": "9727e91fff647ff8859fc9fa0850d7f0d63bbfb5fb00bee33436c0b6d49e2d2b"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\b5_personas_v21\\persona_ltp.npz",
+      "exists": true,
+      "size_bytes": 138070,
+      "mtime_ns": 1785309898000000000,
+      "sha256": "1f858dd1409a4c3618afa2306f648f030c4370420aca8a837c1f15a6e1df86ff"
+    },
+    {
+      "path": "<user_profiling_root>/dataset\\long_term_preference\\stage4_recLLM\\profiles.jsonl",
+      "exists": true,
+      "size_bytes": 132511117,
+      "mtime_ns": 1768373172000000000,
+      "sha256": "3dcceb9399e12932c41bff4d1b08baaf57c70b157d6c87eff5bf9e5772a94463"
+    },
+    {
+      "path": "<user_profiling_root>/dataset\\music_metadata_simple\\music_metadata_enriched.json",
+      "exists": true,
+      "size_bytes": 47632268,
+      "mtime_ns": 1765030716000000000,
+      "sha256": "ed2eac02d2567683336d4abae968d1fc93e631261e0d17cfe785c2b7a3e65bd0"
+    },
+    {
+      "path": "<user_profiling_root>/dataset\\music_metadata_simple\\youtube_metadata.jsonl",
+      "exists": true,
+      "size_bytes": 22271543,
+      "mtime_ns": 1762765582000000000,
+      "sha256": "4362c74dae569ec438e88d7b437c6ef39d25d9553dec99b0d3e7585e629b5fd2"
+    },
+    {
+      "path": "<project_root>/checkpoints\\exp_01\\best\\adapter_model.safetensors",
+      "exists": true,
+      "size_bytes": 591496248,
+      "mtime_ns": 1775369264000000000,
+      "sha256": "d2d2ce433f6f3ee585694c7467f0d968e6df409ca161ff25331e4285103fa86d"
+    },
+    {
+      "path": "<project_root>/checkpoints\\exp_01\\best\\projectors.pt",
+      "exists": true,
+      "size_bytes": 153417653,
+      "mtime_ns": 1775369256000000000,
+      "sha256": "cc2fd0201b8d3f9619d6cfe51f41d90aa625deae3c8cb8ddca75126a20eda21c"
+    },
+    {
+      "path": "<project_root>/checkpoints\\exp_01\\best\\ranking_head.pt",
+      "exists": true,
+      "size_bytes": 4232273,
+      "mtime_ns": 1775369256000000000,
+      "sha256": "de32dac082b2641095f64ff117565938e5542de69def35ed84fccf16874f42c9"
+    },
+    {
+      "path": "<project_root>/checkpoints\\exp_04\\best\\adapter_model.safetensors",
+      "exists": true,
+      "size_bytes": 591496248,
+      "mtime_ns": 1776697750000000000,
+      "sha256": "c57b51f0f47cfae6b55fb2ad7d58052c1887c63177a82f13b78118c548897084"
+    },
+    {
+      "path": "<project_root>/checkpoints\\exp_04\\best\\projectors.pt",
+      "exists": true,
+      "size_bytes": 153417653,
+      "mtime_ns": 1776697742000000000,
+      "sha256": "fd01b1d889dd00193981c053c61328f1ecb246cdbee3e6206789f54392269ec0"
+    },
+    {
+      "path": "<project_root>/checkpoints\\exp_04\\best\\ranking_head.pt",
+      "exists": true,
+      "size_bytes": 4232273,
+      "mtime_ns": 1776697742000000000,
+      "sha256": "811d97a89a8ba8cf7bc66a48b1441b72413292a79354567affe6ff48c59fc960"
+    }
+  ],
+  "analysis_scripts": [
+    {
+      "path": "<project_root>/scripts\\analysis\\b5_build_persona_specs.py",
+      "exists": true,
+      "size_bytes": 18272,
+      "mtime_ns": 1785309738000000000,
+      "sha256": "6471b816a418fa5f885fa694e26315a51c3eeef1a9659302407f2af15cf0e85e"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\b5_build_persona_ltp.py",
+      "exists": true,
+      "size_bytes": 20380,
+      "mtime_ns": 1785309736000000000,
+      "sha256": "f4156028088c2aed300eb5e1d45a48296a78a0075a5c3cdc6dedb9bf58378389"
+    },
+    {
+      "path": "<project_root>/scripts\\eval_main\\run_eval_500pool_persona.py",
+      "exists": true,
+      "size_bytes": 14695,
+      "mtime_ns": 1785311466000000000,
+      "sha256": "aca1eeec6f19ae98ad7470ca917cd95adbc3e90de01be2d2b57c1357310580c2"
+    },
+    {
+      "path": "<project_root>/scripts\\eval_main\\run_eval_500pool_persona_v2.py",
+      "exists": true,
+      "size_bytes": 15251,
+      "mtime_ns": 1785309946000000000,
+      "sha256": "4bbc7207e03bc35c9aede90901de1922c74f64ab827332706a3b5482e7ba458f"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\b5_persona_metrics_v21.py",
+      "exists": true,
+      "size_bytes": 24557,
+      "mtime_ns": 1785311250000000000,
+      "sha256": "f88b4b0403b6c43ef12b9f2efbb984395462922ead22921eb8f532b509c677f1"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\reuse_noltp_v2_for_persona_v21.py",
+      "exists": true,
+      "size_bytes": 3364,
+      "mtime_ns": 1785326220000000000,
+      "sha256": "1b4269d6953a220ebc64f6cf08def64d4bf33e468a1d40d48e015b4fd3594036"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\b6_preference_video_conflict_v21.py",
+      "exists": true,
+      "size_bytes": 21550,
+      "mtime_ns": 1785312522000000000,
+      "sha256": "b323d206a3916c6d4478e0b3a0aa84d1dd2508f630575e100366e6b25e7bce15"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\path_level_generation_analysis_v21.py",
+      "exists": true,
+      "size_bytes": 27291,
+      "mtime_ns": 1785316938000000000,
+      "sha256": "64ad6b77e17ae86f70065ae03567130879987273151b4939e7a2d4d9c2a10b37"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\prepare_v21_preference_claim_blind_audit.py",
+      "exists": true,
+      "size_bytes": 3139,
+      "mtime_ns": 1785317728000000000,
+      "sha256": "f58cfd9f7a208a1eae8d4fd24b6d477b2218a84369b75cb773616f0b4eeaf544"
+    },
+    {
+      "path": "<project_root>/scripts\\eval_main\\run_eval_fixed_hybrid_components_v21.py",
+      "exists": true,
+      "size_bytes": 24005,
+      "mtime_ns": 1785317358000000000,
+      "sha256": "c4b0fcc7d156cc661cee0445fc72da8a257bfd5ec580b3fd812db429342a025a"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\reuse_full_exp01_for_fixed_component_v21.py",
+      "exists": true,
+      "size_bytes": 5784,
+      "mtime_ns": 1785337452000000000,
+      "sha256": "4de12ac173da40bc1f9fd56831bae17ea9d63e8295bd19e8455a1aec8113481f"
+    },
+    {
+      "path": "<project_root>/scripts\\analysis\\fixed_hybrid_component_analysis_v21.py",
+      "exists": true,
+      "size_bytes": 10941,
+      "mtime_ns": 1785313604000000000,
+      "sha256": "b082da75fd97c79d3197e831a37c5b87657b0fae4803cff614e5011f0d5816f2"
+    }
+  ],
+  "analysis_artifacts": [
+    {
+      "path": "<project_root>/results\\analysis\\path_level_generation_v21\\path_level_summary.json",
+      "exists": true,
+      "size_bytes": 23462,
+      "mtime_ns": 1785316958000000000,
+      "sha256": "c647393f2e23d53241f7734552d2fcaa57859204c99b9a96d37dd5675b48bc67"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\path_level_generation_v21\\preference_claims_full_audit.csv",
+      "exists": true,
+      "size_bytes": 1161226,
+      "mtime_ns": 1785316958000000000,
+      "sha256": "37991abbd3d247c8a4ea7974abb4c03239982f2e033870123e9013ef06d3b02a"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\path_level_generation_v21\\preference_claim_blind_audit_packet.csv",
+      "exists": true,
+      "size_bytes": 122502,
+      "mtime_ns": 1785317734000000000,
+      "sha256": "71a30a357601be9241169632cec187e95723aa8dad1df06591306d4acfd28ef5"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\b5_personas_v21\\persona_metrics_v21_summary.json",
+      "exists": true,
+      "size_bytes": 15432,
+      "mtime_ns": 1785336664000000000,
+      "sha256": "eaef7dc18b097ff57093a0dce7903ae3ed119c75cc04aee9f09cc44bec71b525"
+    },
+    {
+      "path": "<project_root>/results\\main_eval\\exp_01\\persona_eval_v21\\persona_v2_no_ltp_reuse_provenance.json",
+      "exists": true,
+      "size_bytes": 1190,
+      "mtime_ns": 1785326226000000000,
+      "sha256": "049b508ce5a8c544eb624d83fd8965b2c503c4700883e89ee72181c16017f174"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\b6_conflict_v21\\conflict_summary.json",
+      "exists": true,
+      "size_bytes": 17405,
+      "mtime_ns": 1785336642000000000,
+      "sha256": "144e4c5740651cd2ff82c619fe51d7378bf4fa89cef0f012c521a60594da1403"
+    },
+    {
+      "path": "<project_root>/results\\main_eval\\exp_01\\fixed_component_intervention_v21\\fixed_component_full_reuse_provenance.json",
+      "exists": true,
+      "size_bytes": 1161,
+      "mtime_ns": 1785337462000000000,
+      "sha256": "fb0befe96d5455fc16bd152d511b63e66f2e9ef478dec8762c7e02896f67ab9d"
+    },
+    {
+      "path": "<project_root>/results\\analysis\\fixed_hybrid_component_v21\\fixed_component_summary.json",
+      "exists": true,
+      "size_bytes": 25208,
+      "mtime_ns": 1785344952000000000,
+      "sha256": "a1edfc6835c9a48f2b897a73bbdc905e96666415c01385d65103bf3f71ba3d4b"
+    }
+  ],
+  "path_overrides": {
+    "PROFILES_JSONL_PATH": null,
+    "MUSIC_METADATA_PATH": null,
+    "YOUTUBE_METADATA_PATH": null
+  }
+}

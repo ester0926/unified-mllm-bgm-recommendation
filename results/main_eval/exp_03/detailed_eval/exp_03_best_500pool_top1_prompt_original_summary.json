@@ -1,0 +1,77 @@
+{
+  "exp_name": "exp_03",
+  "checkpoint": "best",
+  "pool_size": 500,
+  "prompt_variant": "original",
+  "ranking_source_csv": "<project_root>/checkpoints\\exp_03\\detailed_eval\\exp_03_best_500pool_ranking_samples.csv",
+  "generation_mode": "top1_end_to_end_from_existing_ranking",
+  "max_samples": null,
+  "inject_title": true,
+  "started_at": "2026-05-29T07:48:39",
+  "finished_at": "2026-05-29T13:30:12",
+  "generation": {
+    "fallback_count": 0,
+    "fallback_rate": 0.0,
+    "missing_top1_count": 0,
+    "reference_definition": "query GT t4 reference; Top-1 incorrect samples therefore reflect ranking and generation jointly",
+    "bertscore_precision": 0.7674897909164429,
+    "bertscore_recall": 0.7442819476127625,
+    "bertscore_f1": 0.7550457119941711,
+    "infolm_ab_divergence": 2.8233683109283447,
+    "infolm_l2_distance": 0.22106201946735382,
+    "infolm_fisher_rao": 1.8941112756729126
+  },
+  "split_generation": {
+    "all": {
+      "num_samples": 4205,
+      "fallback_count": 0,
+      "fallback_rate": 0.0,
+      "title_consistency_checked": 3582,
+      "title_consistency_rate": 0.40982691233947516,
+      "needs_manual_review_count": 2114,
+      "needs_manual_review_rate": 0.5027348394768133,
+      "bertscore_precision": 0.7674898009946599,
+      "bertscore_recall": 0.7442819777552778,
+      "bertscore_f1": 0.7550457026176022,
+      "infolm_ab_divergence": 2.540678702549473,
+      "infolm_l2_distance": 0.21144542846137682,
+      "infolm_fisher_rao": 1.8064136680188605
+    },
+    "top1_correct_only": {
+      "num_samples": 1306,
+      "fallback_count": 0,
+      "fallback_rate": 0.0,
+      "title_consistency_checked": 1120,
+      "title_consistency_rate": 0.6482142857142857,
+      "needs_manual_review_count": 394,
+      "needs_manual_review_rate": 0.3016845329249617,
+      "bertscore_precision": 0.789058075518922,
+      "bertscore_recall": 0.7670149371187683,
+      "bertscore_f1": 0.7772870836223249,
+      "infolm_ab_divergence": 1.5879122839060755,
+      "infolm_l2_distance": 0.15318387367222086,
+      "infolm_fisher_rao": 1.2854621310667191
+    },
+    "top1_incorrect_only": {
+      "num_samples": 2899,
+      "fallback_count": 0,
+      "fallback_rate": 0.0,
+      "title_consistency_checked": 2462,
+      "title_consistency_rate": 0.3013809910641755,
+      "needs_manual_review_count": 1720,
+      "needs_manual_review_rate": 0.5933080372542255,
+      "bertscore_precision": 0.757773289601529,
+      "bertscore_recall": 0.7340407756411976,
+      "bertscore_f1": 0.745025956638931,
+      "infolm_ab_divergence": 2.96990013847506,
+      "infolm_l2_distance": 0.23769226894245224,
+      "infolm_fisher_rao": 2.0411024252660135
+    }
+  },
+  "outputs": {
+    "generation_csv": "<project_root>/checkpoints\\exp_03\\detailed_eval\\exp_03_best_500pool_top1_prompt_original_generation_samples.csv",
+    "raw_generation_csv": "<project_root>/checkpoints\\exp_03\\detailed_eval\\exp_03_best_500pool_top1_prompt_original_generation_samples_raw.csv",
+    "merged_csv": "<project_root>/checkpoints\\exp_03\\detailed_eval\\exp_03_best_500pool_top1_prompt_original_samples_merged.csv",
+    "merged_jsonl": "<project_root>/checkpoints\\exp_03\\detailed_eval\\exp_03_best_500pool_top1_prompt_original_samples_merged.jsonl"
+  }
+}

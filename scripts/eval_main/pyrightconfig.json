@@ -1,0 +1,10 @@
+{
+  "pythonVersion": "3.10",
+  "extraPaths": [
+    "../..",
+    "../diagnostics"
+  ],
+  "exclude": [
+    "**/__pycache__"
+  ]
+}

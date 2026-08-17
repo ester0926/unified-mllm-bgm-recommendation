@@ -1,0 +1,78 @@
+# Top-1 End-to-End Significance Analysis
+
+Setting: `Top-1 end-to-end generation`
+Prompt variant: `original`
+Focal experiment: `exp_01`
+Comparisons: `exp_02, exp_03, exp_04, exp_05, exp_06, exp_07`
+Bootstrap: 10,000 paired resamples, 95% CI
+Wilcoxon: signed-rank test on paired per-sample improvements
+Correction: Holm-Bonferroni across all tests in this file
+
+This analysis uses explanations generated from the model-selected Top-1 music item, not GT-conditioned generation.
+
+## Overview
+
+- Total paired tests: 48; Holm-significant: 41.
+- Ranking tests: 24; Holm-significant: 20.
+- Generation tests: 24; Holm-significant: 21.
+
+Positive improvement means the focal experiment is better.
+
+| Group | Compare | Metric | n | Focal mean | Compare mean | Improvement | 95% CI | p raw | p Holm | Sig. |
+|---|---|---|---:|---:|---:|---:|---|---:|---:|---|
+| ranking | exp_02 | R@1 | 4205 | 0.30654 | 0.219263 | 0.0872771 | [0.0725327, 0.101784] | 1.775e-30 | 4.082e-29 | yes |
+| ranking | exp_02 | R@5 | 4205 | 0.663971 | 0.537693 | 0.126278 | [0.111296, 0.141736] | 4.754e-58 | 1.284e-56 | yes |
+| ranking | exp_02 | R@10 | 4205 | 0.798811 | 0.683472 | 0.115339 | [0.102021, 0.129132] | 2.043e-60 | 5.72e-59 | yes |
+| ranking | exp_02 | Rank | 4205 | 7.94911 | 13.0181 | 5.06897 | [4.59285, 5.55102] | 8.661e-130 | 3.291e-128 | yes |
+| generation | exp_02 | BERTScore F1 | 4205 | 0.752593 | 0.731523 | 0.0210702 | [0.0186165, 0.0235276] | 1.834e-50 | 4.768e-49 | yes |
+| generation | exp_02 | InfoLM AB | 4205 | 2.50686 | 3.34899 | 0.842125 | [0.771548, 0.914211] | 1.659e-128 | 6.139e-127 | yes |
+| generation | exp_02 | InfoLM L2 | 4205 | 0.206346 | 0.241513 | 0.0351669 | [0.0319118, 0.0384032] | 1.408e-113 | 4.928e-112 | yes |
+| generation | exp_02 | InfoLM Fisher-Rao | 4205 | 1.76029 | 2.02465 | 0.26435 | [0.242055, 0.287064] | 2.452e-128 | 8.827e-127 | yes |
+| ranking | exp_03 | R@1 | 4205 | 0.30654 | 0.310583 | -0.00404281 | [-0.0199762, 0.011415] | 0.6138 | 1 | no |
+| ranking | exp_03 | R@5 | 4205 | 0.663971 | 0.665398 | -0.00142687 | [-0.016409, 0.0140309] | 0.8554 | 1 | no |
+| ranking | exp_03 | R@10 | 4205 | 0.798811 | 0.809275 | -0.0104637 | [-0.02283, 0.00237812] | 0.1034 | 0.5547 | no |
+| ranking | exp_03 | Rank | 4205 | 7.94911 | 7.68014 | -0.268966 | [-0.636397, 0.104643] | 0.3729 | 1 | no |
+| generation | exp_03 | BERTScore F1 | 4205 | 0.752593 | 0.755046 | -0.00245271 | [-0.00401896, -0.000863764] | 0.0008051 | 0.00644 | yes |
+| generation | exp_03 | InfoLM AB | 4205 | 2.50686 | 2.54068 | 0.0338144 | [-0.0118502, 0.080646] | 0.6154 | 1 | no |
+| generation | exp_03 | InfoLM L2 | 4205 | 0.206346 | 0.211445 | 0.00509894 | [0.00246655, 0.0077477] | 0.01246 | 0.08722 | no |
+| generation | exp_03 | InfoLM Fisher-Rao | 4205 | 1.76029 | 1.80641 | 0.0461188 | [0.0251338, 0.0677798] | 0.09245 | 0.5547 | no |
+| ranking | exp_04 | R@1 | 4205 | 0.30654 | 0.190725 | 0.115815 | [0.100595, 0.131034] | 1.837e-49 | 4.593e-48 | yes |
+| ranking | exp_04 | R@5 | 4205 | 0.663971 | 0.479429 | 0.184542 | [0.168609, 0.200482] | 1.59e-103 | 5.248e-102 | yes |
+| ranking | exp_04 | R@10 | 4205 | 0.798811 | 0.636147 | 0.162663 | [0.148395, 0.176932] | 1.889e-97 | 6.044e-96 | yes |
+| ranking | exp_04 | Rank | 4205 | 7.94911 | 16.4221 | 8.47301 | [7.80617, 9.16604] | 3.395e-199 | 1.358e-197 | yes |
+| generation | exp_04 | BERTScore F1 | 4205 | 0.752593 | 0.748395 | 0.00419766 | [0.00249432, 0.00594959] | 2.215e-05 | 0.000288 | yes |
+| generation | exp_04 | InfoLM AB | 4205 | 2.50686 | 2.63942 | 0.132555 | [0.0838914, 0.180721] | 1.166e-05 | 0.0001633 | yes |
+| generation | exp_04 | InfoLM L2 | 4205 | 0.206346 | 0.21947 | 0.0131239 | [0.0104444, 0.015895] | 9.984e-14 | 1.897e-12 | yes |
+| generation | exp_04 | InfoLM Fisher-Rao | 4205 | 1.76029 | 1.86907 | 0.108776 | [0.0871046, 0.129933] | 1.313e-09 | 2.101e-08 | yes |
+| ranking | exp_05 | R@1 | 4205 | 0.30654 | 0.280618 | 0.0259215 | [0.0118906, 0.0397146] | 0.0003093 | 0.002784 | yes |
+| ranking | exp_05 | R@5 | 4205 | 0.663971 | 0.613793 | 0.0501784 | [0.0366231, 0.0639715] | 1.041e-12 | 1.874e-11 | yes |
+| ranking | exp_05 | R@10 | 4205 | 0.798811 | 0.761237 | 0.0375743 | [0.0259215, 0.0492271] | 3.077e-10 | 5.23e-09 | yes |
+| ranking | exp_05 | Rank | 4205 | 7.94911 | 9.61118 | 1.66207 | [1.31961, 2.01429] | 2.511e-22 | 5.523e-21 | yes |
+| generation | exp_05 | BERTScore F1 | 4205 | 0.752593 | 0.741408 | 0.0111846 | [0.00879572, 0.01369] | 7.077e-05 | 0.0007784 | yes |
+| generation | exp_05 | InfoLM AB | 4205 | 2.50686 | 2.81112 | 0.304254 | [0.235576, 0.374618] | 1.866e-06 | 2.8e-05 | yes |
+| generation | exp_05 | InfoLM L2 | 4205 | 0.206346 | 0.227308 | 0.0209611 | [0.016638, 0.0253746] | 0.0001151 | 0.001151 | yes |
+| generation | exp_05 | InfoLM Fisher-Rao | 4205 | 1.76029 | 1.81135 | 0.0510531 | [0.0297217, 0.072646] | 3.684e-05 | 0.0004421 | yes |
+| ranking | exp_06 | R@1 | 4205 | 0.30654 | 0.16956 | 0.13698 | [0.121046, 0.152438] | 1.382e-61 | 4.009e-60 | yes |
+| ranking | exp_06 | R@5 | 4205 | 0.663971 | 0.460404 | 0.203567 | [0.186683, 0.22069] | 8.048e-108 | 2.736e-106 | yes |
+| ranking | exp_06 | R@10 | 4205 | 0.798811 | 0.631391 | 0.16742 | [0.151724, 0.183353] | 2.428e-89 | 7.528e-88 | yes |
+| ranking | exp_06 | Rank | 4205 | 7.94911 | 14.7971 | 6.84804 | [6.2045, 7.51034] | 2.316e-157 | 9.032e-156 | yes |
+| generation | exp_06 | BERTScore F1 | 4205 | 0.752593 | 0.718318 | 0.0342749 | [0.0325938, 0.0359704] | 0 | 0 | yes |
+| generation | exp_06 | InfoLM AB | 4205 | 2.50686 | 3.62847 | 1.1216 | [1.06154, 1.18028] | 2.562e-257 | 1.076e-255 | yes |
+| generation | exp_06 | InfoLM L2 | 4205 | 0.206346 | 0.257721 | 0.0513743 | [0.0484616, 0.054234] | 4.356e-238 | 1.786e-236 | yes |
+| generation | exp_06 | InfoLM Fisher-Rao | 4205 | 1.76029 | 2.21272 | 0.452426 | [0.429832, 0.475551] | 3.491e-284 | 1.536e-282 | yes |
+| ranking | exp_07 | R@1 | 4205 | 0.30654 | 0.000475624 | 0.306064 | [0.292509, 0.320095] | 2.052e-281 | 8.826e-280 | yes |
+| ranking | exp_07 | R@5 | 4205 | 0.663971 | 0.00760999 | 0.656361 | [0.641855, 0.671106] | 0 | 0 | yes |
+| ranking | exp_07 | R@10 | 4205 | 0.798811 | 0.0166468 | 0.782164 | [0.76956, 0.794768] | 0 | 0 | yes |
+| ranking | exp_07 | Rank | 4205 | 7.94911 | 252.57 | 244.621 | [240.261, 248.932] | 0 | 0 | yes |
+| generation | exp_07 | BERTScore F1 | 4205 | 0.752593 | 0.746042 | 0.0065508 | [0.00485073, 0.00822843] | 6.793e-17 | 1.359e-15 | yes |
+| generation | exp_07 | InfoLM AB | 4205 | 2.50686 | 2.74303 | 0.236164 | [0.187106, 0.285411] | 2.664e-18 | 5.595e-17 | yes |
+| generation | exp_07 | InfoLM L2 | 4205 | 0.206346 | 0.234647 | 0.0283003 | [0.0256885, 0.0310001] | 8.353e-64 | 2.506e-62 | yes |
+| generation | exp_07 | InfoLM Fisher-Rao | 4205 | 1.76029 | 1.97234 | 0.212045 | [0.18998, 0.233636] | 6.654e-32 | 1.597e-30 | yes |
+
+## Notes
+
+- For `rank` and InfoLM metrics, lower raw values are better; the reported improvement is therefore `compare - focal`.
+- For Recall and BERTScore metrics, higher raw values are better; the reported improvement is `focal - compare`.
+- Ranking metrics are unchanged by the Top-1 generation rewrite, but they are included here for a single consistent thesis table.
+- Generation metrics are recomputed from Top-1 end-to-end generated explanations.
+- MuseChat cannot be included in this paired test unless per-sample MuseChat predictions are available.

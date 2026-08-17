@@ -1,0 +1,14 @@
+{
+  "failure_case_candidates": 30,
+  "faithfulness_spotcheck_rows": 100,
+  "metadata_spotcheck_rows": 100,
+  "llm_judge_consistency_rows": 120,
+  "outputs": {
+    "failure_case_candidates_csv": "<project_root>/checkpoints\\manual_review\\failure_case_candidates.csv",
+    "failure_case_candidates_md": "<project_root>/checkpoints\\manual_review\\failure_case_candidates.md",
+    "human_faithfulness_spotcheck_template": "<project_root>/checkpoints\\manual_review\\human_faithfulness_spotcheck_template.csv",
+    "human_metadata_spotcheck_template": "<project_root>/checkpoints\\manual_review\\human_metadata_spotcheck_template.csv",
+    "human_llm_judge_consistency_template": "<project_root>/checkpoints\\manual_review\\human_llm_judge_consistency_template.csv",
+    "readme": "<project_root>/checkpoints\\manual_review\\manual_review_readme.md"
+  }
+}

@@ -1,0 +1,21 @@
+﻿comparison,metric,difference,ci_low,ci_high,significant
+full - no_explicit_norm,preference_claim_ratio,-0.005046829944524336,-0.011896790729583813,0.0018977864662545725,False
+full - no_explicit_norm,preference_generation_coverage,-0.030000000000000006,-0.065,0.009999999999999995,False
+full - no_explicit_norm,preference_reference_alignment_rate,0.30000000000000004,-0.16666666666666663,0.7142857142857143,False
+full - no_explicit_norm,preference_reference_contradiction_rate,0.0,0.0,0.0,False
+full - no_explicit_norm,preference_nonexistent_rate,-0.2,-0.6110064935064935,0.23499999999999957,False
+full - no_explicit_norm,metadata_support_rate,0.19593787335722818,-0.22610930735930737,0.5236767830746492,False
+full - no_explicit_norm,UCR_L1_clause,-0.0929503070607108,-0.14558596605827992,-0.045961120125223125,True
+full - no_explicit_norm,UCR_L2_sentence,-0.07648438714069704,-0.13390738852683862,-0.028001788686634596,True
+full - no_explicit_norm,audio_claim_ratio,0.049763650819883765,0.017700831283375407,0.08361111885261953,True
+full - no_explicit_norm,claims_per_generation,-0.20000000000000018,-0.5299999999999994,0.10499999999999957,False
+full - no_implicit_norm,preference_claim_ratio,-0.002549479199308105,-0.011826763408056688,0.006445589340102582,False
+full - no_implicit_norm,preference_generation_coverage,-0.010000000000000002,-0.045000000000000005,0.025,False
+full - no_implicit_norm,preference_reference_alignment_rate,0.13333333333333341,-0.5,0.6156759906759907,False
+full - no_implicit_norm,preference_reference_contradiction_rate,0.0,0.0,0.0,False
+full - no_implicit_norm,preference_nonexistent_rate,-0.0222222222222222,-0.5,0.5666666666666667,False
+full - no_implicit_norm,metadata_support_rate,-0.032258064516129115,-0.25638116628937935,0.19047619047619047,False
+full - no_implicit_norm,UCR_L1_clause,0.0022979573248434193,-0.01626722404679147,0.02071950046595479,False
+full - no_implicit_norm,UCR_L2_sentence,0.005076396635790476,-0.006310173422190722,0.016341663214032673,False
+full - no_implicit_norm,audio_claim_ratio,-0.007071023593754555,-0.03087075065295879,0.016018916356739722,False
+full - no_implicit_norm,claims_per_generation,-0.11000000000000032,-0.2699999999999996,0.04512500000000125,False

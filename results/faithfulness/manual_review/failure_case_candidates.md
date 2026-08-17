@@ -1,0 +1,374 @@
+# Failure and Success Case Candidates
+
+Use this file to choose 3 successful and 3 failed examples for the thesis.
+
+## success_high_alignment
+
+### sample_idx=2001 | rank=1 | BERT-F1=0.9488375782966614 | L2=0.0
+
+- video_id: `0mm-5PZ2Ht4`
+- gt_music_id: `0mm-5PZ2Ht4_esa0H2JC5Mo`
+- top1_music_id: `0mm-5PZ2Ht4_esa0H2JC5Mo`
+- top1_is_gt: `1`
+- metadata unsupported rate: `0.5000`
+- user_text: That sounds great, but I also want to incorporate some hip-hop and pop elements into the music. Do you have any recommendations that fit that description?
+- generated_text: Certainly! How about 'Żyjesz Szybko, Umierasz Młodo' by Fabuła? It's a hip-hop track with electronic and pop influences. The song has a fast-paced beat and catchy melodies that could add a dynamic and energetic vibe to your video.
+- reference_text: Certainly! How about 'Żyjesz Szybko, Umierasz Młodo' by Fabuła? It's a hip-hop track with electronic and pop influences. The song has catchy instrumentals and a male vocal performance. It could add a dynamic and vibrant element to your video.
+- top1_reference_text: Certainly! How about 'Żyjesz Szybko, Umierasz Młodo' by Fabuła? It's a hip-hop track with electronic and pop influences. The song has catchy instrumentals and a male vocal performance. It could add a dynamic and vibrant element to your video.
+
+### sample_idx=2958 | rank=1 | BERT-F1=0.9457220435142517 | L2=0.0
+
+- video_id: `cViUURytFYk`
+- gt_music_id: `cViUURytFYk_G__GL1Basyk`
+- top1_music_id: `cViUURytFYk_G__GL1Basyk`
+- top1_is_gt: `1`
+- metadata unsupported rate: `0.5000`
+- user_text: That sounds great, but I would like to incorporate Bruno Mars' style into my video. I'm looking for a track with acoustic and folk elements, along with rock and pop influences. Female vocals would be a bonus.
+- generated_text: Allow me to recommend 'Count on Me' by Bruno Mars. It's a track from his album 'Count on Me'. This song combines acoustic, folk, rock, and pop elements, with female vocals. It has a heartfelt and emotional vibe that could be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Count on Me' by Bruno Mars. It's a track from his album 'Count on Me'. It combines acoustic, folk, rock and pop elements with powerful female vocals. The song has a heartfelt and uplifting vibe that could enhance your video.
+- top1_reference_text: Allow me to recommend 'Count on Me' by Bruno Mars. It's a track from his album 'Count on Me'. It combines acoustic, folk, rock and pop elements with powerful female vocals. The song has a heartfelt and uplifting vibe that could enhance your video.
+
+### sample_idx=1634 | rank=1 | BERT-F1=0.9431572556495667 | L2=0.0
+
+- video_id: `2mRrXQfI-zQ`
+- gt_music_id: `2mRrXQfI-zQ_cUeVGctTaFM`
+- top1_music_id: `2mRrXQfI-zQ_cUeVGctTaFM`
+- top1_is_gt: `1`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds interesting, I like the hip-hop and electronic types in your music recommendations. But I would like to incorporate a bit more of Booba's distinctive style, especially their experimental and female vocal components. I'm also interested in the rock and beat influences.
+- generated_text: Allow me to recommend 'Garde la pêche' by Booba. It's a track from their album 'Garde la pêche'. It combines elements of hip-hop, electronic, and rock with experimental and female vocal influences. The song also has a strong beat and rock vibe that could be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Garde la pêche' by Booba. It's a track from his album 'Garde la pêche'. It combines elements of hip-hop, electronic, and rock with experimental and female vocalists. The song has a techno and beat-driven sound that could be a fitting choice for your video.
+- top1_reference_text: Allow me to recommend 'Garde la pêche' by Booba. It's a track from his album 'Garde la pêche'. It combines elements of hip-hop, electronic, and rock with experimental and female vocalists. The song has a techno and beat-driven sound that could be a fitting choice for your video.
+
+### sample_idx=3078 | rank=1 | BERT-F1=0.9388226866722107 | L2=0.0
+
+- video_id: `EIy0RiZq87s`
+- gt_music_id: `EIy0RiZq87s_Y5Uh2yuzhgo`
+- top1_music_id: `EIy0RiZq87s_Y5Uh2yuzhgo`
+- top1_is_gt: `1`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great, but I would like to incorporate a bit more of Enrique Iglesias's distinctive style, especially his rock and pop components. I'm also interested in female vocals and indie influences.
+- generated_text: Allow me to recommend 'Alguien Soy Yo' by Enrique Iglesias. It's a track from his album 'Alguien Soy Yo'. It combines elements of rock, pop, and indie with female vocals. This song may be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Alguien Soy Yo' by Enrique Iglesias. It's a track from his album 'Alguien Soy Yo'. It combines elements of rock, pop, and indie with female vocals. It has a guitar-focused sound and a mix of alternative influences. This song could be a fitting choice for your video.
+- top1_reference_text: Allow me to recommend 'Alguien Soy Yo' by Enrique Iglesias. It's a track from his album 'Alguien Soy Yo'. It combines elements of rock, pop, and indie with female vocals. It has a guitar-focused sound and a mix of alternative influences. This song could be a fitting choice for your video.
+
+### sample_idx=373 | rank=1 | BERT-F1=0.9376680254936218 | L2=0.0
+
+- video_id: `i-HtUuzHKTE`
+- gt_music_id: `i-HtUuzHKTE_mFFH3HM3Rzg`
+- top1_music_id: `i-HtUuzHKTE_mFFH3HM3Rzg`
+- top1_is_gt: `1`
+- metadata unsupported rate: `0.0000`
+- user_text: Sounds interesting, but I'm looking for a track with more of a pop-rock vibe and a male vocalist.
+- generated_text: In that case, I would recommend 'Believer' by Sandlot Heroes. This track has a pop-rock sound with elements of alternative and indie. It features a male vocalist and would be a great fit for your video.
+- reference_text: In that case, I would recommend 'Believer' by Sandlot Heroes. This track has a pop-rock sound with elements of alternative rock and indie. It features a male vocalist and has a catchy and energetic vibe. It would work well for your video.
+- top1_reference_text: In that case, I would recommend 'Believer' by Sandlot Heroes. This track has a pop-rock sound with elements of alternative rock and indie. It features a male vocalist and has a catchy and energetic vibe. It would work well for your video.
+
+### sample_idx=95 | rank=1 | BERT-F1=0.9375485181808472 | L2=0.07629071921110153
+
+- video_id: `a-pYG7ZCLj0`
+- gt_music_id: `a-pYG7ZCLj0_fS_hoy6Zhos`
+- top1_music_id: `a-pYG7ZCLj0_fS_hoy6Zhos`
+- top1_is_gt: `1`
+- metadata unsupported rate: `0.5000`
+- user_text: Sounds interesting, but I'm looking for something with a more electronic and dance vibe. Can you recommend something like that?
+- generated_text: Certainly! If you're looking for a track with a more electronic and dance vibe, I would recommend 'Will You Be Mine Tonight? by TonyG'. This track falls under the electronic, dance, and pop genres, and it has a catchy beat and energetic sound. It would be a great fit for your video.
+- reference_text: Sure! If you're looking for a track with a more electronic and dance vibe, I would recommend 'Will You Be Mine Tonight?' by TonyG. This track falls under the electronic, dance, pop, rock, and indie genres. It has a catchy beat and upbeat energy that would be perfect for your video.
+- top1_reference_text: Sure! If you're looking for a track with a more electronic and dance vibe, I would recommend 'Will You Be Mine Tonight?' by TonyG. This track falls under the electronic, dance, pop, rock, and indie genres. It has a catchy beat and upbeat energy that would be perfect for your video.
+
+## failure_ranking_miss
+
+### sample_idx=13 | rank=214 | BERT-F1=0.8317095041275024 | L2=0.14462751150131226
+
+- video_id: `tu-n5fUfjc4`
+- gt_music_id: `tu-n5fUfjc4_8fCX0dDDWnM`
+- top1_music_id: `F6bEuw-MKsw_UCHSW-nQXpE`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great! I'm looking for a track with a similar hip-hop and electronic style like Yojee's 'En Attendant JOY&PAIN'. It would be ideal if the song also incorporates indie and rock influences.
+- generated_text: Allow me to recommend 'En Attendant JOY&PAIN' by Yojee. It's a track from his album 'JOY&PAIN'. The song combines elements of hip-hop, electronic, indie, and rock genres. It has a unique blend of styles that could be a fitting choice for your video.
+- reference_text: Let me suggest 'En Attendant JOY&PAIN' by Yojee. It's a track from Yojee's upcoming album 'JOY & PAIN'. It combines elements of hip-hop, electronic, dance, and pop music. The song was recorded in 2013 and may contain the specific style and influences you're looking for.
+- top1_reference_text: I suggest you check out 'JIIW HD' by Fata EL PResidente. It's a track from his album 'IQRA 2014' and combines elements of hip-hop, rock, and indie music. This track might be a fitting choice to incorporate Fata EL PResidente's unique style into your video.
+
+### sample_idx=871 | rank=193 | BERT-F1=0.7800001502037048 | L2=0.2102777659893036
+
+- video_id: `Idy-4F8iTH4`
+- gt_music_id: `Idy-4F8iTH4_ExfeLj_vNyo`
+- top1_music_id: `7eZ4cAFDSgA_oZJ2CsSxvNw`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.6667`
+- user_text: Sounds good, but I'm looking for something more electronic and dance-oriented with a pop and hip-hop influence.
+- generated_text: In that case, I would recommend 'Nádhera' by Strapo featuring DJ Spinhandz. This track combines electronic, pop, and hip-hop elements, creating a dance-oriented sound. It has a catchy beat and a vibrant energy that will add excitement to your video.
+- reference_text: In that case, I would recommend 'RENEKLEVELAND.BLOGG.NO - SLIK FOLK DANSER PÅ BYN'. This track has an electronic and dance sound with elements of pop and hip-hop. It's perfect for creating a vibrant and energetic atmosphere in your video.
+- top1_reference_text: Allow me to recommend 'Nádhera' by Strapo featuring DJ Spinhandz. It's a track from Strapo's album '23' and incorporates elements of hip-hop, electronic, pop, and rock. The song also has ambient undertones that could add a unique atmosphere to your video.
+
+### sample_idx=941 | rank=158 | BERT-F1=0.710812509059906 | L2=0.3099062144756317
+
+- video_id: `aEUaGjIxq08`
+- gt_music_id: `aEUaGjIxq08_TnyeIvuVF9g`
+- top1_music_id: `IMZ-mAu5SB4_QYlyDvT7UPw`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.5000`
+- user_text: That sounds great, but I'm also interested in incorporating elements of DJ Burn One's style into the music. Can you recommend a track that combines hip-hop, electronic, and rock genres?
+- generated_text: I suggest checking out 'Burn One' by DJ Burn One. It's a track from his album 'Burn One'. The song combines elements of hip-hop, electronic, and rock genres, which aligns well with the style you're looking for. It has a fast-paced beat and features male vocals.
+- reference_text: Allow me to recommend the track 'MoTioN PiCTuRe' by @CSHOT. It's a hip-hop and electronic-influenced song with elements of blues and rock. The track is from DJ Burn One's album 'The Ashtray'. It has a chillout vibe and could be a fitting choice for your video.
+- top1_reference_text: Allow me to recommend the track 'spugy B music video view 1'. It's a track with pop, indie, and rock influences. Although there is no specific information available in the description, it aligns well with your preference for pop, indie, and rock. It may also have electronic and hip-hop elements. However, please note that there is no specific information available about vocals, female vocals, or drums.
+
+### sample_idx=2159 | rank=121 | BERT-F1=0.6883054971694946 | L2=0.2724587619304657
+
+- video_id: `5xwU4mZJO0U`
+- gt_music_id: `5xwU4mZJO0U_S0VhJOFYflo`
+- top1_music_id: `BPflqpsiNV4_FPXWAxHz470`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great! I really like the rock and electronic fusion in your recommendations. However, I would like to incorporate some hip-hop and pop elements into the music as well. Do you have any suggestions?
+- generated_text: Allow me to recommend '24-7-365' by Reportero. It's a track from their album '24-7-365'. The song combines elements of hip-hop, pop, and rock with electronic beats. It has a fast-paced and energetic vibe that could be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Kung Fu' by Critical featuring DJ Tin Ho & MastaMic. It's a collaboration between Swedish rapper Critical, DJ Tin Ho, and MastaMic from Hong Kong. Although I couldn't find specific details about the track, based on the artists involved, it's likely to have elements of hip-hop, electronic, and pop. This track may add some diversity to your video project.
+- top1_reference_text: Allow me to recommend '24-7-365' by Reportero. Although I don't have much information about this track, based on its tags (Hip-Hop, rock, pop, dance, 90s) it could be a fitting choice for your video. It may contain the specific elements you want from the 90s era, including dance and rock influences. It could also have a catchy beat.
+
+### sample_idx=1856 | rank=120 | BERT-F1=0.6613079309463501 | L2=0.22543089091777802
+
+- video_id: `Gsg6phjViZ0`
+- gt_music_id: `Gsg6phjViZ0_Ct7eRpQ2vXY`
+- top1_music_id: `qzOu1aRjtQ0_fUBaGcWz5Eo`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.5000`
+- user_text: Sounds good, but I'm looking for something that has a more positive and uplifting vibe with a touch of soul.
+- generated_text: In that case, I would recommend 'WELL RESPECTED' by LA THE DARKMAN feat;. This track is part of the album 'WELL RESPECTED' and offers a positive and uplifting vibe with a touch of soul. It's perfect for creating a motivational and inspiring atmosphere in your video.
+- reference_text: In that case, I would recommend 'Positive rap - Universal Disciple - War'. This track has elements of Hip-Hop, electronic, rock, indie, and soul. It delivers a positive message and uplifts the listener with its soulful sound. Although the track doesn't have a specific title, it is part of the 'Mixtape 3 - Untold Scriptures' album by Universal Disciple.
+- top1_reference_text: Allow me to recommend 'WELL RESPECTED' by LA THE DARKMAN feat. WILLIE THE KID. It's a hip-hop track from the mixtape 'LIVING NOTORIOUSLY', with electronic and indie influences. The song features male vocals and was edited by Aaron Banks. Although it doesn't contain female vocals, it captures the electronic and indie elements you're looking for.
+
+### sample_idx=156 | rank=118 | BERT-F1=0.6876873970031738 | L2=0.2646642327308655
+
+- video_id: `RvYL2iai7ks`
+- gt_music_id: `RvYL2iai7ks_ji18GR7u2Ng`
+- top1_music_id: `9QnhENTgkwY_awZOA0pleGw`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great. However, I would like to incorporate a bit more of Hatcha's style into the music. I'm interested in his hip-hop and electronic elements, as well as the chillout vibe.
+- generated_text: Allow me to recommend 'Hatcha's 10th Birthday Party' by Hatcha. It's a track from his album 'Hatcha's 10th Birthday Party'. The song combines elements of hip-hop, electronic, and rock with a chillout vibe. It was recorded in 2010 and may contain the specific elements you're looking for.
+- reference_text: Allow me to recommend 'I'm a baller' by Hatcha. Although I don't have much information about this track, based on Hatcha's style and the description provided, it could be a suitable choice for your video. Hatcha is known for his hip-hop and electronic sound with a touch of chillout. Give it a try!
+- top1_reference_text: Certainly! I recommend 'The Return' by RADIx. It's the first single off their new LP and is entirely produced by Statik Selektah. The track combines elements of hip-hop, electronic, and rock, which aligns well with the style you're looking for. It has a chillout vibe and was released on RADIx's official website.
+
+## failure_low_generation_similarity
+
+### sample_idx=4048 | rank=3 | BERT-F1=0.29538214206695557 | L2=0.9882327318191528
+
+- video_id: `DnmlerNcJfM`
+- gt_music_id: `DnmlerNcJfM_3FZqfwE5EKI`
+- top1_music_id: `vTWAhHxTCRQ_DJUBTo_-gnw`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: Звучит интересно! Я ищу что-то с электронным звучанием и атмосферным настроем. Есть что-то такое в жанре ambient или chillout?
+- generated_text: 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+- reference_text: Если ты интересуешься электронной музыкой с атмосферным настроем, то я бы порекомендовал тебе трек 'Traumatisé' от BOOBA X SIBOY X GRADUR. Хотя у меня нет подробной информации о треке, основываясь на его названии, я могу предположить, что он может иметь тот атмосферный и электронный звук, который тебе нужен.
+- top1_reference_text: Allow me to recommend 'одной крови' by 91fm ft. Ghost. It's a track from 91fm and features Ghost as a guest artist. This song combines elements of hip-hop, electronic, pop, and indie, with influences of R&B and male vocals. It may be a fitting choice for your video as it reflects 91fm's distinctive style.
+
+### sample_idx=2110 | rank=8 | BERT-F1=0.30472177267074585 | L2=0.3731640577316284
+
+- video_id: `b7G9_AcPvQQ`
+- gt_music_id: `b7G9_AcPvQQ_hsiYrIt7Erg`
+- top1_music_id: `cj2oar6v-tg_Zf0CbUVZgUY`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great, but I would like to have a track with a female vocalist and a catchy pop melody. Also, it would be nice if the track has a touch of electronic and indie style.
+- generated_text: Allow me to recommend 'Kiss Kiss' by さんみゅ〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜
+- reference_text: Allow me to recommend 'I Love You Baby' by Unity. It's a pop and electronic track with an indie touch. Although there is no specific information about the vocalist, Unity is a band that consists of female vocalists. This song can provide a catchy pop melody and the electronic and indie elements you are looking for in your video.
+- top1_reference_text: Allow me to recommend 'くちびるNetwork' by さんみゅ〜. It's a debut single by さんみゅ〜, which falls under the indie genre. The track combines elements of electronic, dance, and pop with captivating female vocals. It has a unique and indie vibe that could be a fitting choice for your video.
+
+### sample_idx=3997 | rank=3 | BERT-F1=0.35247188806533813 | L2=0.3873726725578308
+
+- video_id: `-h1GDBPaUCc`
+- gt_music_id: `-h1GDBPaUCc_QG26AGzMPsY`
+- top1_music_id: `VDN6chPF_do_4DL9newuW-0`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great, but I would also like to incorporate some elements of electronic and indie music. I'm looking for a track with an ambient and experimental vibe, similar to the one in the target music.
+- generated_text: Allow me to recommend 'The Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making of the Making
+- reference_text: Allow me to recommend 'The Armenian Superhero' by Henry Jackman. It's a track from the 'Kick-Ass: The Score' album, released in 2010. This track combines elements of electronic, indie, rock, and experimental genres. It has an ambient and experimental vibe, which aligns well with the style you're looking for.
+- top1_reference_text: Allow me to recommend 'Lost And Found' (ODESZA Remix) by Pretty Lights. It's a track from their album 'The Hidden Shades'. This remix combines the electronic and indie elements you're looking for, with a more upbeat and danceable vibe. It was recorded specifically for the remix album, which may contain the specific elements you want.
+
+### sample_idx=1598 | rank=4 | BERT-F1=0.3850861191749573 | L2=0.365820050239563
+
+- video_id: `IdbitHTWYSM`
+- gt_music_id: `IdbitHTWYSM_FfT8SBYWrYg`
+- top1_music_id: `Gon7Zc7NvxQ_prtY5xJ2BfE`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great! I also want to include some elements of RADIO PROJECT's dance and electronic style in the music. Can you find a track that combines these genres with a strong beat?
+- generated_text: Certainly! I recommend 'Radio Project - 2013 - 2014 - 2015 - 2016 - 2017 - 2018 - 2019 - 2020 - 2021 - 2022 - 2023 - 2024 - 2025 - 2026 - 2027 - 2028 - 2029 - 2030 - 2031 - 203
+- reference_text: Sure! How about 'Celebration Lève Ton Verre (Steed Watt Remix)' by RADIO PROJECT? It's a dance and electronic track with a strong beat. The remix adds a unique touch to the original song. You can find it on SoundCloud by searching for Steed Watt.
+- top1_reference_text: Certainly! In that case, I would recommend 'Morgan Page feat Tegan & Sara - BodyWork (Lyric Video)'. This track is a fantastic electronic dance song with elements of house and electro. It has a catchy beat and a pop-inspired sound that will give your video a vibrant energy.
+
+### sample_idx=2198 | rank=5 | BERT-F1=0.40827199816703796 | L2=0.3479922413825989
+
+- video_id: `I0H4gwQAM0A`
+- gt_music_id: `I0H4gwQAM0A_3FZqfwE5EKI`
+- top1_music_id: `vjxaxK8HH3I_FadxV4C7eYM`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: Звучит интересно, но мне хотелось бы что-то с большим уклоном в инди и альтернативу, с мужским вокалом. Есть что-то подходящее?
+- generated_text: 100% I have just the track for you! 'Asi Nos Trataron' by Inze Brashier is a perfect fit for your video. It's a hip-hop track with electronic and rock influences, and it has a strong indie and alternative vibe. The song features a male vocalist and was released in 2009. It's a great choice to add a unique and edgy touch to your video.
+- reference_text: Если ты ищешь что-то с большим уклоном в инди и альтернативу, то я рекомендую обратить внимание на трек 'Demony' в исполнении Slim feat. Konstanta. Этот трек сочетает в себе жанры Hip-Hop, electronic, indie, rock и alternative. Он также имеет мужской вокал, который придаст твоему видео особую атмосферу и стиль. Он входит в альбом 'Demony' feat. Konstanta.
+- top1_reference_text: Sure! How about 'Asi Nos Trataron' by Inze Brashier? It's a hip-hop track with electronic and indie influences. The song is from their EP 'Luna Negra 06' and was recorded in Torrejón De Ardoz. It might provide the hip-hop and electronic elements you're looking for in your video.
+
+### sample_idx=2489 | rank=2 | BERT-F1=0.4129526615142822 | L2=0.3065437972545624
+
+- video_id: `QZawn7YJGFs`
+- gt_music_id: `QZawn7YJGFs_g8_YWmBoB7I`
+- top1_music_id: `cYQH37fx1c0_Xdp_DnPXAY8`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great, but I would like to incorporate a bit more of 毛鵬懿 Joseph Mao's distinctive style, especially his indie and alternative components. I'm also interested in female vocals and pop influences.
+- generated_text: Allow me to recommend '毛鵬懿 Joseph Mao 專輯 毛鵬懿 Joseph Mao 專輯 毛鵬懿 Joseph Mao 專輯 毛鵬懿 Joseph Mao 專輯 毛鵬懿 Joseph Mao 專輯 毛鵬懿 Joseph Mao 專輯 毛
+- reference_text: Allow me to recommend '夢想出發 [Heading for My Dream]' by 毛鵬懿 Joseph Mao. Although there is no specific information available about the track, based on the artist's style, it is likely to have indie and alternative elements, along with female vocals and a pop sound. This could be a fitting choice for your video.
+- top1_reference_text: Allow me to recommend 'Gosip Tetangga' by Ka5ya. It's a track from their single album. The song combines elements of rock, pop, and indie with alternative influences, which aligns well with Ka5ya's distinctive style. It features female vocals, but the male vocals and guitar-driven sound of Alit & Andin's version can add a unique touch to your video.
+
+## failure_metadata_inconsistency
+
+### sample_idx=595 | rank=2 | BERT-F1=0.76910799741745 | L2=0.2868105471134186
+
+- video_id: `rZcOV4Y7qG8`
+- gt_music_id: `rZcOV4Y7qG8_M_1g1N4ilQM`
+- top1_music_id: `xyQk3JgZOr4_feoGGCgtI9I`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great, but I’m looking for something with a bit of an 80s vibe as well, maybe something that includes some guitar and drums, ideally suitable for dance and team-building activities.
+- generated_text: Allow me to recommend 'Dance Like a Man' by The Dirty Dishes. It's a track from their album 'Dance Like a Man'. This song combines elements of rock, pop, and indie with a touch of 80s influence. It features guitar and drums, which can add a dynamic and energetic feel to your dance and team-building activities.
+- reference_text: In that case, 'Vamos a Bailar' by Gipsy Kings would be an excellent choice for your event. This track combines electronic, rock, pop, and dance genres with an 80s feel, including elements like fast pace, drums, and guitar. It’s ideal for dance and team-building activities, ensuring a lively and engaging atmosphere.
+- top1_reference_text: In that case, I would recommend 'Gianni Drudi & Omar Lambertini Vacanze Alternative'. While I don't have much information about this track, based on the description, it seems to have a rock and 80s sound with elements of pop and punk. This should give your video the edginess and retro feel you're looking for.
+
+### sample_idx=1048 | rank=12 | BERT-F1=0.7597195506095886 | L2=0.1525547355413437
+
+- video_id: `7xVZlQ-aiLA`
+- gt_music_id: `7xVZlQ-aiLA_rI912z48uLU`
+- top1_music_id: `x6HSfzJcqls_uR9HHIZS-30`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great. I also want to incorporate Michael Jackson's pop and rock style with female vocals. Do you have any recommendations that fit this description?
+- generated_text: Certainly! I recommend 'Beat It' by Michael Jackson. It's a pop and rock track with female vocals. The song has a catchy and energetic vibe that could complement your video. It's from Michael Jackson's album 'Beat It'.
+- reference_text: Certainly! I suggest using the song 'Bad' by Michael Jackson. It's a popular track from the 80s with a mix of pop, rock, and electronic elements. The song features Michael Jackson's iconic vocals and energetic drum beats. It would be a fitting choice to incorporate his distinctive style into your video.
+- top1_reference_text: Allow me to recommend 'Now' by Trouble Maker from their album 'Chemistry'. It's a track that combines elements of electronic, pop, ambient, and indie music. It also has a touch of rock in its sound. This song will add a distinctive and diverse style to your video, perfect for capturing the essence of Trouble Maker's music.
+
+### sample_idx=1161 | rank=87 | BERT-F1=0.6951829791069031 | L2=0.2994252145290375
+
+- video_id: `aCEC-YTevgQ`
+- gt_music_id: `aCEC-YTevgQ_pGsNtzC6FD4`
+- top1_music_id: `lzxM8FWB_pY_QqRq0i-m6wM`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great! I'm also interested in incorporating some elements of Monser Rap's style into my video. I'm looking for a mix of hip-hop, electronic, pop, and indie genres. Can you suggest something that aligns with these preferences?
+- generated_text: Certainly! I recommend 'Monser Rap' by Monser Rap. It's a track from his album 'Monser Rap'. The song combines elements of hip-hop, electronic, pop, and indie genres. It has a catchy beat and a unique style that could add a distinct flavor to your video.
+- reference_text: I recommend checking out 'LA MUERTE ME PERSIGUE' by Monser Rap. It's a track that combines hip-hop, rock, electronic, pop, and indie elements. Although I don't have much information about the track's album or artists, the description suggests that it was produced by LuisR Films and features music by DJ Kruel. This track could add the desired mix of genres to your video.
+- top1_reference_text: Allow me to recommend 'СКВОЗ #НИККИРАККЕТА'. It's a track produced by Aziat Production. Although the specific artist and album information is not available, it falls under the hip-hop and electronic genres with indie and rock influences. The track has a techno sound and male vocals, which adds a unique touch to the music. You may find it fitting for your video.
+
+### sample_idx=1563 | rank=6 | BERT-F1=0.7480348348617554 | L2=0.2275562733411789
+
+- video_id: `GoZRoyqsEiE`
+- gt_music_id: `GoZRoyqsEiE_alJn_s1PvkQ`
+- top1_music_id: `ylF5TPoy7L0_3V3f0f6XGwM`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great, but I'm also interested in incorporating some of Moon Duo's indie and alternative style into the music. Can you suggest something that combines rock, indie, and alternative genres?
+- generated_text: Certainly! I recommend 'Slow Cruel Hands of Time' by Moon Duo. It's a track from their album 'Slow Cruel Hands of Time'. The song combines elements of indie rock, alternative, and indie pop. It has a rock sound with a touch of electronic influence. It was recorded in 2012 and could be a fitting choice for your video.
+- reference_text: I suggest checking out Moon Duo's track 'Zoned', which is from their album 'Zoned b/w Take Me With You'. It's a blend of rock, indie, and alternative with a pop influence. The song was performed at the Liverpool International Festival Of Psychedelia in 2013, so it captures the specific vibe you're looking for.
+- top1_reference_text: Allow me to recommend 'Will We Last'. It's a track from Fufanu's album 'Few More Days to Go (Deluxe)'. It combines elements of indie rock, alternative, and punk with a loud guitar sound and male vocals. It could be a fitting choice for your video.
+
+### sample_idx=3496 | rank=44 | BERT-F1=0.8741763234138489 | L2=0.17111186683177948
+
+- video_id: `ddjr33QRbI0`
+- gt_music_id: `ddjr33QRbI0_bsIIkcCZyRQ`
+- top1_music_id: `nR-EbL6AVnk_f2vw4A-TTYU`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great, but I would like to incorporate a bit more of Hopsin's distinctive style, specifically his electronic and rock components. I'm also interested in alternative elements.
+- generated_text: Allow me to recommend 'The Rap Is Dead' by Hopsin. It's a track from his album 'The Rap Is Dead'. It combines elements of hip-hop, electronic, and rock with alternative influences. The song has a fast-paced and loud sound that could be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Hop Madness' by Hopsin. It's a track from the album 'Hop Madness - Single'. It combines elements of Hip-Hop, electronic, and rock with alternative influences. The song was performed by Hopsin and has a fast-paced, energetic vibe that could be a suitable choice for your video.
+- top1_reference_text: Allow me to recommend 'THE TYPE' by YOUNG RATCHIT featuring LADY V. This track has a Hip-Hop and electronic style with dance and pop influences. It was filmed in Orlando, Florida and could be a fitting choice for your video, with its experimental elements and energetic beats.
+
+### sample_idx=3737 | rank=5 | BERT-F1=0.7815825939178467 | L2=0.2872045040130615
+
+- video_id: `3FK8NN4_wWY`
+- gt_music_id: `3FK8NN4_wWY_jvVmvTaNQo0`
+- top1_music_id: `_muaFW8aKfQ_A-T1d9zmBd4`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great, I like the hip-hop and electronic style in your recommendation. However, I'd like to incorporate a bit more of Derramando Rap's distinctive style, especially their rock and alternative components. I'm also interested in vocal influences.
+- generated_text: Allow me to recommend 'Derramando Rap' by Derramando Rap. It's a track from their album 'Derramando Rap'. The song combines elements of hip-hop, rock, and electronic music with alternative influences. It features male vocals and was released in 2014. This track may contain the specific elements you're looking for.
+- reference_text: Allow me to recommend 'Derramando Rap' by USR feat. Kofla Mc. It's an original song with a video released in 2013. The track combines elements of hip-hop, electronic, rock, and pop genres, and it may contain vocal influences that align with your preferences.
+- top1_reference_text: Sure! I recommend 'It's For Me Intro' by Memphis Bleek. It's a track from the album 'The Movement 2' released in March 2014. The song blends hip-hop, rock, electronic, and ambient genres, capturing Memphis Bleek's unique style. It features keys played by Jtraxx and was produced by Phraze and Rell.
+
+## failure_title_or_manual_review
+
+### sample_idx=156 | rank=118 | BERT-F1=0.6876873970031738 | L2=0.2646642327308655
+
+- video_id: `RvYL2iai7ks`
+- gt_music_id: `RvYL2iai7ks_ji18GR7u2Ng`
+- top1_music_id: `9QnhENTgkwY_awZOA0pleGw`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great. However, I would like to incorporate a bit more of Hatcha's style into the music. I'm interested in his hip-hop and electronic elements, as well as the chillout vibe.
+- generated_text: Allow me to recommend 'Hatcha's 10th Birthday Party' by Hatcha. It's a track from his album 'Hatcha's 10th Birthday Party'. The song combines elements of hip-hop, electronic, and rock with a chillout vibe. It was recorded in 2010 and may contain the specific elements you're looking for.
+- reference_text: Allow me to recommend 'I'm a baller' by Hatcha. Although I don't have much information about this track, based on Hatcha's style and the description provided, it could be a suitable choice for your video. Hatcha is known for his hip-hop and electronic sound with a touch of chillout. Give it a try!
+- top1_reference_text: Certainly! I recommend 'The Return' by RADIx. It's the first single off their new LP and is entirely produced by Statik Selektah. The track combines elements of hip-hop, electronic, and rock, which aligns well with the style you're looking for. It has a chillout vibe and was released on RADIx's official website.
+
+### sample_idx=13 | rank=214 | BERT-F1=0.8317095041275024 | L2=0.14462751150131226
+
+- video_id: `tu-n5fUfjc4`
+- gt_music_id: `tu-n5fUfjc4_8fCX0dDDWnM`
+- top1_music_id: `F6bEuw-MKsw_UCHSW-nQXpE`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great! I'm looking for a track with a similar hip-hop and electronic style like Yojee's 'En Attendant JOY&PAIN'. It would be ideal if the song also incorporates indie and rock influences.
+- generated_text: Allow me to recommend 'En Attendant JOY&PAIN' by Yojee. It's a track from his album 'JOY&PAIN'. The song combines elements of hip-hop, electronic, indie, and rock genres. It has a unique blend of styles that could be a fitting choice for your video.
+- reference_text: Let me suggest 'En Attendant JOY&PAIN' by Yojee. It's a track from Yojee's upcoming album 'JOY & PAIN'. It combines elements of hip-hop, electronic, dance, and pop music. The song was recorded in 2013 and may contain the specific style and influences you're looking for.
+- top1_reference_text: I suggest you check out 'JIIW HD' by Fata EL PResidente. It's a track from his album 'IQRA 2014' and combines elements of hip-hop, rock, and indie music. This track might be a fitting choice to incorporate Fata EL PResidente's unique style into your video.
+
+### sample_idx=3158 | rank=19 | BERT-F1=0.7795088291168213 | L2=0.19809776544570923
+
+- video_id: `zq3QctrLZr0`
+- gt_music_id: `zq3QctrLZr0_Gs5NTHYNzEA`
+- top1_music_id: `y5AE1E8zlhU_jRnLCMx-AM8`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great, but I would like to incorporate a bit more of Fit for an Autopsy's distinctive style, especially their electronic and ambient components. I'm also interested in techno and male vocals.
+- generated_text: Allow me to recommend 'The Sea of Tragic Beasts' by Fit for an Autopsy. It's a track from their album 'The Sea of Tragic Beasts'. It combines elements of metal, rock, and heavy metal with electronic and ambient influences. The song features techno beats and male vocals, which could be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Tremors' by Fit for an Autopsy from their album 'Hellbound'. It combines elements of electronic, rock, and experimental genres with ambient undertones. The song features techno elements and male vocals, which aligns well with your preferences for electronic and male vocals. It was released in an official music video.
+- top1_reference_text: Allow me to recommend 'I Thought You Met Telly And Turned Me Into Casper' by Emmure. It's a track from their self-titled album 'I Thought You Met Telly And Turned Me Into Casper'. The song combines elements of metal, rock, and experimental genres, with a heavy and hard-hitting sound. It was recorded by Emmure and could be a fitting choice for your video.
+
+### sample_idx=2390 | rank=46 | BERT-F1=0.7714986205101013 | L2=0.17717736959457397
+
+- video_id: `BwT2sJeZNTU`
+- gt_music_id: `BwT2sJeZNTU_tCRzYS0PT38`
+- top1_music_id: `iQsK3QXFz_I_XGnWMzgiu-4`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds interesting, but I would like to incorporate a bit more of Maria Villalón's style, especially her instrumental and indie components. I'm also interested in piano and classical influences.
+- generated_text: Allow me to recommend 'Mi Amor' by Maria Villalón. It's a track from her album 'Mi Amor'. It combines elements of pop, rock, and indie with instrumental and classical influences. The song features piano and female vocals, which could be a fitting choice for your video.
+- reference_text: Allow me to recommend 'Sin Hablar' by María Villalón. It's a track from her upcoming album and features a mix of rock, pop, and indie genres. The song showcases Maria's distinctive vocal style and also includes instrumental elements. Although there is no specific mention of piano and classical influences, it might still align with your preferences. The music video for the song has been directed by Javi Lupiáñez.
+- top1_reference_text: Allow me to recommend '月光食堂 feat.acane_madder' by 古川本舗. It's an indie track with female vocals and guitar-focused sound. The song combines elements of rock, pop, and alternative, which aligns well with 古川本舗's unique style. Although there is no specific information about the track's release date or album name, the song itself captures the essence of their artistic style.
+
+### sample_idx=3376 | rank=79 | BERT-F1=0.41492053866386414 | L2=0.29630735516548157
+
+- video_id: `A4Hj1ds5FBg`
+- gt_music_id: `A4Hj1ds5FBg_DyGhl7rO2Qc`
+- top1_music_id: `MS0hlID_B8k_YIcnvcW3-cg`
+- top1_is_gt: `0`
+- metadata unsupported rate: `0.0000`
+- user_text: That sounds great, I like the electronic and hip-hop elements in your music recommendations. However, I would like to incorporate a bit more of OBLIK's style, especially their 90s and rock influences. I'm also interested in experimental and pop sounds.
+- generated_text: Allow me to recommend 'OBLIK - 2014 - 2015 - 2016 - 2017 - 2018 - 2019 - 2020 - 2021 - 2022 - 2023 - 2024 - 2025 - 2026 - 2027 - 2028 - 2029 - 2030 - 2031 - 2032 - 2033
+- reference_text: Allow me to recommend 'DOUBLE TRANCHANT' by OBLIK X LIL LOW. It's a track produced by gary wide and has a mix of hip-hop, electronic, and rock elements with a touch of 90s vibes. The song also has an experimental and pop sound that could be a fitting choice for your video.
+- top1_reference_text: In that case, I would recommend 'I Play WOW' by Jace Hall featuring Benny Cassette. This track combines the genres of Hip-Hop, electronic, and rock, and has an experimental sound with a touch of the 80s. It's part of the album 'Video Games Aren't Bad For You'.
+
+### sample_idx=3248 | rank=96 | BERT-F1=0.8278308510780334 | L2=0.32166504859924316
+
+- video_id: `TRvQPUql-bk`
+- gt_music_id: `TRvQPUql-bk_7t3MnS7lfho`
+- top1_music_id: `8v8OtmCbxfg_JsIaDbJ8SR8`
+- top1_is_gt: `0`
+- metadata unsupported rate: `1.0000`
+- user_text: That sounds great, I like the hip-hop and electronic genres in your music recommendations. However, I would like to incorporate a bit more of Primeiro Ato's distinctive style, especially their rock and pop components. I'm also interested in male vocals.
+- generated_text: Allow me to recommend 'Primeiro Ato' by Primeiro Ato. It's a track from their album 'Primeiro Ato'. It combines elements of hip-hop, electronic, and rock with pop influences. The song features male vocals and was released in 2012. It may contain the specific elements you want.
+- reference_text: Allow me to recommend 'NÓIS por NÓIS - Part. Sinistro 9mm' by Primeiro Ato. It's a track that combines elements of hip-hop, electronic, and R&B with rock and pop influences. The song features male vocals and was recorded by Primeiro Ato. This track may contain the specific elements you are looking for.
+- top1_reference_text: Let me suggest the track 'SUDAMERICANO' by 24 KILLZ featuring Lonely and Dinerozucio. It's a single by the hip-hop group 24killz from Santiago de Chile. This track combines elements of hip-hop, electronic, pop, and dance, with a fast and energetic beat. It features collaborations with Lonely, Dinerozucio, and Zouthbeats. This song could be a fitting choice for your video, incorporating the genres and influences you mentioned.
+

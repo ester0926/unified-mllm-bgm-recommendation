@@ -1,0 +1,2276 @@
+{
+  "generated_at": "2026-07-26T20:46:00",
+  "n_personas": 24,
+  "structure": "6 偏好原型 × 4 內容情境（B4 k=4 影片語意叢集）",
+  "design_notes": [
+    "內容情境改用 B4 影片語意叢集，而非教授原案的旅遊／美食／知識教學／日常生活：本資料集的影片即音樂自身 YouTube 影片，無法操作化為創作者拍攝的內容類型。",
+    "情境只決定該 Persona 配對哪些查詢影片，不限制其歷史曲目來源；原型與情境不相符的組合即為 B6 偏好—影片衝突分析的天然素材。",
+    "節奏維度以 musicnn 的 fast / slow 標籤定義，非 BPM 物理量測。",
+    "情緒價向（valence）在本資料集 80 個標籤詞彙中無任何對應項，標為不可操作化，僅供自然語言描述，不參與曲目篩選與評分。",
+    "「純音樂背景型」以『不具任何顯著人聲標籤』定義，而非要求 instrumental 標籤（該標籤僅 424 首，佔 0.49%，過於稀疏）。"
+  ],
+  "view_count_quantiles": {
+    "p25": 3940,
+    "p75": 63686
+  },
+  "vocal_tags_used": [
+    "choir",
+    "female",
+    "female vocal",
+    "female vocalists",
+    "female voice",
+    "male",
+    "male vocal",
+    "male voice",
+    "man",
+    "opera",
+    "singing",
+    "vocal",
+    "vocals",
+    "voice",
+    "woman"
+  ],
+  "field_operationalizable": {
+    "preferred_genres": true,
+    "rejected_genres": true,
+    "tempo": true,
+    "energy": true,
+    "vocal": true,
+    "instruments": true,
+    "popularity": true,
+    "novelty": true,
+    "consistency": true,
+    "selection_rule": false,
+    "valence": false
+  },
+  "field_notes": {
+    "tempo": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測",
+    "energy": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）",
+    "vocal": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）",
+    "popularity": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25",
+    "novelty": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目",
+    "consistency": "控制所選曲目的屬性離散度，不直接篩選曲目",
+    "valence": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+  },
+  "prototypes": {
+    "P1_high_energy": {
+      "label": "高能量節奏型",
+      "preferred_genres": [
+        "techno",
+        "dance",
+        "house",
+        "electro"
+      ],
+      "rejected_genres": [
+        "ambient",
+        "chillout",
+        "folk",
+        "blues"
+      ],
+      "tempo": "fast",
+      "energy": "high",
+      "valence": "正向、振奮",
+      "vocal": "any",
+      "instruments": [
+        "drums",
+        "beat",
+        "synth"
+      ],
+      "popularity": "mainstream",
+      "novelty": "low",
+      "consistency": "high",
+      "selection_rule": "優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。"
+    },
+    "P2_soft_ambient": {
+      "label": "柔和氛圍型",
+      "preferred_genres": [
+        "ambient",
+        "chillout",
+        "acoustic",
+        "folk"
+      ],
+      "rejected_genres": [
+        "metal",
+        "heavy metal",
+        "punk",
+        "hard rock"
+      ],
+      "tempo": "slow",
+      "energy": "low",
+      "valence": "平靜、內省",
+      "vocal": "any",
+      "instruments": [
+        "guitar",
+        "piano",
+        "strings"
+      ],
+      "popularity": "any",
+      "novelty": "low",
+      "consistency": "high",
+      "selection_rule": "偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。"
+    },
+    "P3_vocal_narrative": {
+      "label": "人聲敘事型",
+      "preferred_genres": [
+        "pop",
+        "rnb",
+        "soul"
+      ],
+      "rejected_genres": [
+        "techno",
+        "experimental"
+      ],
+      "tempo": "any",
+      "energy": "any",
+      "valence": "情感豐富、敘事性強",
+      "vocal": "vocal_required",
+      "instruments": [
+        "guitar",
+        "piano"
+      ],
+      "popularity": "mainstream",
+      "novelty": "low",
+      "consistency": "medium",
+      "selection_rule": "以人聲為主的曲目為核心，重視歌唱表現與敘事性。"
+    },
+    "P4_instrumental_bed": {
+      "label": "純音樂背景型",
+      "preferred_genres": [
+        "electronic",
+        "ambient",
+        "chillout"
+      ],
+      "rejected_genres": [
+        "rnb",
+        "soul"
+      ],
+      "tempo": "any",
+      "energy": "any",
+      "valence": "中性、不搶戲",
+      "vocal": "instrumental_leaning",
+      "instruments": [
+        "synth",
+        "guitar",
+        "strings"
+      ],
+      "popularity": "niche",
+      "novelty": "medium",
+      "consistency": "medium",
+      "selection_rule": "偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。"
+    },
+    "P5_genre_consistent": {
+      "label": "曲風一致型",
+      "preferred_genres": [
+        "rock",
+        "alternative rock",
+        "indie rock"
+      ],
+      "rejected_genres": [
+        "techno",
+        "house",
+        "hip-hop"
+      ],
+      "tempo": "any",
+      "energy": "any",
+      "valence": "一致的樂團感",
+      "vocal": "any",
+      "instruments": [
+        "guitar",
+        "drums"
+      ],
+      "popularity": "any",
+      "novelty": "very_low",
+      "consistency": "very_high",
+      "selection_rule": "跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。"
+    },
+    "P6_exploratory": {
+      "label": "探索多樣型",
+      "preferred_genres": [
+        "indie",
+        "alternative",
+        "funk",
+        "jazz",
+        "country",
+        "hip-hop"
+      ],
+      "rejected_genres": [],
+      "tempo": "any",
+      "energy": "any",
+      "valence": "多變",
+      "vocal": "any",
+      "instruments": [],
+      "popularity": "niche",
+      "novelty": "high",
+      "consistency": "low",
+      "selection_rule": "刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。"
+    }
+  },
+  "contexts": [
+    {
+      "cluster": 0,
+      "name": "主流流行舞曲音樂影片",
+      "n_videos": 1094
+    },
+    {
+      "cluster": 1,
+      "name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_videos": 1309
+    },
+    {
+      "cluster": 2,
+      "name": "樂團演出／搖滾金屬音樂影片",
+      "n_videos": 618
+    },
+    {
+      "cluster": 3,
+      "name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_videos": 1184
+    }
+  ],
+  "personas": [
+    {
+      "persona_id": "P1_high_energy__c0",
+      "prototype_id": "P1_high_energy",
+      "prototype_label": "高能量節奏型",
+      "context_cluster": 0,
+      "context_label": "主流流行舞曲音樂影片",
+      "context_n_query_videos": 1094,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "techno",
+            "dance",
+            "house",
+            "electro"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "folk",
+            "blues"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "fast",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "正向、振奮",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "drums",
+            "beat",
+            "synth"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 4794,
+      "feasible": true,
+      "description": "這位創作者主要產出「主流流行舞曲音樂影片」類型的影片，配樂偏好為「高能量節奏型」：優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。"
+    },
+    {
+      "persona_id": "P1_high_energy__c1",
+      "prototype_id": "P1_high_energy",
+      "prototype_label": "高能量節奏型",
+      "context_cluster": 1,
+      "context_label": "粉絲二創／歌詞與玩偶動畫影片",
+      "context_n_query_videos": 1309,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "techno",
+            "dance",
+            "house",
+            "electro"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "folk",
+            "blues"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "fast",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "正向、振奮",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "drums",
+            "beat",
+            "synth"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 4794,
+      "feasible": true,
+      "description": "這位創作者主要產出「粉絲二創／歌詞與玩偶動畫影片」類型的影片，配樂偏好為「高能量節奏型」：優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。"
+    },
+    {
+      "persona_id": "P1_high_energy__c2",
+      "prototype_id": "P1_high_energy",
+      "prototype_label": "高能量節奏型",
+      "context_cluster": 2,
+      "context_label": "樂團演出／搖滾金屬音樂影片",
+      "context_n_query_videos": 618,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "techno",
+            "dance",
+            "house",
+            "electro"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "folk",
+            "blues"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "fast",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "正向、振奮",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "drums",
+            "beat",
+            "synth"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 4794,
+      "feasible": true,
+      "description": "這位創作者主要產出「樂團演出／搖滾金屬音樂影片」類型的影片，配樂偏好為「高能量節奏型」：優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。"
+    },
+    {
+      "persona_id": "P1_high_energy__c3",
+      "prototype_id": "P1_high_energy",
+      "prototype_label": "高能量節奏型",
+      "context_cluster": 3,
+      "context_label": "嘻哈饒舌／街頭拍攝音樂影片",
+      "context_n_query_videos": 1184,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "techno",
+            "dance",
+            "house",
+            "electro"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "folk",
+            "blues"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "fast",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "正向、振奮",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "drums",
+            "beat",
+            "synth"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 4794,
+      "feasible": true,
+      "description": "這位創作者主要產出「嘻哈饒舌／街頭拍攝音樂影片」類型的影片，配樂偏好為「高能量節奏型」：優先挑選節奏明快、音量飽滿的電子舞曲，避免慢速或氛圍取向的曲目。"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c0",
+      "prototype_id": "P2_soft_ambient",
+      "prototype_label": "柔和氛圍型",
+      "context_cluster": 0,
+      "context_label": "主流流行舞曲音樂影片",
+      "context_n_query_videos": 1094,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "acoustic",
+            "folk"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "metal",
+            "heavy metal",
+            "punk",
+            "hard rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "slow",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "平靜、內省",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 2453,
+      "feasible": true,
+      "description": "這位創作者主要產出「主流流行舞曲音樂影片」類型的影片，配樂偏好為「柔和氛圍型」：偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c1",
+      "prototype_id": "P2_soft_ambient",
+      "prototype_label": "柔和氛圍型",
+      "context_cluster": 1,
+      "context_label": "粉絲二創／歌詞與玩偶動畫影片",
+      "context_n_query_videos": 1309,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "acoustic",
+            "folk"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "metal",
+            "heavy metal",
+            "punk",
+            "hard rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "slow",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "平靜、內省",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 2453,
+      "feasible": true,
+      "description": "這位創作者主要產出「粉絲二創／歌詞與玩偶動畫影片」類型的影片，配樂偏好為「柔和氛圍型」：偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c2",
+      "prototype_id": "P2_soft_ambient",
+      "prototype_label": "柔和氛圍型",
+      "context_cluster": 2,
+      "context_label": "樂團演出／搖滾金屬音樂影片",
+      "context_n_query_videos": 618,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "acoustic",
+            "folk"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "metal",
+            "heavy metal",
+            "punk",
+            "hard rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "slow",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "平靜、內省",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 2453,
+      "feasible": true,
+      "description": "這位創作者主要產出「樂團演出／搖滾金屬音樂影片」類型的影片，配樂偏好為「柔和氛圍型」：偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c3",
+      "prototype_id": "P2_soft_ambient",
+      "prototype_label": "柔和氛圍型",
+      "context_cluster": 3,
+      "context_label": "嘻哈饒舌／街頭拍攝音樂影片",
+      "context_n_query_videos": 1184,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "ambient",
+            "chillout",
+            "acoustic",
+            "folk"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "metal",
+            "heavy metal",
+            "punk",
+            "hard rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "slow",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "平靜、內省",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 2453,
+      "feasible": true,
+      "description": "這位創作者主要產出「嘻哈饒舌／街頭拍攝音樂影片」類型的影片，配樂偏好為「柔和氛圍型」：偏好慢速、不吵雜的氛圍或原音曲目，排斥高失真與強烈打擊樂。"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c0",
+      "prototype_id": "P3_vocal_narrative",
+      "prototype_label": "人聲敘事型",
+      "context_cluster": 0,
+      "context_label": "主流流行舞曲音樂影片",
+      "context_n_query_videos": 1094,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "pop",
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "experimental"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "情感豐富、敘事性強",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "vocal_required",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "以人聲為主的曲目為核心，重視歌唱表現與敘事性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 6051,
+      "feasible": true,
+      "description": "這位創作者主要產出「主流流行舞曲音樂影片」類型的影片，配樂偏好為「人聲敘事型」：以人聲為主的曲目為核心，重視歌唱表現與敘事性。"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c1",
+      "prototype_id": "P3_vocal_narrative",
+      "prototype_label": "人聲敘事型",
+      "context_cluster": 1,
+      "context_label": "粉絲二創／歌詞與玩偶動畫影片",
+      "context_n_query_videos": 1309,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "pop",
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "experimental"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "情感豐富、敘事性強",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "vocal_required",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "以人聲為主的曲目為核心，重視歌唱表現與敘事性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 6051,
+      "feasible": true,
+      "description": "這位創作者主要產出「粉絲二創／歌詞與玩偶動畫影片」類型的影片，配樂偏好為「人聲敘事型」：以人聲為主的曲目為核心，重視歌唱表現與敘事性。"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c2",
+      "prototype_id": "P3_vocal_narrative",
+      "prototype_label": "人聲敘事型",
+      "context_cluster": 2,
+      "context_label": "樂團演出／搖滾金屬音樂影片",
+      "context_n_query_videos": 618,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "pop",
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "experimental"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "情感豐富、敘事性強",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "vocal_required",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "以人聲為主的曲目為核心，重視歌唱表現與敘事性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 6051,
+      "feasible": true,
+      "description": "這位創作者主要產出「樂團演出／搖滾金屬音樂影片」類型的影片，配樂偏好為「人聲敘事型」：以人聲為主的曲目為核心，重視歌唱表現與敘事性。"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c3",
+      "prototype_id": "P3_vocal_narrative",
+      "prototype_label": "人聲敘事型",
+      "context_cluster": 3,
+      "context_label": "嘻哈饒舌／街頭拍攝音樂影片",
+      "context_n_query_videos": 1184,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "pop",
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "experimental"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "情感豐富、敘事性強",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "vocal_required",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "piano"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "mainstream",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "以人聲為主的曲目為核心，重視歌唱表現與敘事性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 6051,
+      "feasible": true,
+      "description": "這位創作者主要產出「嘻哈饒舌／街頭拍攝音樂影片」類型的影片，配樂偏好為「人聲敘事型」：以人聲為主的曲目為核心，重視歌唱表現與敘事性。"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c0",
+      "prototype_id": "P4_instrumental_bed",
+      "prototype_label": "純音樂背景型",
+      "context_cluster": 0,
+      "context_label": "主流流行舞曲音樂影片",
+      "context_n_query_videos": 1094,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "electronic",
+            "ambient",
+            "chillout"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "中性、不搶戲",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "instrumental_leaning",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "synth",
+            "guitar",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 3482,
+      "feasible": true,
+      "description": "這位創作者主要產出「主流流行舞曲音樂影片」類型的影片，配樂偏好為「純音樂背景型」：偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c1",
+      "prototype_id": "P4_instrumental_bed",
+      "prototype_label": "純音樂背景型",
+      "context_cluster": 1,
+      "context_label": "粉絲二創／歌詞與玩偶動畫影片",
+      "context_n_query_videos": 1309,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "electronic",
+            "ambient",
+            "chillout"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "中性、不搶戲",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "instrumental_leaning",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "synth",
+            "guitar",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 3482,
+      "feasible": true,
+      "description": "這位創作者主要產出「粉絲二創／歌詞與玩偶動畫影片」類型的影片，配樂偏好為「純音樂背景型」：偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c2",
+      "prototype_id": "P4_instrumental_bed",
+      "prototype_label": "純音樂背景型",
+      "context_cluster": 2,
+      "context_label": "樂團演出／搖滾金屬音樂影片",
+      "context_n_query_videos": 618,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "electronic",
+            "ambient",
+            "chillout"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "中性、不搶戲",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "instrumental_leaning",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "synth",
+            "guitar",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 3482,
+      "feasible": true,
+      "description": "這位創作者主要產出「樂團演出／搖滾金屬音樂影片」類型的影片，配樂偏好為「純音樂背景型」：偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c3",
+      "prototype_id": "P4_instrumental_bed",
+      "prototype_label": "純音樂背景型",
+      "context_cluster": 3,
+      "context_label": "嘻哈饒舌／街頭拍攝音樂影片",
+      "context_n_query_videos": 1184,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "electronic",
+            "ambient",
+            "chillout"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "rnb",
+            "soul"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "中性、不搶戲",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "instrumental_leaning",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "synth",
+            "guitar",
+            "strings"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "medium",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 3482,
+      "feasible": true,
+      "description": "這位創作者主要產出「嘻哈饒舌／街頭拍攝音樂影片」類型的影片，配樂偏好為「純音樂背景型」：偏好無顯著人聲的背景性曲目，避免歌聲搶走影片旁白的注意力。"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c0",
+      "prototype_id": "P5_genre_consistent",
+      "prototype_label": "曲風一致型",
+      "context_cluster": 0,
+      "context_label": "主流流行舞曲音樂影片",
+      "context_n_query_videos": 1094,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "rock",
+            "alternative rock",
+            "indie rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "house",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "一致的樂團感",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "drums"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "very_low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "very_high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 22943,
+      "feasible": true,
+      "description": "這位創作者主要產出「主流流行舞曲音樂影片」類型的影片，配樂偏好為「曲風一致型」：跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c1",
+      "prototype_id": "P5_genre_consistent",
+      "prototype_label": "曲風一致型",
+      "context_cluster": 1,
+      "context_label": "粉絲二創／歌詞與玩偶動畫影片",
+      "context_n_query_videos": 1309,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "rock",
+            "alternative rock",
+            "indie rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "house",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "一致的樂團感",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "drums"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "very_low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "very_high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 22943,
+      "feasible": true,
+      "description": "這位創作者主要產出「粉絲二創／歌詞與玩偶動畫影片」類型的影片，配樂偏好為「曲風一致型」：跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c2",
+      "prototype_id": "P5_genre_consistent",
+      "prototype_label": "曲風一致型",
+      "context_cluster": 2,
+      "context_label": "樂團演出／搖滾金屬音樂影片",
+      "context_n_query_videos": 618,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "rock",
+            "alternative rock",
+            "indie rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "house",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "一致的樂團感",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "drums"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "very_low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "very_high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 22943,
+      "feasible": true,
+      "description": "這位創作者主要產出「樂團演出／搖滾金屬音樂影片」類型的影片，配樂偏好為「曲風一致型」：跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c3",
+      "prototype_id": "P5_genre_consistent",
+      "prototype_label": "曲風一致型",
+      "context_cluster": 3,
+      "context_label": "嘻哈饒舌／街頭拍攝音樂影片",
+      "context_n_query_videos": 1184,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "rock",
+            "alternative rock",
+            "indie rock"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [
+            "techno",
+            "house",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "一致的樂團感",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [
+            "guitar",
+            "drums"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "very_low",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "very_high",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 22943,
+      "feasible": true,
+      "description": "這位創作者主要產出「嘻哈饒舌／街頭拍攝音樂影片」類型的影片，配樂偏好為「曲風一致型」：跨影片維持單一曲風家族，幾乎不跨出搖滾範圍。"
+    },
+    {
+      "persona_id": "P6_exploratory__c0",
+      "prototype_id": "P6_exploratory",
+      "prototype_label": "探索多樣型",
+      "context_cluster": 0,
+      "context_label": "主流流行舞曲音樂影片",
+      "context_n_query_videos": 1094,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "indie",
+            "alternative",
+            "funk",
+            "jazz",
+            "country",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "多變",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 16149,
+      "feasible": true,
+      "description": "這位創作者主要產出「主流流行舞曲音樂影片」類型的影片，配樂偏好為「探索多樣型」：刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。"
+    },
+    {
+      "persona_id": "P6_exploratory__c1",
+      "prototype_id": "P6_exploratory",
+      "prototype_label": "探索多樣型",
+      "context_cluster": 1,
+      "context_label": "粉絲二創／歌詞與玩偶動畫影片",
+      "context_n_query_videos": 1309,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "indie",
+            "alternative",
+            "funk",
+            "jazz",
+            "country",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "多變",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 16149,
+      "feasible": true,
+      "description": "這位創作者主要產出「粉絲二創／歌詞與玩偶動畫影片」類型的影片，配樂偏好為「探索多樣型」：刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。"
+    },
+    {
+      "persona_id": "P6_exploratory__c2",
+      "prototype_id": "P6_exploratory",
+      "prototype_label": "探索多樣型",
+      "context_cluster": 2,
+      "context_label": "樂團演出／搖滾金屬音樂影片",
+      "context_n_query_videos": 618,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "indie",
+            "alternative",
+            "funk",
+            "jazz",
+            "country",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "多變",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 16149,
+      "feasible": true,
+      "description": "這位創作者主要產出「樂團演出／搖滾金屬音樂影片」類型的影片，配樂偏好為「探索多樣型」：刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。"
+    },
+    {
+      "persona_id": "P6_exploratory__c3",
+      "prototype_id": "P6_exploratory",
+      "prototype_label": "探索多樣型",
+      "context_cluster": 3,
+      "context_label": "嘻哈饒舌／街頭拍攝音樂影片",
+      "context_n_query_videos": 1184,
+      "history_length": 15,
+      "history_mix": {
+        "core": 0.7,
+        "adjacent": 0.2,
+        "off": 0.1
+      },
+      "attributes": {
+        "preferred_genres": {
+          "value": [
+            "indie",
+            "alternative",
+            "funk",
+            "jazz",
+            "country",
+            "hip-hop"
+          ],
+          "operationalizable": true,
+          "note": ""
+        },
+        "rejected_genres": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "tempo": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 musicnn 標籤 fast / slow 定義，非 BPM 物理量測"
+        },
+        "energy": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "以 loud 標籤之有無定義（high = 具 loud；low = 不具 loud）"
+        },
+        "valence": {
+          "value": "多變",
+          "operationalizable": false,
+          "note": "本資料集標籤詞彙（共 80 詞）無任何情緒價向對應項，故不可操作化，僅供自然語言 Persona 描述使用"
+        },
+        "vocal": {
+          "value": "any",
+          "operationalizable": true,
+          "note": "vocal_required = 具顯著人聲標籤；instrumental_leaning = 不具任何顯著人聲標籤（instrumental 標籤僅 424 首，過於稀疏故不採為必要條件）"
+        },
+        "instruments": {
+          "value": [],
+          "operationalizable": true,
+          "note": ""
+        },
+        "popularity": {
+          "value": "niche",
+          "operationalizable": true,
+          "note": "以 youtube view_count 分位數定義：mainstream ≥ p75、niche ≤ p25"
+        },
+        "novelty": {
+          "value": "high",
+          "operationalizable": true,
+          "note": "控制合成歷史中 70/20/10 三層的取樣半徑，不直接篩選曲目"
+        },
+        "consistency": {
+          "value": "low",
+          "operationalizable": true,
+          "note": "控制所選曲目的屬性離散度，不直接篩選曲目"
+        },
+        "selection_rule": {
+          "value": "刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。",
+          "operationalizable": false,
+          "note": ""
+        }
+      },
+      "candidate_pool_size": 16149,
+      "feasible": true,
+      "description": "這位創作者主要產出「嘻哈饒舌／街頭拍攝音樂影片」類型的影片，配樂偏好為「探索多樣型」：刻意跨曲風選曲，偏好小眾與新鮮感，不追求跨影片一致性。"
+    }
+  ]
+}

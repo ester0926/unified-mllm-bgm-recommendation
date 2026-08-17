@@ -1,0 +1,627 @@
+﻿sample_idx,video_id,gt_music_id,condition,condition_description,claim_id,claim_text,claim_type,support_source,removed_source,is_supported,unsupported_reason,generated_text,llm_support_source,llm_is_supported,llm_reason,llm_raw,rule_support_source,rule_is_supported,agree_support_source,agree_is_supported
+2455,gRKzFMRviAs,gRKzFMRviAs_qbZBq5WNw3k,full,all modalities available; title/artist injection follows INJECT_TITLE,5,It has a fast-paced techno beat,audio,audio-supported,,1,source_available,"Certainly! I recommend 'Dance With Me' by D.J. Antoine. It's a track from the album 'Dance With Me'. This song combines elements of electronic, house, and pop with a touch of rock. It has a fast-paced techno beat and a catchy melody that could add a dynamic and energetic vibe to your video.",audio-supported,1,Claim is supported by the description of the song's genre and tempo.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and tempo.""
+}",audio-supported,1,1,1
+3256,cqoeZEweGy4,cqoeZEweGy4_HYgZR5EiTsM,full,all modalities available; title/artist injection follows INJECT_TITLE,5,It was released in 2012,unknown,unsupported,,0,no_detected_support_source,"Certainly! How about 'Uradi pravu stvar' by I? It's a track from their album 'Uradi pravu stvar'. The song combines hip-hop, R&B, and soul elements with electronic and pop influences. It was released in 2012 and could add a unique touch to your video.",audio-supported,1,Claim is supported by the song's metadata and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the song's metadata and genre information.""
+}",unsupported,0,0,0
+313,z7Dy7s5tg2o,z7Dy7s5tg2o_ziYVQWdqAEM,full,all modalities available; title/artist injection follows INJECT_TITLE,2,It's a track from his album 'Sunshine'.,audio,audio-supported,,1,source_available,"Certainly! How about 'Sunshine' by Danny Avila? It's a track from his album 'Sunshine'. This song combines elements of dance, electronic, pop, and house music. It has a catchy beat and a vibrant energy that could be a fitting choice for your video.",audio-supported,1,Claim is supported by the music sound and genre information provided.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre information provided.""
+}",audio-supported,1,1,1
+1897,bTOju_n8BJ4,bTOju_n8BJ4_ym5bIhHJvM4,full,all modalities available; title/artist injection follows INJECT_TITLE,2,This track has a dance,video,video-supported,,1,source_available,Certainly! I would recommend 'My life is mine' by Miriam Reyes. This track has a dance and electronic sound with female vocals. It's part of the album 'My life is mine' and offers a catchy and energetic vibe that would be perfect for your video.,audio-supported,1,Claim is supported by the music sound and genre mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre mentioned in the explanation.""
+}",video-supported,1,0,1
+3587,K7KMRBoqQUg,K7KMRBoqQUg_P56SorCCSmI,full,all modalities available; title/artist injection follows INJECT_TITLE,3,"This song combines elements of electronic, pop",audio,audio-supported,,1,source_available,"Allow me to recommend 'Shooting Star' by Owl City. It's a track from their album 'Shooting Star'. This song combines elements of electronic, pop, and indie genres, which aligns well with Owl City's distinctive style. It has a fast tempo and a catchy melody that can add energy to your video.",audio-supported,1,Claim relies on music genre and style information from the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from the audio modality.""
+}",audio-supported,1,1,1
+685,SSmTgwp15FQ,SSmTgwp15FQ_SH8esP19qww,full,all modalities available; title/artist injection follows INJECT_TITLE,1,"In that case, I would recommend 'Why God Made Love Songs' by Joel Crouse.",audio,audio-supported,,1,source_available,"In that case, I would recommend 'Why God Made Love Songs' by Joel Crouse. This track has a pop sound with elements of rock, indie, and alternative. It also has a touch of 80s influence, which adds a nostalgic feel to the music. It's a perfect fit for your video.",audio-supported,1,"Recommendation based on music genre, sound, and nostalgic feel.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation based on music genre, sound, and nostalgic feel.""
+}",audio-supported,1,1,1
+3819,qIJqSGTpfA0,qIJqSGTpfA0_babtBEl69zc,full,all modalities available; title/artist injection follows INJECT_TITLE,5,The song has a unique,audio,audio-supported,,1,source_available,"Allow me to recommend 'Shining Crane' by dESEO. It's a track from their album 'Shining Crane'. It combines elements of indie, pop, and dance with electronic beats and a fast-paced tempo. The song has a unique and catchy sound that could be a fitting choice for your video.",audio-supported,1,"The claim relies on the song's unique sound and tempo, which can be inferred from its audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the song's unique sound and tempo, which can be inferred from its audio features.""
+}",audio-supported,1,1,1
+2813,TFAyPoHmcBQ,TFAyPoHmcBQ_H_K1mi0EPdQ,full,all modalities available; title/artist injection follows INJECT_TITLE,2,This track has a rock,audio,audio-supported,,1,source_available,"In that case, I would recommend 'Let's Get By' by Paddy Clegg. This track has a rock and indie sound with elements of alternative and indie rock. It's a catchy and energetic song that will add a unique touch to your video.",audio-supported,1,The claim is supported by the music sound and genre mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim is supported by the music sound and genre mentioned in the explanation.""
+}",audio-supported,1,1,1
+1950,XS7C6uA8H7Y,XS7C6uA8H7Y_-xufahb_Szs,full,all modalities available; title/artist injection follows INJECT_TITLE,1,I would recommend 'Planos impossiveis' by Manu Gavassi.,general,general-supported,,1,source_available,"Certainly! I would recommend 'Planos impossiveis' by Manu Gavassi. This track is a pop song with female vocals. It has a catchy melody and a positive message, which would be a great fit for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",general-supported,1,0,1
+839,_0kWPBMmYEU,_0kWPBMmYEU_p21n2iGmd_s,full,all modalities available; title/artist injection follows INJECT_TITLE,5,pop with female vocals,audio,audio-supported,,1,source_available,"Allow me to recommend 'I'm Alive' by J.R. featuring J.R. & The Soul Survivors. It's a track from their album 'I'm Alive'. The song combines elements of hip-hop, soul, and pop with female vocals and drum beats. It was released in 2010 and has a catchy and energetic vibe that could be a fitting choice for your video.",audio-supported,1,Claim is supported by the description of the song's genre and vocals.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and vocals.""
+}",audio-supported,1,1,1
+2882,1yNEohtQSW8,1yNEohtQSW8_OBsuZx3xPcQ,full,all modalities available; title/artist injection follows INJECT_TITLE,4,alternative with female vocals.,audio,audio-supported,,1,source_available,"Allow me to recommend 'Vivre à en crever' by Mozart Opera Rock. It's a track from their album 'Vivre à en crever'. The song combines elements of rock, pop, and alternative with female vocals. It was released in 2005 and may contain the specific elements you're looking for.",audio-supported,1,Claim is supported by the description of the song's genre and vocals.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and vocals.""
+}",audio-supported,1,1,1
+323,7KnEzXBwovQ,7KnEzXBwovQ_VdzigTcir9U,full,all modalities available; title/artist injection follows INJECT_TITLE,3,"This song combines elements of hip-hop, pop",audio,audio-supported,,1,source_available,"Certainly! I recommend '너 때문에' by 2PM. It's a track from their album 'HOTTEST EVERYWHERE'. This song combines elements of hip-hop, pop, and electronic music, which aligns well with the Korean music scene. It has a catchy beat and features male vocals, which adds a unique touch to the track.",audio-supported,1,Claim is supported by the description of music genre and style in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of music genre and style in the explanation.""
+}",audio-supported,1,1,1
+780,5ZVQ6_Hd4zc,5ZVQ6_Hd4zc_58ip325ZOu8,full,all modalities available; title/artist injection follows INJECT_TITLE,4,ambient with chillout vibes.,unknown,unsupported,,0,no_detected_support_source,"Allow me to recommend 'Sunshine' by Breezewax. It's a track from their album 'Sunshine'. It combines elements of electronic, indie, and ambient with chillout vibes. The song features female vocals, which could be a fitting choice for your video.",audio-supported,1,"The explanation mentions 'chillout vibes' and 'female vocals', which are audio-related features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions 'chillout vibes' and 'female vocals', which are audio-related features.""
+}",unsupported,0,0,0
+3915,4Q4VQyHfiPI,4Q4VQyHfiPI_5KMORmZGYRc,full,all modalities available; title/artist injection follows INJECT_TITLE,2,It's a track from their album 'Se siente el party'.,audio,audio-supported,,1,source_available,"Allow me to recommend 'Se siente el party' by Jhon KPO & Edsson. It's a track from their album 'Se siente el party'. It combines elements of electronic, pop, and Hip-Hop with catchy vocals and a beat-driven sound. It was released in 2013 and may contain the specific elements you're looking for.",audio-supported,1,Claim is supported by the music sound and genre information provided.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre information provided.""
+}",audio-supported,1,1,1
+3003,0J808gIog1o,0J808gIog1o_PoJFn_RIdkg,full,all modalities available; title/artist injection follows INJECT_TITLE,1,"In that case, I would recommend 'Kimi no sobade' by Sayaka Shionoya.",general,general-supported,,1,source_available,"In that case, I would recommend 'Kimi no sobade' by Sayaka Shionoya. This track has a strong electronic and pop influence, with a powerful female vocal. It's part of the album 'Kimi no sobade' and would be a great fit for your video.",audio-supported,1,Recommendation depends on music genre and style mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation depends on music genre and style mentioned in the explanation.""
+}",general-supported,1,0,1
+3129,TcfxyMRLVRg,TcfxyMRLVRg_U9CmRdMAtIc,full,all modalities available; title/artist injection follows INJECT_TITLE,3,"The song combines elements of pop, rock",audio,audio-supported,,1,source_available,"Allow me to recommend '懸崖上的玫瑰' by 陳妍希. It's a track from her album '懸崖上的玫瑰'. The song combines elements of pop, rock, and indie with a touch of folk. It features Michelle Chen's distinctive female vocals, which aligns well with your preferences.",audio-supported,1,"The claim references music genre and style, which are audio-based features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references music genre and style, which are audio-based features.""
+}",audio-supported,1,1,1
+1240,Tqo1UOK1I44,Tqo1UOK1I44_skTcQLUZKEA,full,all modalities available; title/artist injection follows INJECT_TITLE,1,Allow me to recommend 'Generación 12' by Generación 12.,general,general-supported,,1,source_available,"Allow me to recommend 'Generación 12' by Generación 12. It's a track from their album 'Generación 12'. It combines elements of rock, indie, and alternative with electronic beats that could be a fitting choice for your video. It also has indie rock and drum influences that you mentioned.",audio-supported,1,Recommendation relies on music genre and style mentioned in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre and style mentioned in the audio modality.""
+}",general-supported,1,0,1
+2673,6I0Dv46ZgZE,6I0Dv46ZgZE_eZEP4QbTics,full,all modalities available; title/artist injection follows INJECT_TITLE,1,Allow me to recommend 'The Last Goodbye' by The Rasmus.,general,general-supported,,1,source_available,"Allow me to recommend 'The Last Goodbye' by The Rasmus. It's a track from their album 'The Last Goodbye'. The song combines elements of rock, indie, and alternative with a touch of metal. It has a slow and melodic sound with guitar-driven melodies. The track was released in 2012 and could be a fitting choice for your video.",audio-supported,1,"Claim relies on music genre, sound, and artist information.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre, sound, and artist information.""
+}",general-supported,1,0,1
+3463,Ga9vrr_fB-k,Ga9vrr_fB-k_nGpQxNRnNtQ,full,all modalities available; title/artist injection follows INJECT_TITLE,4,It has a fast-paced beat,audio,audio-supported,,1,source_available,"Certainly! How about 'Never Fear Dem' by Advance? It's a track from their album 'Never Fear Dem'. This song combines elements of Hip-Hop, electronic, and dance music. It has a fast-paced beat and a catchy rhythm that could add a dynamic touch to your video.",audio-supported,1,Claim is supported by the description of the song's rhythm and tempo.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's rhythm and tempo.""
+}",audio-supported,1,1,1
+256,JOUczfMaLTE,JOUczfMaLTE_F91pQy19-j0,full,all modalities available; title/artist injection follows INJECT_TITLE,2,It's a track from his album 'Fe'.,audio,audio-supported,,1,source_available,"Allow me to recommend 'Fe' by Juaninacka. It's a track from his album 'Fe'. It combines elements of hip-hop, electronic, and rock genres, with a chillout vibe. The song was released in 2012 and has a unique blend of genres that could be a fitting choice for your video.",audio-supported,1,"The claim references the song's album title 'Fe', which is audio-related information.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references the song's album title 'Fe', which is audio-related information.""
+}",audio-supported,1,1,1
+1322,pgoDe__Fm-Y,pgoDe__Fm-Y_vf4LLox2GTE,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,"It combines elements of pop, rock",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'Kodaline' by Kodaline. It's a track from their album 'Kodaline'. It combines elements of pop, rock, and indie with female vocalists, which could be a fitting choice for your video. It has a techno and fast-paced sound too.",audio-supported,1,Claim is supported by the presence of music genre and style information in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the presence of music genre and style information in the audio modality.""
+}",audio-supported,0,1,0
+2254,Fr2ZASMNaa0,Fr2ZASMNaa0_fQZL6kaJav0,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,5,It was released in 2014,unknown,unsupported,audio-supported,0,no_detected_support_source,"Allow me to recommend 'DJ Caique - 'Aqui Eu' by Dj Caique. It's a track from his album 'DJ Caique'. It combines elements of hip-hop, electronic, and rock with indie and male vocal influences that could be a fitting choice for your video. It was released in 2014 and has a unique style that aligns with your preferences.",audio-supported,1,The release year is mentioned in the audio metadata.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The release year is mentioned in the audio metadata.""
+}",unsupported,0,0,0
+4087,khe8nWxLC6A,khe8nWxLC6A_GM5NClxKzV4,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,"It combines elements of hip-hop, electronic",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'Troy Nathans - The Best of Troy Nathans'. It's a track from his album 'The Best of Troy Nathans'. It combines elements of hip-hop, electronic, and pop with a focus on vocal and guitar. It was released in 2012 and may contain the specific elements you want.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,0,1,0
+1528,lXhW9YQhkEU,lXhW9YQhkEU_tGlKac8RVS4,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,6,a catchy title that will appeal to fans of electronic,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Certainly, I recommend 'Electronic and 80s Influences' by The Chainsmokers. It's an electronic track that combines elements of rock, pop, and 80s with a touch of electronic and 80s influences. It has a fast-paced techno-beat and a catchy title that will appeal to fans of electronic and 80s influences.",audio-supported,1,"The claim relies on the music's title and genre, which are audio-based features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the music's title and genre, which are audio-based features.""
+}",audio-supported,0,1,0
+2688,7Rd-wFSnrTY,7Rd-wFSnrTY_a1_I0dYcqos,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,"Although I don't have much information about this specific track, it aligns with your interest in hip hop",preference,preference-supported,audio-supported,1,source_available,"I suggest checking out 'Gunplay' by Gunplay. It's a track that combines elements of hip hop, electronic, and rock genres. Although I don't have much information about this specific track, it aligns with your interest in hip hop and electronic music.",audio-supported,1,"Claim relies on the user's interest in hip hop music, which is inferred from audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the user's interest in hip hop music, which is inferred from audio features.""
+}",preference-supported,1,0,1
+215,yyaNJKJ6y6k,yyaNJKJ6y6k_0hMrj3zZxB8,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,4,dance feel to it.,video,video-supported,audio-supported,1,source_available,"In that case, I would recommend 'Electronic and Dance' by Lady Gaga. This track is a perfect fit for your video, as it has an electronic and dance feel to it. It's a great choice for a music video that needs a bit of an electronic and dance vibe.",audio-supported,1,Claim relies on the music's genre and style to infer a 'dance feel' without relying on visual cues.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the music's genre and style to infer a 'dance feel' without relying on visual cues.""
+}",video-supported,1,0,1
+3963,Wu8w5gYs6ZI,Wu8w5gYs6ZI_RzKd8etBkhQ,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,2,It's a track from Vinyl Therapy's album 'The Best of the Best'.,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'Vinyl Therapy - The Best of the Best'. It's a track from Vinyl Therapy's album 'The Best of the Best'. It combines elements of hip-hop, electronic, and jazz with a chillout vibe that could be a fitting choice for your video. It was released in 2012 and has a unique style that incorporates elements of soul and jazz.",audio-supported,1,Claim is supported by audio features and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by audio features and genre information.""
+}",audio-supported,0,1,0
+2813,TFAyPoHmcBQ,TFAyPoHmcBQ_H_K1mi0EPdQ,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,4,"indie vibe, which aligns with your preferences.",preference,preference-supported,audio-supported,1,source_available,"In that case, I would recommend 'Rock and Indie' by The Vaccines. This track has a rock and indie vibe, which aligns with your preferences. It falls under the genres of rock, indie, and alternative, with elements of electronic and pop. It's a great choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",preference-supported,1,0,1
+3754,GI6_MCrDl6o,GI6_MCrDl6o_fYEhUcWefXY,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,"It combines elements of hip-hop, electronic",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'Avicii' by Avicii. It's a track from their album 'Avicii'. It combines elements of hip-hop, electronic, and pop with female vocalists. It has a techno and fast-paced electronic beats that could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,0,1,0
+1311,CSvBwXlOQPY,CSvBwXlOQPY_iZOXwI35PZY,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,"Although I don't have specific information about this track, it aligns with the hip-hop",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"I suggest 'Hip-Hop' by Kendrick Lamarre. It's a track that combines elements of hip-hop, electronic, and ambient music. Although I don't have specific information about this track, it aligns with the hip-hop and ambient elements you're looking for.",audio-supported,1,Claim relies on music genre and style information from the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from the audio modality.""
+}",audio-supported,0,1,0
+357,aXgXFr89wpY,aXgXFr89wpY_5cdy3zeBS0w,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,2,"It's a track that combines elements of hip-hop, rock",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'Hip Hop' by The Hip Hop. It's a track that combines elements of hip-hop, rock, and electronic beats with male vocals. Although I don't have specific information about the track name, album name, or artists, it aligns well with your preferences for hip-hop, rock, and electronic beats with male vocals.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,0,1,0
+1036,YhFYuZyr5Yo,YhFYuZyr5Yo_vBqoI_4em_o,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,1,"Certainly, I recommend 'The Charlatans - 'The Charlatans' by The Charlatans.",general,general-supported,audio-supported,1,source_available,"Certainly, I recommend 'The Charlatans - 'The Charlatans' by The Charlatans. It's a track from their album 'The Charlatans'. The song combines elements of rock, indie, and alternative with a touch of electronic and techno influences. It has a fast-paced and loud sound with a mix of guitar and drums, which could be a fitting choice for your video.",audio-supported,1,"Recommendation relies on music genre, style, and sound characteristics.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre, style, and sound characteristics.""
+}",general-supported,1,0,1
+3605,Iyy9VDuS3oM,Iyy9VDuS3oM_4oB7o8Tl9so,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,2,"It's a track by ARTMATA, a collective of artists, musicians",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'ARTMATA - A.R.T.M.A.'. It's a track by ARTMATA, a collective of artists, musicians, and activists. It combines elements of indie, alternative, and electronic music with a focus on drums. It was released in 2012 and has a unique style that could be a fitting choice for your video.",audio-supported,1,Claim relies on music metadata and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music metadata and genre information.""
+}",audio-supported,0,1,0
+3463,Ga9vrr_fB-k,Ga9vrr_fB-k_nGpQxNRnNtQ,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,1,I suggest checking out 'Hip-Hop' by M.I.T.,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"I suggest checking out 'Hip-Hop' by M.I.T. It's a track that combines elements of Hip-Hop with electronic and dance music. Although I don't have specific information about the track name, album name, or artists, it aligns with the Hip-Hop genre and could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,0,1,0
+2316,Z9ry7JQTl6g,Z9ry7JQTl6g_lHhZJeHP7Ac,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,6,has a techno sound too.,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"Allow me to recommend 'I'm Gonna Be (500 Miles High)' by Stuart Wilson. It's a track from his album 'I'm Gonna Be (500 Miles High)'. It combines elements of pop, soul, and electronic with a catchy beat that could be a fitting choice for your video. It features female vocals and has a techno sound too.",audio-supported,1,Claim relies on the description of the song's sound and genre.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the description of the song's sound and genre.""
+}",audio-supported,0,1,0
+215,yyaNJKJ6y6k,yyaNJKJ6y6k_0hMrj3zZxB8,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,"This track is a perfect fit for your video, as it has an electronic",video,video-supported,audio-supported,1,source_available,"In that case, I would recommend 'Electronic and Dance' by Lady Gaga. This track is a perfect fit for your video, as it has an electronic and dance feel to it. It's a great choice for a music video that needs a bit of an electronic and dance vibe.",audio-supported,1,Claim relies on the music genre and style mentioned in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the music genre and style mentioned in the audio modality.""
+}",video-supported,1,0,1
+3290,6fAbkc0sdtA,6fAbkc0sdtA_3L1cePInKU8,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,4,It has a techno,unknown,unsupported,audio-supported,0,no_detected_support_source,"Certainly, I recommend 'Chillout' by The Chillout Crew. It's a track that combines elements of Hip-Hop, electronic, and rock with chillout vibes and female vocalists. It has a techno and fast-paced beat that could be a fitting choice for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",unsupported,0,0,0
+1615,M7GS21LLo3o,M7GS21LLo3o_znyeIK_Zsz0,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,3,It's a track from their album 'I'm Not Sorry'.,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"I understand this recommendation. In that case, I would like to recommend 'I'm Not Sorry' by The Stereo MCs. It's a track from their album 'I'm Not Sorry'. It combines elements of pop, rock, and folk with female vocals, which could be a fitting choice for your video.",audio-supported,1,The recommendation is based on the music sound and genre mentioned in the input.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The recommendation is based on the music sound and genre mentioned in the input.""
+}",audio-supported,0,1,0
+839,_0kWPBMmYEU,_0kWPBMmYEU_p21n2iGmd_s,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,4,"Although I don't have specific information about the track name, album name, or artists, it aligns well with your preferences for hip-hop, soul",preference,preference-supported,audio-supported,1,source_available,"Allow me to recommend 'Hip Hop' by T.I.C. It's a track that combines elements of hip-hop, soul, and pop with electronic beats and female vocals. Although I don't have specific information about the track name, album name, or artists, it aligns well with your preferences for hip-hop, soul, and pop with electronic beats and female vocals.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",preference-supported,1,0,1
+2711,YJtkZTx7fmE,YJtkZTx7fmE_uJdYPnlSqEs,wo_audio_all,music feature is zeroed and title/artist metadata injection is disabled,1,"In that case, I would recommend 'Soulful - Indie Vibe - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Ind",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_all,"In that case, I would recommend 'Soulful - Indie Vibe - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Indie Wedding - Ind",audio-supported,1,Recommendation relies on music genre and style (Indie Vibe) for the wedding playlist.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre and style (Indie Vibe) for the wedding playlist.""
+}",audio-supported,0,1,0
+3673,h5Dl5y6er04,h5Dl5y6er04_rHV4SRg0aSU,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",5,It has a fast-paced,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"In that case, I recommend 'Ezra by David R Black'. It's a track from David R Black's album 'Ezra by David R Black'. The album features a mix of rock and punk vibe tracks with electronic, indie, and alternative genres. It has a fast-paced and loud sound with a mix of techno and loud elements.",audio-supported,1,Claim is supported by audio features such as tempo and rhythm.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by audio features such as tempo and rhythm.""
+}",audio-supported,0,1,0
+3915,4Q4VQyHfiPI,4Q4VQyHfiPI_5KMORmZGYRc,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",1,Allow me to recommend 'Jhon KPO & Edsson' by Jhon KPO & Edsson.,general,general-supported,audio-supported,1,source_available,"Allow me to recommend 'Jhon KPO & Edsson' by Jhon KPO & Edsson. It's a track that combines elements of electronic, Hip-Hop, and rock genres. It has a fast-paced and energetic sound with a mix of techno and drum influences. It could be a fitting choice for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",general-supported,1,0,1
+1861,mjpjzg8cPbk,mjpjzg8cPbk_P0OCoCCMsUc,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",3,"Although I don't have specific information about this track, it falls under the genres of rock, electronic, dance",video,video-supported,audio-supported,1,source_available,"In that case, I would recommend 'We Stand (Live) by Jesus Culture feat. It's a track from the album 'We Stand (Live)'. Although I don't have specific information about this track, it falls under the genres of rock, electronic, dance, and alternative. It could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre information from audio features.""
+}",video-supported,1,0,1
+1896,kt2lmbNPFk4,kt2lmbNPFk4_C5PUb0hCtj4,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",3,It has a mix of hip-hop,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,Allow me to recommend 'TVXQ!' by TVXQ! It's a track that combines elements from both TVXQ! and the dance and pop genres. It has a mix of hip-hop and electronic components that could be a fitting choice for your recommendation.,audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",audio-supported,0,1,0
+2014,3t8sLQEPY0o,3t8sLQEPY0o_aoGA3sc0aMA,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",4,"Although I don't have specific information about this track, it might be a fitting choice for your recommendation.",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"Allow me to recommend 'Punk' by The Punks. It's a track that combines elements of punk, rock, and hard rock with a touch of electronic beats. Although I don't have specific information about this track, it might be a fitting choice for your recommendation.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,0,1,0
+3454,qf-l0RJThfA,qf-l0RJThfA_74jEqQczxGc,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",5,"alternative, which are often associated with indie",preference,preference-supported,audio-supported,1,source_available,"In that case, I would recommend 'Rock With An Indie' by Mike Dunn. This track has a rock and indie vibe with an alternative vibe. It falls under the genres of rock, indie, and alternative, which are often associated with indie and alternative vibe. It has a rock sound with a mix of genres like rock, indie, and alternative.",audio-supported,1,Claim relies on music genre and sound features mentioned in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and sound features mentioned in the audio modality.""
+}",preference-supported,1,0,1
+2555,m7Cq8gduKP0,m7Cq8gduKP0_gk2j6CDUFpI,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",3,"Although I don't have specific information about this track, it aligns with the hip-hop",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"I recommend 'Hip-Hop' by Beli Blanco. It's a track that combines elements of hip-hop, chillout, and electronic dance. Although I don't have specific information about this track, it aligns with the hip-hop and chillout genres you're looking for.",audio-supported,1,Claim relies on music genre information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre information from audio features.""
+}",audio-supported,0,1,0
+2688,7Rd-wFSnrTY,7Rd-wFSnrTY_a1_I0dYcqos,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",3,"Although I don't have specific information about this track, it aligns with your interest in hip hop",preference,preference-supported,audio-supported,1,source_available,"I recommend 'Gunplay' by Gunplay. It's a track that combines elements of hip hop and electronic music. Although I don't have specific information about this track, it aligns with your interest in hip hop and electronic music. It may contain the specific elements you want.",audio-supported,1,"Claim relies on user's interest in hip hop music, which is inferred from audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on user's interest in hip hop music, which is inferred from audio features.""
+}",preference-supported,1,0,1
+800,2NDgbLNNWTI,2NDgbLNNWTI_KOSv-bV8qDU,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",1,"In that case, I recommend 'I'm a fan of Julie Ingram.",general,general-supported,audio-supported,1,source_available,"In that case, I recommend 'I'm a fan of Julie Ingram. She is a talented singer and songwriter. Her music is known for its rock and pop influence. She has a strong female vocal presence. Her music is classified as pop, which is a fitting choice for your video.",audio-supported,1,"The explanation mentions Julie Ingram's music and vocal presence, indicating audio features are relevant.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions Julie Ingram's music and vocal presence, indicating audio features are relevant.""
+}",general-supported,1,0,1
+2813,TFAyPoHmcBQ,TFAyPoHmcBQ_H_K1mi0EPdQ,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",3,This track has a rock,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"In that case, I would recommend 'Rock and Indie' by Paddy Clegg. This track has a rock and indie vibe, which is a popular style of music. It combines elements of rock, indie, and electronic dance, with a focus on the 80s. It has a fast-paced techno-tapht and a loud sound that could be a fitting choice for your video.",audio-supported,1,"The claim relies on the music sound and genre, which is supported by the audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the music sound and genre, which is supported by the audio features.""
+}",audio-supported,0,1,0
+3225,QtCxsZNx8pE,QtCxsZNx8pE_zmWpJONAYzU,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",1,Allow me to recommend 'Couturier' by Couturier.,general,general-supported,audio-supported,1,source_available,"Allow me to recommend 'Couturier' by Couturier. It's a track that combines elements of electronic, rock, and techno influences. It has a unique style that could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",general-supported,1,0,1
+1455,XXgtN7TA1V8,XXgtN7TA1V8_LqTg77a6R9I,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",2,This track has a hip-hop,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"In that case, I would recommend 'Стары' by Стары. This track has a hip-hop and R&B vibe, along with ambient elements. It falls under the genres of hip-hop, R&B, and ambient. It has a mix of electronic and rock elements, which could be a fitting choice for your video.",audio-supported,1,Claim is supported by audio features such as genre and style mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by audio features such as genre and style mentioned in the explanation.""
+}",audio-supported,0,1,0
+839,_0kWPBMmYEU,_0kWPBMmYEU_p21n2iGmd_s,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",4,"Although I don't have specific information about this track, it aligns with your preferences for a track that combines elements of hip-hop, soul",preference,preference-supported,audio-supported,1,source_available,"In that case, I recommend 'Hip Hop' by Kool & The Gangsta. It's a track that combines elements of hip-hop, soul, and pop with female vocals and drum components. Although I don't have specific information about this track, it aligns with your preferences for a track that combines elements of hip-hop, soul, and pop with female vocals and drum components.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",preference-supported,1,0,1
+2650,sucNsk45Bzg,sucNsk45Bzg_sFQ647JCX2I,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",4,"Although I don't have specific information about this track, it may contain the specific elements you are looking for.",prompt,prompt-supported,audio-supported,1,source_available,"I suggest you consider 'The 1st Annual B.A.N.C. (B.A.) It's a track that combines elements of Hip-Hop, electronic, and dance with a focus on electronic and dance elements. Although I don't have specific information about this track, it may contain the specific elements you are looking for.",audio-supported,1,"The explanation mentions specific music genres and elements, indicating audio features are relevant.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions specific music genres and elements, indicating audio features are relevant.""
+}",prompt-supported,1,0,1
+3905,H-W68B4KTVI,H-W68B4KTVI_ulxuGZNxbA0,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",4,"It's a track that combines elements of electronic, ambient",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"I apologize for my lack of recommendation. I'm sorry to say that I don't have any specific recommendations that fit your criteria. However, I can recommend 'Sexy' by the artist. It's a track that combines elements of electronic, ambient, and female vocalists with a focus on the female vocalists. It has a techno and fast-paced beat with a focus on the female vocalists. It's a track that aligns with your criteria.",audio-supported,1,Claim relies on audio features such as genre and instruments mentioned in the track description.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on audio features such as genre and instruments mentioned in the track description.""
+}",audio-supported,0,1,0
+2449,JknekAM8pY4,JknekAM8pY4_FAi1atXAKHo,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",6,It also incorporates elements of 80s,unknown,unsupported,audio-supported,0,no_detected_support_source,"In that case, I recommend '從' by Aom Sushar. It's a track that combines elements of 80s and alternative rock with drums and vocal. It has a mix of electronic, dance, and pop genres with a mix of electronic, dance, and pop genres. It also incorporates elements of 80s and alternative rock.",audio-supported,1,The explanation mentions 'drums and vocal' which suggests the presence of audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions 'drums and vocal' which suggests the presence of audio features.""
+}",unsupported,0,0,0
+3981,s4UKAbZXMD8,s4UKAbZXMD8_c6F-7olJ_VI,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",1,I don't have any specific recommendations for this video.,video,video-supported,audio-supported,1,source_available,"I don't have any specific recommendations for this video. However, if you're looking for a track that combines elements of acoustic, folk, and rock, you might enjoy 'Sunshine' by The Wombats. It's a track that blends acoustic, folk, and rock elements with a touch of electronic and indie influences. It's a great choice for a video that wants to incorporate a mix of genres.",video-supported,1,Explanation is conditional on the video content and does not provide a specific recommendation.,"{
+  ""support_source"": ""video-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Explanation is conditional on the video content and does not provide a specific recommendation.""
+}",video-supported,1,1,1
+3603,aloy-hdZ3CE,aloy-hdZ3CE_VgXFWk_EDGU,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",3,"Although I don't have much information about this track, it falls under the genres of rock, indie",audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"In that case, I recommend 'True North' by The Crossing. It's a track with a similar style to 'True North'. Although I don't have much information about this track, it falls under the genres of rock, indie, and alternative, which align with the style of 'True North'.",audio-supported,1,Claim relies on music genre information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre information from audio features.""
+}",audio-supported,0,1,0
+3952,hlhgYkDKqn4,hlhgYkDKqn4_jKBmrIgG-Nw,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",5,It was released in 2012,unknown,unsupported,audio-supported,0,no_detected_support_source,"Allow me to recommend 'La Tierra del Olvido' by Carlos Vives. It's a track that combines elements of rock, folk, and electronic music. It has a fast-paced and electronic sound with a mix of guitar and vocal elements. It was released in 2012 and has a mix of rock and folk influences. It may contain the specific elements you want.",audio-supported,1,The claim is supported by the audio features mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim is supported by the audio features mentioned in the explanation.""
+}",unsupported,0,0,0
+2658,vIaH35-MLsk,vIaH35-MLsk_SGEzNs5dArw,wo_audio_feature_only,"music feature is zeroed, but title/artist metadata is kept",7,It has a mix of genres,audio,audio-supported,audio-supported,0,source_removed_by_wo_audio_feature_only,"In that case, I would recommend 'Love Me' by J. Cole. It's a track from the album 'Love Me' by J. Cole. It's a catchy chorus and a bit more of a romantic vibe. The song combines elements of Hip-Hop, pop, and dance with a romantic vibe. It has a mix of genres and a mix of elements that could be a fitting choice for your video.",audio-supported,1,Claim is supported by the song's genre and style mentioned in the audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the song's genre and style mentioned in the audio features.""
+}",audio-supported,0,1,0
+1897,bTOju_n8BJ4,bTOju_n8BJ4_ym5bIhHJvM4,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,2,"that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that",unknown,unsupported,preference-supported,0,no_detected_support_source,", is is that is, and that is, and that is, and that., and that., that is, and that, and that, and that, and that, and that., that., that. that? that. that. that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that,",audio-supported,1,Claim relies on music characteristics and genre-specific patterns.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music characteristics and genre-specific patterns.""
+}",unsupported,0,0,0
+3635,MsvUscdzkAc,MsvUscdzkAc_aZuqmdRgEHE,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,2,morning morning morning morning.,unknown,unsupported,preference-supported,0,no_detected_support_source,". today. today morning morning morning morning morning morning morning morning morning morning morning morning, and morning morning morning morning. morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning morning tomorrow morning morning tomorrow morning tomorrow morning tomorrow tomorrow tomorrow morning tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow tomorrow morning tomorrow tomorrow morning tomorrow tomorrow tomorrow morning tomorrow",audio-supported,1,"Claim relies on musical context and rhythm, indicating morning-themed music recommendation.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on musical context and rhythm, indicating morning-themed music recommendation.""
+}",unsupported,0,0,0
+3494,9EO4nBIe-yA,9EO4nBIe-yA_RUjHBwO0EgM,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,and was was was was.,unknown,unsupported,preference-supported,0,no_detected_support_source,.. is. is. for. was. for. and was back. for. is back. for. is back. and was back. and was back. and was back. and was back. and was was was was. and was was. was was. and was. was was. and was. was was. was. was was. and was. was. was was. was was to morning. was was to morning. was was was to was was was to was to was to was was to was to was to was to was to was to was that was that was that was that was that was that was,audio-supported,1,The claim appears to be related to the music's structure and progression.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim appears to be related to the music's structure and progression.""
+}",unsupported,0,0,0
+1434,Gzse71YV_-Q,Gzse71YV_-Q_dGe3HxoH1nM,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,2,"this, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that",unknown,unsupported,preference-supported,0,no_detected_support_source,"th, this is that is that.
+this, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that, that,",unsupported,0,The provided explanation does not contain any meaningful information and cannot be verified.,"{
+  ""support_source"": ""unsupported"",
+  ""is_supported"": false,
+  ""reason"": ""The provided explanation does not contain any meaningful information and cannot be verified.""
+}",unsupported,0,1,1
+1136,zI51uay2YXg,zI51uay2YXg_GAPYhU8aI8A,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,2,is is is is.,unknown,unsupported,preference-supported,0,no_detected_support_source,"is is is is is is is is is is is. is is. is is.
+ is is is.
+ is is is is.
+ is is is is is is is.
+ is is is.
+ is is is is.
+t.
+t.
+t.
+t.
+t.
+t.
+t.t.
+t't.
+t'tt.
+t'ttt.t.t.t.t.t.t.t.t.t.t.t.t.t.t.t.t.t.t.t.",audio-supported,1,The claim appears to be related to the music's sound and genre.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim appears to be related to the music's sound and genre.""
+}",unsupported,0,0,0
+3715,HalzeiAqMCs,HalzeiAqMCs_fJniB5oey-s,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,5,is for the city.,video,video-supported,preference-supported,1,source_available,. is is for. is for. is is for. and is for. and is is for times. is is for in morning. for in is for the city. is for the city. is for the city. is for the city. is for the city. and is for the city. is for morning. and is for morning. and is for morning. and is is for. and is for morning. and that's is for morning. to the morning. to the. and that is is. that. that is that. that. that is. that. that is to the the morning. to the morning,audio-supported,1,"The claim references music genre and city, which are audio-related features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references music genre and city, which are audio-related features.""
+}",video-supported,1,0,1
+1226,VBDoZ0Tu5CI,VBDoZ0Tu5CI_K29bp9zG0jA,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,"., and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",unknown,unsupported,preference-supported,0,no_detected_support_source,"., and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and,",unsupported,0,The explanation does not contain any relevant information to support the claim.,"{
+  ""support_source"": ""unsupported"",
+  ""is_supported"": false,
+  ""reason"": ""The explanation does not contain any relevant information to support the claim.""
+}",unsupported,0,1,1
+3587,K7KMRBoqQUg,K7KMRBoqQUg_P56SorCCSmI,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,3,a lot a lot.,unknown,unsupported,preference-supported,0,no_detected_support_source,. and. is a lot. for a lot. a lot. a lot for a lot. a lot. a lot. a lot. a lot. a lot. a lot a lot. a lot a lot. a a lot a lot a a lot a lot a a lot a a a lot a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a,audio-supported,1,The claim relies on the music's characteristics and features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the music's characteristics and features.""
+}",unsupported,0,0,0
+2176,3LJM-jE1ms4,3LJM-jE1ms4_A84hNilKxFM,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,s is is is is is.,unknown,unsupported,preference-supported,0,no_detected_support_source,"s.
+s is is is is is.
+s.s.
+s.s.s.s.
+s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s.s's.s's.s's's's's's's's's's's's's's's's's's's'",audio-supported,1,"The claim appears to be based on the music's characteristics, such as genre and mood.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim appears to be based on the music's characteristics, such as genre and mood.""
+}",unsupported,0,0,0
+2609,iwxzc2MlkRg,iwxzc2MlkRg_UB7-5vH_veA,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,2,and that is is.,unknown,unsupported,preference-supported,0,no_detected_support_source,and. and. and that is is. and that is is. and that is. and that is. and that is. that is. that is that. that. that. that is that. that. that. that. that. that' that' that that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that',audio-supported,1,"The claim appears to be related to the music's characteristics, such as genre, mood, or tempo.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim appears to be related to the music's characteristics, such as genre, mood, or tempo.""
+}",unsupported,0,0,0
+1603,l3IbMrnSJtM,l3IbMrnSJtM_1JLiGvkrL0s,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,2,that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,unknown,unsupported,preference-supported,0,no_detected_support_source,this. this morning. this morning. that. this morning. this morning. this morning. that. this morning. this morning. this morning. this morning. that. this morning. that. that. that. that. that. that that. that. that that that that. that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,unsupported,0,The generated explanation does not contain any meaningful information and appears to be repetitive nonsense.,"{
+  ""support_source"": ""unsupported"",
+  ""is_supported"": false,
+  ""reason"": ""The generated explanation does not contain any meaningful information and appears to be repetitive nonsense.""
+}",unsupported,0,1,1
+2172,sBTkevwy9xo,sBTkevwy9xo_i8Q6ZmEVZxI,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,unknown,unsupported,preference-supported,0,no_detected_support_source,for. that. for that. for that. for today. that' for that? for that. for today. for that! for that! for that! that! that! that! that! that! that! that! that! that! that that that! that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,general-supported,1,The explanation is a repetitive sequence of phrases without any specific reference to the input modalities.,"{
+  ""support_source"": ""general-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation is a repetitive sequence of phrases without any specific reference to the input modalities.""
+}",unsupported,0,0,0
+3170,pT9lqqvBsdo,pT9lqqvBsdo_iF7HM0jzDP8,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,3,that is for that is that that is that is that that that is that that is that that that is that is that that that that that is that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,unknown,unsupported,preference-supported,0,no_detected_support_source,is is that is for. that is is that for that is that is for that is that for that is that is for that is for that. that is for that is that that is that is that that that is that that is that that that is that is that that that that that is that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,unsupported,0,The generated explanation does not contain any meaningful information and appears to be a repetitive sequence of words.,"{
+  ""support_source"": ""unsupported"",
+  ""is_supported"": false,
+  ""reason"": ""The generated explanation does not contain any meaningful information and appears to be a repetitive sequence of words.""
+}",unsupported,0,1,1
+3715,HalzeiAqMCs,HalzeiAqMCs_fJniB5oey-s,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,3,for in is for the city.,video,video-supported,preference-supported,1,source_available,. is is for. is for. is is for. and is for. and is is for times. is is for in morning. for in is for the city. is for the city. is for the city. is for the city. is for the city. and is for the city. is for morning. and is for morning. and is for morning. and is is for. and is for morning. and that's is for morning. to the morning. to the. and that is is. that. that is that. that. that is. that. that is to the the morning. to the morning,audio-supported,1,"The claim references music-related phrases like 'for the city' and 'morning', indicating a connection to audio content.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references music-related phrases like 'for the city' and 'morning', indicating a connection to audio content.""
+}",video-supported,1,0,1
+2368,pQdbNvEAmo0,pQdbNvEAmo0_GOkwlQbLNiM,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,unknown,unsupported,preference-supported,0,no_detected_support_source,? to?t his morning.? that? for? that? for? for?? for? that? for? that? that? that? that? that? that? that? that? that? that? that? that? that? that? that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,general-supported,1,Explanation lacks specific modality references and appears to be a generic recommendation phrase.,"{
+  ""support_source"": ""general-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Explanation lacks specific modality references and appears to be a generic recommendation phrase.""
+}",unsupported,0,0,0
+3225,QtCxsZNx8pE,QtCxsZNx8pE_zmWpJONAYzU,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's,unknown,unsupported,preference-supported,0,no_detected_support_source,. and. and. is is. and. is a. and. and that's. and that's. and that's. and that's. and that's. and that's. and that's. that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's that's,general-supported,1,The explanation is a repetitive phrase with no clear connection to any specific modality.,"{
+  ""support_source"": ""general-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation is a repetitive phrase with no clear connection to any specific modality.""
+}",unsupported,0,0,0
+2455,gRKzFMRviAs,gRKzFMRviAs_qbZBq5WNw3k,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,that is that that.,unknown,unsupported,preference-supported,0,no_detected_support_source,that. that is that. that is that that. that is that that that. that that that that that that. that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that that,general-supported,1,The explanation is a repetitive phrase that does not rely on any specific modality.,"{
+  ""support_source"": ""general-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation is a repetitive phrase that does not rely on any specific modality.""
+}",unsupported,0,0,0
+2609,iwxzc2MlkRg,iwxzc2MlkRg_UB7-5vH_veA,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,3,that' that' that that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that',unknown,unsupported,preference-supported,0,no_detected_support_source,and. and. and that is is. and that is is. and that is. and that is. and that is. that is. that is that. that. that. that is that. that. that. that. that. that' that' that that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that' that',unsupported,0,The generated explanation does not contain any meaningful information and appears to be random text.,"{
+  ""support_source"": ""unsupported"",
+  ""is_supported"": false,
+  ""reason"": ""The generated explanation does not contain any meaningful information and appears to be random text.""
+}",unsupported,0,1,1
+2769,guwB1oxI3ko,guwB1oxI3ko_Qit1Ox1uOgY,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,"t.t, andt, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",unknown,unsupported,preference-supported,0,no_detected_support_source,"t.t, andt, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and",unsupported,0,The provided explanation does not contain any relevant information to support the claim.,"{
+  ""support_source"": ""unsupported"",
+  ""is_supported"": false,
+  ""reason"": ""The provided explanation does not contain any relevant information to support the claim.""
+}",unsupported,0,1,1
+1713,8n1M2_OuoEo,8n1M2_OuoEo_ylt23Hk65kM,wo_ltp,long-term preference feature is zeroed; title/artist metadata is kept,1,1010 1011 1111 1111 1111 11111 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111,unknown,unsupported,preference-supported,0,no_detected_support_source,"1010
+1011
+1111
+1111
+1111
+11111
+111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",unsupported,0,0,0
+781,bqzAothNuZs,bqzAothNuZs_7Exf7LE_ef0,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,4,"pop, with a touch of jazz.",audio,audio-supported,prompt-supported,1,source_available,"I recommend 'Be Staunch' by This Side Up. It's a track from their album 'Be Staunch'. The song combines elements of Hip-Hop, electronic, rock, and pop, with a touch of jazz. It has a unique blend of genres and a catchy beat that could add an interesting dynamic to your video.",audio-supported,1,"The claim references the song's genre and style, which can be inferred from its audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim references the song's genre and style, which can be inferred from its audio features.""
+}",audio-supported,1,1,1
+310,9wVRNILwL4I,9wVRNILwL4I_yp0PNekX4vI,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,6,"synth-focused sound, which could be a fitting choice for your video.",video,video-supported,prompt-supported,1,source_available,"I recommend 'Unchained Melody-917' by SINIMA BEATS. It's a track from their album 'Unchained Melody-917'. The song combines elements of Hip-Hop, electronic, and rock with a touch of pop. It has a techno and synth-focused sound, which could be a fitting choice for your video.",audio-supported,1,Claim is supported by the music sound and genre mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre mentioned in the explanation.""
+}",video-supported,1,0,1
+1713,8n1M2_OuoEo,8n1M2_OuoEo_ylt23Hk65kM,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,3,"combines elements of Hip-Hop, electronic, pop",audio,audio-supported,prompt-supported,1,source_available,"I recommend 'Guerreros' by C-kan featuring lluminatik. It's a track from the album 'Guerreros' and combines elements of Hip-Hop, electronic, pop, and rock. The song has a techno and fast-paced beat, which could add an energetic and dynamic vibe to your video.",audio-supported,1,Claim is supported by the song's genre and style mentioned in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the song's genre and style mentioned in the audio modality.""
+}",audio-supported,1,1,1
+1136,zI51uay2YXg,zI51uay2YXg_GAPYhU8aI8A,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,It was released in 2013,unknown,unsupported,prompt-supported,0,no_detected_support_source,"I recommend 'Ceria' by Lil O. It's a track from his album 'Ceria'. The song combines elements of Hip-Hop, electronic, pop, and indie genres. It has a chillout vibe with electronic beats and male vocals. It was released in 2013 and could be a fitting choice for your video.",audio-supported,1,Release year mentioned in audio metadata,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Release year mentioned in audio metadata""
+}",unsupported,0,0,0
+3290,6fAbkc0sdtA,6fAbkc0sdtA_3L1cePInKU8,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,captivating sound that will add a touch of emotion to your video.,video,video-supported,prompt-supported,1,source_available,"In terms of music style, 'When You Cry' by Desi Mo is a perfect fit. It combines elements of Hip-Hop, electronic, rock, and indie with female vocals. The track has a unique and captivating sound that will add a touch of emotion to your video.",audio-supported,1,Claim relies on the music's sound and genre to add emotion to a video.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the music's sound and genre to add emotion to a video.""
+}",video-supported,1,0,1
+3030,7dfx1xqgGMc,7dfx1xqgGMc_Vs_1IMX3GLE,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,1,"In that case, I would recommend the 'Summer Pop Medley 2011' by Sam Tsui.",audio,audio-supported,prompt-supported,1,source_available,"In that case, I would recommend the 'Summer Pop Medley 2011' by Sam Tsui. This medley features a mix of popular songs from the summer of 2011. It includes tracks like 'Party Rock Anthem' by LMFAO, 'Good Feeling' by Flo Rida, and 'Give Me Everything' by Pitbull. It's a great choice for creating a fun and energetic atmosphere in your video.",audio-supported,1,Recommendation based on music genre and era (summer of 2011),"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation based on music genre and era (summer of 2011)""
+}",audio-supported,1,1,1
+1226,VBDoZ0Tu5CI,VBDoZ0Tu5CI_K29bp9zG0jA,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,4,"electronic music, with female vocals.",audio,audio-supported,prompt-supported,1,source_available,"I recommend 'Eras Tu' by Santaye. It's a track from her album 'Eras Tu'. The song combines elements of pop, dance, and electronic music, with female vocals. It has a catchy and upbeat sound that could be a great fit for your video.",audio-supported,1,Claim is supported by the description of the song's genre and vocals.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of the song's genre and vocals.""
+}",audio-supported,1,1,1
+1689,SCJrvPr92u4,SCJrvPr92u4_-ey67-zHusQ,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,2,It's a track from his album 'My Queen'.,audio,audio-supported,prompt-supported,1,source_available,"I recommend 'My Queen' by YT Man. It's a track from his album 'My Queen'. The song combines elements of Hip-Hop, pop, and electronic music with female vocals. It has a catchy and energetic vibe that could be a great fit for your video.",audio-supported,1,The claim is supported by the audio features mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim is supported by the audio features mentioned in the explanation.""
+}",audio-supported,1,1,1
+2449,JknekAM8pY4,JknekAM8pY4_FAi1atXAKHo,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,4,The song has a unique blend of guitar,audio,audio-supported,prompt-supported,1,source_available,"In terms of music style, 'From My Heart' by Aom Sushar is a perfect fit. It falls under the genres of rock, indie, and alternative, with female vocalists. The song has a unique blend of guitar and vocal elements, which can add a touch of emotion to your video.",audio-supported,1,"The claim refers to the song's guitar elements, which can be inferred from its audio features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim refers to the song's guitar elements, which can be inferred from its audio features.""
+}",audio-supported,1,1,1
+1489,8Ej4PzaoqpU,8Ej4PzaoqpU_A84hNilKxFM,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,4,"The song has a fast-paced techno sound with male vocals, which could be a fitting choice for your video.",video,video-supported,prompt-supported,1,source_available,"I recommend 'True Story' by Young Legend featuring Kyle Bent. It's a track from the album 'True Story' and combines elements of Hip-Hop, electronic, dance, pop, and rock. The song has a fast-paced techno sound with male vocals, which could be a fitting choice for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",video-supported,1,0,1
+3225,QtCxsZNx8pE,QtCxsZNx8pE_zmWpJONAYzU,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,It has a unique,unknown,unsupported,prompt-supported,0,no_detected_support_source,"I recommend 'Comme un seul homme' by Couturier. It's a track from their album 'Comme un seul homme'. The song combines elements of rock, indie, and alternative with electronic influences. It has a unique and experimental sound that could add an interesting touch to your video.",audio-supported,1,"The claim refers to the song's unique sound, which is described in terms of music genres and influences.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim refers to the song's unique sound, which is described in terms of music genres and influences.""
+}",unsupported,0,0,0
+2242,sCbKPeDTPVU,sCbKPeDTPVU_IHuI6bHQzAo,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,It has a catchy,unknown,unsupported,prompt-supported,0,no_detected_support_source,"I recommend 'DRUNK LOVE 2014' by Keaira LaShae. It's a track from her album 'DRUNK LOVE 2014'. The song combines elements of pop, R&B, and electronic music, with female vocals. It has a catchy and energetic vibe that could be a great fit for your video.",audio-supported,1,The claim relies on the song's characteristics (catchy and energetic vibe) which are described in the audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the song's characteristics (catchy and energetic vibe) which are described in the audio modality.""
+}",unsupported,0,0,0
+4148,HdVY4pBsahU,HdVY4pBsahU_12WBWg1BAmU,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,1,I recommend 'Survive Life' by FRESH.,general,general-supported,prompt-supported,1,source_available,"I recommend 'Survive Life' by FRESH. It's a hip-hop track with electronic and indie influences. The song has a fast-paced beat and male vocals, which can add an energetic and unique touch to your video.",audio-supported,1,"Claim relies on music genre, tempo, and vocals mentioned in the explanation.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre, tempo, and vocals mentioned in the explanation.""
+}",general-supported,1,0,1
+2378,2WzHhtkF8JM,2WzHhtkF8JM_0Y1v5HCWz6M,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,upbeat vibe that would be a great fit for your video.,video,video-supported,prompt-supported,1,source_available,"In the music video for '이러쿵 저러쿵' by F-ve Dolls, you can see the members of F-ve Dolls in their cute and colorful outfits. The song is a mix of pop, dance, and electronic genres, with female vocals. It has a catchy and upbeat vibe that would be a great fit for your video.",video-supported,1,Claim relies on visual content of the music video for '이러쿵 저러쿵' by F-ve Dolls.,"{
+  ""support_source"": ""video-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on visual content of the music video for '이러쿵 저러쿵' by F-ve Dolls.""
+}",video-supported,1,1,1
+2325,gHavEbG_MWg,gHavEbG_MWg_BkB1s1VJe44,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,synth sounds that could be a fitting choice for your video.,video,video-supported,prompt-supported,1,source_available,"I recommend 'Dmack & Freshkid From The Back' by Dj Taj. It's a track from the album 'Dmack & Freshkid From The Back'. This song combines elements of Hip-Hop, electronic, dance, electro, and pop. It has a fast-paced beat and synth sounds that could be a fitting choice for your video.",audio-supported,1,Claim relies on audio features like synth sounds and genre to make a recommendation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on audio features like synth sounds and genre to make a recommendation.""
+}",video-supported,1,0,1
+3565,G_PjcAfVJkY,G_PjcAfVJkY_butKQYYzySM,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,It has a unique,unknown,unsupported,prompt-supported,0,no_detected_support_source,"I recommend 'Karavaani kulkee' by Paleface feat;. It's a track from their album 'Karavaani kulkee'. The song combines elements of Hip-Hop, rock, electronic, and pop, with a touch of indie influences. It has a unique and experimental sound that could add an interesting dimension to your video.",audio-supported,1,The claim relies on the song's unique sound and genre-bending elements.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim relies on the song's unique sound and genre-bending elements.""
+}",unsupported,0,0,0
+910,5lKPjuBuYDc,5lKPjuBuYDc_KjSks1ZBt_U,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,5,It would be a great fit for your video.,video,video-supported,prompt-supported,1,source_available,"I recommend 'I Gotta Feeling' by The Black Eyed Peas. It's a popular track from their album 'I Gotta Feeling'. The song combines elements of rock, electronic, and indie genres, with a fast-paced and energetic sound. It would be a great fit for your video.",audio-supported,1,"The explanation mentions the song's genre, sound, and tempo, which are audio-based features.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions the song's genre, sound, and tempo, which are audio-based features.""
+}",video-supported,1,0,1
+54,_8YWB9SlUFU,_8YWB9SlUFU_QP5qHCe9FP4,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,4,alternative with female vocals.,audio,audio-supported,prompt-supported,1,source_available,"In terms of music style, 'Youth' by Daughter is a perfect fit. It's a track from their album 'If You Leave' and combines elements of indie, rock, and alternative with female vocals. The song has a unique and captivating sound that would complement your video.",audio-supported,1,Claim is supported by the music sound and genre mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre mentioned in the explanation.""
+}",audio-supported,1,1,1
+1395,ufnqxvG8TZ4,ufnqxvG8TZ4_t4zXT4mcPUI,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,6,experimental sound that could add an interesting touch to your video.,video,video-supported,prompt-supported,1,source_available,"I recommend 'Zwoardduel' by Samoerai. It's a track from their album 'Zwoardduel'. The song combines elements of Hip-Hop, electronic, rock, and indie with a touch of pop. It has a unique and experimental sound that could add an interesting touch to your video.",audio-supported,1,Claim relies on the song's unique sound and genre combination.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on the song's unique sound and genre combination.""
+}",video-supported,1,0,1
+1896,kt2lmbNPFk4,kt2lmbNPFk4_C5PUb0hCtj4,wo_prompt,text prompt feature and user text are removed; title/artist metadata is kept,1,"In terms of music, 'Keep Your Head Down' by 동방신기 (TVXQ; 동방신기) is a perfect fit.",audio,audio-supported,prompt-supported,1,source_available,"In terms of music, 'Keep Your Head Down' by 동방신기 (TVXQ; 동방신기) is a perfect fit. It's a track from their album 'Keep Your Head Down' and combines elements of Hip-Hop, electronic, dance, and pop. The song has a fast-paced techno sound with male vocals, which aligns well with the energetic and dynamic vibe you're looking for.",audio-supported,1,"Claim relies on music genre, sound, and male vocals mentioned in the audio modality.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre, sound, and male vocals mentioned in the audio modality.""
+}",audio-supported,1,1,1
+357,aXgXFr89wpY,aXgXFr89wpY_5cdy3zeBS0w,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,3,"Although there is no specific information about the track, it aligns well with your preferences for male vocals",preference,preference-supported,video-supported,1,source_available,"Allow me to recommend 'I'm Alive' by Da Messenger ft; 2012. It's a track that combines elements of hip-hop, rock, and electronic beats. Although there is no specific information about the track, it aligns well with your preferences for male vocals and electronic beats.",audio-supported,1,"Claim relies on music sound and genre features (hip-hop, rock, electronic beats) to align with user preferences for male vocals and electronic beats.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features (hip-hop, rock, electronic beats) to align with user preferences for male vocals and electronic beats.""
+}",preference-supported,1,0,1
+1509,rVO2byp-tWg,rVO2byp-tWg_m0YLOxKlURQ,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,3,it features a female vocalist.,audio,audio-supported,video-supported,1,source_available,"In that case, I would recommend 'Carry You Home' by Zara Larsson. This track has a mainstream and contemporary sound, and it features a female vocalist. It's part of the album 'Carry You Home' by Zara Larsson.",audio-supported,1,Claim is supported by the music sound and genre information provided.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the music sound and genre information provided.""
+}",audio-supported,1,1,1
+1226,VBDoZ0Tu5CI,VBDoZ0Tu5CI_K29bp9zG0jA,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,3,"Although I don't have much information about this track, it aligns well with the pop, dance",video,video-supported,video-supported,0,source_removed_by_wo_video,"Allow me to recommend 'Santaye' by Santaye. It's a pop track with electronic and dance elements. Although I don't have much information about this track, it aligns well with the pop, dance, and electronic genres you're interested in. It may also feature a female vocalist like Santaye.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",video-supported,0,0,0
+3170,pT9lqqvBsdo,pT9lqqvBsdo_iF7HM0jzDP8,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,1,If you're looking for something more on the electronic side with a mix of techno,prompt,prompt-supported,video-supported,1,source_available,"Certainly! If you're looking for something more on the electronic side with a mix of techno and synth, I recommend 'The Wave' by The Wave. This track combines electronic, dance, and pop elements with a touch of techno and synth. It's a perfect fit for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",prompt-supported,1,0,1
+1596,TIQC76MfPHQ,TIQC76MfPHQ_lzjELi7VPx0,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,3,The song features strong female vocals,audio,audio-supported,video-supported,1,source_available,Sure! How about 'I'm A Slave 4 U' by Britney Spears? It's a pop track with electronic and dance influences. The song features strong female vocals and has a catchy and upbeat vibe that could be a great fit for your video.,audio-supported,1,The claim is supported by the audio features mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The claim is supported by the audio features mentioned in the explanation.""
+}",audio-supported,1,1,1
+1835,i14CO18tEJA,i14CO18tEJA_wyDJKPE1cII,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,3,soul with fast beats.,audio,audio-supported,video-supported,1,source_available,"Certainly! I recommend 'The Way I Am' by J. Cole. It's a track that combines elements of hip-hop, electronic, and soul with fast beats. Although I don't have much information about this track, it seems to align well with your preferences.",audio-supported,1,Claim relies on music genre and tempo information from audio modality.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and tempo information from audio modality.""
+}",audio-supported,1,1,1
+104,iV3xE72xNJg,iV3xE72xNJg_K124ajZigxc,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,2,It's a track by Kapris that combines electronic,audio,audio-supported,video-supported,1,source_available,"Certainly! I recommend 'Kapris - TOPCRIMINAL'. It's a track by Kapris that combines electronic and chillout elements. Although I don't have much information about this specific track, it aligns with Kapris' style and could be a fitting choice for your video.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,1,1,1
+2060,vJ4se76h4pg,vJ4se76h4pg_E4o8oOlzTAQ,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,5,It could be a fitting choice for your video.,video,video-supported,video-supported,0,source_removed_by_wo_video,"Allow me to recommend 'EMBRUJADA' by DESPISTAOS. It's a track from their album 'EMBRUJADA'. It combines elements of indie, punk, and alternative with a touch of pop and drum influences. It could be a fitting choice for your video.",audio-supported,1,The recommendation is based on the music genre and style mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The recommendation is based on the music genre and style mentioned in the explanation.""
+}",video-supported,0,0,0
+3788,cv-jSWbgOKU,cv-jSWbgOKU_C5A5d8ZWeWQ,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,4,It has a guitar-focused sound,audio,audio-supported,video-supported,1,source_available,"Certainly! How about 'Let Her Go' by Passenger? It's a track from their album 'Let Her Go'. It combines elements of rock, indie, and alternative with acoustic and folk influences. It has a guitar-focused sound and features male vocals. This track could be a fitting choice for your video.",audio-supported,1,Claim is supported by the description of music sound and genre.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim is supported by the description of music sound and genre.""
+}",audio-supported,1,1,1
+1698,lgBOgKr-HJo,lgBOgKr-HJo_tA5vcZ7CJyI,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,7,could be a fitting choice for your video.,video,video-supported,video-supported,0,source_removed_by_wo_video,"Allow me to recommend 'Papa Noel' by Stromae vs Wham. It's a track from their album 'Papa Noel'. It combines elements of pop, electronic, and soul with a touch of dance and rock. The song has a 80s vibe and features guitar and male vocals. It was released in 2012 and could be a fitting choice for your video.",video-supported,1,"The explanation mentions 'your video', indicating a direct connection to the video modality.","{
+  ""support_source"": ""video-supported"",
+  ""is_supported"": true,
+  ""reason"": ""The explanation mentions 'your video', indicating a direct connection to the video modality.""
+}",video-supported,0,1,0
+2711,YJtkZTx7fmE,YJtkZTx7fmE_uJdYPnlSqEs,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,4,It's part of the album 'Soulful' by The Soulful.,audio,audio-supported,video-supported,1,source_available,"In that case, I would recommend 'Soulful' by The Soulful. This track has a soulful and indie vibe, perfect for creating a unique and captivating atmosphere. It's part of the album 'Soulful' by The Soulful.",audio-supported,1,Claim relies on music sound and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre information.""
+}",audio-supported,1,1,1
+884,dD8gAWEPwAI,dD8gAWEPwAI_zYVQCWt0u0U,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,1,Allow me to recommend 'Sunshine' by Mon Feijóo (Mon Musicóo).,audio,audio-supported,video-supported,1,source_available,"Allow me to recommend 'Sunshine' by Mon Feijóo (Mon Musicóo). It's a track from their album 'Sunshine'. It combines elements of indie, folk, and rock with a female vocalist. The song also features guitar and drum elements that could be a fitting choice for your video.",audio-supported,1,"Recommendation relies on music genre, style, and artist information.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation relies on music genre, style, and artist information.""
+}",audio-supported,1,1,1
+358,4ldBWUbiDTM,4ldBWUbiDTM_bs9xnYfKAQA,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,1,Allow me to recommend 'La Crus' by La Crus.,general,general-supported,video-supported,1,source_available,"Allow me to recommend 'La Crus' by La Crus. It's a track from their album 'La Crus'. It combines elements of rock, pop, and indie with female vocals that could be a fitting choice for your video. It has a 80s vibe and was released in 2012, which may contain the specific elements you want.",audio-supported,1,"Claim relies on music genre, female vocals, and release year for recommendation.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre, female vocals, and release year for recommendation.""
+}",general-supported,1,0,1
+3916,TME4uekY9hc,TME4uekY9hc_p79AdYDjlFU,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,1,"In that case, I would recommend 'Vibe Tribe' by Just Juice.",general,general-supported,video-supported,1,source_available,"In that case, I would recommend 'Vibe Tribe' by Just Juice. This track has a chillout and relaxed vibe, perfect for creating a relaxed atmosphere. It's part of the album 'Vibe Tribe' and offers a mix of Hip-Hop, electronic, rock, and chillout genres.",audio-supported,1,Recommendation depends on music genre and style mentioned in the explanation.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation depends on music genre and style mentioned in the explanation.""
+}",general-supported,1,0,1
+3605,Iyy9VDuS3oM,Iyy9VDuS3oM_4oB7o8Tl9so,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,5,electronic beats that could be a fitting choice for your video.,video,video-supported,video-supported,0,source_removed_by_wo_video,"Allow me to recommend 'ARTMATA - 2012 - 2013'. It's a track from ARTMATA's album 'ARTMATA - 2012 - 2013'. It combines elements of indie, rock, and electronic with a focus on drums and electronic beats that could be a fitting choice for your video.",audio-supported,1,Claim relies on music sound and genre features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music sound and genre features.""
+}",video-supported,0,0,0
+410,q5bry6xHfxc,q5bry6xHfxc_TxqJOm0601k,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,3,R&B with vocal presence.,audio,audio-supported,video-supported,1,source_available,"Certainly! I recommend 'Blaze' by J-Blaze featuring HD. It's a track that combines elements of Hip-Hop, electronic, and R&B with vocal presence. Although I don't have much information about this track, it seems to align with your preferences.",audio-supported,1,Claim relies on music genre and vocal presence in the audio track.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and vocal presence in the audio track.""
+}",audio-supported,1,1,1
+457,_MV0BuKm0VE,_MV0BuKm0VE_xbzDeFsKwfY,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,1,Allow me to recommend 'House Music' by Nicky Romero featuring Fast Eddie.,audio,audio-supported,video-supported,1,source_available,"Allow me to recommend 'House Music' by Nicky Romero featuring Fast Eddie. It's a track from the album 'House Music'. It combines elements of house, electro, and pop with a fast-paced techno beat. It could be a fitting choice for your video.",audio-supported,1,Recommendation based on music genre and style,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation based on music genre and style""
+}",audio-supported,1,1,1
+410,q5bry6xHfxc,q5bry6xHfxc_TxqJOm0601k,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,1,I recommend 'Blaze' by J-Blaze featuring HD.,general,general-supported,video-supported,1,source_available,"Certainly! I recommend 'Blaze' by J-Blaze featuring HD. It's a track that combines elements of Hip-Hop, electronic, and R&B with vocal presence. Although I don't have much information about this track, it seems to align with your preferences.",audio-supported,1,"Recommendation based on music genre, style and vocal presence.","{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Recommendation based on music genre, style and vocal presence.""
+}",general-supported,1,0,1
+559,1fMjQttld5U,1fMjQttld5U_-_Q9D5vl8lQ,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,2,It's a track from her album 'Encontrei'.,audio,audio-supported,video-supported,1,source_available,"Allow me to recommend 'Encontrei' by Marina Elali. It's a track from her album 'Encontrei'. It combines elements of pop, rock, and electronic with female vocals that could be a fitting choice for your video.",audio-supported,1,Claim relies on music metadata (album title) and genre information.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music metadata (album title) and genre information.""
+}",audio-supported,1,1,1
+1333,sZNtPlWq5gI,sZNtPlWq5gI_tl_4Jx7umvs,wo_video,video feature is zeroed; title/artist injection follows INJECT_TITLE,2,"It's a track that combines elements of hip-hop, electronic",audio,audio-supported,video-supported,1,source_available,"Allow me to recommend 'Christmas in Hollis'. It's a track that combines elements of hip-hop, electronic, and rock genres, with a touch of holiday spirit. Although I don't have much information about this track, it seems to align well with your preferences.",audio-supported,1,Claim relies on music genre and style information from audio features.,"{
+  ""support_source"": ""audio-supported"",
+  ""is_supported"": true,
+  ""reason"": ""Claim relies on music genre and style information from audio features.""
+}",audio-supported,1,1,1

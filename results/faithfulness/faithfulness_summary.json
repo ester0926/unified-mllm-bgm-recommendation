@@ -1,0 +1,131 @@
+{
+  "created_at": "2026-05-22T00:30:44",
+  "UCR_target": "<= 10-15%",
+  "MAA_target": ">= 80%",
+  "PCR_target": ">= 60%",
+  "PCR": 1.0,
+  "claim_ratio_reductions": {
+    "video_claim_reduction_after_wo_video": -0.015614046268561665,
+    "audio_claim_reduction_after_wo_audio_feature_only": -0.033856275772598865,
+    "audio_claim_reduction_after_wo_audio_all": -0.014134879462923244,
+    "prompt_claim_reduction_after_wo_prompt": 0.683206106870229,
+    "preference_claim_reduction_after_wo_ltp": 1.0
+  },
+  "by_condition": [
+    {
+      "condition": "full",
+      "n_claims": 1079,
+      "unsupported_claims": 116,
+      "UCR": 0.10750695088044486,
+      "MAA": 1.0,
+      "video_claim_ratio": 0.20481927710843373,
+      "audio_claim_ratio": 0.5236329935125116,
+      "prompt_claim_ratio": 0.03614457831325301,
+      "preference_claim_ratio": 0.005560704355885079,
+      "general_claim_ratio": 0.12233549582947173,
+      "unknown_claim_ratio": 0.10750695088044486
+    },
+    {
+      "condition": "wo_audio_all",
+      "n_claims": 1015,
+      "unsupported_claims": 613,
+      "UCR": 0.6039408866995074,
+      "MAA": 0.35603345280764637,
+      "video_claim_ratio": 0.20591133004926107,
+      "audio_claim_ratio": 0.5310344827586206,
+      "prompt_claim_ratio": 0.027586206896551724,
+      "preference_claim_ratio": 0.060098522167487685,
+      "general_claim_ratio": 0.10246305418719212,
+      "unknown_claim_ratio": 0.0729064039408867
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "n_claims": 955,
+      "unsupported_claims": 561,
+      "UCR": 0.587434554973822,
+      "MAA": 0.3363286264441592,
+      "video_claim_ratio": 0.1549738219895288,
+      "audio_claim_ratio": 0.5413612565445026,
+      "prompt_claim_ratio": 0.048167539267015703,
+      "preference_claim_ratio": 0.0712041884816754,
+      "general_claim_ratio": 0.1382198952879581,
+      "unknown_claim_ratio": 0.04607329842931937
+    },
+    {
+      "condition": "wo_ltp",
+      "n_claims": 342,
+      "unsupported_claims": 336,
+      "UCR": 0.9824561403508771,
+      "MAA": 1.0,
+      "video_claim_ratio": 0.017543859649122806,
+      "audio_claim_ratio": 0.0,
+      "prompt_claim_ratio": 0.0,
+      "preference_claim_ratio": 0.0,
+      "general_claim_ratio": 0.0,
+      "unknown_claim_ratio": 0.9824561403508771
+    },
+    {
+      "condition": "wo_prompt",
+      "n_claims": 1048,
+      "unsupported_claims": 94,
+      "UCR": 0.08969465648854962,
+      "MAA": 0.985594237695078,
+      "video_claim_ratio": 0.22137404580152673,
+      "audio_claim_ratio": 0.5591603053435115,
+      "prompt_claim_ratio": 0.011450381679389313,
+      "preference_claim_ratio": 0.0028625954198473282,
+      "general_claim_ratio": 0.1269083969465649,
+      "unknown_claim_ratio": 0.07824427480916031
+    },
+    {
+      "condition": "wo_video",
+      "n_claims": 923,
+      "unsupported_claims": 264,
+      "UCR": 0.28602383531960995,
+      "MAA": 0.7307152875175316,
+      "video_claim_ratio": 0.20801733477789816,
+      "audio_claim_ratio": 0.49187432286023836,
+      "prompt_claim_ratio": 0.04550379198266522,
+      "preference_claim_ratio": 0.027085590465872156,
+      "general_claim_ratio": 0.1495124593716143,
+      "unknown_claim_ratio": 0.0780065005417118
+    }
+  ],
+  "sensitivity": [
+    {
+      "condition": "wo_audio_all",
+      "n_pairs": 200,
+      "ESS_jaccard_distance_mean": 0.6728016491135649,
+      "ESS_jaccard_distance_min": 0.2222222222222222,
+      "ESS_jaccard_distance_max": 0.9473684210526316
+    },
+    {
+      "condition": "wo_audio_feature_only",
+      "n_pairs": 200,
+      "ESS_jaccard_distance_mean": 0.720862530555199,
+      "ESS_jaccard_distance_min": 0.3214285714285714,
+      "ESS_jaccard_distance_max": 1.0
+    },
+    {
+      "condition": "wo_ltp",
+      "n_pairs": 200,
+      "ESS_jaccard_distance_mean": 0.9997727272727271,
+      "ESS_jaccard_distance_min": 0.9545454545454546,
+      "ESS_jaccard_distance_max": 1.0
+    },
+    {
+      "condition": "wo_prompt",
+      "n_pairs": 200,
+      "ESS_jaccard_distance_mean": 0.6322672119740294,
+      "ESS_jaccard_distance_min": 0.16000000000000003,
+      "ESS_jaccard_distance_max": 0.96875
+    },
+    {
+      "condition": "wo_video",
+      "n_pairs": 200,
+      "ESS_jaccard_distance_mean": 0.542379289511405,
+      "ESS_jaccard_distance_min": 0.0,
+      "ESS_jaccard_distance_max": 0.9130434782608696
+    }
+  ]
+}

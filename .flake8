@@ -1,0 +1,21 @@
+[flake8]
+max-line-length = 120
+
+# E402 = module level import not at top of file
+# 本專案每支腳本開頭都有「Auto-added after project reorganization」的 sys.path
+# bootstrap（把 PROJECT_ROOT 插入 sys.path），import 必須排在它之後才能解析
+# scripts.* 套件，因此 E402 在此為刻意設計而非缺陷（92 支腳本中 86 支適用）。
+#
+# E221 = multiple spaces before operator
+# 本專案的常數區慣用等號對齊（例如 run_eval_500pool_detailed.py 的
+# BASE_DIR    = ... / H5_DIR      = ...），為既有可讀性風格，不視為缺陷。
+#
+# 其餘規則一律保留 —— 特別是 F401（未使用的 import）與 E501（過長行）仍應被抓出來。
+extend-ignore = E402, E221
+
+exclude =
+    .git,
+    __pycache__,
+    .vscode,
+    tmp,
+    cache

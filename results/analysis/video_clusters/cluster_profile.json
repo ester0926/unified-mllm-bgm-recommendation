@@ -1,0 +1,873 @@
+{
+  "generated_at": "2026-07-26T17:54:04",
+  "clusters": {
+    "k3_c0": {
+      "k": 3,
+      "cluster": 0,
+      "n": 1428,
+      "share": 0.3395957193816885,
+      "median_duration_sec": 231.0,
+      "median_view_count": 10434.0,
+      "top_title_terms": [
+        {
+          "term": "freestyle",
+          "ratio": 14.27,
+          "n": 22
+        },
+        {
+          "term": "shot",
+          "ratio": 7.78,
+          "n": 16
+        },
+        {
+          "term": "king",
+          "ratio": 6.61,
+          "n": 17
+        },
+        {
+          "term": "directed",
+          "ratio": 6.61,
+          "n": 17
+        },
+        {
+          "term": "prod",
+          "ratio": 5.6,
+          "n": 72
+        },
+        {
+          "term": "black",
+          "ratio": 4.95,
+          "n": 28
+        },
+        {
+          "term": "dir",
+          "ratio": 4.17,
+          "n": 15
+        },
+        {
+          "term": "rap",
+          "ratio": 3.89,
+          "n": 22
+        },
+        {
+          "term": "officiel",
+          "ratio": 3.47,
+          "n": 50
+        },
+        {
+          "term": "big",
+          "ratio": 3.01,
+          "n": 17
+        },
+        {
+          "term": "clip",
+          "ratio": 2.13,
+          "n": 91
+        },
+        {
+          "term": "life",
+          "ratio": 1.95,
+          "n": 16
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "unknown",
+          "ratio": 9.73,
+          "n": 65
+        },
+        {
+          "term": "hip-hop",
+          "ratio": 4.64,
+          "n": 1241
+        },
+        {
+          "term": "rnb",
+          "ratio": 2.22,
+          "n": 287
+        },
+        {
+          "term": "male voice",
+          "ratio": 2.01,
+          "n": 249
+        },
+        {
+          "term": "funk",
+          "ratio": 1.71,
+          "n": 22
+        },
+        {
+          "term": "techno",
+          "ratio": 1.64,
+          "n": 1310
+        },
+        {
+          "term": "electronic",
+          "ratio": 1.62,
+          "n": 1187
+        },
+        {
+          "term": "beat",
+          "ratio": 1.59,
+          "n": 662
+        },
+        {
+          "term": "soul",
+          "ratio": 1.52,
+          "n": 195
+        },
+        {
+          "term": "male",
+          "ratio": 1.48,
+          "n": 843
+        },
+        {
+          "term": "male vocal",
+          "ratio": 1.41,
+          "n": 721
+        },
+        {
+          "term": "voice",
+          "ratio": 1.37,
+          "n": 26
+        }
+      ],
+      "max_title_ratio": 14.27,
+      "max_tag_ratio": 9.73
+    },
+    "k3_c1": {
+      "k": 3,
+      "cluster": 1,
+      "n": 2061,
+      "share": 0.4901307966706302,
+      "median_duration_sec": 229.5,
+      "median_view_count": 12387.5,
+      "top_title_terms": [
+        {
+          "term": "lps",
+          "ratio": 24.98,
+          "n": 24
+        },
+        {
+          "term": "amv",
+          "ratio": 15.61,
+          "n": 15
+        },
+        {
+          "term": "wedding",
+          "ratio": 9.89,
+          "n": 19
+        },
+        {
+          "term": "lyric",
+          "ratio": 7.63,
+          "n": 44
+        },
+        {
+          "term": "lyrics",
+          "ratio": 2.95,
+          "n": 17
+        },
+        {
+          "term": "dance",
+          "ratio": 2.89,
+          "n": 25
+        },
+        {
+          "term": "song",
+          "ratio": 2.57,
+          "n": 37
+        },
+        {
+          "term": "mix",
+          "ratio": 2.23,
+          "n": 15
+        },
+        {
+          "term": "girl",
+          "ratio": 2.19,
+          "n": 21
+        },
+        {
+          "term": "remix",
+          "ratio": 1.38,
+          "n": 45
+        },
+        {
+          "term": "time",
+          "ratio": 1.28,
+          "n": 16
+        },
+        {
+          "term": "out",
+          "ratio": 1.28,
+          "n": 16
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "classical",
+          "ratio": 6.76,
+          "n": 26
+        },
+        {
+          "term": "strings",
+          "ratio": 5.2,
+          "n": 20
+        },
+        {
+          "term": "ambient",
+          "ratio": 4.68,
+          "n": 45
+        },
+        {
+          "term": "house",
+          "ratio": 4.59,
+          "n": 260
+        },
+        {
+          "term": "female voice",
+          "ratio": 4.29,
+          "n": 268
+        },
+        {
+          "term": "slow",
+          "ratio": 3.62,
+          "n": 181
+        },
+        {
+          "term": "female vocal",
+          "ratio": 3.52,
+          "n": 501
+        },
+        {
+          "term": "female vocalists",
+          "ratio": 3.51,
+          "n": 860
+        },
+        {
+          "term": "piano",
+          "ratio": 3.47,
+          "n": 70
+        },
+        {
+          "term": "beats",
+          "ratio": 3.24,
+          "n": 28
+        },
+        {
+          "term": "instrumental",
+          "ratio": 3.12,
+          "n": 15
+        },
+        {
+          "term": "woman",
+          "ratio": 2.79,
+          "n": 796
+        }
+      ],
+      "max_title_ratio": 24.98,
+      "max_tag_ratio": 6.76
+    },
+    "k3_c2": {
+      "k": 3,
+      "cluster": 2,
+      "n": 716,
+      "share": 0.17027348394768133,
+      "median_duration_sec": 236.0,
+      "median_view_count": 12709.0,
+      "top_title_terms": [
+        {
+          "term": "live",
+          "ratio": 10.24,
+          "n": 42
+        },
+        {
+          "term": "band",
+          "ratio": 6.62,
+          "n": 19
+        },
+        {
+          "term": "cover",
+          "ratio": 3.5,
+          "n": 33
+        },
+        {
+          "term": "oficial",
+          "ratio": 1.28,
+          "n": 39
+        },
+        {
+          "term": "videoclip",
+          "ratio": 0.99,
+          "n": 18
+        },
+        {
+          "term": "love",
+          "ratio": 0.95,
+          "n": 15
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "heavy metal",
+          "ratio": 12.13,
+          "n": 112
+        },
+        {
+          "term": "punk",
+          "ratio": 8.9,
+          "n": 179
+        },
+        {
+          "term": "metal",
+          "ratio": 8.31,
+          "n": 225
+        },
+        {
+          "term": "hard rock",
+          "ratio": 7.02,
+          "n": 154
+        },
+        {
+          "term": "alternative rock",
+          "ratio": 6.43,
+          "n": 198
+        },
+        {
+          "term": "classic rock",
+          "ratio": 5.77,
+          "n": 45
+        },
+        {
+          "term": "indie rock",
+          "ratio": 5.44,
+          "n": 115
+        },
+        {
+          "term": "alternative",
+          "ratio": 3.94,
+          "n": 403
+        },
+        {
+          "term": "blues",
+          "ratio": 3.36,
+          "n": 20
+        },
+        {
+          "term": "indie",
+          "ratio": 2.71,
+          "n": 351
+        },
+        {
+          "term": "guitar",
+          "ratio": 2.65,
+          "n": 562
+        },
+        {
+          "term": "acoustic",
+          "ratio": 2.65,
+          "n": 25
+        }
+      ],
+      "max_title_ratio": 10.24,
+      "max_tag_ratio": 12.13
+    },
+    "k4_c0": {
+      "k": 4,
+      "cluster": 0,
+      "n": 1094,
+      "share": 0.260166468489893,
+      "median_duration_sec": 233.0,
+      "median_view_count": 24590.0,
+      "top_title_terms": [
+        {
+          "term": "remix",
+          "ratio": 2.04,
+          "n": 33
+        },
+        {
+          "term": "song",
+          "ratio": 1.78,
+          "n": 20
+        },
+        {
+          "term": "clipe",
+          "ratio": 1.64,
+          "n": 15
+        },
+        {
+          "term": "love",
+          "ratio": 1.45,
+          "n": 31
+        },
+        {
+          "term": "oficial",
+          "ratio": 1.25,
+          "n": 57
+        },
+        {
+          "term": "videoclip",
+          "ratio": 1.06,
+          "n": 29
+        },
+        {
+          "term": "clip",
+          "ratio": 0.74,
+          "n": 36
+        },
+        {
+          "term": "officiel",
+          "ratio": 0.68,
+          "n": 15
+        },
+        {
+          "term": "cover",
+          "ratio": 0.67,
+          "n": 15
+        },
+        {
+          "term": "prod",
+          "ratio": 0.56,
+          "n": 16
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "90s",
+          "ratio": 3.72,
+          "n": 17
+        },
+        {
+          "term": "house",
+          "ratio": 2.9,
+          "n": 161
+        },
+        {
+          "term": "80s",
+          "ratio": 2.33,
+          "n": 59
+        },
+        {
+          "term": "beats",
+          "ratio": 2.17,
+          "n": 16
+        },
+        {
+          "term": "female voice",
+          "ratio": 2.17,
+          "n": 144
+        },
+        {
+          "term": "dance",
+          "ratio": 2.15,
+          "n": 409
+        },
+        {
+          "term": "female vocalists",
+          "ratio": 2.12,
+          "n": 476
+        },
+        {
+          "term": "woman",
+          "ratio": 1.95,
+          "n": 445
+        },
+        {
+          "term": "female vocal",
+          "ratio": 1.94,
+          "n": 263
+        },
+        {
+          "term": "female",
+          "ratio": 1.79,
+          "n": 569
+        },
+        {
+          "term": "soul",
+          "ratio": 1.55,
+          "n": 157
+        },
+        {
+          "term": "rnb",
+          "ratio": 1.52,
+          "n": 188
+        }
+      ],
+      "max_title_ratio": 2.04,
+      "max_tag_ratio": 3.72
+    },
+    "k4_c1": {
+      "k": 4,
+      "cluster": 1,
+      "n": 1309,
+      "share": 0.3112960760998811,
+      "median_duration_sec": 226.0,
+      "median_view_count": 8424.0,
+      "top_title_terms": [
+        {
+          "term": "lps",
+          "ratio": 53.12,
+          "n": 24
+        },
+        {
+          "term": "amv",
+          "ratio": 33.2,
+          "n": 15
+        },
+        {
+          "term": "lyric",
+          "ratio": 13.6,
+          "n": 43
+        },
+        {
+          "term": "dance",
+          "ratio": 1.97,
+          "n": 16
+        },
+        {
+          "term": "day",
+          "ratio": 1.64,
+          "n": 17
+        },
+        {
+          "term": "song",
+          "ratio": 1.62,
+          "n": 22
+        },
+        {
+          "term": "videoclip",
+          "ratio": 1.17,
+          "n": 37
+        },
+        {
+          "term": "cover",
+          "ratio": 1.15,
+          "n": 27
+        },
+        {
+          "term": "love",
+          "ratio": 0.92,
+          "n": 27
+        },
+        {
+          "term": "clip",
+          "ratio": 0.8,
+          "n": 46
+        },
+        {
+          "term": "remix",
+          "ratio": 0.7,
+          "n": 19
+        },
+        {
+          "term": "oficial",
+          "ratio": 0.55,
+          "n": 37
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "strings",
+          "ratio": 5.37,
+          "n": 17
+        },
+        {
+          "term": "classical",
+          "ratio": 3.82,
+          "n": 19
+        },
+        {
+          "term": "slow",
+          "ratio": 2.84,
+          "n": 131
+        },
+        {
+          "term": "piano",
+          "ratio": 2.7,
+          "n": 50
+        },
+        {
+          "term": "folk",
+          "ratio": 2.48,
+          "n": 111
+        },
+        {
+          "term": "ambient",
+          "ratio": 2.3,
+          "n": 28
+        },
+        {
+          "term": "acoustic",
+          "ratio": 2.28,
+          "n": 36
+        },
+        {
+          "term": "chillout",
+          "ratio": 2.21,
+          "n": 31
+        },
+        {
+          "term": "electronica",
+          "ratio": 2.16,
+          "n": 42
+        },
+        {
+          "term": "electro",
+          "ratio": 1.86,
+          "n": 79
+        },
+        {
+          "term": "experimental",
+          "ratio": 1.77,
+          "n": 16
+        },
+        {
+          "term": "country",
+          "ratio": 1.73,
+          "n": 99
+        }
+      ],
+      "max_title_ratio": 53.12,
+      "max_tag_ratio": 5.37
+    },
+    "k4_c2": {
+      "k": 4,
+      "cluster": 2,
+      "n": 618,
+      "share": 0.1469678953626635,
+      "median_duration_sec": 235.0,
+      "median_view_count": 12709.0,
+      "top_title_terms": [
+        {
+          "term": "live",
+          "ratio": 12.19,
+          "n": 42
+        },
+        {
+          "term": "band",
+          "ratio": 4.84,
+          "n": 15
+        },
+        {
+          "term": "cover",
+          "ratio": 3.55,
+          "n": 30
+        },
+        {
+          "term": "oficial",
+          "ratio": 1.24,
+          "n": 33
+        },
+        {
+          "term": "love",
+          "ratio": 1.13,
+          "n": 15
+        },
+        {
+          "term": "videoclip",
+          "ratio": 1.02,
+          "n": 16
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "heavy metal",
+          "ratio": 9.64,
+          "n": 98
+        },
+        {
+          "term": "punk",
+          "ratio": 8.55,
+          "n": 165
+        },
+        {
+          "term": "metal",
+          "ratio": 7.74,
+          "n": 204
+        },
+        {
+          "term": "hard rock",
+          "ratio": 5.76,
+          "n": 130
+        },
+        {
+          "term": "alternative rock",
+          "ratio": 5.67,
+          "n": 172
+        },
+        {
+          "term": "classic rock",
+          "ratio": 4.9,
+          "n": 38
+        },
+        {
+          "term": "indie rock",
+          "ratio": 4.83,
+          "n": 99
+        },
+        {
+          "term": "alternative",
+          "ratio": 3.71,
+          "n": 351
+        },
+        {
+          "term": "blues",
+          "ratio": 3.08,
+          "n": 17
+        },
+        {
+          "term": "acoustic",
+          "ratio": 2.61,
+          "n": 22
+        },
+        {
+          "term": "indie",
+          "ratio": 2.6,
+          "n": 304
+        },
+        {
+          "term": "guitar",
+          "ratio": 2.56,
+          "n": 489
+        }
+      ],
+      "max_title_ratio": 12.19,
+      "max_tag_ratio": 9.64
+    },
+    "k4_c3": {
+      "k": 4,
+      "cluster": 3,
+      "n": 1184,
+      "share": 0.28156956004756245,
+      "median_duration_sec": 230.0,
+      "median_view_count": 9072.0,
+      "top_title_terms": [
+        {
+          "term": "freestyle",
+          "ratio": 18.72,
+          "n": 22
+        },
+        {
+          "term": "shot",
+          "ratio": 10.21,
+          "n": 16
+        },
+        {
+          "term": "directed",
+          "ratio": 8.68,
+          "n": 17
+        },
+        {
+          "term": "king",
+          "ratio": 5.47,
+          "n": 15
+        },
+        {
+          "term": "prod",
+          "ratio": 4.52,
+          "n": 62
+        },
+        {
+          "term": "black",
+          "ratio": 3.67,
+          "n": 23
+        },
+        {
+          "term": "officiel",
+          "ratio": 3.48,
+          "n": 45
+        },
+        {
+          "term": "clip",
+          "ratio": 2.17,
+          "n": 80
+        },
+        {
+          "term": "rap",
+          "ratio": 2.13,
+          "n": 15
+        },
+        {
+          "term": "one",
+          "ratio": 1.66,
+          "n": 15
+        },
+        {
+          "term": "all",
+          "ratio": 1.57,
+          "n": 16
+        },
+        {
+          "term": "oficial",
+          "ratio": 1.18,
+          "n": 59
+        }
+      ],
+      "top_tag_terms": [
+        {
+          "term": "unknown",
+          "ratio": 8.51,
+          "n": 60
+        },
+        {
+          "term": "hip-hop",
+          "ratio": 3.95,
+          "n": 1070
+        },
+        {
+          "term": "male voice",
+          "ratio": 2.0,
+          "n": 215
+        },
+        {
+          "term": "rnb",
+          "ratio": 1.93,
+          "n": 232
+        },
+        {
+          "term": "techno",
+          "ratio": 1.59,
+          "n": 1101
+        },
+        {
+          "term": "electronic",
+          "ratio": 1.57,
+          "n": 996
+        },
+        {
+          "term": "male",
+          "ratio": 1.5,
+          "n": 720
+        },
+        {
+          "term": "beat",
+          "ratio": 1.46,
+          "n": 537
+        },
+        {
+          "term": "male vocal",
+          "ratio": 1.41,
+          "n": 612
+        },
+        {
+          "term": "man",
+          "ratio": 1.39,
+          "n": 288
+        },
+        {
+          "term": "soul",
+          "ratio": 1.28,
+          "n": 149
+        },
+        {
+          "term": "voice",
+          "ratio": 1.28,
+          "n": 21
+        }
+      ],
+      "max_title_ratio": 18.72,
+      "max_tag_ratio": 8.51
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "baseline": "musechat_light",
+  "paper_alignment": {
+    "recommendation_module": "MVT-Fusion over video, user prompt text, and first-round candidate music; target music encoded by AST CLS projection.",
+    "sentence_generator": "Vicuna-7B + LoRA + linear music projection, using MuseChat-style inference prompt with music title and music feature token when a checkpoint is available.",
+    "data_alignment": "Uses the unified thesis HDF5 directory, video-level split seed, song bank, and candidate-pool sampling rule from run_eval_500pool_detailed.py."
+  },
+  "musechat_dir": "<musechat_repo>",
+  "mvt_checkpoint": "<musechat_repo>\\checkpoints\\mvt_best.pt",
+  "generator_checkpoint": "<musechat_repo>\\checkpoints\\generator_epoch3",
+  "pool_size": 500,
+  "candidate_pool_seed": 20260315,
+  "max_samples": null,
+  "started_at": "2026-06-04T09:16:41",
+  "finished_at": "2026-06-05T00:58:18",
+  "ranking": {
+    "recall@1": 0.02877526753864447,
+    "recall@5": 0.11676575505350772,
+    "recall@10": 0.20332936979785968,
+    "median_rank": 37.0,
+    "mean_rank": 58.30820451843044,
+    "num_samples": 4205,
+    "pool_size": 500,
+    "candidate_pool_seed": 20260315,
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42
+  },
+  "generation": {
+    "gt_conditioned": {
+      "bertscore_precision": 0.6824851251527331,
+      "bertscore_recall": 0.7314305481956065,
+      "bertscore_f1": 0.7055435020348121,
+      "infolm_ab_divergence": 3.1581804086820764,
+      "infolm_l2_distance": 0.24817106257127455,
+      "infolm_fisher_rao": 2.084689875806233,
+      "num_samples": 4205,
+      "n_valid": 4205,
+      "fallback_count": 0,
+      "fallback_rate": 0.0,
+      "title_consistency_checked": 3604,
+      "title_consistency_rate": 0.012486126526082131
+    },
+    "top1_end_to_end": {
+      "bertscore_precision": 0.6652031616138363,
+      "bertscore_recall": 0.7093166095535763,
+      "bertscore_f1": 0.6858454763889312,
+      "infolm_ab_divergence": 3.8914829837368727,
+      "infolm_l2_distance": 0.2696172176657619,
+      "infolm_fisher_rao": 2.2860055741883913,
+      "num_samples": 4205,
+      "n_valid": 4205,
+      "fallback_count": 0,
+      "fallback_rate": 0.0,
+      "title_consistency_checked": 3508,
+      "title_consistency_rate": 0.01909920182440137
+    }
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_ranking_samples.csv",
+    "ranking_jsonl": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_ranking_samples.jsonl",
+    "gt_conditioned": {
+      "csv": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_gt_conditioned_generation_samples.csv",
+      "jsonl": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_gt_conditioned_generation_samples.jsonl",
+      "raw_csv": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_gt_conditioned_generation_samples_raw.csv"
+    },
+    "top1_end_to_end": {
+      "csv": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_top1_end_to_end_generation_samples.csv",
+      "jsonl": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_top1_end_to_end_generation_samples.jsonl",
+      "raw_csv": "<project_root>/checkpoints\\musechat_light\\detailed_eval\\musechat_light_500pool_top1_end_to_end_generation_samples_raw.csv"
+    }
+  }
+}

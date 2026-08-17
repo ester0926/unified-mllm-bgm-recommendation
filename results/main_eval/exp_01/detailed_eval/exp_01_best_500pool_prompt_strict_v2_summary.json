@@ -1,0 +1,65 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "checkpoint_dir": "<project_root>/checkpoints\\exp_01\\best",
+  "ltp_mode": "hybrid",
+  "active_modalities": [
+    "video",
+    "ltp",
+    "text",
+    "music"
+  ],
+  "pool_size": 500,
+  "prompt_variant": "strict_v2",
+  "prompt_variant_rule": {
+    "purpose": "Revised strict prompt with bounded constraints to avoid over-restriction.",
+    "construction_rules": [
+      "Instruction block is 70-100 English words.",
+      "Use exactly four grounding rules.",
+      "Mention unavailable-modality avoidance without requiring excessive refusal.",
+      "Allow cautious general wording when evidence is partial."
+    ]
+  },
+  "result_tag": "prompt_strict_v2",
+  "candidate_pool_seed": 20260315,
+  "max_samples": null,
+  "max_gen_samples": null,
+  "started_at": "2026-05-26T16:31:18",
+  "finished_at": "2026-05-27T05:36:36",
+  "ranking": {
+    "recall@1": 0.28894173602853745,
+    "recall@5": 0.6382877526753864,
+    "recall@10": 0.7802615933412604,
+    "median_rank": 3.0,
+    "mean_rank": 8.59857312722949,
+    "num_samples": 4205,
+    "pool_size": 500,
+    "scoring": "pointwise Plan B ([RANK] token readout) + random tiebreak",
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42,
+    "candidate_pool_seed": 20260315,
+    "n_allequal_scores": 0,
+    "pct_allequal": 0.0,
+    "avg_score_range": 29.208002356711805,
+    "avg_score_std": 6.926873682001683
+  },
+  "generation": {
+    "n_generated": 4205,
+    "n_valid": 4205,
+    "fallback_count": 0,
+    "fallback_rate": 0.0,
+    "inject_title": true,
+    "bertscore_precision": 0.7874962687492371,
+    "bertscore_recall": 0.7647398710250854,
+    "bertscore_f1": 0.7753984928131104,
+    "infolm_ab_divergence": 2.809786081314087,
+    "infolm_l2_distance": 0.20424416661262512,
+    "infolm_fisher_rao": 1.7602554559707642
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_strict_v2_ranking_samples.csv",
+    "generation_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_strict_v2_generation_samples.csv",
+    "merged_csv": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_strict_v2_samples_merged.csv",
+    "merged_jsonl": "<project_root>/checkpoints\\exp_01\\detailed_eval\\exp_01_best_500pool_prompt_strict_v2_samples_merged.jsonl"
+  }
+}

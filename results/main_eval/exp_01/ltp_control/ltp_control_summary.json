@@ -1,0 +1,71 @@
+{
+  "conditions": [
+    {
+      "condition": "matched",
+      "recall@1": 0.3058263971462545,
+      "recall@5": 0.6623067776456599,
+      "recall@10": 0.7988109393579073,
+      "median_rank": 3.0,
+      "mean_rank": 7.9574316290130795,
+      "num_samples": 4205,
+      "pool_size": 500,
+      "n_allequal": 0,
+      "pct_allequal": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\ltp_control\\ltp_matched_ranking.csv"
+    },
+    {
+      "condition": "shuffled",
+      "recall@1": 0.04851367419738407,
+      "recall@5": 0.16218787158145065,
+      "recall@10": 0.25422116527942923,
+      "median_rank": 34.0,
+      "mean_rank": 63.62829964328181,
+      "num_samples": 4205,
+      "pool_size": 500,
+      "n_allequal": 0,
+      "pct_allequal": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\ltp_control\\ltp_shuffled_ranking.csv"
+    },
+    {
+      "condition": "random",
+      "recall@1": 0.03258026159334126,
+      "recall@5": 0.12271105826397147,
+      "recall@10": 0.1928656361474435,
+      "median_rank": 50.0,
+      "mean_rank": 90.17502972651606,
+      "num_samples": 4205,
+      "pool_size": 500,
+      "n_allequal": 0,
+      "pct_allequal": 0.0,
+      "csv_path": "<project_root>/results\\main_eval\\exp_01\\ltp_control\\ltp_random_ranking.csv"
+    }
+  ],
+  "delta_matched_minus_shuffled": {
+    "R@1": 0.2573,
+    "R@5": 0.5001,
+    "R@10": 0.5446,
+    "MR": -31.0
+  },
+  "delta_matched_minus_random": {
+    "R@1": 0.2732,
+    "R@5": 0.5396,
+    "R@10": 0.6059,
+    "MR": -47.0
+  },
+  "delta_shuffled_minus_random": {
+    "R@1": 0.0159,
+    "R@5": 0.0395,
+    "R@10": 0.0614,
+    "MR": -16.0
+  },
+  "interpretation": "SUPPORTS LTP VALIDITY: matched significantly outperforms both shuffled and random (ΔR@1 vs shuffled=+0.2573, vs random=+0.2732). The model effectively utilises semantically matched long-term preference vectors.",
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "pool_size": 500,
+  "ltp_mode": "hybrid",
+  "ltp_dim": 256,
+  "shuffle_seed": 42,
+  "random_seed": 1234,
+  "started_at": "2026-07-03T15:19:00",
+  "finished_at": "2026-07-04T10:53:55"
+}

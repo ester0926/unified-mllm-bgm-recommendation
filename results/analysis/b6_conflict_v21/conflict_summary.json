@@ -1,0 +1,480 @@
+{
+  "generated_at": "2026-07-29T22:50:40",
+  "compatibility_edges": [
+    0.03736104621313074,
+    0.09506398537477148
+  ],
+  "cells": [
+    {
+      "persona_id": "P1_high_energy__c0",
+      "prototype": "高能量節奏型",
+      "cluster": 0,
+      "cluster_name": "主流流行舞曲音樂影片",
+      "n_cluster_videos": 1094,
+      "compatibility": 0.08775137111517367,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P1_high_energy__c1",
+      "prototype": "高能量節奏型",
+      "cluster": 1,
+      "cluster_name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_cluster_videos": 1309,
+      "compatibility": 0.0374331550802139,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P1_high_energy__c2",
+      "prototype": "高能量節奏型",
+      "cluster": 2,
+      "cluster_name": "樂團演出／搖滾金屬音樂影片",
+      "n_cluster_videos": 618,
+      "compatibility": 0.07119741100323625,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P1_high_energy__c3",
+      "prototype": "高能量節奏型",
+      "cluster": 3,
+      "cluster_name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_cluster_videos": 1184,
+      "compatibility": 0.02787162162162162,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c0",
+      "prototype": "柔和氛圍型",
+      "cluster": 0,
+      "cluster_name": "主流流行舞曲音樂影片",
+      "n_cluster_videos": 1094,
+      "compatibility": 0.029250457038391225,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c1",
+      "prototype": "柔和氛圍型",
+      "cluster": 1,
+      "cluster_name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_cluster_videos": 1309,
+      "compatibility": 0.05653170359052712,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c2",
+      "prototype": "柔和氛圍型",
+      "cluster": 2,
+      "cluster_name": "樂團演出／搖滾金屬音樂影片",
+      "n_cluster_videos": 618,
+      "compatibility": 0.025889967637540454,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P2_soft_ambient__c3",
+      "prototype": "柔和氛圍型",
+      "cluster": 3,
+      "cluster_name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_cluster_videos": 1184,
+      "compatibility": 0.0016891891891891893,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c0",
+      "prototype": "人聲敘事型",
+      "cluster": 0,
+      "cluster_name": "主流流行舞曲音樂影片",
+      "n_cluster_videos": 1094,
+      "compatibility": 0.09506398537477148,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c1",
+      "prototype": "人聲敘事型",
+      "cluster": 1,
+      "cluster_name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_cluster_videos": 1309,
+      "compatibility": 0.06646294881588999,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c2",
+      "prototype": "人聲敘事型",
+      "cluster": 2,
+      "cluster_name": "樂團演出／搖滾金屬音樂影片",
+      "n_cluster_videos": 618,
+      "compatibility": 0.11003236245954692,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P3_vocal_narrative__c3",
+      "prototype": "人聲敘事型",
+      "cluster": 3,
+      "cluster_name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_cluster_videos": 1184,
+      "compatibility": 0.013513513513513514,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c0",
+      "prototype": "純音樂背景型",
+      "cluster": 0,
+      "cluster_name": "主流流行舞曲音樂影片",
+      "n_cluster_videos": 1094,
+      "compatibility": 0.019195612431444242,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c1",
+      "prototype": "純音樂背景型",
+      "cluster": 1,
+      "cluster_name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_cluster_videos": 1309,
+      "compatibility": 0.05042016806722689,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c2",
+      "prototype": "純音樂背景型",
+      "cluster": 2,
+      "cluster_name": "樂團演出／搖滾金屬音樂影片",
+      "n_cluster_videos": 618,
+      "compatibility": 0.0372168284789644,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P4_instrumental_bed__c3",
+      "prototype": "純音樂背景型",
+      "cluster": 3,
+      "cluster_name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_cluster_videos": 1184,
+      "compatibility": 0.0464527027027027,
+      "conflict_group": "部分一致"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c0",
+      "prototype": "曲風一致型",
+      "cluster": 0,
+      "cluster_name": "主流流行舞曲音樂影片",
+      "n_cluster_videos": 1094,
+      "compatibility": 0.263254113345521,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c1",
+      "prototype": "曲風一致型",
+      "cluster": 1,
+      "cluster_name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_cluster_videos": 1309,
+      "compatibility": 0.3422459893048128,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c2",
+      "prototype": "曲風一致型",
+      "cluster": 2,
+      "cluster_name": "樂團演出／搖滾金屬音樂影片",
+      "n_cluster_videos": 618,
+      "compatibility": 0.6051779935275081,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P5_genre_consistent__c3",
+      "prototype": "曲風一致型",
+      "cluster": 3,
+      "cluster_name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_cluster_videos": 1184,
+      "compatibility": 0.016891891891891893,
+      "conflict_group": "明顯衝突"
+    },
+    {
+      "persona_id": "P6_exploratory__c0",
+      "prototype": "探索多樣型",
+      "cluster": 0,
+      "cluster_name": "主流流行舞曲音樂影片",
+      "n_cluster_videos": 1094,
+      "compatibility": 0.09506398537477148,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P6_exploratory__c1",
+      "prototype": "探索多樣型",
+      "cluster": 1,
+      "cluster_name": "粉絲二創／歌詞與玩偶動畫影片",
+      "n_cluster_videos": 1309,
+      "compatibility": 0.22001527883880825,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P6_exploratory__c2",
+      "prototype": "探索多樣型",
+      "cluster": 2,
+      "cluster_name": "樂團演出／搖滾金屬音樂影片",
+      "n_cluster_videos": 618,
+      "compatibility": 0.16019417475728157,
+      "conflict_group": "高度一致"
+    },
+    {
+      "persona_id": "P6_exploratory__c3",
+      "prototype": "探索多樣型",
+      "cluster": 3,
+      "cluster_name": "嘻哈饒舌／街頭拍攝音樂影片",
+      "n_cluster_videos": 1184,
+      "compatibility": 0.2677364864864865,
+      "conflict_group": "高度一致"
+    }
+  ],
+  "group_metrics": [
+    {
+      "conflict_group": "明顯衝突",
+      "n_personas": 8,
+      "mean_compatibility": 0.021439885225319567,
+      "persona_fit": 0.475,
+      "persona_fit_ci_low": 0.36875,
+      "persona_fit_ci_high": 0.5510416666666667,
+      "video_fit": 0.38089682419170323,
+      "video_fit_ci_low": 0.3493582568455217,
+      "video_fit_ci_high": 0.4081485659689547,
+      "lean": 0.09410317580829677,
+      "lean_ci_low": -0.009039797962319974,
+      "lean_ci_high": 0.18263822930919882,
+      "diversity": 0.5451573055555325,
+      "diversity_ci_low": 0.5175858303258606,
+      "diversity_ci_high": 0.5748841496799018,
+      "concession": 0.0625,
+      "concession_ci_low": 0.025,
+      "concession_ci_high": 0.11875,
+      "R@1": 0.0125,
+      "R@1_ci_low": 0.0,
+      "R@1_ci_high": 0.03125,
+      "MRR": 0.05912019248983361,
+      "MRR_ci_low": 0.03874351864679252,
+      "MRR_ci_high": 0.08082021840263542,
+      "noltp_persona_fit": 0.2703125,
+      "matched_minus_noltp_persona_fit": 0.2046875,
+      "matched_minus_noltp_persona_fit_ci_low": 0.13802083333333331,
+      "matched_minus_noltp_persona_fit_ci_high": 0.2854296875,
+      "noltp_video_fit": 0.5755698996729292,
+      "matched_minus_noltp_video_fit": -0.19467307548122598,
+      "matched_minus_noltp_video_fit_ci_low": -0.2487664990798824,
+      "matched_minus_noltp_video_fit_ci_high": -0.13769200021277747,
+      "noltp_R@1": 0.125,
+      "matched_minus_noltp_R@1": -0.1125,
+      "matched_minus_noltp_R@1_ci_low": -0.2,
+      "matched_minus_noltp_R@1_ci_high": -0.05609375000000085
+    },
+    {
+      "conflict_group": "部分一致",
+      "n_personas": 7,
+      "mean_compatibility": 0.05946420862499578,
+      "persona_fit": 0.5988095238095239,
+      "persona_fit_ci_low": 0.5369047619047619,
+      "persona_fit_ci_high": 0.650610119047619,
+      "video_fit": 0.426501684524551,
+      "video_fit_ci_low": 0.37950813595755895,
+      "video_fit_ci_high": 0.47266111680716283,
+      "lean": 0.17230783928497279,
+      "lean_ci_low": 0.09315081154172528,
+      "lean_ci_high": 0.2588338246630216,
+      "diversity": 0.5517665525240226,
+      "diversity_ci_low": 0.5357258478544861,
+      "diversity_ci_high": 0.5691525005059506,
+      "concession": 0.06428571428571428,
+      "concession_ci_low": 0.02142857142857143,
+      "concession_ci_high": 0.11428571428571428,
+      "R@1": 0.02857142857142857,
+      "R@1_ci_low": 0.007142857142857143,
+      "R@1_ci_high": 0.04285714285714286,
+      "MRR": 0.09534988598188339,
+      "MRR_ci_low": 0.06415785296916422,
+      "MRR_ci_high": 0.12423551380224013,
+      "noltp_persona_fit": 0.41666666666666663,
+      "matched_minus_noltp_persona_fit": 0.18214285714285713,
+      "matched_minus_noltp_persona_fit_ci_low": 0.13035714285714287,
+      "matched_minus_noltp_persona_fit_ci_high": 0.23214285714285715,
+      "noltp_video_fit": 0.6208709045205617,
+      "matched_minus_noltp_video_fit": -0.19436921999601076,
+      "matched_minus_noltp_video_fit_ci_low": -0.2616446983070444,
+      "matched_minus_noltp_video_fit_ci_high": -0.13852957961387288,
+      "noltp_R@1": 0.2357142857142857,
+      "matched_minus_noltp_R@1": -0.20714285714285716,
+      "matched_minus_noltp_R@1_ci_low": -0.2857142857142857,
+      "matched_minus_noltp_R@1_ci_high": -0.14285714285714285
+    },
+    {
+      "conflict_group": "高度一致",
+      "n_personas": 9,
+      "mean_compatibility": 0.23986492994105646,
+      "persona_fit": 0.6138888888888889,
+      "persona_fit_ci_low": 0.5222222222222223,
+      "persona_fit_ci_high": 0.7148148148148148,
+      "video_fit": 0.49993362137041186,
+      "video_fit_ci_low": 0.4582158919791079,
+      "video_fit_ci_high": 0.5445864662966701,
+      "lean": 0.11395526751847701,
+      "lean_ci_low": 0.04118519614188797,
+      "lean_ci_high": 0.18735289804173952,
+      "diversity": 0.5112542919017816,
+      "diversity_ci_low": 0.48167803224074096,
+      "diversity_ci_high": 0.5384227475666844,
+      "concession": 0.05,
+      "concession_ci_low": 0.011111111111111112,
+      "concession_ci_high": 0.1,
+      "R@1": 0.06666666666666667,
+      "R@1_ci_low": 0.027777777777777776,
+      "R@1_ci_high": 0.1111111111111111,
+      "MRR": 0.13741309853883374,
+      "MRR_ci_low": 0.10077244867318347,
+      "MRR_ci_high": 0.17796538180057705,
+      "noltp_persona_fit": 0.5361111111111111,
+      "matched_minus_noltp_persona_fit": 0.07777777777777778,
+      "matched_minus_noltp_persona_fit_ci_low": 0.02037037037037037,
+      "matched_minus_noltp_persona_fit_ci_high": 0.1388888888888889,
+      "noltp_video_fit": 0.6199449213974498,
+      "matched_minus_noltp_video_fit": -0.1200113000270379,
+      "matched_minus_noltp_video_fit_ci_low": -0.17322816695986523,
+      "matched_minus_noltp_video_fit_ci_high": -0.07082454315120727,
+      "noltp_R@1": 0.18333333333333332,
+      "matched_minus_noltp_R@1": -0.11666666666666667,
+      "matched_minus_noltp_R@1_ci_low": -0.18888888888888888,
+      "matched_minus_noltp_R@1_ci_high": -0.044444444444444446
+    }
+  ],
+  "contrasts": [
+    {
+      "metric": "persona_fit",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": 0.13888888888888895,
+      "ci_low": -0.004325396825396698,
+      "ci_high": 0.38311965811965776,
+      "significant": false
+    },
+    {
+      "metric": "video_fit",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": 0.11903679717870869,
+      "ci_low": 0.052825841497966354,
+      "ci_high": 0.2034041616201082,
+      "significant": true
+    },
+    {
+      "metric": "lean",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": 0.01985209171018025,
+      "ci_low": -0.13294860026790628,
+      "ci_high": 0.22968915801015533,
+      "significant": false
+    },
+    {
+      "metric": "diversity",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": -0.033903013653750924,
+      "ci_low": -0.09379517668954437,
+      "ci_high": 0.022726863878146042,
+      "significant": false
+    },
+    {
+      "metric": "concession",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": -0.01249999999999999,
+      "ci_low": -0.13190476190476189,
+      "ci_high": 0.09768253968253969,
+      "significant": false
+    },
+    {
+      "metric": "R@1",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": 0.05416666666666668,
+      "ci_low": -0.008714285714285716,
+      "ci_high": 0.13333333333333333,
+      "significant": false
+    },
+    {
+      "metric": "MRR",
+      "comparison": "高度一致 - 明顯衝突",
+      "difference": 0.0782929060490001,
+      "ci_low": 0.003362854464429857,
+      "ci_high": 0.1638896110393997,
+      "significant": true
+    }
+  ],
+  "interactions": [
+    {
+      "metric": "persona_fit",
+      "contrast": "(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突",
+      "difference_in_differences": -0.1269097222222222,
+      "ci_low": -0.2772222222222222,
+      "ci_high": 0.04819444444444435,
+      "significant": false
+    },
+    {
+      "metric": "video_fit",
+      "contrast": "(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突",
+      "difference_in_differences": 0.07466177545418808,
+      "ci_low": -0.04057237144432599,
+      "ci_high": 0.17698694992253183,
+      "significant": false
+    },
+    {
+      "metric": "R@1",
+      "contrast": "(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突",
+      "difference_in_differences": -0.00416666666666668,
+      "ci_low": -0.1375,
+      "ci_high": 0.17499999999999993,
+      "significant": false
+    },
+    {
+      "metric": "MRR",
+      "contrast": "(Matched-NoLTP)_高度一致 - (Matched-NoLTP)_明顯衝突",
+      "difference_in_differences": 0.02425224807595011,
+      "ci_low": -0.1045876776526895,
+      "ci_high": 0.1835321306221297,
+      "significant": false
+    }
+  ],
+  "by_prototype": [
+    {
+      "prototype": "人聲敘事型",
+      "persona_fit": 0.5854166666666667,
+      "video_fit": 0.469588884641592,
+      "lean": 0.11582778202507468
+    },
+    {
+      "prototype": "探索多樣型",
+      "persona_fit": 0.56875,
+      "video_fit": 0.4636323293472094,
+      "lean": 0.10511767065279062
+    },
+    {
+      "prototype": "曲風一致型",
+      "persona_fit": 0.5625,
+      "video_fit": 0.4851255361747816,
+      "lean": 0.07737446382521848
+    },
+    {
+      "prototype": "柔和氛圍型",
+      "persona_fit": 0.525,
+      "video_fit": 0.4099173494311845,
+      "lean": 0.11508265056881542
+    },
+    {
+      "prototype": "純音樂背景型",
+      "persona_fit": 0.5375,
+      "video_fit": 0.39261733733074927,
+      "lean": 0.14488266266925068
+    },
+    {
+      "prototype": "高能量節奏型",
+      "persona_fit": 0.6,
+      "video_fit": 0.4121408074592806,
+      "lean": 0.1878591925407193
+    }
+  ],
+  "notes": [
+    "衝突程度由資料決定：相容度＝該叢集影片的 GT 音樂中符合此原型核心規格的比例，再三等分；未由研究者主觀指派。",
+    "Video-fit 以 top-1 與該影片 GT 音樂的標籤 Jaccard 操作化，為相似度代理而非人工判定的適配度。",
+    "說明衝突承認率以讓步／對比語（although / while / however …）判定，屬規則式詞彙偵測，與 B2/B3 同層級限制。",
+    "lean = Persona-fit − Video-fit：正值代表推薦偏向偏好、負值偏向影片。",
+    "GT 的 R@1 僅作操作檢查，非主指標（見 B5）。",
+    "相容度分組與 Persona-fit／Video-fit 共用 Persona 與 GT 標籤，raw 組間差異只作描述；主要判讀採 Matched-NoLTP 的交互作用。",
+    "組間差異與交互作用的 95% CI 採原型 × 情境雙向叢集拔靴；六種 prototype 與四種 context 分別重抽，再以交叉權重計算。"
+  ]
+}

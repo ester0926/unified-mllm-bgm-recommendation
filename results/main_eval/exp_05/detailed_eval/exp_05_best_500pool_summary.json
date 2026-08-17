@@ -1,0 +1,51 @@
+{
+  "exp_name": "exp_05",
+  "checkpoint": "best",
+  "checkpoint_dir": "<project_root>/checkpoints\\exp_05\\best",
+  "ltp_mode": "hybrid",
+  "active_modalities": [
+    "ltp",
+    "text",
+    "music"
+  ],
+  "pool_size": 500,
+  "max_samples": null,
+  "max_gen_samples": null,
+  "started_at": "2026-05-10T21:40:05",
+  "finished_at": "2026-05-11T09:20:09",
+  "ranking": {
+    "recall@1": 0.2806183115338882,
+    "recall@5": 0.6137931034482759,
+    "recall@10": 0.7612366230677765,
+    "median_rank": 3.0,
+    "mean_rank": 9.611177170035672,
+    "num_samples": 4205,
+    "pool_size": 500,
+    "scoring": "pointwise Plan B ([RANK] token readout) + random tiebreak",
+    "tiebreak_noise": true,
+    "tiebreak_seed": 42,
+    "n_allequal_scores": 0,
+    "pct_allequal": 0.0,
+    "avg_score_range": 30.94113798561051,
+    "avg_score_std": 7.201324365311939
+  },
+  "generation": {
+    "n_generated": 4205,
+    "n_valid": 4204,
+    "fallback_count": 1,
+    "fallback_rate": 0.00023781212841854935,
+    "inject_title": true,
+    "bertscore_precision": 0.7779756784439087,
+    "bertscore_recall": 0.7591868042945862,
+    "bertscore_f1": 0.7677901387214661,
+    "infolm_ab_divergence": 2.897846221923828,
+    "infolm_l2_distance": 0.2114732265472412,
+    "infolm_fisher_rao": 1.722802996635437
+  },
+  "outputs": {
+    "ranking_csv": "<project_root>/checkpoints\\exp_05\\detailed_eval\\exp_05_best_500pool_ranking_samples.csv",
+    "generation_csv": "<project_root>/checkpoints\\exp_05\\detailed_eval\\exp_05_best_500pool_generation_samples.csv",
+    "merged_csv": "<project_root>/checkpoints\\exp_05\\detailed_eval\\exp_05_best_500pool_samples_merged.csv",
+    "merged_jsonl": "<project_root>/checkpoints\\exp_05\\detailed_eval\\exp_05_best_500pool_samples_merged.jsonl"
+  }
+}

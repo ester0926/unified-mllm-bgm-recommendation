@@ -1,0 +1,117 @@
+{
+  "created_at": "2026-05-23T18:10:37",
+  "method": "rule_based_music_keyword_overlap_with_top1_reference_text",
+  "scope_note": "Uses top1_reference_text as the available metadata proxy; should be manually audited before strong claims.",
+  "by_exp": [
+    {
+      "exp_name": "exp_01",
+      "n_music_claims": 7600,
+      "unsupported_music_claims": 4834,
+      "unsupported_music_claim_rate": 0.6360526315789473,
+      "top1_correct_music_claims": 2326,
+      "top1_correct_unsupported_rate": 0.442390369733448,
+      "top1_incorrect_music_claims": 5274,
+      "top1_incorrect_unsupported_rate": 0.7214637846037163,
+      "unsupported_category_counts": {
+        "genre": 3314,
+        "instrument": 2316,
+        "mood_tempo": 1813
+      }
+    },
+    {
+      "exp_name": "exp_02",
+      "n_music_claims": 7240,
+      "unsupported_music_claims": 4591,
+      "unsupported_music_claim_rate": 0.6341160220994475,
+      "top1_correct_music_claims": 1558,
+      "top1_correct_unsupported_rate": 0.4300385109114249,
+      "top1_incorrect_music_claims": 5682,
+      "top1_incorrect_unsupported_rate": 0.6900739176346357,
+      "unsupported_category_counts": {
+        "genre": 3335,
+        "instrument": 2168,
+        "mood_tempo": 1601
+      }
+    },
+    {
+      "exp_name": "exp_03",
+      "n_music_claims": 7661,
+      "unsupported_music_claims": 4843,
+      "unsupported_music_claim_rate": 0.6321629030152721,
+      "top1_correct_music_claims": 2372,
+      "top1_correct_unsupported_rate": 0.41357504215851604,
+      "top1_incorrect_music_claims": 5289,
+      "top1_incorrect_unsupported_rate": 0.7301947438079032,
+      "unsupported_category_counts": {
+        "genre": 3334,
+        "mood_tempo": 1800,
+        "instrument": 2220
+      }
+    },
+    {
+      "exp_name": "exp_04",
+      "n_music_claims": 7797,
+      "unsupported_music_claims": 5159,
+      "unsupported_music_claim_rate": 0.661664742849814,
+      "top1_correct_music_claims": 1444,
+      "top1_correct_unsupported_rate": 0.4619113573407202,
+      "top1_incorrect_music_claims": 6353,
+      "top1_incorrect_unsupported_rate": 0.7070675271525264,
+      "unsupported_category_counts": {
+        "genre": 3719,
+        "mood_tempo": 1970,
+        "instrument": 2450
+      }
+    },
+    {
+      "exp_name": "exp_05",
+      "n_music_claims": 7376,
+      "unsupported_music_claims": 4637,
+      "unsupported_music_claim_rate": 0.6286605206073753,
+      "top1_correct_music_claims": 2065,
+      "top1_correct_unsupported_rate": 0.43389830508474575,
+      "top1_incorrect_music_claims": 5311,
+      "top1_incorrect_unsupported_rate": 0.7043871210694784,
+      "unsupported_category_counts": {
+        "genre": 3339,
+        "mood_tempo": 1715,
+        "instrument": 2153
+      }
+    },
+    {
+      "exp_name": "exp_06",
+      "n_music_claims": 7814,
+      "unsupported_music_claims": 6118,
+      "unsupported_music_claim_rate": 0.7829536728948042,
+      "top1_correct_music_claims": 1349,
+      "top1_correct_unsupported_rate": 0.7731653076352853,
+      "top1_incorrect_music_claims": 6465,
+      "top1_incorrect_unsupported_rate": 0.7849961330239753,
+      "unsupported_category_counts": {
+        "genre": 4197,
+        "instrument": 3284,
+        "mood_tempo": 2257
+      }
+    },
+    {
+      "exp_name": "exp_07",
+      "n_music_claims": 8010,
+      "unsupported_music_claims": 7375,
+      "unsupported_music_claim_rate": 0.9207240948813983,
+      "top1_correct_music_claims": 3,
+      "top1_correct_unsupported_rate": 0.6666666666666666,
+      "top1_incorrect_music_claims": 8007,
+      "top1_incorrect_unsupported_rate": 0.9208192831272637,
+      "unsupported_category_counts": {
+        "genre": 5659,
+        "instrument": 2874,
+        "mood_tempo": 2179
+      }
+    }
+  ],
+  "outputs": {
+    "claims_csv": "<project_root>/checkpoints\\faithfulness_analysis\\metadata_consistency_claims.csv",
+    "summary_json": "<project_root>/checkpoints\\faithfulness_analysis\\metadata_consistency_summary.json",
+    "summary_md": "<project_root>/checkpoints\\faithfulness_analysis\\metadata_consistency_summary.md"
+  }
+}

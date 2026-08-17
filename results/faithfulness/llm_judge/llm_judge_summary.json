@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-05-23T20:01:38",
+  "ollama_url": "http://localhost:11434/api/chat",
+  "ollama_model": "llama3:8b",
+  "sample_seed": 20260523,
+  "feature_erasure": {
+    "n": 120,
+    "n_valid": 120,
+    "n_errors": 0,
+    "llm_is_supported_rate": 0.95,
+    "agreement_rate": 0.6083333333333333
+  },
+  "preference_alignment": {
+    "n": 80,
+    "n_valid": 80,
+    "n_errors": 0,
+    "llm_is_aligned_rate": 0.9125,
+    "agreement_rate": 0.925
+  },
+  "preference_conflict": {
+    "n": 80,
+    "n_valid": 80,
+    "n_errors": 0,
+    "llm_has_conflict_rate": 0.1625,
+    "agreement_rate": 0.75
+  },
+  "metadata_consistency": {
+    "n": 120,
+    "n_valid": 119,
+    "n_errors": 1,
+    "llm_is_metadata_supported_rate": 0.8403361344537815,
+    "agreement_rate": 0.44537815126050423
+  },
+  "outputs": {
+    "feature_csv": "<project_root>/checkpoints\\faithfulness_analysis\\llm_judge\\llm_judge_feature_erasure.csv",
+    "preference_csv": "<project_root>/checkpoints\\faithfulness_analysis\\llm_judge\\llm_judge_preference_counterfactual.csv",
+    "metadata_csv": "<project_root>/checkpoints\\faithfulness_analysis\\llm_judge\\llm_judge_metadata_consistency.csv",
+    "summary_json": "<project_root>/checkpoints\\faithfulness_analysis\\llm_judge\\llm_judge_summary.json",
+    "summary_md": "<project_root>/checkpoints\\faithfulness_analysis\\llm_judge\\llm_judge_summary.md"
+  }
+}

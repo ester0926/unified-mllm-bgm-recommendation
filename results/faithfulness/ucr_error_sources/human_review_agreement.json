@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-07-26T17:36:22",
+  "n_annotated": 143,
+  "annotator": "研究者本人（單一標註者，盲標；活頁簿「標註」工作表不顯示規則判定）",
+  "codebook_version": "標註準則 2026-07-26T14:19:31（活頁簿「標註準則」工作表，E0–E7 八類代碼）",
+  "agreement_all": {
+    "n": 143,
+    "observed_agreement": 0.7482517482517482,
+    "cohen_kappa": 0.36834355828220866,
+    "gwet_ac1": 0.7330637007077856,
+    "pabak": 0.49650349650349646
+  },
+  "agreement_collapsed_non_error": {
+    "n": 143,
+    "observed_agreement": 0.9090909090909091,
+    "cohen_kappa": 0.5916977816824069,
+    "pabak": 0.8181818181818181
+  },
+  "agreement_primary_condition": {
+    "condition": "full",
+    "n": 143,
+    "observed_agreement": 0.7482517482517482,
+    "cohen_kappa": 0.36834355828220866
+  },
+  "agreement_binary_genuine_error": {
+    "n": 143,
+    "observed_agreement": 0.9090909090909091,
+    "cohen_kappa": 0.5768267698611423
+  },
+  "ucr_estimates": [
+    {
+      "condition": "full",
+      "n_claims": 1090,
+      "n_no_source": 143,
+      "n_reviewed": 143,
+      "is_census": true,
+      "genuine_share_of_no_source": 0.11888111888111888,
+      "genuine_share_ci": [
+        0.07556207461182213,
+        0.1821414644397818
+      ],
+      "UCR_reported": 0.13119266055045872,
+      "UCR_human_point": 0.015596330275229359,
+      "UCR_human_ci": [
+        0.009913189605037216,
+        0.02389562331641174
+      ]
+    }
+  ],
+  "confusion_matrix": {
+    "E0": {
+      "E0": 92,
+      "E5": 1,
+      "E0b": 12,
+      "E4": 1,
+      "E1": 2,
+      "E2": 1
+    },
+    "E0b": {
+      "E4": 1,
+      "E0": 11,
+      "E0b": 4
+    },
+    "E4": {
+      "E4": 8,
+      "E0": 6
+    },
+    "E6": {
+      "E6": 2
+    },
+    "E3": {
+      "E3": 1
+    },
+    "E2": {
+      "E0b": 1
+    }
+  },
+  "note": "人工標註為盲標（活頁簿「標註」工作表不顯示規則判定），故 κ 具校準意義；未填『是否真實錯誤』者依代碼推得並以 human_genuine_inferred 標記。"
+}

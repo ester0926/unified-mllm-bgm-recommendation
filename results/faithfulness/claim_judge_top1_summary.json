@@ -1,0 +1,13 @@
+{
+  "input_csv": "<project_root>/checkpoints\\faithfulness_analysis\\counterfactual_generations_top1.csv",
+  "n_generation_rows": 1200,
+  "n_claims": 5387,
+  "unsupported_claims": 1997,
+  "unsupported_claim_rate": 0.3707072582142194,
+  "judge": "rule_based_keyword_v1",
+  "created_at": "2026-06-03T21:44:31",
+  "outputs": {
+    "csv": "<project_root>/checkpoints\\faithfulness_analysis\\claim_annotations_top1.csv",
+    "jsonl": "<project_root>/checkpoints\\faithfulness_analysis\\claim_annotations_top1.jsonl"
+  }
+}

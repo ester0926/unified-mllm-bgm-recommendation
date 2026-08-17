@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-26T20:38:13",
+  "n_pairs": 1500,
+  "n_train": 1200,
+  "n_test": 300,
+  "skipped": {
+    "no_history": 0,
+    "no_core_sbs": 0,
+    "no_emb": 0
+  },
+  "y_mean_abs": 0.9994074799103886,
+  "train_max_abs_error": 0.4264592694712218,
+  "train_mean_abs_error": 0.024794988071243057,
+  "test_max_abs_error": 0.6769712042458368,
+  "test_mean_abs_error": 0.04390394235307339,
+  "test_relative_mean_error": 0.043929971743867695,
+  "threshold": 0.001,
+  "recovered": false,
+  "test_per_sample_max_err_percentiles": {
+    "p50": 0.1362899174124872,
+    "p75": 0.18470701805828355,
+    "p90": 0.3133099408036275,
+    "p95": 0.3779327849900668,
+    "p99": 0.4737949017518844
+  },
+  "test_n_samples_under_1e-4": 0,
+  "test_share_under_1e-4": 0.0
+}

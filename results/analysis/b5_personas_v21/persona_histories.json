@@ -1,0 +1,1970 @@
+{
+  "P1_high_energy__c0": [
+    {
+      "music_id": "ET1P16PNTCw",
+      "layer": "core"
+    },
+    {
+      "music_id": "KdYms5pRwS4",
+      "layer": "core"
+    },
+    {
+      "music_id": "Gs_y1Z_gkNI",
+      "layer": "core"
+    },
+    {
+      "music_id": "08SEvtNnp3c",
+      "layer": "core"
+    },
+    {
+      "music_id": "Cqz713hhz1Y",
+      "layer": "core"
+    },
+    {
+      "music_id": "yxf1WvjFF3M",
+      "layer": "core"
+    },
+    {
+      "music_id": "pSehT1xLG8o",
+      "layer": "core"
+    },
+    {
+      "music_id": "kqi75rKIvKU",
+      "layer": "core"
+    },
+    {
+      "music_id": "wtM8Nc_Wd6I",
+      "layer": "core"
+    },
+    {
+      "music_id": "pbXHb_CNP1E",
+      "layer": "core"
+    },
+    {
+      "music_id": "x0CbkFjGD_E",
+      "layer": "core"
+    },
+    {
+      "music_id": "7TZnf8nK1ZE",
+      "layer": "core"
+    },
+    {
+      "music_id": "shNByD2SMsM",
+      "layer": "core"
+    },
+    {
+      "music_id": "nEbOPaMyM_s",
+      "layer": "core"
+    },
+    {
+      "music_id": "QwZwnZ4dKpA",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "5dXnUzKpHvs",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "9sO5SoZS5ls",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "3MJ3ONbVWKI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "ahbUvzShP9Y",
+      "layer": "off"
+    },
+    {
+      "music_id": "tkg3k4LpzJ0",
+      "layer": "off"
+    }
+  ],
+  "P1_high_energy__c1": [
+    {
+      "music_id": "Q2a64gPDCTk",
+      "layer": "core"
+    },
+    {
+      "music_id": "foWFB0z1dbg",
+      "layer": "core"
+    },
+    {
+      "music_id": "aDYbm7JjIJA",
+      "layer": "core"
+    },
+    {
+      "music_id": "vOgc3oPBi4c",
+      "layer": "core"
+    },
+    {
+      "music_id": "xTjU2NQw55g",
+      "layer": "core"
+    },
+    {
+      "music_id": "Sd0j0YeUINs",
+      "layer": "core"
+    },
+    {
+      "music_id": "oA6VvhqMK9Q",
+      "layer": "core"
+    },
+    {
+      "music_id": "rdsEBwMC20k",
+      "layer": "core"
+    },
+    {
+      "music_id": "d0xz_PUscSQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "TTRVGXT1BuE",
+      "layer": "core"
+    },
+    {
+      "music_id": "Mtx7KymICjw",
+      "layer": "core"
+    },
+    {
+      "music_id": "SlEbzcGVJi0",
+      "layer": "core"
+    },
+    {
+      "music_id": "nNE3uEfOaho",
+      "layer": "core"
+    },
+    {
+      "music_id": "iNtBZ6jP--8",
+      "layer": "core"
+    },
+    {
+      "music_id": "xxywZC8XrCw",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "VU2gqyP64oI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "LaFLBydQG8I",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "0v35KiH2p-g",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "FvfiZlGvJkI",
+      "layer": "off"
+    },
+    {
+      "music_id": "iRffshEtrM8",
+      "layer": "off"
+    }
+  ],
+  "P1_high_energy__c2": [
+    {
+      "music_id": "pGbbuSIhB1w",
+      "layer": "core"
+    },
+    {
+      "music_id": "Wx6cUz7cYw8",
+      "layer": "core"
+    },
+    {
+      "music_id": "bc-jLBIuntg",
+      "layer": "core"
+    },
+    {
+      "music_id": "ifOFlBcaeu8",
+      "layer": "core"
+    },
+    {
+      "music_id": "jaRUFwQ68u8",
+      "layer": "core"
+    },
+    {
+      "music_id": "7pVp6SjSFxo",
+      "layer": "core"
+    },
+    {
+      "music_id": "-BLPrPa45gU",
+      "layer": "core"
+    },
+    {
+      "music_id": "QOHW-XnVAv0",
+      "layer": "core"
+    },
+    {
+      "music_id": "2z_4331JZ88",
+      "layer": "core"
+    },
+    {
+      "music_id": "ef2nDwPijhU",
+      "layer": "core"
+    },
+    {
+      "music_id": "6NSr2DPlIkM",
+      "layer": "core"
+    },
+    {
+      "music_id": "_Xeku9QEDFE",
+      "layer": "core"
+    },
+    {
+      "music_id": "d6RS1wZ2amQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "lyaja0qaYJc",
+      "layer": "core"
+    },
+    {
+      "music_id": "9moZMqoRgsQ",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "Vd2z6lil7EU",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "BCSQHXhXDDU",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "8FWIfSMmSyY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "06RWsvTRFI0",
+      "layer": "off"
+    },
+    {
+      "music_id": "sYAvKAJLtbA",
+      "layer": "off"
+    }
+  ],
+  "P1_high_energy__c3": [
+    {
+      "music_id": "qB12apMi8bU",
+      "layer": "core"
+    },
+    {
+      "music_id": "YLz3R1wI27s",
+      "layer": "core"
+    },
+    {
+      "music_id": "R37zSEjL0Ec",
+      "layer": "core"
+    },
+    {
+      "music_id": "XoeaPiAxUFY",
+      "layer": "core"
+    },
+    {
+      "music_id": "5Zx3-7nhJjU",
+      "layer": "core"
+    },
+    {
+      "music_id": "Y5BFyRp__GU",
+      "layer": "core"
+    },
+    {
+      "music_id": "vG2RM21nM_g",
+      "layer": "core"
+    },
+    {
+      "music_id": "fcWE_8yeCJo",
+      "layer": "core"
+    },
+    {
+      "music_id": "IgxZLZUj4pE",
+      "layer": "core"
+    },
+    {
+      "music_id": "IpmaSjVtu0s",
+      "layer": "core"
+    },
+    {
+      "music_id": "gAL48G7TCxk",
+      "layer": "core"
+    },
+    {
+      "music_id": "GF1JXqBWHpM",
+      "layer": "core"
+    },
+    {
+      "music_id": "nHlJODYBLKs",
+      "layer": "core"
+    },
+    {
+      "music_id": "ytsr9xFMFzg",
+      "layer": "core"
+    },
+    {
+      "music_id": "CDkJux_hF8U",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "9F2PKngLQBk",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "fkBE1J_etsc",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "Y-VQsq4zElQ",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "Ai_fv2ji6zo",
+      "layer": "off"
+    },
+    {
+      "music_id": "PdzFvG_UxsM",
+      "layer": "off"
+    }
+  ],
+  "P2_soft_ambient__c0": [
+    {
+      "music_id": "nkRNIRgcUgg",
+      "layer": "core"
+    },
+    {
+      "music_id": "i-Y2rJWOjag",
+      "layer": "core"
+    },
+    {
+      "music_id": "z0l9WS83cZA",
+      "layer": "core"
+    },
+    {
+      "music_id": "Ckp9njL2pAw",
+      "layer": "core"
+    },
+    {
+      "music_id": "ZKJEq1DmTPc",
+      "layer": "core"
+    },
+    {
+      "music_id": "9sFTh_at8w0",
+      "layer": "core"
+    },
+    {
+      "music_id": "ZL6QsWlWTow",
+      "layer": "core"
+    },
+    {
+      "music_id": "FNRekw3Z9lI",
+      "layer": "core"
+    },
+    {
+      "music_id": "3e3PYr0RTDQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "Dih7K1QGGig",
+      "layer": "core"
+    },
+    {
+      "music_id": "ytYO9b6Jyxg",
+      "layer": "core"
+    },
+    {
+      "music_id": "AOic1oRiSCo",
+      "layer": "core"
+    },
+    {
+      "music_id": "t5LoR8Xg1N8",
+      "layer": "core"
+    },
+    {
+      "music_id": "f8e8tvK3Hyw",
+      "layer": "core"
+    },
+    {
+      "music_id": "gNvW3u7NopQ",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "KOSv-bV8qDU",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "5XxL9t9Cay8",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "YYs3xIUwdpQ",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "rxKNlaeKyEw",
+      "layer": "off"
+    },
+    {
+      "music_id": "G44yQydul2E",
+      "layer": "off"
+    }
+  ],
+  "P2_soft_ambient__c1": [
+    {
+      "music_id": "gQSagPttC9g",
+      "layer": "core"
+    },
+    {
+      "music_id": "AdFbF35RoAQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "AGVZyf6NbRk",
+      "layer": "core"
+    },
+    {
+      "music_id": "RQMmVr-r1lE",
+      "layer": "core"
+    },
+    {
+      "music_id": "khhCWobdJfI",
+      "layer": "core"
+    },
+    {
+      "music_id": "qMsTVKBpgm4",
+      "layer": "core"
+    },
+    {
+      "music_id": "pgoDe__Fm-Y",
+      "layer": "core"
+    },
+    {
+      "music_id": "QDSSi7C08GU",
+      "layer": "core"
+    },
+    {
+      "music_id": "jxfVH0SAU9g",
+      "layer": "core"
+    },
+    {
+      "music_id": "JPtcc1p5gUo",
+      "layer": "core"
+    },
+    {
+      "music_id": "rO5wF2HAhzQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "c3MVITo76eg",
+      "layer": "core"
+    },
+    {
+      "music_id": "n7kEj7l99Iw",
+      "layer": "core"
+    },
+    {
+      "music_id": "a_JZ-bdpInQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "jWBeKROna8g",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "6cBTXGzTLvc",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "t-2hL6kaY1I",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "7yRkX7brhAY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "_8BpGSrYHxo",
+      "layer": "off"
+    },
+    {
+      "music_id": "z3XKimkBy2g",
+      "layer": "off"
+    }
+  ],
+  "P2_soft_ambient__c2": [
+    {
+      "music_id": "dJd5UoqAZL4",
+      "layer": "core"
+    },
+    {
+      "music_id": "c3MVITo76eg",
+      "layer": "core"
+    },
+    {
+      "music_id": "QFSgWVBpnEY",
+      "layer": "core"
+    },
+    {
+      "music_id": "pMW5Bfxjm3A",
+      "layer": "core"
+    },
+    {
+      "music_id": "7HsIfAjTI6Q",
+      "layer": "core"
+    },
+    {
+      "music_id": "0DjTeaJTJBI",
+      "layer": "core"
+    },
+    {
+      "music_id": "vgoCzpF1GBg",
+      "layer": "core"
+    },
+    {
+      "music_id": "HUmcEJu7Zhg",
+      "layer": "core"
+    },
+    {
+      "music_id": "AGVZyf6NbRk",
+      "layer": "core"
+    },
+    {
+      "music_id": "0_AdW8GEtu8",
+      "layer": "core"
+    },
+    {
+      "music_id": "qMsTVKBpgm4",
+      "layer": "core"
+    },
+    {
+      "music_id": "7hCsQBl7Db4",
+      "layer": "core"
+    },
+    {
+      "music_id": "N2E8u2SMDV4",
+      "layer": "core"
+    },
+    {
+      "music_id": "Qe3dP50hiX8",
+      "layer": "core"
+    },
+    {
+      "music_id": "kd64OlaAy1Y",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "nCfTsMnZ8ag",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "-Z5ABoi5WGY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "uDb0n5WwgAE",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "VuEmeZhjAEw",
+      "layer": "off"
+    },
+    {
+      "music_id": "Cr0nj8DJmTk",
+      "layer": "off"
+    }
+  ],
+  "P2_soft_ambient__c3": [
+    {
+      "music_id": "N_pClQa6bOc",
+      "layer": "core"
+    },
+    {
+      "music_id": "zaRIySqM-9A",
+      "layer": "core"
+    },
+    {
+      "music_id": "-NTooLe3Odw",
+      "layer": "core"
+    },
+    {
+      "music_id": "6bSULtGMmo0",
+      "layer": "core"
+    },
+    {
+      "music_id": "n2KBa6MoQIw",
+      "layer": "core"
+    },
+    {
+      "music_id": "RT9QQ77UfQE",
+      "layer": "core"
+    },
+    {
+      "music_id": "_BB3juZaPZ0",
+      "layer": "core"
+    },
+    {
+      "music_id": "Xx390g3aWEM",
+      "layer": "core"
+    },
+    {
+      "music_id": "FUMnK9TFw4Q",
+      "layer": "core"
+    },
+    {
+      "music_id": "QPVkrP2JUbM",
+      "layer": "core"
+    },
+    {
+      "music_id": "-URg9vFF-e8",
+      "layer": "core"
+    },
+    {
+      "music_id": "kWQs3m4q3q8",
+      "layer": "core"
+    },
+    {
+      "music_id": "yn1Z2021FTs",
+      "layer": "core"
+    },
+    {
+      "music_id": "I8kb2ZPdTDk",
+      "layer": "core"
+    },
+    {
+      "music_id": "mx3NoVRqVQs",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "SxOOeAx2kGo",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "MfTkZxYIzic",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "uYSTMvgfBUE",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "R9wFU2Jf5wc",
+      "layer": "off"
+    },
+    {
+      "music_id": "nJPo17plfYo",
+      "layer": "off"
+    }
+  ],
+  "P3_vocal_narrative__c0": [
+    {
+      "music_id": "YyX9w_PC178",
+      "layer": "core"
+    },
+    {
+      "music_id": "70VT7Q3C4tg",
+      "layer": "core"
+    },
+    {
+      "music_id": "t9mT5N8aypU",
+      "layer": "core"
+    },
+    {
+      "music_id": "wwv2xLYpDRU",
+      "layer": "core"
+    },
+    {
+      "music_id": "A0-MX0H6fRA",
+      "layer": "core"
+    },
+    {
+      "music_id": "F-y73-9Q2uE",
+      "layer": "core"
+    },
+    {
+      "music_id": "ciktlKQ67Jc",
+      "layer": "core"
+    },
+    {
+      "music_id": "bC3WAxiLnDY",
+      "layer": "core"
+    },
+    {
+      "music_id": "hbyyfZVR8UY",
+      "layer": "core"
+    },
+    {
+      "music_id": "KlCS5jrfaW0",
+      "layer": "core"
+    },
+    {
+      "music_id": "WTJgXSasqtg",
+      "layer": "core"
+    },
+    {
+      "music_id": "b7G9_AcPvQQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "6nDCB0ZMtXg",
+      "layer": "core"
+    },
+    {
+      "music_id": "THbBxZFW3tM",
+      "layer": "core"
+    },
+    {
+      "music_id": "k4f-LnU67mM",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "xTIIcEtw3AA",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "tuLfT54jS8A",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "BKzTAbBN2L8",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "ynu0ihXX_DA",
+      "layer": "off"
+    },
+    {
+      "music_id": "IugBEHI5WdE",
+      "layer": "off"
+    }
+  ],
+  "P3_vocal_narrative__c1": [
+    {
+      "music_id": "yQoFFcKCD8k",
+      "layer": "core"
+    },
+    {
+      "music_id": "nqxMZWCXMBc",
+      "layer": "core"
+    },
+    {
+      "music_id": "b0IaM4_I_Nk",
+      "layer": "core"
+    },
+    {
+      "music_id": "oH6oGZG4BSc",
+      "layer": "core"
+    },
+    {
+      "music_id": "P9wuIdElKOo",
+      "layer": "core"
+    },
+    {
+      "music_id": "h7h4_2PYkv4",
+      "layer": "core"
+    },
+    {
+      "music_id": "m2MZ8PQwZD4",
+      "layer": "core"
+    },
+    {
+      "music_id": "ESG5Y7pejU0",
+      "layer": "core"
+    },
+    {
+      "music_id": "CMf0sCsutE8",
+      "layer": "core"
+    },
+    {
+      "music_id": "A0btL_dWZuk",
+      "layer": "core"
+    },
+    {
+      "music_id": "4TLUbKY5uMo",
+      "layer": "core"
+    },
+    {
+      "music_id": "FzGNsQX1Dec",
+      "layer": "core"
+    },
+    {
+      "music_id": "aNYjOVo5IEw",
+      "layer": "core"
+    },
+    {
+      "music_id": "zumAIoWOeBk",
+      "layer": "core"
+    },
+    {
+      "music_id": "IWRPJ_8TVGc",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "T0A6B9fwZV4",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "NI_SQ0NiUv0",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "O4XskfT6vNY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "3hO82SFWH0E",
+      "layer": "off"
+    },
+    {
+      "music_id": "QFHPijbUW4k",
+      "layer": "off"
+    }
+  ],
+  "P3_vocal_narrative__c2": [
+    {
+      "music_id": "NTxarK0N1Tg",
+      "layer": "core"
+    },
+    {
+      "music_id": "oGn-k8qW8VM",
+      "layer": "core"
+    },
+    {
+      "music_id": "48Ebe-oCMIQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "6j8sgc5Pbes",
+      "layer": "core"
+    },
+    {
+      "music_id": "_tWRILNT0Kc",
+      "layer": "core"
+    },
+    {
+      "music_id": "FIXdCQOCd50",
+      "layer": "core"
+    },
+    {
+      "music_id": "4R2efYK36z8",
+      "layer": "core"
+    },
+    {
+      "music_id": "qCucAwz-KsQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "7RJrNnRpVHg",
+      "layer": "core"
+    },
+    {
+      "music_id": "iWujO4kRoOw",
+      "layer": "core"
+    },
+    {
+      "music_id": "i-Y2rJWOjag",
+      "layer": "core"
+    },
+    {
+      "music_id": "ACTTq3PpC1A",
+      "layer": "core"
+    },
+    {
+      "music_id": "oiMNRaltQA8",
+      "layer": "core"
+    },
+    {
+      "music_id": "X7qGVPfDZ5U",
+      "layer": "core"
+    },
+    {
+      "music_id": "IMMhBy48YY4",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "-DcbLGul8Mk",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "q4cz2QcoABI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "hyjYWEqmag0",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "3NZ8uNS1h0k",
+      "layer": "off"
+    },
+    {
+      "music_id": "XAPA6fbaDK4",
+      "layer": "off"
+    }
+  ],
+  "P3_vocal_narrative__c3": [
+    {
+      "music_id": "6S-KSpF2bVQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "rhuNm2X7nbA",
+      "layer": "core"
+    },
+    {
+      "music_id": "ERNT-ejYrM4",
+      "layer": "core"
+    },
+    {
+      "music_id": "UJoLGKQYRzs",
+      "layer": "core"
+    },
+    {
+      "music_id": "MRtqL4v2jsM",
+      "layer": "core"
+    },
+    {
+      "music_id": "2U-WPN4DS94",
+      "layer": "core"
+    },
+    {
+      "music_id": "tpLngOd-QfM",
+      "layer": "core"
+    },
+    {
+      "music_id": "dtuiq2cE43g",
+      "layer": "core"
+    },
+    {
+      "music_id": "pEiXa3bqd-M",
+      "layer": "core"
+    },
+    {
+      "music_id": "lKPV3N2LCVU",
+      "layer": "core"
+    },
+    {
+      "music_id": "VLIAMw-t21I",
+      "layer": "core"
+    },
+    {
+      "music_id": "QomKtGOJotE",
+      "layer": "core"
+    },
+    {
+      "music_id": "dI6l128Ev8k",
+      "layer": "core"
+    },
+    {
+      "music_id": "EFfj1Kf26Rs",
+      "layer": "core"
+    },
+    {
+      "music_id": "EfSp_YeYMYI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "idZ4lqbNwEI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "ha7aMbPb6pU",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "k1UEYIlxppQ",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "8kuepRqalbM",
+      "layer": "off"
+    },
+    {
+      "music_id": "6wA_aKJABVc",
+      "layer": "off"
+    }
+  ],
+  "P4_instrumental_bed__c0": [
+    {
+      "music_id": "dpjjxXtikl0",
+      "layer": "core"
+    },
+    {
+      "music_id": "L3apbviZNGY",
+      "layer": "core"
+    },
+    {
+      "music_id": "s3kvBAeV2bg",
+      "layer": "core"
+    },
+    {
+      "music_id": "rnbw9bjLZ00",
+      "layer": "core"
+    },
+    {
+      "music_id": "HTUoNC2OB1Y",
+      "layer": "core"
+    },
+    {
+      "music_id": "COHo5pnZ-Hs",
+      "layer": "core"
+    },
+    {
+      "music_id": "3E7vegtFDd4",
+      "layer": "core"
+    },
+    {
+      "music_id": "8caokdtk5Ks",
+      "layer": "core"
+    },
+    {
+      "music_id": "U220T2UYH8k",
+      "layer": "core"
+    },
+    {
+      "music_id": "14MTHKxA1kw",
+      "layer": "core"
+    },
+    {
+      "music_id": "lL5UsMvmdYg",
+      "layer": "core"
+    },
+    {
+      "music_id": "tHEXmvRseII",
+      "layer": "core"
+    },
+    {
+      "music_id": "QixZWc98mZY",
+      "layer": "core"
+    },
+    {
+      "music_id": "zJ4yYFsHmDw",
+      "layer": "core"
+    },
+    {
+      "music_id": "sWKGQmXultY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "e9XsU2x7xio",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "qjfufeDpZtU",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "1r8zoFNhYWA",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "jBxDnMXHl7A",
+      "layer": "off"
+    },
+    {
+      "music_id": "MZR4071hjDg",
+      "layer": "off"
+    }
+  ],
+  "P4_instrumental_bed__c1": [
+    {
+      "music_id": "_lYgzN-iuIc",
+      "layer": "core"
+    },
+    {
+      "music_id": "A6UmkltYYL8",
+      "layer": "core"
+    },
+    {
+      "music_id": "3z2PhMr96sA",
+      "layer": "core"
+    },
+    {
+      "music_id": "vCW6LtG_m0U",
+      "layer": "core"
+    },
+    {
+      "music_id": "Mqz4wQKvEgk",
+      "layer": "core"
+    },
+    {
+      "music_id": "95-YF2W-GIA",
+      "layer": "core"
+    },
+    {
+      "music_id": "L3apbviZNGY",
+      "layer": "core"
+    },
+    {
+      "music_id": "EAP20KWvoP0",
+      "layer": "core"
+    },
+    {
+      "music_id": "3C7X3muGx0U",
+      "layer": "core"
+    },
+    {
+      "music_id": "AD2NtDTuHqQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "iims9I-muWk",
+      "layer": "core"
+    },
+    {
+      "music_id": "EZ0ZfbInEiU",
+      "layer": "core"
+    },
+    {
+      "music_id": "UHoWsIdccT4",
+      "layer": "core"
+    },
+    {
+      "music_id": "COHo5pnZ-Hs",
+      "layer": "core"
+    },
+    {
+      "music_id": "8MmzB1ZrUIY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "sw-6noJOuz0",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "2tQqfBBy2Pk",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "z63mbNP5i1o",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "UgPu6iJol40",
+      "layer": "off"
+    },
+    {
+      "music_id": "Lg6me7nCWSk",
+      "layer": "off"
+    }
+  ],
+  "P4_instrumental_bed__c2": [
+    {
+      "music_id": "xqU3FHUAb7Y",
+      "layer": "core"
+    },
+    {
+      "music_id": "8-s0NEhRHzQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "LchLN7-tf3s",
+      "layer": "core"
+    },
+    {
+      "music_id": "qAncQszLNpc",
+      "layer": "core"
+    },
+    {
+      "music_id": "yNvalXmLUa8",
+      "layer": "core"
+    },
+    {
+      "music_id": "7mxYijilV3g",
+      "layer": "core"
+    },
+    {
+      "music_id": "5xD8eKEQ40Y",
+      "layer": "core"
+    },
+    {
+      "music_id": "zYpNoF36E30",
+      "layer": "core"
+    },
+    {
+      "music_id": "-8G6tkUdHTE",
+      "layer": "core"
+    },
+    {
+      "music_id": "J1j2lJVto4c",
+      "layer": "core"
+    },
+    {
+      "music_id": "-mMbJnPsddA",
+      "layer": "core"
+    },
+    {
+      "music_id": "MyGNikslhsw",
+      "layer": "core"
+    },
+    {
+      "music_id": "2BRxewbyx38",
+      "layer": "core"
+    },
+    {
+      "music_id": "32__oMkAq5k",
+      "layer": "core"
+    },
+    {
+      "music_id": "o1iI515pbu4",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "KGyghL74GYc",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "dcwrmdlyBsI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "yEvokSJXAq0",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "q1bWpc1l55E",
+      "layer": "off"
+    },
+    {
+      "music_id": "6yiGld0cmWc",
+      "layer": "off"
+    }
+  ],
+  "P4_instrumental_bed__c3": [
+    {
+      "music_id": "cmFMXASfxuk",
+      "layer": "core"
+    },
+    {
+      "music_id": "6KkOW17XbGs",
+      "layer": "core"
+    },
+    {
+      "music_id": "cyqLs8CTVvQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "PXBj805fhfk",
+      "layer": "core"
+    },
+    {
+      "music_id": "dTTTImFJyzE",
+      "layer": "core"
+    },
+    {
+      "music_id": "wVHneHgs8wc",
+      "layer": "core"
+    },
+    {
+      "music_id": "Jv4fWTkO2kE",
+      "layer": "core"
+    },
+    {
+      "music_id": "U_wURAxCtck",
+      "layer": "core"
+    },
+    {
+      "music_id": "1vbQ9uLMaek",
+      "layer": "core"
+    },
+    {
+      "music_id": "boIsKhjpchw",
+      "layer": "core"
+    },
+    {
+      "music_id": "GmrJ1JNsEQs",
+      "layer": "core"
+    },
+    {
+      "music_id": "sdgBYiWkOHg",
+      "layer": "core"
+    },
+    {
+      "music_id": "z1oi3nG_Gu4",
+      "layer": "core"
+    },
+    {
+      "music_id": "X57MLbjv1Mo",
+      "layer": "core"
+    },
+    {
+      "music_id": "b-8ao-yurBQ",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "lu4xGQCV3G4",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "y1G64dpUglo",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "hlpkKWbMC14",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "EuRzAaNYURo",
+      "layer": "off"
+    },
+    {
+      "music_id": "FjgqNUCdrfY",
+      "layer": "off"
+    }
+  ],
+  "P5_genre_consistent__c0": [
+    {
+      "music_id": "vsUhXoYzRWc",
+      "layer": "core"
+    },
+    {
+      "music_id": "S4ANnI2SMQs",
+      "layer": "core"
+    },
+    {
+      "music_id": "GQ2fJoKWC_w",
+      "layer": "core"
+    },
+    {
+      "music_id": "mW_Fd_TZ_70",
+      "layer": "core"
+    },
+    {
+      "music_id": "qnVD7WuarSo",
+      "layer": "core"
+    },
+    {
+      "music_id": "mi4ok0KSID0",
+      "layer": "core"
+    },
+    {
+      "music_id": "17ePDV_zUJ0",
+      "layer": "core"
+    },
+    {
+      "music_id": "_YX2ilxRLo8",
+      "layer": "core"
+    },
+    {
+      "music_id": "0V8uSouJrRY",
+      "layer": "core"
+    },
+    {
+      "music_id": "foEUAtXPQhU",
+      "layer": "core"
+    },
+    {
+      "music_id": "KLp37-pmGpQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "74QR06SLem4",
+      "layer": "core"
+    },
+    {
+      "music_id": "1Acyt-u4RVk",
+      "layer": "core"
+    },
+    {
+      "music_id": "ydCXp1XWutw",
+      "layer": "core"
+    },
+    {
+      "music_id": "KGS31X-o1NI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "4GV6TJxqLXs",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "kJJ6VKkmHXE",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "SXo4jK9cTpc",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "SX--FNjrBjA",
+      "layer": "off"
+    },
+    {
+      "music_id": "680bI-Of1Kg",
+      "layer": "off"
+    }
+  ],
+  "P5_genre_consistent__c1": [
+    {
+      "music_id": "JbQmk27h964",
+      "layer": "core"
+    },
+    {
+      "music_id": "0u6FS3-Nwvc",
+      "layer": "core"
+    },
+    {
+      "music_id": "F5lCYYyGlQU",
+      "layer": "core"
+    },
+    {
+      "music_id": "icLniGHbLxs",
+      "layer": "core"
+    },
+    {
+      "music_id": "QzLfGoFxOkQ",
+      "layer": "core"
+    },
+    {
+      "music_id": "euTobQ4Y7FE",
+      "layer": "core"
+    },
+    {
+      "music_id": "XNSTjLibmN8",
+      "layer": "core"
+    },
+    {
+      "music_id": "q9-fa3Dv-Wc",
+      "layer": "core"
+    },
+    {
+      "music_id": "sGNXiEbj8no",
+      "layer": "core"
+    },
+    {
+      "music_id": "EpSE9x9Lqq8",
+      "layer": "core"
+    },
+    {
+      "music_id": "OlFyM2cYGW0",
+      "layer": "core"
+    },
+    {
+      "music_id": "XRjb6FSgzCk",
+      "layer": "core"
+    },
+    {
+      "music_id": "kXg2fufPRgI",
+      "layer": "core"
+    },
+    {
+      "music_id": "e8MVYYHjQfo",
+      "layer": "core"
+    },
+    {
+      "music_id": "bIdKwtKUtvk",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "6XqpNmTZes4",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "3kRjlkZwXTo",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "iqQ9UGb6HKI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "50S5ZtAQ8Eg",
+      "layer": "off"
+    },
+    {
+      "music_id": "tFGqDmSBGDY",
+      "layer": "off"
+    }
+  ],
+  "P5_genre_consistent__c2": [
+    {
+      "music_id": "Nxzid02W1T0",
+      "layer": "core"
+    },
+    {
+      "music_id": "s0gJPPDa1ro",
+      "layer": "core"
+    },
+    {
+      "music_id": "MHrqrq7hyok",
+      "layer": "core"
+    },
+    {
+      "music_id": "-UaZ09V9hnA",
+      "layer": "core"
+    },
+    {
+      "music_id": "Pf0ZtcnBPSA",
+      "layer": "core"
+    },
+    {
+      "music_id": "F4VbMq_HODI",
+      "layer": "core"
+    },
+    {
+      "music_id": "Pw7bd4BLlmI",
+      "layer": "core"
+    },
+    {
+      "music_id": "K1gp9bcu5hc",
+      "layer": "core"
+    },
+    {
+      "music_id": "HKKGc7_vlb4",
+      "layer": "core"
+    },
+    {
+      "music_id": "bzcPyNcrbLY",
+      "layer": "core"
+    },
+    {
+      "music_id": "x6B95eOYhWw",
+      "layer": "core"
+    },
+    {
+      "music_id": "kIayAaBFqf4",
+      "layer": "core"
+    },
+    {
+      "music_id": "vQX2DR0ZsXw",
+      "layer": "core"
+    },
+    {
+      "music_id": "s6DHwZwWwWs",
+      "layer": "core"
+    },
+    {
+      "music_id": "zzEE-a5ryp0",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "UJSOP940ong",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "bwPeEY1ug2I",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "hgil0xOueQk",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "t1JooeV-Ev4",
+      "layer": "off"
+    },
+    {
+      "music_id": "Bt2ha5B3X3c",
+      "layer": "off"
+    }
+  ],
+  "P5_genre_consistent__c3": [
+    {
+      "music_id": "9oKyFUj10Y8",
+      "layer": "core"
+    },
+    {
+      "music_id": "xdC8sg89lDE",
+      "layer": "core"
+    },
+    {
+      "music_id": "29T3laSuk2c",
+      "layer": "core"
+    },
+    {
+      "music_id": "p47yE50afEw",
+      "layer": "core"
+    },
+    {
+      "music_id": "fCLzyLW2T9g",
+      "layer": "core"
+    },
+    {
+      "music_id": "o6fgESp6TQc",
+      "layer": "core"
+    },
+    {
+      "music_id": "yutBwqKeU7E",
+      "layer": "core"
+    },
+    {
+      "music_id": "gwu_V1YO7Ak",
+      "layer": "core"
+    },
+    {
+      "music_id": "UbQ-Pi0pgl8",
+      "layer": "core"
+    },
+    {
+      "music_id": "nGZWmcXF5Do",
+      "layer": "core"
+    },
+    {
+      "music_id": "KTzVFnQPlzw",
+      "layer": "core"
+    },
+    {
+      "music_id": "6OrG4C2vkXk",
+      "layer": "core"
+    },
+    {
+      "music_id": "IN5VPNlO7F8",
+      "layer": "core"
+    },
+    {
+      "music_id": "gVHC9ED55Rg",
+      "layer": "core"
+    },
+    {
+      "music_id": "xQLZFFSMoPM",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "cpZFLM5xUzc",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "ctIUW7oAIEM",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "9xmdqF0L_8c",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "20PfrCdz2F0",
+      "layer": "off"
+    },
+    {
+      "music_id": "q--W9e2Ao9Q",
+      "layer": "off"
+    }
+  ],
+  "P6_exploratory__c0": [
+    {
+      "music_id": "UJ44ko9vCAk",
+      "layer": "core"
+    },
+    {
+      "music_id": "76C3ELBk5qI",
+      "layer": "core"
+    },
+    {
+      "music_id": "IvonBLnYCOo",
+      "layer": "core"
+    },
+    {
+      "music_id": "ZnnZXI8w66M",
+      "layer": "core"
+    },
+    {
+      "music_id": "vuHFQqE7SmA",
+      "layer": "core"
+    },
+    {
+      "music_id": "rpXg9LTtLtA",
+      "layer": "core"
+    },
+    {
+      "music_id": "-i20MZGMogc",
+      "layer": "core"
+    },
+    {
+      "music_id": "AHA47A2V_oE",
+      "layer": "core"
+    },
+    {
+      "music_id": "i5PENQpaJj4",
+      "layer": "core"
+    },
+    {
+      "music_id": "uN3TDHXlrns",
+      "layer": "core"
+    },
+    {
+      "music_id": "hmvX2q64hO8",
+      "layer": "core"
+    },
+    {
+      "music_id": "CnTcYRf8JgI",
+      "layer": "core"
+    },
+    {
+      "music_id": "J001cnrWvdI",
+      "layer": "core"
+    },
+    {
+      "music_id": "0lviPRZewXU",
+      "layer": "core"
+    },
+    {
+      "music_id": "JCBooCWhc48",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "mSsilgwH_kI",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "JV4jevg2P-E",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "bXAP5i-xeRg",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "M9uhBiPAOKg",
+      "layer": "off"
+    },
+    {
+      "music_id": "mMGxf-PLcFA",
+      "layer": "off"
+    }
+  ],
+  "P6_exploratory__c1": [
+    {
+      "music_id": "4QoIKAWTe0w",
+      "layer": "core"
+    },
+    {
+      "music_id": "qpSi3P86Azg",
+      "layer": "core"
+    },
+    {
+      "music_id": "IX74iZ3Agag",
+      "layer": "core"
+    },
+    {
+      "music_id": "NGtiqUOIAQs",
+      "layer": "core"
+    },
+    {
+      "music_id": "OzrhJ3_yBGc",
+      "layer": "core"
+    },
+    {
+      "music_id": "PqTxyuvC2hg",
+      "layer": "core"
+    },
+    {
+      "music_id": "9mdAIXjW08A",
+      "layer": "core"
+    },
+    {
+      "music_id": "0GYOmbQcKoc",
+      "layer": "core"
+    },
+    {
+      "music_id": "L1SZUUVi_g4",
+      "layer": "core"
+    },
+    {
+      "music_id": "l7k4DczHVX4",
+      "layer": "core"
+    },
+    {
+      "music_id": "-JQwrCf6vfs",
+      "layer": "core"
+    },
+    {
+      "music_id": "-zxQ_u0XqI0",
+      "layer": "core"
+    },
+    {
+      "music_id": "DSIf2qIdROc",
+      "layer": "core"
+    },
+    {
+      "music_id": "zGEmF3Mj7dY",
+      "layer": "core"
+    },
+    {
+      "music_id": "A_POEv3Xp3Q",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "JZYd2J0gk98",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "qhOjq19O9nY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "XFg8QlNK3TM",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "_N3bWClL4U8",
+      "layer": "off"
+    },
+    {
+      "music_id": "cLs0oWq2ovo",
+      "layer": "off"
+    }
+  ],
+  "P6_exploratory__c2": [
+    {
+      "music_id": "LkBYgpZUbyA",
+      "layer": "core"
+    },
+    {
+      "music_id": "TavZlJJpgl8",
+      "layer": "core"
+    },
+    {
+      "music_id": "YGzPFYmVIeU",
+      "layer": "core"
+    },
+    {
+      "music_id": "1toi0Iqo578",
+      "layer": "core"
+    },
+    {
+      "music_id": "urWXflAzRuU",
+      "layer": "core"
+    },
+    {
+      "music_id": "CZ2yebHXe0U",
+      "layer": "core"
+    },
+    {
+      "music_id": "faStuU3khKI",
+      "layer": "core"
+    },
+    {
+      "music_id": "q9Ynte4q1Gs",
+      "layer": "core"
+    },
+    {
+      "music_id": "bUCCT5CQ7Pk",
+      "layer": "core"
+    },
+    {
+      "music_id": "7L-KrHYnu6U",
+      "layer": "core"
+    },
+    {
+      "music_id": "aZn0vIUC2i0",
+      "layer": "core"
+    },
+    {
+      "music_id": "jZYXES9T2eE",
+      "layer": "core"
+    },
+    {
+      "music_id": "Gcyl4nC2hsw",
+      "layer": "core"
+    },
+    {
+      "music_id": "yFmRG3rvGz8",
+      "layer": "core"
+    },
+    {
+      "music_id": "64sjUV1IYDA",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "LZ8L7V5H-Fg",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "Iu2wqSmhJxY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "bIExTSb4s3s",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "tGTZYBhRs2s",
+      "layer": "off"
+    },
+    {
+      "music_id": "ediACKclh4g",
+      "layer": "off"
+    }
+  ],
+  "P6_exploratory__c3": [
+    {
+      "music_id": "sU4kg-3u25c",
+      "layer": "core"
+    },
+    {
+      "music_id": "_jiNorz1OHY",
+      "layer": "core"
+    },
+    {
+      "music_id": "_T5zCmaty4U",
+      "layer": "core"
+    },
+    {
+      "music_id": "HsCG4ANq5-8",
+      "layer": "core"
+    },
+    {
+      "music_id": "kyEpmIXICHo",
+      "layer": "core"
+    },
+    {
+      "music_id": "YGflK_JL2p8",
+      "layer": "core"
+    },
+    {
+      "music_id": "yhXIF0H0oBs",
+      "layer": "core"
+    },
+    {
+      "music_id": "AO04s7NjhJ4",
+      "layer": "core"
+    },
+    {
+      "music_id": "-ZvBVZ-cMkw",
+      "layer": "core"
+    },
+    {
+      "music_id": "nh7AsvgMNsg",
+      "layer": "core"
+    },
+    {
+      "music_id": "5HlBxkxz1Qo",
+      "layer": "core"
+    },
+    {
+      "music_id": "-OJx_QOrIiE",
+      "layer": "core"
+    },
+    {
+      "music_id": "3R0Pknsoj4Q",
+      "layer": "core"
+    },
+    {
+      "music_id": "RnAAT804Hl8",
+      "layer": "core"
+    },
+    {
+      "music_id": "iTbPcYgBdRY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "xN-Al64YtG4",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "O6P_NzYehK8",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "LrD5Cc2LehY",
+      "layer": "adjacent"
+    },
+    {
+      "music_id": "DvLRi01N2zs",
+      "layer": "off"
+    },
+    {
+      "music_id": "6XwAdh9-9T4",
+      "layer": "off"
+    }
+  ]
+}

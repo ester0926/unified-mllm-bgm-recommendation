@@ -1,0 +1,32 @@
+{
+  "exp_name": "exp_01",
+  "checkpoint": "best",
+  "n_samples": 200,
+  "n_rows": 1200,
+  "conditions": [
+    "full",
+    "wo_video",
+    "wo_audio_feature_only",
+    "wo_audio_all",
+    "wo_prompt",
+    "wo_ltp"
+  ],
+  "condition_descriptions": {
+    "full": "all modalities available; title/artist injection follows INJECT_TITLE",
+    "wo_video": "video feature is zeroed; title/artist injection follows INJECT_TITLE",
+    "wo_audio_feature_only": "music feature is zeroed, but title/artist metadata is kept",
+    "wo_audio_all": "music feature is zeroed and title/artist metadata injection is disabled",
+    "wo_prompt": "text prompt feature and user text are removed; title/artist metadata is kept",
+    "wo_ltp": "long-term preference feature is zeroed; title/artist metadata is kept"
+  },
+  "sample_seed": 20260516,
+  "prompt_variant": "original",
+  "inject_title": true,
+  "fallback_count": 0,
+  "started_at": "2026-05-21T23:53:46",
+  "finished_at": "2026-05-22T00:30:42",
+  "outputs": {
+    "csv": "<project_root>/checkpoints\\faithfulness_analysis\\counterfactual_generations.csv",
+    "jsonl": "<project_root>/checkpoints\\faithfulness_analysis\\counterfactual_generations.jsonl"
+  }
+}
