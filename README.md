@@ -39,6 +39,7 @@ checkpoints/          checkpoint 放置位置，僅保留 README
 5. [RESULTS_GUIDE.md](RESULTS_GUIDE.md)：`results/` 中摘要結果與分析檔案的用途。
 6. [REPRODUCIBILITY.md](REPRODUCIBILITY.md)：重現主實驗的建議流程。
 7. [CHECKPOINTS.md](CHECKPOINTS.md)：大型權重、cache 與 checkpoint 的放置方式。
+8. [ZENODO.md](ZENODO.md)：Zenodo 下載包、解壓方式與 checksum 驗證。
 
 ## 環境安裝
 
@@ -52,4 +53,4 @@ pip install -r requirements.txt
 
 ## 外部資料與大型檔案
 
-本 repo 僅保存可版本控制的程式與小型結果摘要。完整資料、模型權重與 cache 請依 [DATA.md](DATA.md) 與 [CHECKPOINTS.md](CHECKPOINTS.md) 放置於指定資料夾，或透過 GitHub Release、Zenodo、Google Drive、實驗室 NAS 等方式另外提供下載連結與 checksum。
+本 repo 僅保存可版本控制的程式與小型結果摘要。模型權重、LTP cache、metadata 與 ID 清單以 Zenodo 下載包提供；下載與解壓方式見 [ZENODO.md](ZENODO.md)。完整 MuseChat HDF5 features 與原始影音檔未包含於 Zenodo v1 重現包。

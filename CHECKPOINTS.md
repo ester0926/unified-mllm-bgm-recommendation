@@ -2,6 +2,8 @@
 
 模型權重、LTP cache 與 MuseChat features 未納入 Git 版本控制。本 repository 僅保存程式、設定、流程文件與小型摘要結果。
 
+`exp_01` 至 `exp_07` 的 `best/` checkpoint 已整理為 Zenodo 下載包 `bgm_recommender_model_checkpoints_v1.tar.zst`。下載與解壓方式請見 [ZENODO.md](ZENODO.md)。
+
 ## 版本控制範圍
 
 以下類型屬於大型或可再生檔案，預設由 `.gitignore` 排除：

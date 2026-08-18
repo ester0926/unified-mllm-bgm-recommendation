@@ -2,6 +2,8 @@
 
 本 repo 不包含完整資料集。原因是 MuseChat 特徵、影音資料、LTP cache 與 checkpoint 體積過大，不適合直接放入 GitHub。重現時請依照下列結構自行放置資料，或依 [LTP_PIPELINE.md](LTP_PIPELINE.md) 重新產生中間輸出。
 
+部分外部資料已整理為 Zenodo 下載包。下載、解壓與 checksum 驗證方式請見 [ZENODO.md](ZENODO.md)。
+
 ## 需要另外準備的資料
 
 ### 1. MuseChat HDF5 features

@@ -28,6 +28,13 @@ tmp/
 .codex_work/
 .codex_audit*/
 
+# Release archives hosted outside Git
+*.tar
+*.tar.gz
+*.tar.zst
+*.zip
+zenodo_release/
+
 # Large datasets and generated features
 *.h5
 *.hdf5
