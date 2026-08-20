@@ -52,7 +52,6 @@
 | `results/analysis/b5_personas_v21/` | 最終 v21 persona controllability artifacts。 |
 | `results/analysis/b6_conflict_v21/` | 最終 v21 preference-video conflict analysis。 |
 | `results/analysis/v21_reproducibility_manifest.json` | 追蹤主要 v21 outputs 與 provenance 的 manifest。 |
-| `results/analysis/v21_experiment_completion_review.json` | v21 experiments 完整性檢查。 |
 
 ## Faithfulness 結果
 

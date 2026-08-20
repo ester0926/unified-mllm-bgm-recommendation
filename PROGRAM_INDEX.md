@@ -130,7 +130,6 @@
 | `scripts/analysis/b6_preference_video_conflict_v21.py` | 最終論文版本使用的 preference-video conflict analysis。 |
 | `scripts/analysis/reuse_full_exp01_for_fixed_component_v21.py` | 重用 full-model outputs 以進行 fixed-component v21 分析。 |
 | `scripts/analysis/prepare_v21_preference_claim_blind_audit.py` | 製作 v21 preference-claim blind audit packets。 |
-| `scripts/analysis/review_v21_experiment_completion.py` | 檢查 v21 experiment outputs 是否完整。 |
 | `scripts/analysis/write_v21_reproducibility_manifest.py` | 產生 v21 reproducibility/provenance manifest。 |
 | `scripts/analysis/tsne_umap_ltp.py` | 使用降維方式視覺化 LTP representation structure。 |
 | `scripts/analysis/video_cluster_stratification.py` | 依 video clusters 分層分析效能。 |

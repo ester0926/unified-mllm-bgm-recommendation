@@ -66,7 +66,6 @@ checkpoints/exp_07/best/
 ```text
 data_preparation/feature_alignment/valid_training_ids_v2.4_verified.json
 results/analysis/v21_reproducibility_manifest.json
-results/analysis/v21_experiment_completion_review.json
 results/main_eval/
 results/baselines/
 results/robustness/
