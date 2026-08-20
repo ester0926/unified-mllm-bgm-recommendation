@@ -40,6 +40,7 @@ checkpoints/          checkpoint 放置位置，僅保留 README
 6. [REPRODUCIBILITY.md](REPRODUCIBILITY.md)：重現主實驗的建議流程。
 7. [CHECKPOINTS.md](CHECKPOINTS.md)：大型權重、cache 與 checkpoint 的放置方式。
 8. [ZENODO.md](ZENODO.md)：Zenodo 下載包、解壓方式與 checksum 驗證。
+9. [CLEANUP_DECISIONS.md](CLEANUP_DECISIONS.md)：舊版、測試與問卷資料的移除原則。
 
 ## 環境安裝
 

@@ -56,7 +56,6 @@
 | `scripts/baselines/run_musechat_light_eval_500pool.py` | 評估輕量版 MuseChat-style baseline。 |
 | `scripts/baselines/train_musechat_light_generator_current_data.py` | 使用目前資料格式訓練輕量 MuseChat-style generator。 |
 | `scripts/baselines/run_musechat_ltp_eval_500pool.py` | 在 MuseChat-light baseline 設定下加入 LTP 訊號。 |
-| `scripts/baselines/run_exp08_ltp_eval_500pool.py` | 保留作為 provenance 的實驗性 LTP baseline/evaluation。 |
 | `scripts/baselines/summarize_baseline_results.py` | 將 baseline 結果整理成摘要表。 |
 
 ## Robustness 與 Prompt Variant 程式
@@ -93,20 +92,14 @@
 | 檔案 | 功用 |
 |---|---|
 | `scripts/faithfulness/run_faithfulness_counterfactual.py` | 產生 faithfulness counterfactual outputs。 |
-| `scripts/faithfulness/run_faithfulness_counterfactual_faithful.py` | 在 faithful-prompt 設定下產生 counterfactual outputs。 |
 | `scripts/faithfulness/run_faithfulness_counterfactual_top1.py` | 對 top-1 recommendations 執行 counterfactual generation。 |
 | `scripts/faithfulness/faithfulness_claim_judge.py` | 判斷生成解釋中的 claims 是否有輸入證據支持。 |
 | `scripts/faithfulness/faithfulness_claim_judge_v2.py` | claim judge v2 設定。 |
-| `scripts/faithfulness/faithfulness_claim_judge_faithful.py` | faithful-prompt outputs 的 claim judge。 |
-| `scripts/faithfulness/faithfulness_claim_judge_top1.py` | top-1 outputs 的 claim judge。 |
 | `scripts/faithfulness/faithfulness_claim_judge_top1_v2.py` | top-1 claim judge v2。 |
 | `scripts/faithfulness/analyze_faithfulness.py` | 整理 faithfulness claim-judge outputs。 |
-| `scripts/faithfulness/analyze_faithfulness_faithful.py` | 整理 faithful-prompt faithfulness outputs。 |
-| `scripts/faithfulness/analyze_faithfulness_top1.py` | 整理 top-1 faithfulness outputs。 |
 | `scripts/faithfulness/analyze_faithfulness_top1_v2.py` | 整理 top-1 faithfulness v2 outputs。 |
 | `scripts/faithfulness/run_preference_counterfactual_generation.py` | 進行 preference counterfactual intervention 後產生輸出。 |
 | `scripts/faithfulness/run_preference_counterfactual_generation_top1.py` | 針對 top-1 執行 preference counterfactual generation。 |
-| `scripts/faithfulness/run_preference_counterfactual_by_path.py` | 分 explicit/implicit path 執行 preference counterfactual。 |
 | `scripts/faithfulness/analyze_preference_counterfactual.py` | 整理 preference counterfactual outputs。 |
 | `scripts/faithfulness/analyze_preference_counterfactual_top1.py` | 整理 top-1 preference counterfactual outputs。 |
 | `scripts/faithfulness/analyze_metadata_consistency.py` | 檢查生成解釋是否與 metadata 一致。 |
@@ -128,19 +121,13 @@
 | `scripts/analysis/paired_effect_size.py` | 計算 paired effect-size statistics。 |
 | `scripts/analysis/ltp_control_significance.py` | 檢定 LTP control experiments 的顯著性。 |
 | `scripts/analysis/candidate_difficulty_stratification.py` | 分析 candidate pool difficulty 對效能的影響。 |
-| `scripts/analysis/path_level_generation_analysis.py` | 依 preference path 分析推薦解釋。 |
-| `scripts/analysis/path_level_generation_analysis_v21.py` | v21 path-level explanation analysis。 |
-| `scripts/analysis/preference_counterfactual_by_path_analysis.py` | 依 LTP path 整理 counterfactual effects。 |
+| `scripts/analysis/path_level_generation_analysis_v21.py` | 最終論文版本使用的 path-level explanation analysis。 |
 | `scripts/analysis/fixed_hybrid_component_analysis_v21.py` | 整理 explicit/implicit component 固定介入結果。 |
 | `scripts/analysis/b5_build_persona_specs.py` | 建立 controllability tests 使用的 structured persona specs。 |
 | `scripts/analysis/b5_build_persona_ltp.py` | 建立 structured persona tests 使用的 LTP vectors。 |
-| `scripts/analysis/b5_persona_metrics.py` | 計算 persona controllability metrics。 |
-| `scripts/analysis/b5_persona_metrics_v2.py` | persona controllability metrics v2。 |
 | `scripts/analysis/b5_persona_metrics_v21.py` | 最終論文版本使用的 persona controllability metrics v21。 |
-| `scripts/analysis/b5_smoketest_recover_wout.py` | 檢查 no-LTP/persona comparison outputs 的 recovery 邏輯。 |
 | `scripts/analysis/reuse_noltp_v2_for_persona_v21.py` | 重用 no-LTP outputs 以進行 persona v21 比較。 |
-| `scripts/analysis/b6_preference_video_conflict.py` | 分析 video context 與 preference proxy 衝突的情境。 |
-| `scripts/analysis/b6_preference_video_conflict_v21.py` | v21 preference-video conflict analysis。 |
+| `scripts/analysis/b6_preference_video_conflict_v21.py` | 最終論文版本使用的 preference-video conflict analysis。 |
 | `scripts/analysis/reuse_full_exp01_for_fixed_component_v21.py` | 重用 full-model outputs 以進行 fixed-component v21 分析。 |
 | `scripts/analysis/prepare_v21_preference_claim_blind_audit.py` | 製作 v21 preference-claim blind audit packets。 |
 | `scripts/analysis/review_v21_experiment_completion.py` | 檢查 v21 experiment outputs 是否完整。 |
@@ -150,14 +137,10 @@
 | `scripts/analysis/video_cluster_profile.py` | 建立 video clusters 的描述性 profile。 |
 | `scripts/analysis/video_cluster_finalize.py` | 整理與命名最終 video cluster outputs。 |
 | `scripts/diagnostics/dataset_overlap_analysis.py` | 檢查 train/test overlap 與 leakage risk。 |
-| `scripts/diagnostics/evaluate_leakage.py` | 評估可能的資料洩漏樣態。 |
 | `scripts/diagnostics/compute_median_rank_unseen_seen.py` | 比較 seen/unseen cases 的 median rank。 |
 | `scripts/diagnostics/diagnose_exp07_scores.py` | 診斷 no-music experiment 的分數行為。 |
 | `scripts/diagnostics/evaluate.py` | 一般診斷評估輔助程式。 |
-| `scripts/diagnostics/infolm_test.py` | 測試 InfoLM/text metric 設定。 |
 | `scripts/diagnostics/plot_training_curves.py` | 由 checkpoint logs 繪製 training curves。 |
-| `scripts/diagnostics/run_ablation_50.py` | 執行 50-sample 小型 ablation diagnostic。 |
-| `scripts/diagnostics/run_ablation_all.py` | 執行完整 ablation diagnostic set。 |
 
 ## LTP / User Profiling 流程程式
 

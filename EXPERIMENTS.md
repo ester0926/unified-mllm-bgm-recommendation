@@ -60,7 +60,7 @@
 |---|---|
 | significance tests | `scripts/significance/analyze_significance*.py` |
 | Cliff's delta | `scripts/analysis/cliffs_delta_significance.py` |
-| path-level generation | `scripts/analysis/path_level_generation_analysis*.py` |
-| persona controllability | `scripts/analysis/b5_*persona*.py` |
-| preference-video conflict | `scripts/analysis/b6_preference_video_conflict*.py` |
-| train/test overlap diagnostics | `scripts/diagnostics/` |
+| path-level generation | `scripts/analysis/path_level_generation_analysis_v21.py` |
+| persona controllability | `scripts/analysis/b5_build_persona_specs.py`, `scripts/analysis/b5_build_persona_ltp.py`, `scripts/analysis/b5_persona_metrics_v21.py` |
+| preference-video conflict | `scripts/analysis/b6_preference_video_conflict_v21.py` |
+| train/test overlap diagnostics | `scripts/diagnostics/dataset_overlap_analysis.py`, `scripts/diagnostics/compute_median_rank_unseen_seen.py`, `scripts/diagnostics/diagnose_exp07_scores.py` |

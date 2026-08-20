@@ -46,15 +46,10 @@
 | 資料夾 | 意義 |
 |---|---|
 | `results/analysis/candidate_difficulty/` | 依 candidate-pool difficulty 分層的效能分析。 |
-| `results/analysis/path_level_generation/` | 較早版本的 path-level explanation analysis。 |
 | `results/analysis/path_level_generation_v21/` | 最終 v21 論文版本使用的 path-level explanation analysis。 |
-| `results/analysis/preference_counterfactual_by_path/` | 依 preference path 區分的 counterfactual effect 方向與強度。 |
 | `results/analysis/fixed_hybrid_component_v21/` | fixed explicit/implicit component intervention 指標。 |
 | `results/analysis/video_clusters/` | video cluster assignments、metrics、names 與 worksheet。 |
-| `results/analysis/b5_personas/` | 較早版本的 persona controllability artifacts。 |
 | `results/analysis/b5_personas_v21/` | 最終 v21 persona controllability artifacts。 |
-| `results/analysis/b5_smoketest/` | persona/no-LTP recovery logic 的 smoke-test checks。 |
-| `results/analysis/b6_conflict/` | 較早版本的 preference-video conflict analysis。 |
 | `results/analysis/b6_conflict_v21/` | 最終 v21 preference-video conflict analysis。 |
 | `results/analysis/v21_reproducibility_manifest.json` | 追蹤主要 v21 outputs 與 provenance 的 manifest。 |
 | `results/analysis/v21_experiment_completion_review.json` | v21 experiments 完整性檢查。 |
@@ -70,7 +65,6 @@
 | `results/faithfulness/llm_judge/` | LLM-as-judge calibration 輸出。 |
 | `results/faithfulness/manual_review/` | 人工檢查封包、抽查標註、agreement reports 與 failure-case candidates。 |
 | `results/faithfulness/ucr_error_sources/` | unsupported claim rate 的錯誤來源分解與人工檢查 workbook。 |
-| `results/faithfulness/preference_counterfactual_by_path/` | 依 preference representation path 區分的 counterfactual outputs。 |
 
 ## Baseline、Robustness、Significance 與 Diagnostics
 

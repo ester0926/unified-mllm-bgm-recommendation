@@ -354,8 +354,8 @@ def write_markdown(path, doc, pools):
     L.append("- 情緒價向欄位不可操作化，任何以該欄位為依據的結論皆不得寫入論文。")
     L.append("- Persona 為研究者依標籤分布設計，非真實創作者；"
              "其合成歷史由曲庫依屬性條件抽樣而得，不代表真實聆聽行為。")
-    L.append("- Persona LTP 由既有 LTP 向量組合而成，未走完整 Stage 3–5 管線"
-             "（原因見 `results/analysis/b5_smoketest/wout_recovery_report.md`）。")
+    L.append("- Persona LTP 由既有 LTP 向量組合而成，未走完整 Stage 3-5 管線；"
+             "此限制已於論文附錄 C 與 `REPRODUCIBILITY.md` 說明。")
     path.write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
