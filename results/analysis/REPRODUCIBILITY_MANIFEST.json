@@ -1,5 +1,5 @@
 {
-  "schema": "v21-experiment-provenance-1",
+  "schema": "thesis-reproducibility-provenance-1",
   "project_root": "<project_root>",
   "environment": {
     "python": "3.11.14 | packaged by conda-forge | (main, Oct 22 2025, 22:35:28) [MSC v.1944 64 bit (AMD64)]",

@@ -179,15 +179,15 @@ def fmt(value, digits=4):
 
 def write_markdown(path, rows, metric_summary):
     lines = []
-    lines.append("# Top-1 Random Seed Robustness")
+    lines.append("# Top-1 隨機種子穩健性")
     lines.append("")
-    lines.append(f"Experiment: `{EXP_NAME}`")
-    lines.append(f"Pool size: `{POOL_SIZE}`")
-    lines.append(f"Prompt variant: `{PROMPT_VARIANT}`")
-    lines.append(f"Seeds: `{', '.join(str(s) for s in SEEDS)}`")
-    lines.append("Generation setting: `Top-1 end-to-end`")
+    lines.append(f"實驗：`{EXP_NAME}`")
+    lines.append(f"候選池大小：`{POOL_SIZE}`")
+    lines.append(f"Prompt variant：`{PROMPT_VARIANT}`")
+    lines.append(f"隨機種子：`{', '.join(str(s) for s in SEEDS)}`")
+    lines.append("生成設定：`Top-1 end-to-end`")
     lines.append("")
-    lines.append("## Per-Seed Results")
+    lines.append("## 各隨機種子結果")
     lines.append("")
     lines.append("| Seed | R@1 | R@5 | R@10 | Mean Rank | BERT F1 | InfoLM L2 | Title Consistency | Manual Review |")
     lines.append("|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
@@ -207,7 +207,7 @@ def write_markdown(path, rows, metric_summary):
         )
 
     lines.append("")
-    lines.append("## Stability Summary")
+    lines.append("## 穩定性摘要")
     lines.append("")
     lines.append("| Metric | Mean | Min | Max | Range | Relative Range |")
     lines.append("|---|---:|---:|---:|---:|---:|")
@@ -224,13 +224,13 @@ def write_markdown(path, rows, metric_summary):
         )
 
     lines.append("")
-    lines.append("## Notes")
+    lines.append("## 注意事項")
     lines.append("")
-    lines.append("- This analysis uses the revised non-adjacent seeds `42`, `12345`, and `987654`.")
-    lines.append("- Ranking metrics are recomputed from each seed-specific candidate pool.")
-    lines.append("- Generation metrics are computed from the Top-1 music selected under each seed-specific ranking result.")
-    lines.append("- For mean rank and InfoLM metrics, lower is better.")
-    lines.append("- The earlier adjacent seeds `20260315/20260316/20260317` should be treated as historical pilot runs, not the formal seed robustness result.")
+    lines.append("- 本分析使用修正版非相鄰隨機種子 `42`、`12345`、`987654`。")
+    lines.append("- Ranking metrics 會依各 seed 的 candidate pool 重新計算。")
+    lines.append("- Generation metrics 會使用各 seed ranking 結果選出的 Top-1 音樂重新計算。")
+    lines.append("- Mean rank 與 InfoLM 指標越低越好。")
+    lines.append("- 早期相鄰種子 `20260315/20260316/20260317` 屬於歷史 pilot runs，不是正式 seed robustness 結果。")
 
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
@@ -262,7 +262,7 @@ def main():
         "pool_size": POOL_SIZE,
         "prompt_variant": PROMPT_VARIANT,
         "formal_seeds": SEEDS,
-        "historical_seed_note": "Earlier adjacent seeds 20260315/20260316/20260317 are excluded from this formal summary.",
+        "historical_seed_note": "早期相鄰種子 20260315/20260316/20260317 未納入此正式摘要。",
         "rows": rows,
         "metric_summary": metric_summary,
         "outputs": {

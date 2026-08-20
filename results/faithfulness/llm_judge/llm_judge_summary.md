@@ -1,6 +1,6 @@
-# LLM-as-a-Judge Faithfulness Validation
+# LLM-as-a-Judge 忠實度驗證
 
-Model: `llama3:8b`
+評審模型：`llama3:8b`
 
 | Task | n | valid | errors | LLM positive rate | Agreement with rule-based judge |
 |---|---:|---:|---:|---:|---:|
@@ -9,8 +9,8 @@ Model: `llama3:8b`
 | Preference conflict | 80 | 80 | 0 | 16.25% | 75.00% |
 | Metadata supported | 120 | 119 | 1 | 84.03% | 44.54% |
 
-## Interpretation Notes
+## 解讀注意事項
 
-- This is an LLM-assisted validation subset, not the full deterministic analysis.
-- Use agreement rates to discuss whether rule-based labels are directionally reliable.
-- Low agreement indicates the corresponding rule-based metric should be treated cautiously or manually audited.
+- 這是 LLM 輔助驗證子集，不是完整 deterministic analysis。
+- Agreement rate 可用來討論規則式標籤是否具有方向性可靠度。
+- 若 agreement rate 偏低，對應的規則式指標應保守解讀，並搭配人工查核。

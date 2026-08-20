@@ -58,8 +58,8 @@
 
 | 論文位置 | 程式/資料 | 類別 | 說明 |
 |---|---|---|---|
-| 附錄 C | `scripts/analysis/write_v21_reproducibility_manifest.py` | 重現輔助 | 產生 `results/analysis/v21_reproducibility_manifest.json`。此程式不直接產生表格，但附錄 C 明確提到 manifest，因此保留。 |
-| 附錄 C | `results/analysis/v21_reproducibility_manifest.json` | 重現輔助 | 記錄 v21 補充分析與封存檔案的來源、大小與 checksum。 |
+| 附錄 C | `scripts/analysis/write_reproducibility_manifest.py` | 重現輔助 | 產生 `results/analysis/REPRODUCIBILITY_MANIFEST.json`。此程式不直接產生表格，但附錄 C 明確提到 manifest，因此保留。 |
+| 附錄 C | `results/analysis/REPRODUCIBILITY_MANIFEST.json` | 重現輔助 | 記錄補充分析與封存檔案的來源、大小與 checksum。 |
 | 附錄 D | `results/analysis/b5_personas_v21/persona_specs.*` | 補充分析 | 結構化偏好原型規格。 |
 | 人工覆核/校準 | `scripts/analysis/prepare_v21_preference_claim_blind_audit.py`, `scripts/manual_review/prepare_manual_review_packets.py` | 重現輔助 | 用於建立人工抽查或盲審資料，不是問卷研究，也不是主要執行入口。 |
 

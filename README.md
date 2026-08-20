@@ -32,16 +32,17 @@ checkpoints/          checkpoint 放置位置，僅保留 README
 
 ## 閱讀順序
 
-1. [DATA.md](DATA.md)：外部資料與預期目錄結構。
-2. [LTP_PIPELINE.md](LTP_PIPELINE.md)：`P_ltp` 建構流程與中間輸出。
-3. [PROGRAM_INDEX.md](PROGRAM_INDEX.md)：主要程式功能與對應實驗。
-4. [EXPERIMENTS.md](EXPERIMENTS.md)：論文實驗條件與程式對照。
-5. [RESULTS_GUIDE.md](RESULTS_GUIDE.md)：`results/` 中摘要結果與分析檔案的用途。
-6. [REPRODUCIBILITY.md](REPRODUCIBILITY.md)：重現主實驗的建議流程。
-7. [CHECKPOINTS.md](CHECKPOINTS.md)：大型權重、cache 與 checkpoint 的放置方式。
-8. [ZENODO.md](ZENODO.md)：Zenodo 下載包、解壓方式與 checksum 驗證。
-9. [CLEANUP_DECISIONS.md](CLEANUP_DECISIONS.md)：舊版、測試與問卷資料的移除原則。
-10. [THESIS_ALIGNMENT.md](THESIS_ALIGNMENT.md)：程式與資料對應論文表格、圖與附錄的索引。
+1. [RUN_ORDER.md](RUN_ORDER.md)：從資料、LTP、訓練、評估到分析的建議執行順序。
+2. [DATA.md](DATA.md)：外部資料與預期目錄結構。
+3. [LTP_PIPELINE.md](LTP_PIPELINE.md)：`P_ltp` 建構流程與中間輸出。
+4. [PROGRAM_INDEX.md](PROGRAM_INDEX.md)：主要程式功能與對應實驗。
+5. [EXPERIMENTS.md](EXPERIMENTS.md)：論文實驗條件與程式對照。
+6. [RESULTS_GUIDE.md](RESULTS_GUIDE.md)：`results/` 中摘要結果與分析檔案的用途。
+7. [REPRODUCIBILITY.md](REPRODUCIBILITY.md)：重現主實驗的建議流程。
+8. [CHECKPOINTS.md](CHECKPOINTS.md)：大型權重、cache 與 checkpoint 的放置方式。
+9. [ZENODO.md](ZENODO.md)：Zenodo 下載包、解壓方式與 checksum 驗證。
+10. [CLEANUP_DECISIONS.md](CLEANUP_DECISIONS.md)：舊版、測試與問卷資料的移除原則。
+11. [THESIS_ALIGNMENT.md](THESIS_ALIGNMENT.md)：程式與資料對應論文表格、圖與附錄的索引。
 
 ## 環境安裝
 

@@ -1,12 +1,12 @@
-# Top-1 Random Seed Robustness
+# Top-1 隨機種子穩健性
 
-Experiment: `exp_01`
-Pool size: `500`
-Prompt variant: `original`
-Seeds: `42, 12345, 987654`
-Generation setting: `Top-1 end-to-end`
+實驗：`exp_01`
+候選池大小：`500`
+Prompt variant：`original`
+隨機種子：`42, 12345, 987654`
+生成設定：`Top-1 end-to-end`
 
-## Per-Seed Results
+## 各隨機種子結果
 
 | Seed | R@1 | R@5 | R@10 | Mean Rank | BERT F1 | InfoLM L2 | Title Consistency | Manual Review |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -14,7 +14,7 @@ Generation setting: `Top-1 end-to-end`
 | 12345 | 0.3132 | 0.6647 | 0.8059 | 7.9584 | 0.7532 | 0.2048 | 0.6233 | 0.3241 |
 | 987654 | 0.3082 | 0.6604 | 0.7986 | 7.9753 | 0.7538 | 0.2047 | 0.6200 | 0.3303 |
 
-## Stability Summary
+## 穩定性摘要
 
 | Metric | Mean | Min | Max | Range | Relative Range |
 |---|---:|---:|---:|---:|---:|
@@ -27,10 +27,10 @@ Generation setting: `Top-1 end-to-end`
 | title_consistency_rate | 0.6189 | 0.6133 | 0.6233 | 0.0099 | 0.0161 |
 | needs_manual_review_rate | 0.3298 | 0.3241 | 0.3351 | 0.0109 | 0.0332 |
 
-## Notes
+## 注意事項
 
-- This analysis uses the revised non-adjacent seeds `42`, `12345`, and `987654`.
-- Ranking metrics are recomputed from each seed-specific candidate pool.
-- Generation metrics are computed from the Top-1 music selected under each seed-specific ranking result.
-- For mean rank and InfoLM metrics, lower is better.
-- The earlier adjacent seeds `20260315/20260316/20260317` should be treated as historical pilot runs, not the formal seed robustness result.
+- 本分析使用修正版非相鄰隨機種子 `42`、`12345`、`987654`。
+- Ranking metrics 會依各 seed 的 candidate pool 重新計算。
+- Generation metrics 會使用各 seed ranking 結果選出的 Top-1 音樂重新計算。
+- Mean rank 與 InfoLM 指標越低越好。
+- 早期相鄰種子 `20260315/20260316/20260317` 屬於歷史 pilot runs，不是正式 seed robustness 結果。

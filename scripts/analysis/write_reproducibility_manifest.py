@@ -1,5 +1,5 @@
 """
-用途：整理 v21 實驗輸出清單與可重現性紀錄。
+用途：整理論文補充分析輸出清單與可重現性紀錄。
 輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
 輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
 執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
@@ -15,7 +15,7 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "results" / "analysis" / "v21_reproducibility_manifest.json"
+OUT = ROOT / "results" / "analysis" / "REPRODUCIBILITY_MANIFEST.json"
 
 
 def sha256(path: Path, chunk_size=8 * 1024 * 1024):
@@ -116,7 +116,7 @@ def main():
         torch_info = {"error": str(exc)}
 
     manifest = {
-        "schema": "v21-experiment-provenance-1",
+        "schema": "thesis-reproducibility-provenance-1",
         "project_root": str(ROOT),
         "environment": {
             "python": sys.version,

@@ -1,22 +1,22 @@
-# Top-1 End-to-End Significance Analysis
+# Top-1 End-to-End 顯著性分析
 
-Setting: `Top-1 end-to-end generation`
-Prompt variant: `original`
-Focal experiment: `exp_01`
-Comparisons: `exp_02, exp_03, exp_04, exp_05, exp_06, exp_07`
-Bootstrap: 10,000 paired resamples, 95% CI
-Wilcoxon: signed-rank test on paired per-sample improvements
-Correction: Holm-Bonferroni across all tests in this file
+設定：`Top-1 end-to-end generation`
+Prompt variant：`original`
+主要比較實驗：`exp_01`
+比較對象：`exp_02, exp_03, exp_04, exp_05, exp_06, exp_07`
+Bootstrap：10,000 次 paired resamples，95% CI
+Wilcoxon：針對 paired per-sample improvements 進行 signed-rank test
+校正方式：本檔所有測試使用 Holm-Bonferroni correction
 
-This analysis uses explanations generated from the model-selected Top-1 music item, not GT-conditioned generation.
+本分析使用模型選出的 Top-1 音樂生成推薦理由，不是以 ground-truth music 為條件的 generation。
 
-## Overview
+## 總覽
 
-- Total paired tests: 48; Holm-significant: 41.
-- Ranking tests: 24; Holm-significant: 20.
-- Generation tests: 24; Holm-significant: 21.
+- Paired tests 總數：48；Holm-significant：41。
+- Ranking tests：24；Holm-significant：20。
+- Generation tests：24；Holm-significant：21。
 
-Positive improvement means the focal experiment is better.
+Improvement 為正值代表主要比較實驗表現較好。
 
 | Group | Compare | Metric | n | Focal mean | Compare mean | Improvement | 95% CI | p raw | p Holm | Sig. |
 |---|---|---|---:|---:|---:|---:|---|---:|---:|---|
@@ -69,10 +69,10 @@ Positive improvement means the focal experiment is better.
 | generation | exp_07 | InfoLM L2 | 4205 | 0.206346 | 0.234647 | 0.0283003 | [0.0256885, 0.0310001] | 8.353e-64 | 2.506e-62 | yes |
 | generation | exp_07 | InfoLM Fisher-Rao | 4205 | 1.76029 | 1.97234 | 0.212045 | [0.18998, 0.233636] | 6.654e-32 | 1.597e-30 | yes |
 
-## Notes
+## 注意事項
 
-- For `rank` and InfoLM metrics, lower raw values are better; the reported improvement is therefore `compare - focal`.
-- For Recall and BERTScore metrics, higher raw values are better; the reported improvement is `focal - compare`.
-- Ranking metrics are unchanged by the Top-1 generation rewrite, but they are included here for a single consistent thesis table.
-- Generation metrics are recomputed from Top-1 end-to-end generated explanations.
-- MuseChat cannot be included in this paired test unless per-sample MuseChat predictions are available.
+- 對 `rank` 與 InfoLM 指標而言，原始值越低越好，因此 improvement 計算為 `compare - focal`。
+- 對 Recall 與 BERTScore 指標而言，原始值越高越好，因此 improvement 計算為 `focal - compare`。
+- Ranking metrics 不受 Top-1 generation rewrite 影響，但為了讓論文表格一致，仍一併列出。
+- Generation metrics 由 Top-1 end-to-end generated explanations 重新計算。
+- 若沒有 per-sample MuseChat predictions，MuseChat 無法納入此 paired test。

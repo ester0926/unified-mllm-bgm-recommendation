@@ -1,6 +1,6 @@
 # 可重現流程說明
 
-這份文件說明如何從資料準備到重現論文主要實驗結果。由於大型資料與模型權重未放入 GitHub，請先依照 [DATA.md](DATA.md) 和 [CHECKPOINTS.md](CHECKPOINTS.md) 放好外部檔案。
+這份文件說明如何從資料準備到重現論文主要實驗結果。由於大型資料與模型權重未放入 GitHub，請先依照 [DATA.md](DATA.md) 和 [CHECKPOINTS.md](CHECKPOINTS.md) 放好外部檔案。若需要更直白的程式執行順序，請先看 [RUN_ORDER.md](RUN_ORDER.md)。
 
 ## 1. 建立環境
 

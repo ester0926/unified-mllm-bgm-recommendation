@@ -196,7 +196,7 @@ def main():
     summary = {
         "created_at": datetime.now().isoformat(timespec="seconds"),
         "method": "rule_based_music_keyword_overlap_with_top1_reference_text",
-        "scope_note": "Uses top1_reference_text as the available metadata proxy; should be manually audited before strong claims.",
+        "scope_note": "使用 top1_reference_text 作為可用 metadata proxy；正式解讀前應搭配代表案例人工查核。",
         "by_exp": summary_rows,
         "outputs": {
             "claims_csv": OUTPUT_CSV,
@@ -208,9 +208,9 @@ def main():
         json.dump(summary, f, indent=2, ensure_ascii=False)
 
     lines = [
-        "# Metadata Consistency Test",
+        "# Metadata 一致性測試",
         "",
-        "This rule-based analysis checks whether music-detail terms in generated explanations are supported by the top-1 candidate metadata/reference text.",
+        "本規則式分析檢查生成推薦理由中的音樂細節主張，是否能被 Top-1 候選音樂的 metadata 或 reference text 支持。",
         "",
         "| Exp | Music claims | Unsupported claims | Unsupported rate | Top-1 correct unsupported | Top-1 incorrect unsupported |",
         "|---|---:|---:|---:|---:|---:|",
@@ -224,11 +224,11 @@ def main():
         )
     lines.extend([
         "",
-        "## Interpretation Notes",
+        "## 解讀注意事項",
         "",
-        "- Lower unsupported rate indicates better metadata consistency.",
-        "- This is a conservative keyword-overlap proxy; it can over-flag paraphrases and under-flag unsupported generic claims.",
-        "- Use this table as first-pass evidence, then manually audit representative cases.",
+        "- Unsupported rate 越低，表示 metadata consistency 越好。",
+        "- 本分析使用保守的 keyword-overlap proxy，可能高估改寫語句的 unsupported 情況，也可能低估較籠統但缺乏依據的主張。",
+        "- 本表適合作為初步證據；正式解讀時應搭配代表案例的人工查核。",
     ])
     with open(OUTPUT_SUMMARY_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")

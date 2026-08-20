@@ -525,11 +525,11 @@ def write_summary(feature_rows, preference_rows, metadata_rows):
         )
     lines.extend([
         "",
-        "## Interpretation Notes",
+        "## 解讀注意事項",
         "",
-        "- This is an LLM-assisted validation subset, not the full deterministic analysis.",
-        "- Use agreement rates to discuss whether rule-based labels are directionally reliable.",
-        "- Low agreement indicates the corresponding rule-based metric should be treated cautiously or manually audited.",
+        "- 這是 LLM 輔助驗證子集，不是完整 deterministic analysis。",
+        "- Agreement rate 可用來討論規則式標籤是否具有方向性可靠度。",
+        "- 若 agreement rate 偏低，對應的規則式指標應保守解讀，並搭配人工查核。",
     ])
     with open(OUTPUT_SUMMARY_MD, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")

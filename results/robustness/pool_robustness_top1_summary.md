@@ -1,8 +1,8 @@
-# Top-1 Pool-Size Robustness
+﻿# Top-1 候選池大小穩健性
 
-Experiment: `exp_01`
-Prompt variant: `original`
-Generation setting: `Top-1 end-to-end`
+實驗：`exp_01`
+Prompt variant：`original`
+生成設定：`Top-1 end-to-end`
 
 | Pool | R@1 | R@5 | R@10 | Mean Rank | BERT F1 | InfoLM L2 | Title Consistency | Manual Review |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -10,7 +10,7 @@ Generation setting: `Top-1 end-to-end`
 | 500 | 0.3065 | 0.6640 | 0.7988 | 7.9491 | 0.7526 | 0.2063 | 0.6071 | 0.3403 |
 | 1000 | 0.2109 | 0.5241 | 0.6754 | 14.9496 | 0.7507 | 0.2160 | 0.5788 | 0.3643 |
 
-## Delta vs 500-Pool
+## 與 500-Pool 的差異
 
 | Pool | ΔR@1 | ΔR@5 | ΔR@10 | ΔMean Rank | ΔBERT F1 | ΔInfoLM L2 |
 |---:|---:|---:|---:|---:|---:|---:|
@@ -18,9 +18,10 @@ Generation setting: `Top-1 end-to-end`
 | 500 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 | 0.0000 |
 | 1000 | -0.0956 | -0.1398 | -0.1234 | 7.0005 | -0.0019 | 0.0096 |
 
-## Notes
+## 注意事項
 
-- Ranking metrics are read from the original pool-size ranking summaries.
-- Generation metrics are read from Top-1 end-to-end summaries, not GT-conditioned generation.
-- For InfoLM and mean rank, lower is better; negative delta vs 500-pool therefore means improvement.
-- If any field is `NA`, run the corresponding Top-1 pool wrapper first.
+- Ranking metrics 讀自原始 pool-size ranking summaries。
+- Generation metrics 讀自 Top-1 end-to-end summaries，不是 ground-truth conditioned generation。
+- InfoLM 與 mean rank 越低越好，因此相對 500-pool 的 delta 若為負值代表改善。
+- 若欄位為 `NA`，請先執行對應的 Top-1 pool wrapper。
+

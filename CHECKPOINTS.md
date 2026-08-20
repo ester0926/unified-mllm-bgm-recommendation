@@ -51,7 +51,7 @@ config or README file
 本 repo 保留：
 
 ```text
-results/analysis/v21_reproducibility_manifest.json
+results/analysis/REPRODUCIBILITY_MANIFEST.json
 ```
 
 該 manifest 可用來追蹤 LTP cache、User Profiling 輸出、checkpoint 與分析結果的來源。若公開大型檔案，建議同時提供 `CHECKSUMS.txt`，記錄檔名、大小、checksum 與下載位置。

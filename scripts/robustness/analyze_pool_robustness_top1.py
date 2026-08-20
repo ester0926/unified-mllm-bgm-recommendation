@@ -181,11 +181,11 @@ def fmt(x, digits=4):
 
 def write_markdown(path, rows):
     lines = []
-    lines.append("# Top-1 Pool-Size Robustness")
+    lines.append("# Top-1 候選池大小穩健性")
     lines.append("")
-    lines.append(f"Experiment: `{EXP_NAME}`")
-    lines.append(f"Prompt variant: `{PROMPT_VARIANT}`")
-    lines.append("Generation setting: `Top-1 end-to-end`")
+    lines.append(f"實驗：`{EXP_NAME}`")
+    lines.append(f"Prompt variant：`{PROMPT_VARIANT}`")
+    lines.append("生成設定：`Top-1 end-to-end`")
     lines.append("")
     lines.append("| Pool | R@1 | R@5 | R@10 | Mean Rank | BERT F1 | InfoLM L2 | Title Consistency | Manual Review |")
     lines.append("|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
@@ -205,7 +205,7 @@ def write_markdown(path, rows):
         )
 
     lines.append("")
-    lines.append("## Delta vs 500-Pool")
+    lines.append("## 與 500-Pool 的差異")
     lines.append("")
     lines.append("| Pool | ΔR@1 | ΔR@5 | ΔR@10 | ΔMean Rank | ΔBERT F1 | ΔInfoLM L2 |")
     lines.append("|---:|---:|---:|---:|---:|---:|---:|")
@@ -223,12 +223,12 @@ def write_markdown(path, rows):
         )
 
     lines.append("")
-    lines.append("## Notes")
+    lines.append("## 注意事項")
     lines.append("")
-    lines.append("- Ranking metrics are read from the original pool-size ranking summaries.")
-    lines.append("- Generation metrics are read from Top-1 end-to-end summaries, not GT-conditioned generation.")
-    lines.append("- For InfoLM and mean rank, lower is better; negative delta vs 500-pool therefore means improvement.")
-    lines.append("- If any field is `NA`, run the corresponding Top-1 pool wrapper first.")
+    lines.append("- Ranking metrics 讀自原始 pool-size ranking summaries。")
+    lines.append("- Generation metrics 讀自 Top-1 end-to-end summaries，不是 ground-truth conditioned generation。")
+    lines.append("- InfoLM 與 mean rank 越低越好，因此相對 500-pool 的 delta 若為負值代表改善。")
+    lines.append("- 若欄位為 `NA`，請先執行對應的 Top-1 pool wrapper。")
 
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")

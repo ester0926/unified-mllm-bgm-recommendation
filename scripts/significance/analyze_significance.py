@@ -306,15 +306,15 @@ def write_csv(path, rows):
 
 def write_markdown(path, rows):
     lines = []
-    lines.append("# Significance Analysis")
+    lines.append("# Ground-Truth Conditioned 顯著性分析")
     lines.append("")
-    lines.append(f"Focal experiment: `{FOCAL_EXP}`")
-    lines.append(f"Comparisons: `{', '.join(COMPARE_EXPS)}`")
-    lines.append(f"Bootstrap: {BOOTSTRAP_N:,} paired resamples, 95% CI")
-    lines.append("Wilcoxon: signed-rank test on paired per-sample improvements")
-    lines.append("Correction: Holm-Bonferroni across all tests in this file")
+    lines.append(f"主要比較實驗：`{FOCAL_EXP}`")
+    lines.append(f"比較對象：`{', '.join(COMPARE_EXPS)}`")
+    lines.append(f"Bootstrap：{BOOTSTRAP_N:,} 次 paired resamples，95% CI")
+    lines.append("Wilcoxon：針對 paired per-sample improvements 進行 signed-rank test")
+    lines.append("校正方式：本檔所有測試使用 Holm-Bonferroni correction")
     lines.append("")
-    lines.append("Positive improvement means the focal experiment is better.")
+    lines.append("Improvement 為正值代表主要比較實驗表現較好。")
     lines.append("")
     lines.append("| Compare | Metric | n | Focal mean | Compare mean | Improvement | 95% CI | p raw | p Holm | Sig. |")
     lines.append("|---|---|---:|---:|---:|---:|---|---:|---:|---|")
@@ -338,11 +338,11 @@ def write_markdown(path, rows):
         )
 
     lines.append("")
-    lines.append("## Notes")
+    lines.append("## 注意事項")
     lines.append("")
-    lines.append("- For `rank` and InfoLM metrics, lower raw values are better; the reported improvement is therefore `compare - focal`.")
-    lines.append("- For Recall and BERTScore metrics, higher raw values are better; the reported improvement is `focal - compare`.")
-    lines.append("- MuseChat cannot be included in this paired test unless per-sample MuseChat predictions are available.")
+    lines.append("- 對 `rank` 與 InfoLM 指標而言，原始值越低越好，因此 improvement 計算為 `compare - focal`。")
+    lines.append("- 對 Recall 與 BERTScore 指標而言，原始值越高越好，因此 improvement 計算為 `focal - compare`。")
+    lines.append("- 若沒有 per-sample MuseChat predictions，MuseChat 無法納入此 paired test。")
 
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")

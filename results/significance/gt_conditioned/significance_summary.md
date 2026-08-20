@@ -1,12 +1,12 @@
-# Significance Analysis
+# Ground-Truth Conditioned 顯著性分析
 
-Focal experiment: `exp_01`
-Comparisons: `exp_02, exp_03, exp_04, exp_05, exp_06, exp_07`
-Bootstrap: 10,000 paired resamples, 95% CI
-Wilcoxon: signed-rank test on paired per-sample improvements
-Correction: Holm-Bonferroni across all tests in this file
+主要比較實驗：`exp_01`
+比較對象：`exp_02, exp_03, exp_04, exp_05, exp_06, exp_07`
+Bootstrap：10,000 次 paired resamples，95% CI
+Wilcoxon：針對 paired per-sample improvements 進行 signed-rank test
+校正方式：本檔所有測試使用 Holm-Bonferroni correction
 
-Positive improvement means the focal experiment is better.
+Improvement 為正值代表主要比較實驗表現較好。
 
 | Compare | Metric | n | Focal mean | Compare mean | Improvement | 95% CI | p raw | p Holm | Sig. |
 |---|---|---:|---:|---:|---:|---|---:|---:|---|
@@ -59,8 +59,8 @@ Positive improvement means the focal experiment is better.
 | exp_07 | InfoLM L2 | 4204 | 0.137323 | 0.234417 | 0.0970941 | [0.0939538, 0.100287] | 0 | 0 | yes |
 | exp_07 | InfoLM Fisher-Rao | 4204 | 1.14954 | 1.97011 | 0.820571 | [0.795033, 0.846267] | 0 | 0 | yes |
 
-## Notes
+## 注意事項
 
-- For `rank` and InfoLM metrics, lower raw values are better; the reported improvement is therefore `compare - focal`.
-- For Recall and BERTScore metrics, higher raw values are better; the reported improvement is `focal - compare`.
-- MuseChat cannot be included in this paired test unless per-sample MuseChat predictions are available.
+- 對 `rank` 與 InfoLM 指標而言，原始值越低越好，因此 improvement 計算為 `compare - focal`。
+- 對 Recall 與 BERTScore 指標而言，原始值越高越好，因此 improvement 計算為 `focal - compare`。
+- 若沒有 per-sample MuseChat predictions，MuseChat 無法納入此 paired test。

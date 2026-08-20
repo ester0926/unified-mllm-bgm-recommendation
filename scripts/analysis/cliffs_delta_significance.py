@@ -198,10 +198,10 @@ def main():
 
     # ── 印出 Markdown 表格 ─────────────────────────────────────────────────
     md_lines = []
-    md_lines.append("## Cliff's Delta + Wilcoxon Significance Analysis (500-pool, n=4205)\n")
-    md_lines.append("Baseline: **exp_01** (Full Model, hybrid LTP, all modalities)  ")
+    md_lines.append("## Cliff's Delta 與 Wilcoxon 顯著性分析（500-pool, n=4205）\n")
+    md_lines.append("Baseline：**exp_01**（Full Model, hybrid LTP, all modalities）  ")
     md_lines.append(f"R@1={r1_01.mean()*100:.2f}%, R@5={r5_01.mean()*100:.2f}%, R@10={r10_01.mean()*100:.2f}%\n")
-    md_lines.append("Holm-Bonferroni correction applied across all pairwise comparisons.\n")
+    md_lines.append("所有 pairwise comparisons 皆套用 Holm-Bonferroni correction。\n")
 
     header = "| Comparison | Ablation | ΔR@1 (pp) | ΔR@5 (pp) | ΔR@10 (pp) | Cliff's δ | Magnitude | W | p_adj | Sig |"
     sep    = "|---|---|---:|---:|---:|---:|---|---:|---:|---|"

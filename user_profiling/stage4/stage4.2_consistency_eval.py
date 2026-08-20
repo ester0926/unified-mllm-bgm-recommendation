@@ -38,7 +38,7 @@ EVAL_CONFIG = {
     # 注意：這裡假設你已經跑了一部分 Stage 4 的全量生成，或者先用 Pilot 的結果來測試
     # 如果要評估 Pilot 結果，請指向 stage4.1_pilot/results.json (需稍微調整讀取邏輯)
     # 這裡預設指向 Stage 4 的標準輸出目錄 (請根據實際情況修改檔案名稱)
-    "STAGE4_PROFILES": Path("data/user_profiling/long_term_preference/stage4_recLLM/profiles_20525_84151.jsonl"), # 測試用檔案
+    "STAGE4_PROFILES": Path("data/user_profiling/long_term_preference/stage4_recLLM/profiles_20525_84151.jsonl"), # 預設範例；正式重跑時可改為完整 profiles.jsonl
     "OUTPUT_DIR": Path("data/user_profiling/long_term_preference/stage4_recLLM/stage4.2_eval")
 }
 
@@ -236,10 +236,10 @@ def generate_report(results: List[Dict]):
         f.write(f"- **Average Accuracy Score:** {avg_score:.2f} / 5.0\n")
         f.write(f"- **Hallucination Rate:** {hallucination_rate:.1f}%"
                 f"  (95% Clopper-Pearson CI: [{hall_ci_lo:.1f}%, {hall_ci_hi:.1f}%],"
-                f" n={hallucination_count}/{total}, lower is better)\n")
+                f" n={hallucination_count}/{total}，越低越好)\n")
         f.write(f"- **Omission Rate:** {omission_rate:.1f}%"
                 f"  (95% Clopper-Pearson CI upper bound: {omit_ci_hi:.1f}%,"
-                f" n={omission_count}/{total}, lower is better)\n\n")
+                f" n={omission_count}/{total}，越低越好)\n\n")
         
         f.write("## 📝 Detailed Analysis\n\n")
         f.write("| Music ID | Score | Hallucination? | Omission? | Reasoning |\n")

@@ -51,7 +51,7 @@
 | `results/analysis/video_clusters/` | video cluster assignments、metrics、names 與 worksheet。 |
 | `results/analysis/b5_personas_v21/` | 最終 v21 persona controllability artifacts。 |
 | `results/analysis/b6_conflict_v21/` | 最終 v21 preference-video conflict analysis。 |
-| `results/analysis/v21_reproducibility_manifest.json` | 追蹤主要 v21 outputs 與 provenance 的 manifest。 |
+| `results/analysis/REPRODUCIBILITY_MANIFEST.json` | 追蹤主要補充分析 outputs 與 provenance 的 manifest。 |
 
 ## Faithfulness 結果
 
