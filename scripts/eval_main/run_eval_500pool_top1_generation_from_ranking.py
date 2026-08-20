@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：讀取既有 ranking 結果，針對每筆 Top-1 推薦產生文字解釋。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,19 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Top-1 end-to-end generation from existing 500-pool ranking outputs.
-
-Usage:
-  Open this file in VSCode and click Run.
-
-This script does NOT rerun ranking. It reads the per-sample ranking CSV produced
-by run_eval_500pool_detailed.py, retrieves each sample's recorded top-1 music,
-then generates an explanation for that top-1 recommendation.
-
-Outputs are written next to the original detailed_eval files with a `_top1_`
-suffix so the original GT-conditioned generation files remain untouched.
-"""
 
 import csv
 import datetime as _dt
@@ -34,7 +27,7 @@ from scripts.eval_main import run_eval_500pool_detailed as core
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 EXP_NAME = "all"          # "all" or one exp, e.g. "exp_01"
@@ -128,8 +121,8 @@ def mentions_value(generated_text, value):
     generated = normalize_for_match(generated_text)
     if value in generated:
         return True
-    # Some titles include punctuation or spacing variants. Keep this conservative:
-    # only compare an alphanumeric/punctuation-stripped form as a fallback.
+    # 有些歌名包含標點或空白差異，因此採用保守比對。
+    # 備用比對：移除標點後只比較英數字形式。
     compact_value = re.sub(r"[\W_]+", "", value, flags=re.UNICODE)
     compact_generated = re.sub(r"[\W_]+", "", generated, flags=re.UNICODE)
     if compact_value and compact_value in compact_generated:
@@ -391,8 +384,8 @@ def run_one_exp(exp_name):
             "infolm_fisher_rao": None,
         })
 
-    # Save raw generations before expensive metrics and merging. This protects a
-    # long run from losing all generated text if a later metric or merge step fails.
+    # 先儲存原始生成結果，再計算耗時指標與合併檔案，
+    # 避免後續步驟失敗時整批生成文字遺失。
     write_csv(raw_generation_csv, generation_rows)
     logger.info("Saved raw top1 generation samples before metrics: %s", raw_generation_csv)
 

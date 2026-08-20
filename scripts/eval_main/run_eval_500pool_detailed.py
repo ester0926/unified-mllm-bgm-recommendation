@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行主實驗詳細評估，輸出逐筆 ranking 與生成結果。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -9,15 +15,6 @@ for _p in [str(PROJECT_ROOT), str(DIAGNOSTICS_DIR)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-"""
-Detailed 500-pool evaluation for exp_01..exp_07.
-
-Outputs per-sample ranking and generation rows so downstream scripts can run
-bootstrap CI, Wilcoxon tests, robustness checks, and failure-case analysis.
-
-Usage:
-  Open this file in VSCode, edit the USER SETTINGS block below, then click Run.
-"""
 
 import csv
 import datetime as _dt
@@ -46,20 +43,20 @@ EXP_NAMES = [f"exp_{i:02d}" for i in range(1, 8)]
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 #
 # EXP_NAME:
 #   "all" runs exp_01 to exp_07.
 #   Or set one experiment, e.g. "exp_01".
 #
-# MAX_SAMPLES / MAX_GEN_SAMPLES:
-#   None means full test set. Use a small number such as 10 for a smoke test.
+# MAX_SAMPLES / MAX_GEN_SAMPLES：
+#   None 表示完整測試集；小數字如 10 可用於快速檢查。
 #
-# KEEP_PER_SAMPLE_INFOLM:
-#   Always True for the thesis-ready output requested here. Per-sample InfoLM is
-#   expensive because torchmetrics returns aggregate scores by default, so this
-#   script computes single-sample InfoLM rows one by one.
+# KEEP_PER_SAMPLE_INFOLM：
+#   論文輸出需保留逐筆 InfoLM。此計算較耗時，
+#   因為 torchmetrics 預設回傳整體分數，
+#   因此此處逐筆計算單一樣本的 InfoLM。
 # =============================================================================
 
 EXP_NAME = "all"
@@ -279,9 +276,9 @@ def load_model(ckpt_dir, model_config, tokenizer, logger):
     )
     ranking_head = ranking_head.to(torch.bfloat16).cuda().eval()
 
-    # Build a lightweight UnifiedMLLM container without calling its __init__.
-    # Calling __init__ would load another full LLaMA before we replace it with
-    # the PEFT checkpoint, which is slow and can cause avoidable OOM.
+    # 建立輕量版 UnifiedMLLM 容器，不呼叫原始 __init__。
+    # 若呼叫 __init__ 會先載入完整 LLaMA，
+    # 之後又被 PEFT checkpoint 取代，速度慢且容易造成 OOM。
     model = UnifiedMLLM.__new__(UnifiedMLLM)
     nn.Module.__init__(model)
     model.config = model_config
@@ -419,9 +416,9 @@ def prompt_tensors_for_variant(
         music_title=music_title,
         music_artist=music_artist,
     )
-    # Use a targeted replacement instead of str.format(). Some music titles or
-    # artist strings contain literal braces such as "{rap}", which str.format()
-    # would treat as missing fields and raise KeyError.
+    # 使用指定欄位替換，不用 str.format()。有些歌名或藝人名
+    # 可能包含像 {rap} 的大括號，str.format() 會誤判成欄位名稱，
+    # 導致 KeyError。
     full_prompt = prompt_tmpl.replace("{user_text}", t3_text)
     enc = tokenizer(full_prompt, return_tensors="pt", add_special_tokens=False)
     return enc["input_ids"].to(device), enc["attention_mask"].to(device)

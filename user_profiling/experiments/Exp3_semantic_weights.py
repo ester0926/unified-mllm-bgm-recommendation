@@ -1,19 +1,8 @@
 """
-實驗三：隱性特徵的語義基礎化權重 (Semantic Grounding Weights)
-============================================================
-目標：用真實資料展示 Softmax 加權機制能有效「過濾雜訊」。
-      公式：w_i = softmax(β × sim(Semantic_Seed(m_i), P_explicit))，β=2.0
-
-自動選樣策略：
-  掃描 Stage 2 history 目錄，找出 core_sbs 中 genre 最多樣的一首
-  target music 作為展示範例（最能呈現權重差異）。
-
-使用方式：
-  cd "<repo_root>"
-  python exp3_semantic_weights.py
-
-輸出：
-  visualization_outputs/exp3_semantic_grounding_weights.png
+用途：分析語意偏好權重與音樂屬性的關係。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import json
@@ -192,7 +181,7 @@ def find_best_sample_music_id() -> str:
             continue
 
     if not candidates:
-        # fallback：放寬條件，只要有 core_sbs 且 ASCII/CJK 即可
+        # 備用處理：放寬條件，只要有 core_sbs 且 ASCII/CJK 即可
         logger.warning("嚴格條件找不到樣本，放寬為僅過濾字元...")
         for path in history_files[:CFG.MAX_SCAN_HISTORIES]:
             try:
@@ -203,7 +192,7 @@ def find_best_sample_music_id() -> str:
                     continue
                 if all(_is_ascii_or_cjk(item.get('title', '')) for item in core_sbs):
                     mid = hist.get('target_music')
-                    logger.info(f"Fallback 選定: {mid}")
+                    logger.info(f"備用條件選定: {mid}")
                     return mid
             except Exception:
                 continue
@@ -318,7 +307,7 @@ def softmax_beta(sims: np.ndarray, beta: float) -> np.ndarray:
 def get_cjk_font():
     """
     偵測系統中可用的 CJK 字型，回傳 FontProperties 物件。
-    優先順序：Windows 常見字型 → 跨平台字型 → fallback DejaVu Sans。
+    優先順序：Windows 常見字型 → 跨平台字型 → 備用字型 DejaVu Sans。
     同時把該字型設為 matplotlib 的全域 sans-serif，讓所有文字都能顯示。
     """
     from matplotlib import font_manager as fm
@@ -347,7 +336,7 @@ def get_cjk_font():
 
     for name in candidates:
         if name in available:
-            # 把它加入 sans-serif fallback，讓全局文字也能 fallback 到它
+            # 加入 sans-serif 備用字型清單，讓全局文字也能 fallback 到它
             plt.rcParams['font.sans-serif'] = [name, 'DejaVu Sans']
             plt.rcParams['axes.unicode_minus'] = False
             logger.info(f"CJK 字型選用: {name}")
@@ -429,7 +418,7 @@ def plot_weights(
     bars = ax_main.bar(x, weights * 100, color=bar_colors, width=0.58,
                        edgecolor='white', linewidth=0.8, zorder=3)
 
-    # Uniform baseline
+    # 均勻分布 baseline
     ax_main.axhline(uniform * 100, color=C['baseline'], linestyle='--',
                     linewidth=1.8, zorder=2,
                     label=f'Uniform Baseline ({uniform*100:.1f}%)')

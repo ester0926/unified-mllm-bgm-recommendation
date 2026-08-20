@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理人工複查用資料與 UCR 錯誤來源分析結果。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,33 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-make_ucr_review_workbook.py
-===========================
-把 B2 產出的 human_review_template.csv 轉成便於人工標註的 Excel 活頁簿。
-
-為什麼不直接標 CSV：
-  1. CSV 在 Excel 中欄寬與換行都不友善，generated_text 動輒數百字，逐列閱讀極慢。
-  2. **盲標需求**：若標註者一開始就看到規則式判定，會產生錨定效應，
-     算出來的 Cohen's κ 會虛高、失去校準意義。
-     因此本活頁簿把規則判定移到另一張工作表，標註完再比對。
-
-活頁簿結構：
-  工作表 1「標註」        盲標用。只顯示子句、母句、生成全文，與三個待填欄位。
-  工作表 2「規則判定_標註後再看」  規則式判定與判定依據，以序號對應。
-  工作表 3「標註準則」    八類代碼定義與判定順序（同時可作為論文附錄的標註準則）。
-
-優先順序（「優先」欄）：
-  A = full 條件（論文報告的 UCR 13.12% 即此條件，143 列，務必全標）
-  B = 其他條件中規則標記「需人工複核」者
-  C = 其餘抽樣列（時間允許再標）
-
-使用方式：
-  VSCode 直接 Run，或：
-    python scripts/faithfulness/make_ucr_review_workbook.py
-
-  需要 openpyxl。
-"""
 
 import csv
 import datetime as _dt

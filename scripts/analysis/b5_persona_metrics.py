@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：建立或分析 persona 條件下的 LTP 與評估結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,46 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-b5_persona_metrics.py
-=====================
-B5 步驟 6：Persona 偏好可控性指標
-
-【為什麼不能用 GT 的 R@1 當主指標】
-  本實驗的「正確答案」是 MuseChat 原始的影片—音樂配對，該配對是為**影片**選的，
-  與 Persona 的偏好無關。Persona 向量本來就不應該幫助找回 GT。
-  實測亦如此：matched R@1=3.96%、shuffled 4.17%（幾乎相同），
-  但兩者皆高於 random 2.92% —— 這組數字只能作為**操作檢查**
-  （證明模型確實在使用 LTP 結構，且 Persona 向量落在有效分布內），
-  不能作為偏好可控性的證據。
-
-  真正的指標是「模型推薦出來的曲目，是否符合該 Persona 的屬性」。
-
-【本模組計算的指標】（皆以 top-1 推薦曲目為對象，見末段限制）
-  1. ACR  Attribute Compliance Rate
-       top-1 曲目滿足該 Persona 各項**可操作化**屬性的比例
-       （曲風／節奏／能量／人聲／熱門度；情緒價向不可操作化故排除）
-  2. Persona-fit@1
-       top-1 曲目同時滿足全部核心屬性的比例（ACR 的嚴格版）
-  3. Matched–Shuffled Gap
-       ACR(matched) − ACR(shuffled)；配對敏感度的核心證據
-  4. CDA  Counterfactual Direction Accuracy
-       翻轉某屬性後，top-1 曲目在**該屬性**上朝翻轉方向改變的比例
-  5. IAD  Irrelevant Attribute Drift
-       翻轉某屬性後，**其他**屬性一併改變的比例（愈低愈好）
-
-  統計：Persona 層級叢集拔靴（重抽 Persona 而非查詢，因同一 Persona 的 20 支查詢相關）。
-
-【限制（須寫入論文）】
-  評估腳本僅保存 top-1 曲目，未保存 top-K 清單，故 Persona-fit 與 ACR 僅能在 K=1 計算。
-  教授建議的 Persona-fit@K 與 nDCG@5/@10 需重跑並保存 top-K（約 6 小時 GPU）。
-
-【輸出】results/analysis/b5_personas/
-  persona_metrics_by_condition.csv / persona_metrics_by_persona.csv
-  persona_metrics_summary.json / .md
-
-【執行】python scripts/analysis/b5_persona_metrics.py   （純 CPU）
-"""
 
 import csv
 import datetime as _dt
@@ -138,7 +104,7 @@ def main():
     print(f"metadata={len(md)}　view_count={len(views)}")
 
     # ---- 逐條件計算每筆推薦的屬性符合情形 ----------------------------------
-    # per_case[condition][persona_id] = list of dict(attr -> True/False/None)
+    # per_case[condition][persona_id] 存放每個屬性的 True/False/None 判斷
     per_case = {c: defaultdict(list) for c in CONDITIONS}
     gt_rank = {c: defaultdict(list) for c in CONDITIONS}
 
@@ -196,7 +162,7 @@ def main():
         print(f"[{cond:16s}] ACR={acr:.4f} [{acr_lo:.4f},{acr_hi:.4f}]  "
               f"fit@1={fit:.4f}  GT R@1={row['gt_R@1']:.4f}")
 
-    # ---- Matched–Shuffled Gap ----------------------------------------------
+    # ---- Matched 與 Shuffled 的差距 -----------------------------------------
     def paired_gap(cond_a, cond_b, metric="ACR"):
         pids = sorted(set(per_case[cond_a]) & set(per_case[cond_b]))
         diffs = {}

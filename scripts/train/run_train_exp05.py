@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：設定並啟動 exp_05 的訓練流程。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,19 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_train_exp05.py — 模態消融：w/o Video
-
-移除影片視覺特徵（CLIP Vision 768D）。
-prefix 從 [VIDEO][LTP][TEXT_CLIP][MUSIC] 縮減為 [LTP][TEXT_CLIP][MUSIC]（3 tokens）。
-video_proj 投影層不被呼叫。
-build_prompt() 移除 "Video: [VIDEO]" 行。
-
-學術意義：
-  驗證視覺特徵的必要性。
-  MuseChat 論文發現 w/o Video 是最差的消融設定，
-  本研究預期有相同結果，但因加入 P_ltp 而可能略優於 MuseChat w/o Video。
-"""
 
 import os, sys, json, logging
 import numpy as np

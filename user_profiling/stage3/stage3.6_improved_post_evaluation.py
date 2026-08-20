@@ -1,14 +1,8 @@
 """
-改進的事後評估腳本 (VSCode 直接執行版 - 正確抽樣策略)
-
-特性：
-1. 先抽樣歌曲（music_id），再取該歌的全部 3 種對話
-2. 確保評估的是同一組歌曲在不同對話類型的表現
-3. 自然分布 1:1:1（每首歌都有 Positive/Exploratory/Negative）
-4. 詳細品質報告與論文對齊
-
-用法：
-直接在 VSCode 中執行（F5 或 Run）
+用途：產生或評估 Stage 3 的合成使用者偏好對話。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import jsonlines

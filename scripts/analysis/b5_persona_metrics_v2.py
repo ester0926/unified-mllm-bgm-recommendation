@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：建立或分析 persona 條件下的 LTP 與評估結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,51 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-b5_persona_metrics_v2.py
-========================
-B5 完整指標（對應教授 §七 的八項指標與五組比較條件）
-
-相對於第一版（b5_persona_metrics.py）新增：
-  • Persona-fit@5 / @10 與 nDCG@5 / @10       ← 使用 v2 保存的 top-10 清單
-  • No-LTP 條件納入比較與 Matched−No-LTP gap  ← 使用 exp_04 的結果
-  • 指標⑦ Persona 屬性說明支持率              ← 使用 v2 產生的說明文字
-  • 指標⑧ UPCR Unsupported Persona Claim Rate ← 同上
-
-教授 §七 的八項指標對照：
-  ① Persona-fit@K            ✔ K = 1 / 5 / 10
-  ② nDCG@5 / @10             ✔ 以屬性合規度為分級相關性
-  ③ Counterfactual Direction Accuracy ✔
-  ④ Attribute Compliance Rate ✔
-  ⑤ Matched–Shuffled Gap      ✔（另加 Matched–No-LTP、Matched–Random）
-  ⑥ Irrelevant Attribute Drift ✔
-  ⑦ Persona 屬性說明支持率    ✔（本版新增）
-  ⑧ Unsupported Persona Claim Rate ✔（本版新增）
-
-【關鍵判讀原則】
-  GT 的 R@1 **不是** 主指標：GT 是為影片而非為 Persona 選的曲目，
-  Persona 向量本就不應幫助找回 GT，該欄僅作操作檢查。
-
-【指標定義】
-  相關性 rel(track) = 該曲目滿足此 Persona **可操作化**屬性的比例（0–1 分級）
-    ACR            = top-1 的 rel
-    Persona-fit@K  = top-K 中 rel = 1.0（全部屬性皆符合）之曲目比例
-    nDCG@K         = 以 rel 為分級相關性，IDCG 取「同一組 K 筆的理想排序」
-                     （因無法得知整池的理想排序，故為**檢索清單內**的排序品質）
-  ⑦ 說明支持率 = 說明文字中提到的屬性詞，與該 Persona 規格**一致**者之比例
-  ⑧ UPCR       = 說明文字中提到的屬性詞，與該 Persona 規格**矛盾**者之比例
-     （矛盾＝命中排斥曲風，或與 tempo / energy / vocal 規格相反）
-  ⑦⑧ 為規則式詞彙比對，與 B2/B3 同一層級的方法限制：只能反映詞彙層級一致性。
-  **No-LTP 條件提供機率基線**：模型在完全沒有偏好輸入時仍會說出的屬性詞比例。
-
-【統計】以 Persona 為叢集重抽單位（同一 Persona 的 20 支查詢彼此相關）。
-
-【輸出】results/analysis/b5_personas/
-  persona_metrics_v2_by_condition.csv / _gaps.csv / _counterfactual.csv / _explanation.csv
-  persona_metrics_v2_summary.json / .md
-
-【執行】python scripts/analysis/b5_persona_metrics_v2.py   （純 CPU，需 v2 評估完成）
-"""
 
 import csv
 import datetime as _dt

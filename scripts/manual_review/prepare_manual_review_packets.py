@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理人工檢查用的樣本包與對照資料。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,22 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Prepare thesis manual-review packets from existing experiment outputs.
-
-This script does not rerun any model. It converts existing Top-1 end-to-end,
-faithfulness, and metadata-consistency outputs into compact CSV/Markdown files
-that are ready for human spot-checking and failure-case writing.
-
-Outputs:
-  checkpoints/manual_review/
-    failure_case_candidates.csv
-    failure_case_candidates.md
-    human_faithfulness_spotcheck_template.csv
-    human_metadata_spotcheck_template.csv
-    human_llm_judge_consistency_template.csv
-    manual_review_readme.md
-"""
 
 import csv
 import json

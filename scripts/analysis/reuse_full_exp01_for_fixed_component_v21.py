@@ -1,9 +1,8 @@
-"""Materialize the fixed-component `full` condition from the existing exp_01 run.
-
-The source detailed evaluation used the same checkpoint, 500-pool seed and
-tie-breaking seed.  This helper selects the exact 200 v21 sample indices,
-reconstructs every candidate pool from the ordered song-bank IDs, and records
-source/output hashes.  Only the intervention conditions need fresh inference.
+"""
+用途：重用既有實驗輸出並轉成 v21 分析所需格式。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 from pathlib import Path

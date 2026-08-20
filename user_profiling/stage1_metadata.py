@@ -1,10 +1,8 @@
 """
-Stage 1: Metadata Construction & Semantic Integration
-功能：
-1. 載入原始 music_metadata.json (來自 Stage 0)
-2. 執行「語義整合」：將結構化標籤轉為自然語言描述 (Semantic Seed)
-   Spec 3.2.3: Semantic_Seed(m) = Template(Tags(m), Metadata(m))
-3. 輸出 enriched_metadata.json 供 Stage 2 使用
+用途：執行使用者偏好建模流程中的資料處理或分析。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json
@@ -95,7 +93,7 @@ class MetadataIntegrator:
             info['semantic_seed'] = seed
             enriched_count += 1
 
-            # 顯示第一筆結果給用戶檢查 (Debug 用)
+            # 顯示第一筆結果，方便人工檢查
             if not sample_checked:
                 logger.info(f"\n[Sample Check] ID: {mid}")
                 logger.info(f"  Genre: {info.get('genre')}")

@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：計算主要評估結果的顯著性檢定與統計摘要。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,26 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Paired statistical tests for Top-1 end-to-end 500-pool evaluation outputs.
-
-Usage:
-  Open this file in VSCode, edit USER SETTINGS if needed, then click Run.
-
-Inputs:
-  checkpoints/exp_XX/detailed_eval/
-    exp_XX_best_500pool_top1_prompt_original_samples_merged.csv
-
-Outputs:
-  checkpoints/significance_analysis_top1/
-    significance_top1_results.csv
-    significance_top1_results.json
-    significance_top1_summary.md
-
-This script is intended for the formal end-to-end generation setting:
-the model first ranks the 500-pool candidates, then generates the explanation
-conditioned on the actual Top-1 music item rather than the ground-truth item.
-"""
 
 import csv
 import json
@@ -37,7 +23,7 @@ import numpy as np
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 BASE_DIR = str(PROJECT_ROOT)
@@ -45,7 +31,7 @@ CHECKPOINT_NAME = "best"
 POOL_SIZE = 500
 PROMPT_VARIANT = "original"
 
-# Positive improvement means FOCAL_EXP is better than COMPARE_EXPS.
+# improvement 為正表示 FOCAL_EXP 優於 COMPARE_EXPS。
 FOCAL_EXP = "exp_01"
 COMPARE_EXPS = ["exp_02", "exp_03", "exp_04", "exp_05", "exp_06", "exp_07"]
 
@@ -53,18 +39,18 @@ BOOTSTRAP_N = 10000
 BOOTSTRAP_SEED = 20260602
 ALPHA = 0.05
 
-# If scipy is available, the script uses scipy.stats.wilcoxon.
-# Otherwise it falls back to a normal-approximation signed-rank test.
+# 若 scipy 可用，使用 scipy.stats.wilcoxon。
+# 若 scipy 不可用，改用常態近似的符號等級檢定。
 USE_SCIPY_IF_AVAILABLE = True
 
-# Keep ranking and generation in the same output file so thesis tables can cite
-# one consistent Top-1 end-to-end significance analysis.
+# ranking 與 generation 放在同一份輸出檔，
+# 方便論文表格引用同一份 Top-1 end-to-end 顯著性分析。
 INCLUDE_RANKING_METRICS = True
 INCLUDE_GENERATION_METRICS = True
 
 
 METRICS = [
-    # name, higher_is_better, paper label, metric group
+    # 指標名稱、是否越高越好、論文顯示名稱, metric group
     ("R@1", True, "R@1", "ranking"),
     ("R@5", True, "R@5", "ranking"),
     ("R@10", True, "R@10", "ranking"),

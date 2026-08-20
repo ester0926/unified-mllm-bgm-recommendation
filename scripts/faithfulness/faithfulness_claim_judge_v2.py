@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：將推薦解釋切成 claim，並依規則標註每個 claim 的支持來源。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,18 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Rule-based claim-level judge v2 for explanation faithfulness.
-
-Why v2:
-  - v1 over-counted generic phrases such as "fit your video" as video claims.
-  - v1 mixed title/artist/album metadata with true audio-feature claims.
-  - v2 separates metadata-supported, audio-feature-supported, video-supported,
-    prompt-supported, preference-supported, general-supported, and unsupported.
-
-This script is still deterministic and auditable. It is intended as a stronger
-rule-based proxy before optional manual or LLM-as-a-Judge auditing.
-"""
 
 import csv
 import json
@@ -192,8 +186,8 @@ def is_metadata_claim(claim, row):
     lower = claim.lower()
     if keyword_hit(lower, METADATA_TERMS):
         return True
-    # "X by Y" recommendation clauses usually rely on injected title/artist,
-    # not audio features.
+    # 「X by Y」推薦句通常來自注入的歌名與藝人，
+    # 不一定是由音訊特徵支持。
     if re.search(r"['\"].+?['\"]\s+by\s+", claim) or re.search(r"\bby\s+[A-Z\u00C0-\uFFFF]", claim):
         return True
     return False
@@ -205,8 +199,8 @@ def is_video_claim(claim):
         return True
     if keyword_hit(lower, STRONG_VIDEO_TERMS):
         return True
-    # The word "video" alone is often generic recommendation framing. Count it
-    # as visual only when paired with concrete content/visual words.
+    # 單獨出現 video 通常只是推薦語氣，
+    # 只有搭配具體內容或視覺詞時才標成視覺來源。
     if "video" in lower and any(term in lower for term in ["visual", "scene", "content", "footage", "image", "action", "pace"]):
         return True
     return False
@@ -216,8 +210,8 @@ def is_audio_claim(claim):
     lower = claim.lower()
     if keyword_hit(lower, STRONG_AUDIO_TERMS):
         return True
-    # Genre-only statements are treated as audio claims only when they describe
-    # the track's sound/style, not title/artist/album metadata.
+    # 單純曲風句只有在描述歌曲聲音或風格時，
+    # 才視為音訊 claim；若只是標題、藝人或專輯 metadata 則不算。
     if keyword_hit(lower, GENRE_TERMS) and any(anchor in lower for anchor in [
         "genre", "genres", "style", "sound", "influence", "influences",
         "combines elements", "blend", "falls under",

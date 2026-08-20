@@ -1,12 +1,8 @@
 """
-t-SNE / UMAP visualizations of LTP (Latent Taste Profile) vectors.
-
-Generates three figures:
-  Fig A — hybrid vs explicit_only vs implicit_only LTP space (t-SNE, 2D)
-  Fig B — within hybrid LTP: K-Means cluster structure (UMAP, 2D)
-  Fig C — eval-set query embeddings: correct vs incorrect retrieval (t-SNE, 2D)
-
-All figures saved to docs/figures/ltp_viz/
+用途：整理實驗輸出並產生論文分析用表格或圖表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import json
@@ -22,14 +18,14 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import normalize
 import umap
 
-# ── paths ─────────────────────────────────────────────────────────────────────
+# ── 路徑設定 ─────────────────────────────────────────────────────────────────
 BASE    = Path(__file__).resolve().parents[2]
 CACHE   = BASE / "cache"
 CKPT    = BASE / "checkpoints"
 FIG_DIR = BASE / "docs" / "figures" / "ltp_viz"
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-# ── style ─────────────────────────────────────────────────────────────────────
+# ── 圖表樣式 ─────────────────────────────────────────────────────────────────
 COLORS = {
     "hybrid":        "#2563EB",   # blue
     "explicit_only": "#DC2626",   # red
@@ -54,21 +50,21 @@ TSNE_PERP = 40
 TSNE_ITER = 1000
 RANDOM_STATE = 42
 
-# ── load data ─────────────────────────────────────────────────────────────────
+# ── 讀取資料 ─────────────────────────────────────────────────────────────────
 print("Loading LTP vectors...")
 ltp_hybrid   = np.load(CACHE / "ltp_hybrid.npy")
 ltp_explicit = np.load(CACHE / "ltp_explicit_only.npy")
 ltp_implicit = np.load(CACHE / "ltp_implicit_only.npy")
 print(f"  hybrid: {ltp_hybrid.shape}, explicit: {ltp_explicit.shape}, implicit: {ltp_implicit.shape}")
 
-# L2-normalise (all models share the 256-dim LTP space)
+# L2 正規化；所有模型共用 256 維 LTP 空間
 ltp_hybrid_n   = normalize(ltp_hybrid,   norm="l2")
 ltp_explicit_n = normalize(ltp_explicit, norm="l2")
 ltp_implicit_n = normalize(ltp_implicit, norm="l2")
 
 rng = np.random.RandomState(RANDOM_STATE)
 
-# ── shared subsample indices ───────────────────────────────────────────────────
+# ── 共用抽樣索引 ─────────────────────────────────────────────────────────────
 total = ltp_hybrid.shape[0]
 idx   = rng.choice(total, size=min(N_SAMPLE, total), replace=False)
 
@@ -77,10 +73,10 @@ sub_e = ltp_explicit_n[idx]
 sub_i = ltp_implicit_n[idx]
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Fig A — three-model comparison via t-SNE
+# 圖 A：以 t-SNE 比較三種模型
 # ─────────────────────────────────────────────────────────────────────────────
 print("\n[Fig A] t-SNE: hybrid vs explicit vs implicit ...")
-# Stack all three and embed jointly so axes are comparable
+# 將三種向量一起降維，讓座標軸可比較
 X_all   = np.vstack([sub_h, sub_e, sub_i])
 labels  = (["hybrid"] * len(sub_h) +
            ["explicit_only"] * len(sub_e) +
@@ -114,17 +110,17 @@ plt.close()
 print(f"  Saved → {out_A}")
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Fig B — K-Means cluster structure in hybrid LTP space (UMAP)
+# 圖 B：hybrid LTP 空間中的 K-Means 群集結構（UMAP）
 # ─────────────────────────────────────────────────────────────────────────────
 print(f"\n[Fig B] UMAP + K-Means ({K_CLUSTERS} clusters) on hybrid LTP ...")
 
-# K-Means on the full hybrid set (not just subsample) for stable centroids
+# K-Means 使用完整 hybrid set，讓 centroid 較穩定
 print("  Fitting K-Means on full hybrid set ...")
 km = KMeans(n_clusters=K_CLUSTERS, n_init=20, random_state=RANDOM_STATE)
 km.fit(ltp_hybrid_n)
 cluster_labels_full = km.labels_
 
-# UMAP on subsample, coloured by cluster
+# UMAP 使用抽樣資料，並依群集上色
 cluster_labels_sub = cluster_labels_full[idx]
 
 print("  Fitting UMAP on subsample ...")
@@ -132,7 +128,7 @@ reducer = umap.UMAP(n_components=2, n_neighbors=30, min_dist=0.1,
                     metric="cosine", random_state=RANDOM_STATE)
 emb_B   = reducer.fit_transform(sub_h)
 
-# Cluster centroid names (descriptive, based on k-means centre analysis)
+# 群集名稱依 K-Means 中心特徵做描述
 cluster_names = [f"Cluster {i+1}" for i in range(K_CLUSTERS)]
 
 fig, ax = plt.subplots(figsize=(7, 6))
@@ -155,25 +151,25 @@ plt.savefig(str(out_B).replace(".pdf", ".png"), bbox_inches="tight", dpi=150)
 plt.close()
 print(f"  Saved → {out_B}")
 
-# Cluster size breakdown
+# 各群集樣本數摘要
 print("\n  Cluster sizes:")
 unique, counts = np.unique(cluster_labels_full, return_counts=True)
 for u, c in zip(unique, counts):
     print(f"    Cluster {u+1}: {c} ({c/len(cluster_labels_full)*100:.1f}%)")
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Fig C — Eval-set LTP vectors: correct vs incorrect Top-1 retrieval (t-SNE)
+# 圖 C：評估集 LTP 向量中 Top-1 正確與錯誤樣本的 t-SNE 分布
 # ─────────────────────────────────────────────────────────────────────────────
 print("\n[Fig C] t-SNE: eval query LTP — correct vs incorrect retrieval ...")
 
 import csv
 
-# Load eval-set sample indices (val_subset_indices_500.json → indices into ltp cache)
+# 讀取評估集樣本索引；val_subset_indices_500.json 對應到 LTP cache 索引
 val_idx_path = CACHE / "val_subset_indices_500.json"
 with open(val_idx_path) as f:
     val_indices = json.load(f)   # list of ints, length ~500
 
-# Load per-sample R@1 from exp_01 ranking CSV
+# 從 exp_01 ranking CSV 讀取逐筆 R@1
 ranking_csv = CKPT / "exp_01" / "detailed_eval" / "exp_01_best_500pool_ranking_samples.csv"
 top1_hits = []
 with open(ranking_csv, newline="", encoding="utf-8-sig") as f:
@@ -182,14 +178,14 @@ with open(ranking_csv, newline="", encoding="utf-8-sig") as f:
         top1_hits.append(int(row["R@1"]))  # 1=correct, 0=incorrect
 top1_hits = np.array(top1_hits)  # shape (4205,)
 
-# Use val_indices to select LTP vectors & correctness labels
-# val_indices are indices into the full 84150-length LTP cache
+# 使用 val_indices 選取 LTP 向量與正確性標籤
+# val_indices 對應完整 84150 筆 LTP cache 的索引
 eval_ltp = ltp_hybrid_n[val_indices]  # (500, 256)
 
-# Match correctness: we need same ordering as val_indices
-# eval CSVs have 4205 rows; val_subset is a 500-sample pool subset
-# map by position: val_subset_indices_500 gives sample positions in eval set
-# These indices might index directly into the eval CSV rows
+# 對齊正確性標籤，順序需與 val_indices 相同
+# eval CSV 有 4205 列；val_subset 是 500-sample pool 子集
+# 依位置對應：val_subset_indices_500 提供 eval set 中的樣本位置
+# 這些索引可直接對應 eval CSV 的列位置
 n_eval_csv = len(top1_hits)  # 4205
 valid_mask = np.array(val_indices) < n_eval_csv  # safety filter
 eval_ltp_valid    = eval_ltp[valid_mask]

@@ -1,26 +1,8 @@
 """
-LTP Perturbation Control — Wilcoxon Signed-Rank + Cliff's Delta
-================================================================
-
-三個條件的成對顯著性檢定：
-  matched  — 正確 LTP（video_id 對應的 preference vector）
-  shuffled — 隨機其他使用者的 LTP（保持分佈但打亂身份）
-  random   — 全零向量（無 LTP 訊號）
-
-比較方向：
-  A: matched  vs shuffled  →「LTP 身份的邊際效益」
-  B: matched  vs random    →「有 LTP vs 完全無 LTP」
-  C: shuffled vs random    →「錯誤 LTP vs 無 LTP」（診斷用）
-
-Cliff's delta 符號：
-  正值 → 前者 rank 較低（較優）
-  delta = (#(x<y) - #(x>y)) / (n*m)，x=前條件 ranks，y=後條件 ranks
-
-輸入：results/main_eval/exp_01/ltp_control/ltp_{matched,shuffled,random}_ranking.csv
-輸出：同資料夾下 ltp_control_significance.{csv,md,json}
-
-執行：
-    python scripts/analysis/ltp_control_significance.py
+用途：計算統計檢定與效果量。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import csv
@@ -114,7 +96,7 @@ def fmt_p(p: float) -> str:
     return "< .001" if p < 0.001 else f"= {p:.3f}"
 
 
-# ── main ─────────────────────────────────────────────────────────────────────
+# ── 主程式入口 ───────────────────────────────────────────────────────────────
 
 def main():
     # 載入三個條件
@@ -176,7 +158,7 @@ def main():
         print(f"\n[{comp['id']}] {comp['name']}")
         print(f"     ΔR@1={entry['delta_R@1']:+.2f}pp  δ={delta:+.4f} ({mag})  W={stat:.0f}  p_raw={p_raw:.4g}")
 
-    # Holm-Bonferroni
+    # Holm-Bonferroni 多重比較校正
     adj_ps = holm_bonferroni(raw_ps)
     for i, r in enumerate(results):
         r["p_adj"] = adj_ps[i]
@@ -260,7 +242,7 @@ def main():
     print(md_text)
     print("="*70)
 
-    # ── thesis-ready text ─────────────────────────────────────────────────────
+    # ── 論文用文字摘要 ───────────────────────────────────────────────────────
     print("\n\n=== THESIS TEXT FRAGMENT (§4.7.4) ===\n")
     for r in results:
         print(

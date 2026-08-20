@@ -1,28 +1,7 @@
 """
-models/projectors.py — 多模態投影層（Pointwise v2 Plan B + 消融實驗支援）
-
-Plan B 主要改動（相比原 Pointwise v2）：
-  - prefix 順序改為：[VIDEO, LTP, TEXT_CLIP, MUSIC]（causal mask 正確版）
-  - modality_type_emb ID 對應更新
-
-消融實驗擴充（v3）：
-  - forward() 新增 active_modalities 參數
-  - 只投影並拼接 active 模態的 embedding
-  - prefix 長度從固定 4 變為動態（3 或 4）
-  - modality_type_emb 也動態選取對應 ID
-
-模態順序與 ID 對應（固定，不隨消融改變）：
-  順序：video → ltp → text → music（CANONICAL_ORDER）
-  ID：  VIDEO=0, LTP=2, TEXT_CLIP=3, MUSIC=1
-
-消融後的 prefix 範例（維持相對順序）：
-  w/o ltp：  [VIDEO, TEXT_CLIP, MUSIC] → IDs [0, 3, 1]
-  w/o video：[LTP, TEXT_CLIP, MUSIC]   → IDs [2, 3, 1]
-  w/o text： [VIDEO, LTP, MUSIC]       → IDs [0, 2, 1]
-  w/o music：[VIDEO, LTP, TEXT_CLIP]   → IDs [0, 2, 3]
-
-投影器結構（LLaVA v1.5 消融實驗驗證的兩層 MLP）：
-  LayerNorm → Linear → GELU → Dropout → Linear → LayerNorm
+用途：定義不同模態特徵投影到共同表示空間的模型元件。
+輸入：訓練或推論程式傳入的多模態特徵與 LTP 表示。
+輸出：推薦分數、投影後特徵或生成模型需要的表示。
 """
 
 import torch
@@ -93,7 +72,7 @@ class MultimodalProjectors(nn.Module):
         self.ltp_proj   = ModalityProjector(ltp_dim,  llama_hidden_dim, projector_hidden_dim, dropout)
         self.text_proj  = ModalityProjector(text_dim,  llama_hidden_dim, projector_hidden_dim, dropout)
 
-        # ★ Embedding 大小固定為 4，即使消融時只用到 3 個
+        # Embedding 大小固定為 4，即使消融時只用到 3 個
         # 保持所有 exp 的 projectors.pt 的 modality_type_emb 維度一致
         self.modality_type_emb = nn.Embedding(4, llama_hidden_dim)
         nn.init.trunc_normal_(self.modality_type_emb.weight, std=0.02)

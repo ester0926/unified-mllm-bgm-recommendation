@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：產生 counterfactual 條件下的推薦解釋，用於後續 faithfulness 分析。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,17 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Top-1 counterfactual modality-removal generation for explanation faithfulness.
-
-Usage:
-  Open this file in VSCode and click Run.
-
-This is the end-to-end counterpart of run_faithfulness_counterfactual.py. It
-does not use the GT music feature for generation. Instead, it reads the existing
-500-pool ranking CSV, retrieves the recorded Top-1 music for each sampled query,
-and generates explanations conditioned on that actual recommendation.
-"""
 
 import csv
 import json
@@ -34,7 +29,7 @@ from scripts.eval_main.run_eval_500pool_top1_generation_from_ranking import (
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 EXP_NAME = "exp_01"

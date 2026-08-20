@@ -1,31 +1,8 @@
 """
-實驗四：雙空間 t-SNE 偏好對齊可視化 (v8)
-========================================================
-佈局：1 行 4 欄
-
-  Panel 1  Text Space t-SNE（定性）
-  Panel 2  Cross-Modal Alignment（跨模態對齊，p<0.001）
-  Panel 3  Cross-Modal Hit@K 檢索測試（全庫 ~74,000 首）← 主要改動
-  Panel 4  Audio Space t-SNE + Convex Hull + 錨定率
-
-v8 改動摘要（vs v7）：
-
-  Panel 3 query 修正（關鍵）：
-    v7：query = P_ltp_implicit（Core Music 偏好中心）
-        → Core Music ≠ Target Music，找不到正確答案（Hit = 0%）
-
-    v8：query = W_explicit(raw_text[i])（文字偏好投影到 256D）
-        pool  = W_implicit(target_ast[j])（全庫 ~74,000 首音訊投影）
-        → 和 Panel 2 完全一致的跨模態框架
-        → 問題變成：「給定用戶的文字偏好，能否從全庫找到對應的目標音樂？」
-        → Panel 2 的 Δμ=+0.072 已確認跨模態信號強，Hit@K 應顯著優於隨機
-
-  另外修正：移除殘留的舊版執行呼叫，確保腳本只執行一次
-
-使用方式：
-  cd "<repo_root>"
-  python experiments/Exp4_dual_tsne_v8.py
-  （若要取代 Exp4_dual_tsne.py，請用本檔案的全部內容覆蓋舊檔）
+用途：以 t-SNE 檢視不同偏好表示的分布。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import json
@@ -73,7 +50,7 @@ class CFG:
     PLTP_EXPLICIT       = STAGE5_DIR / "preference_vectors_explicit_only.h5"
     PLTP_IMPLICIT       = STAGE5_DIR / "preference_vectors_implicit_only.h5"
 
-    # ── CLIP Text Encoder ────────────────────────────────────
+    # ── CLIP 文字編碼器 ─────────────────────────────────────
     CLIP_MODEL = "openai/clip-vit-base-patch32"
 
     # ── 輸出 ─────────────────────────────────────────────────
@@ -142,7 +119,7 @@ def music_id_from_key(pair_key: str) -> str:
 
 
 def pool_text(feat: np.ndarray) -> np.ndarray:
-    """text_features [77, 512] → Masked Mean Pooling → [512]"""
+    """將 text_features [77, 512] 經 masked mean pooling 轉為 [512]。"""
     feat  = feat.astype(np.float32)
     norms = np.linalg.norm(feat, axis=1)
     mask  = (norms > 0.01).astype(np.float32)

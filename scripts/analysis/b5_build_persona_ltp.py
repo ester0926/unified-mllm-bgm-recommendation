@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：建立或分析 persona 條件下的 LTP 與評估結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,67 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-b5_build_persona_ltp.py
-=======================
-B5 步驟 2–4：合成歷史建構 → Persona LTP（Plan B）→ 分布驗證
-
-【步驟 2：合成歷史】
-  每個 Persona 抽 20 首，依教授指定的比例分三層（避免 100% 一致而使測試過易）：
-    core       70%（14 首）符合核心條件；反事實嚴格池不足時保留翻轉目標並分層補足
-    adjacent   20%（4 首） 符合偏好曲風，但**放寬一項**次要條件（節奏或能量）
-    off        10%（2 首） **違反**核心偏好，刻意製造雜訊
-  consistency 欄位控制 core 層的取樣半徑：
-    very_high / high → 取離該 Persona 曲目質心最近者（AST 空間）
-    medium           → 中間半徑
-    low              → 隨機散布
-  novelty 欄位控制 adjacent 層的放寬幅度。
-
-【步驟 3：Persona LTP（Plan B + 偏差尺度校正）】
-  Persona LTP 由該 20 首曲目之**既有** LTP 向量組合而成
-  （Plan A 失敗原因見 results/analysis/b5_smoketest/wout_recovery_report.md）。
-
-  ⚠ 單純取平均**不可行**，原因由資料診斷得出：
-    • 真實 LTP 的 93.6% 是共同成分（全域平均向量 norm 19.38，典型向量 norm 20.68）
-    • 鑑別資訊全在去均值後的偏差，而偏差彼此近乎正交（餘弦中位數 −0.009）
-    • 因此平均 15 條會使偏差 norm 縮小 √15 ≈ 3.86 倍（實測 6.93 → 1.79）
-    • 結果是所有 Persona 向量都擠在全域平均附近：
-      兩兩餘弦 0.986，遠高於真實 LTP 的 0.885 → 模型無從區分，B5 測不出可控性
-
-  故採**偏差尺度校正**（僅匹配前二階動差，不改變方向）：
-
-      dev      = mean(LTP_i) − μ            μ = 真實 LTP 全域平均
-      persona  = μ + dev × (d* / ‖dev‖)     d* = 真實偏差 norm 的中位數
-
-  方向仍完全由該 Persona 的曲目決定，只把偏差幅度還原到真實分布的尺度。
-  校正後的向量 norm 與兩兩餘弦皆與真實 LTP 相當（見驗證報告）。
-
-  ⚠ 論文須寫明：校正後已非嚴格的凸組合，而是「與真實分布前二階動差對齊」的建構，
-    此為在 Stage 5 不可重現前提下的權宜設計。
-
-  同時產生 5 種**向量層級**反事實（教授 §七 指定的翻轉項）：
-    cf_tempo        快節奏 ↔ 慢節奏
-    cf_energy       高能量 ↔ 低能量
-    cf_vocal        有人聲 ↔ 純音樂
-    cf_popularity   熱門熟悉 ↔ 小眾新穎
-    cf_consistency  一致型 ↔ 探索型
-  作法：翻轉該屬性後重新篩選候選池、重建歷史、重新平均。
-  這補上了 B3-2 只能做 prompt 層級反事實的缺口。
-
-【步驟 4：分布驗證】
-  1. norm 是否落在真實 LTP 的 p5–p95 內
-  2. 與最近的真實 LTP 之餘弦相似度（是否落在真實鄰域）
-  3. Persona 之間的兩兩餘弦（是否彼此可區分——若過高，B5 測不出可控性）
-  4. 反事實向量與原向量的差異（是否確實產生了位移）
-
-【輸出】results/analysis/b5_personas/
-  persona_histories.json      每個 Persona 的 20 首曲目與分層標記
-  persona_ltp.npz             persona_id → 256 維向量（含 5 種反事實）
-  persona_ltp_validation.csv  逐 Persona 的分布檢查
-  persona_ltp_validation.md   驗證報告
-
-【執行】python scripts/analysis/b5_build_persona_ltp.py   （純 CPU）
-"""
 
 import csv
 import datetime as _dt

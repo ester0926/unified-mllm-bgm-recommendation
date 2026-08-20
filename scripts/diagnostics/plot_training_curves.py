@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：繪製訓練曲線與診斷圖表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,35 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-plot_training_curves.py — 訓練曲線視覺化（修正版）
-
-修正清單：
-  Fix A：train.py 的 logger 修正後，step/epoch/val log 才會進 train.log，
-          本腳本的 parse_train_log() 才能正確解析。
-          訓練前請確認 train.py 已套用 Fix A。
-
-  Fix B：新增 val loss 解析正則（對應 train.py Fix B 的 log 格式）
-          "[Val Epoch N] ... | val_loss=X.XXXX"
-
-  Fix C：新增最重要的過擬合判斷圖：
-          train loss vs val loss（同一張圖，雙曲線）
-
-  Fix D：從 epoch checkpoint 的 metrics.json 讀取數據（更可靠的資料來源，
-          不依賴 log 解析）。metrics.json 由 save_checkpoint() 自動儲存。
-
-  Fix E：LOG_VAL_RE 格式修正：同時支援 val_loss 欄位有無的舊版 log
-
-使用方式：
-  python plot_training_curves.py
-  → 輸出圖片至 exp_01/analysis_plots/
-  → 輸出解析摘要至 exp_01/analysis_plots/summary.json
-
-過擬合判斷準則：
-  - 若 train_loss 持續下降，但 val_loss 先降後升（或平台後升）→ 過擬合
-  - 若 train_loss 和 val_loss 均持續下降且趨勢一致 → 欠擬合或正常收斂
-  - 若 val R@1 持續提升，即使 val_loss 略有波動，仍以排序指標為主要判斷依據
-"""
 
 import json
 import re
@@ -61,7 +38,7 @@ COMPARE_EXPS = {
 
 # ── 正則表達式 ────────────────────────────────────────────────────────────────
 
-# Step log："Epoch 3 Step 150 | loss=1.2345 | rank=0.8765 | gen=0.4321"
+# step log 範例："Epoch 3 Step 150 | loss=1.2345 | rank=0.8765 | gen=0.4321"
 LOG_STEP_RE = re.compile(
     r"Epoch\s+(?P<epoch>\d+)\s+Step\s+(?P<step>\d+)\s*\|\s*"
     r"loss=(?P<loss>[0-9.nan]+)\s*\|\s*"

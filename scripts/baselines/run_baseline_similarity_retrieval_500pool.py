@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行相似度檢索 baseline 的 500-pool 評估。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,25 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-VSCode-run baseline: non-parametric 500-pool similarity retrieval.
-
-This script evaluates lightweight baselines on the same test split and the same
-candidate-pool construction used by run_eval_500pool_detailed.py.
-
-Baselines:
-  1. random_500pool
-  2. audio_ast_similarity
-     Query: the candidate music audio feature in the query pair.
-     Bank: target_music_all_cls features for all songs.
-  3. video_audio_embedding_similarity
-     Query: video feature pooled from the query video.
-     Bank: target_music_all_cls features for all songs.
-
-The third baseline is intentionally weak because the raw video and audio
-embeddings are not trained into a shared space. It is still useful as a
-traditional multimodal retrieval baseline that does not use the unified MLLM.
-"""
 
 import csv
 import json
@@ -70,8 +57,8 @@ def read_query_features(h5_path: str, pair_key: str) -> Tuple[np.ndarray, np.nda
         if "candidate_music_all_cls" in group:
             audio_feat = mean_pool_dataset(group["candidate_music_all_cls"][:])
         elif "candidate_music_all_seq" in group:
-            # AST-like sequence features: use the CLS token from each segment if
-            # available, then average across segments.
+            # AST 類序列特徵：若每段有 CLS token，優先取 CLS，
+            # 再跨段平均。
             seq = np.asarray(group["candidate_music_all_seq"][:], dtype=np.float32)
             if seq.ndim >= 3:
                 audio_feat = seq[:, 0, :].mean(axis=0)

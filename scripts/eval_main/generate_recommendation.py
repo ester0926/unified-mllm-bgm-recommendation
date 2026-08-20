@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：對指定影片與候選音樂產生推薦文字解釋。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,29 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-generate_recommendation.py — 批次生成音樂推薦理由 + 500-pool 排名
-
-用途：
-  修改 TARGET_VIDEO_IDS 清單，一次處理一筆或多筆 video_id，
-  對每筆同時計算 500-pool 排名指標（R@1/R@5/R@10/MR）
-  與生成指標（BERTScore F1/InfoLM L2/FR/AB），
-  結果分別存為個別 JSON 和彙整 summary.csv。
-
-執行：
-  python generate_recommendation.py
-
-設定（直接修改程式底部的 TARGET_VIDEO_IDS 等常數）：
-  TARGET_VIDEO_IDS = ["VRzzLEMF8LU", "CyHc9CDPfl4", ...]
-  INJECT_TITLE     = True   # 開啟標題注入（對齊 MuseChat 推論）
-  DO_RANKING       = True   # 計算 500-pool 排名
-  AUTO_SAVE_JSON   = True   # 儲存個別 JSON
-  SAVE_SUMMARY     = True   # 儲存彙整 summary.csv
-
-輸出資料夾：
-  SAVE_DIR/gen_{video_id}.json  — 每筆詳細結果
-  SAVE_DIR/summary.csv          — 所有筆數的論文指標彙整
-"""
 
 import os
 import sys

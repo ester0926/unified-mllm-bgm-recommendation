@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：檢查資料切分是否有潛在資料洩漏。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,56 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-evaluate_leakage.py — Music-Level Leakage 分析模組（v2.2，同步 Pointwise v2）
-
-【版本說明】
-v2.2：scoring 機制從 batchwise_pool_scoring（Listwise v1）
-      改為 pointwise_pool_scoring（Pointwise v2），與主評估流程一致。
-
-【為何需要這個模組】
-
-Video-Level Split（已在 dataset.py 實作）防止了「同一影片同時出現在
-train 和 test」的資料外洩。但這無法防止「同一首音樂跨越 train/test」
-的記憶問題：
-
-    訓練集：影片 A 配對音樂 X（GT）→ 模型記住「音樂 X = 高分」
-    測試集：影片 B 候選包含音樂 X  → 高分可能來自記憶，非語義理解
-
-熱門歌曲（一首歌配多支影片）最容易發生。
-
-【分析方法：冷啟動子集評估（不重新分割資料）】
-
-篩選測試集中「GT 為訓練集從未出現的音樂」的樣本，稱為 cold-start subset。
-在這個子集上計算 R@10，與整體 R@10 比較。
-
-    memorization_gap = overall_R@10 - cold_start_R@10
-    gap ≤ 5%  → 模型學到跨模態語義，而非記憶曲目 ✅
-    gap > 5%  → 可能存在記憶效應，需在論文 limitation 節說明 ⚠️
-
-【使用方式】
-
-    from evaluate_leakage import evaluate_cold_start_music, build_train_music_ids
-
-    # 建構訓練集音樂 ID 集合
-    train_music_ids = build_train_music_ids(train_h5_files)
-
-    # 執行分析
-    results = evaluate_cold_start_music(
-        model=model,
-        test_dataset=test_dataset,
-        all_music_features=all_music_features,
-        all_music_ids=all_music_ids,
-        train_music_ids=train_music_ids,
-        device=device,
-        train_config=train_config,
-        model_config=model_config,
-    )
-
-    print(f"Overall R@10:     {results['overall_recall@10']:.4f}")
-    print(f"Cold-start R@10:  {results['cold_start_recall@10']:.4f}")
-    print(f"Memorization gap: {results['memorization_gap']:+.4f}")
-"""
 
 import logging
 import random

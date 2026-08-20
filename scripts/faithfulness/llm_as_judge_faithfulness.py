@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：準備或執行 LLM-as-a-Judge 的解釋品質輔助評估。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,23 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-LLM-as-a-Judge helper for explanation faithfulness analysis.
-
-Usage:
-  1. Make sure Ollama is running locally.
-  2. Edit USER SETTINGS below if needed.
-  3. Open this file in VSCode and click Run.
-
-This script samples a manageable subset from the rule-based faithfulness outputs
-and asks a local LLM judge to verify three analyses:
-  1. Feature-erasure claim support
-  2. Counterfactual preference alignment
-  3. Metadata consistency
-
-The goal is not to replace the full deterministic analysis, but to provide an
-auditable LLM-assisted validation subset for the thesis.
-"""
 
 import csv
 import json
@@ -37,7 +26,7 @@ from datetime import datetime
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 BASE_DIR = str(PROJECT_ROOT)
@@ -156,9 +145,9 @@ def extract_json_object(text):
     try:
         return json.loads(json_text)
     except json.JSONDecodeError:
-        # Local LLMs occasionally return invalid JSON string escapes such as
-        # "\&" or "\'". Keep valid JSON escapes intact and double other
-        # backslashes so the object remains parseable.
+        # 本機 LLM 有時會回傳不合法的 JSON escape，
+        # 例如 \& 或 \'。合法 escape 會保留，其他反斜線加倍處理，
+        # 讓 JSON 仍可被解析。
         fixed = re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', json_text)
         return json.loads(fixed)
 
@@ -424,7 +413,7 @@ def summarize_binary(rows, llm_key, rule_key=None):
 
 def run_feature_erasure():
     rows = read_csv(FEATURE_CLAIMS_CSV)
-    # Favor informative counterfactual claims while keeping condition diversity.
+    # 優先保留資訊量高的 counterfactual claim，同時維持條件多樣性。
     rows = [r for r in rows if r.get("claim_text") != "<EMPTY_GENERATION>"]
     sampled = sample_rows(rows, N_FEATURE_ERASURE_CLAIMS, SAMPLE_SEED, stratify_key="condition")
     identity_fields = ["condition", "sample_idx", "video_id", "claim_id", "claim_text"]

@@ -1,4 +1,11 @@
-# file: Step_4a_fix_unknown_artist_title.py
+"""
+用途：修正 metadata 或音訊抽取過程中的缺漏與錯誤。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
+"""
+
+# 原始檔名：Step_4a_fix_unknown_artist_title.py
 # 修正 metadata 中 unknown 的 artist 和 title
 import json
 import jsonlines

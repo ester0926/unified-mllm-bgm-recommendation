@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行 baseline 模型的訓練或評估流程。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,23 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Re-implemented MuseChat-light evaluation on the unified thesis test split.
-
-Open this file in VSCode and click Run. The script evaluates the existing
-MuseChat-light MVT-Fusion checkpoint with the same HDF5 data, video-level split,
-candidate-pool sampling rule, and text metrics used by the main model.
-
-Outputs:
-  checkpoints/musechat_light/detailed_eval/musechat_light_500pool_ranking_samples.csv
-  checkpoints/musechat_light/detailed_eval/musechat_light_500pool_gt_generation_samples.csv
-  checkpoints/musechat_light/detailed_eval/musechat_light_500pool_top1_generation_samples.csv
-  checkpoints/musechat_light/detailed_eval/musechat_light_500pool_summary.json
-
-If a MuseChat sentence-generator checkpoint is not available, ranking still runs
-and generation outputs are marked as skipped instead of silently producing bogus
-text.
-"""
 
 import csv
 import datetime as _dt
@@ -48,20 +37,20 @@ from dataset import build_pair_index, build_song_bank, extract_music_title, spli
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 MUSECHAT_DIR = r"external/musechat"
 MVT_CKPT_PATH = os.path.join(MUSECHAT_DIR, "checkpoints", "mvt_best.pt")
 
-# Leave as None to auto-detect checkpoints/generator_epoch*/training_state.pt.
-# Example: r"external/musechat\checkpoints\generator_epoch3"
+# 設為 None 時會自動尋找 checkpoints/generator_epoch*/training_state.pt。
+# 範例：r"external/musechat\checkpoints\generator_epoch3"
 GENERATOR_CKPT_DIR = None
 
 POOL_SIZE = 500
 MAX_SAMPLES = None
-# False reuses an existing ranking CSV and only regenerates GT/Top-1 text.
-# If the ranking CSV is missing, ranking will still run automatically.
+# False 表示重用既有 ranking CSV，只重新產生 GT/Top-1 文字。
+# 若 ranking CSV 不存在，仍會自動執行 ranking。
 RUN_RANKING = False
 RUN_GT_GENERATION = True
 RUN_TOP1_GENERATION = True
@@ -123,7 +112,7 @@ def load_module_from_file(name, path):
 
 
 def load_musechat_modules():
-    """Load modules from external/musechat without clobbering main config.py."""
+    """從 external/musechat 載入 baseline 模組，避免覆蓋本專案的 config.py。"""
     old_config = sys.modules.get("config")
     old_sys_path = list(sys.path)
     muse_config = load_module_from_file(

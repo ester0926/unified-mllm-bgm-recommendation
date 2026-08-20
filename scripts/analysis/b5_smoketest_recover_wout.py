@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理實驗輸出並產生論文分析用表格或圖表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,46 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-b5_smoketest_recover_wout.py
-============================
-B5 smoke test：驗證能否還原 Stage 5 的輸出投影層 W_out_hybrid
-
-【為什麼需要這支】
-  B5 要為 24 個 Persona 產生 LTP 向量，前提是新向量必須與 exp_01 訓練時所用的
-  LTP 空間一致。但檢查 stage5_preference_representation_v4.py 後發現：
-
-    • projection_weights.pt 只存了 W_explicit 與 W_implicit
-    • W_out_hybrid / W_out_single 是 **每次執行都重新 Xavier 隨機初始化**
-      （第 305-313 行），且整支腳本**沒有任何 manual_seed**
-    • hybrid 模式為 p_ltp = W_out_hybrid( concat(explicit_256, implicit_256) )
-
-  → 今天重跑 Stage 5 會得到一個**與當初完全不同的隨機輸出投影**，
-    Persona LTP 將落在與訓練分布不同的 256 維基底上，模型看到的等同雜訊。
-    若不先解決，B5 花一週做出來的結果全部無效。
-
-【解法與本腳本要驗證的事】
-  W_out_hybrid 是純線性層 y = Wx + b，而：
-    y = cache/ltp_hybrid.npy 的既有向量（84,150 筆，即訓練時實際使用者）
-    x = concat(explicit_256, implicit_256)，可由已存檔的 W_explicit / W_implicit
-        + profiles.jsonl + stage2 history + AST 嵌入完全確定性地重算
-  兩個編碼函式（encode_explicit_preference / encode_implicit_preference）
-  經逐行檢查**不含任何隨機來源**，因此 x 可精確重建。
-
-  以最小平方法自 (x, y) 配對解出 W 與 b：512+1 個未知數、上千筆方程式，
-  屬高度超定系統。若在**留出樣本**上的殘差趨近 0，即同時證明兩件事：
-    1. W_out_hybrid 已被精確還原 → Persona 可用同一投影產生 in-distribution 的 LTP
-    2. 我們重算 x 的流程與原始 Stage 5 完全一致 → 後續 Persona 編碼可信
-
-  若殘差偏大，代表尚有未掌握的處理步驟，B5 必須改採其他設計（見腳本末的建議）。
-
-【輸出】results/analysis/b5_smoketest/
-  wout_recovery_report.json / .md
-  recovered_W_out_hybrid.pt      （殘差達標時才輸出）
-
-【執行】需要 CLIP 與 torch：
-  <user_home>/anaconda3\\envs\\ollama\\python.exe scripts/analysis/b5_smoketest_recover_wout.py
-"""
 
 import datetime as _dt
 import json
@@ -299,7 +265,7 @@ def main():
     (OUT_DIR / "wout_recovery_report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    md = ["# B5 smoke test：Stage 5 輸出投影層還原\n",
+    md = ["# B5 快速檢查：Stage 5 輸出投影層還原\n",
           f"- 產生時間：{report['generated_at']}",
           f"- 有效配對樣本：{report['n_pairs']}（訓練 {report['n_train']} / 留出 {report['n_test']}）\n",
           "## 問題\n",

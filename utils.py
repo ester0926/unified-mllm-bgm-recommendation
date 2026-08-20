@@ -1,13 +1,8 @@
 """
-utils.py — 工具函數與輔助類別
-
-包含：
-  - 隨機種子設定
-  - AverageMeter（損失追蹤）
-  - 參數計數
-  - Checkpoint 儲存/載入
-  - Logger 設定
-  - EarlyStopping
+用途：放置訓練與評估流程共用的小工具函式。
+輸入：依程式內路徑設定讀取本專案資料或前一階段輸出。
+輸出：依程式內 OUTPUT_DIR、results 或 checkpoints 設定寫出結果。
+執行：建議在 repo 根目錄執行，避免相對路徑錯誤。
 """
 
 import os

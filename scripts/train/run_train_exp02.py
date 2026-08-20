@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：設定並啟動 exp_02 的訓練流程。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,28 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_train_exp02.py — 消融實驗 A_explicit：P_ltp 使用 explicit_only 向量
-
-消融設計：
-  exp_01（主實驗）：LTP_MODE = "hybrid"      → 已完成，R@1=30.82%
-  exp_02（本腳本）：LTP_MODE = "explicit_only" → 只用顯性語義偏好（CLIP-Text 512D→256D）
-  exp_03          ：LTP_MODE = "implicit_only"  → 只用隱性行為偏好（AST 768D→256D）
-
-消融目的：
-  驗證 hybrid P_ltp 的設計選擇是否有效：
-  若 explicit_only 或 implicit_only 效能顯著低於 hybrid，
-  即說明兩種偏好表示的融合在本研究中是必要的。
-
-修正清單（相比 run_train.py）：
-  ★ P1 fix：epoch/step loss 透過 train.py 的 logger 記錄（請確認 train.py 使用 logger 而非 print）
-  ★ P6 fix：VAL_POOL_SIZE 建議改為 100（需 train.py 支援此參數）
-  ★ 其他：RESUME_CHECKPOINT=None（從頭訓練），OUTPUT_DIR=exp_02，LTP_MODE=explicit_only
-  ★ vocab 注釋修正：5 個 special tokens（[VIDEO][MUSIC][LTP][TEXT_CLIP][RANK]）→ 32005
-
-執行：
-  python run_train_exp02.py
-"""
 
 import os
 import sys

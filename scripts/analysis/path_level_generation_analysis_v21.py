@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：分析不同資訊來源路徑對生成解釋的影響。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,57 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-path_level_generation_analysis.py
-=================================
-B3：顯性／隱性／混合偏好路徑的**生成側**分析 —— 離線重新彙整，不需 GPU
-
-對應指導教授 0723 建議 §四「補做的最小實驗」，以及第三位口委「為何 Hybrid 沒有優於
-隱性音訊路徑」的提問。
-
-排序側已完成（500-pool R@1）：
-    exp_01 Hybrid 30.65% ｜ exp_02 Explicit-only 21.93%
-    exp_03 Implicit-only 31.06% ｜ exp_04 No-LTP 19.07%
-Hybrid 未優於 Implicit-only，因此不能再主張「雙路徑融合提升排序」。本腳本補上生成側，
-檢驗是否存在「隱性路徑主排序、顯性路徑主說明」的**功能分工**。
-
-四個模型的 4,205 筆 Top-1 說明文字都已在磁碟上，故本分析完全不需重跑生成：
-    results/main_eval/exp_0X/detailed_eval/
-        exp_0X_best_500pool_top1_prompt_original_samples_merged.csv
-
-教授指定的生成側指標，本腳本逐一實作：
-  1. 偏好屬性引用率      preference claim 佔全部 claim 之比（另報樣本層級涵蓋率）
-  2. 參考畫像一致率      偏好主張之屬性與極性和 Stage-4 參考畫像一致者之比
-  3. 不存在偏好主張率    偏好主張中，屬性完全查無於畫像者之比
-  4. 音樂元資料支持率    元資料主張中，可由 top-1 參考文本／musicnn 標籤佐證者之比
-  5. UCR                 與 B2 一致，同時報子句層級（L1）與母句校正後（L2）
-
-證據來源：
-  • 偏好畫像：Stage 4 profiles.jsonl 的 summary_text + salient_facts（依 video_id 對應，
-    測試集 4,205 支影片 100% 覆蓋）
-  • 音樂元資料：top1_reference_text + music_title/artist（管線內）
-                + music_metadata_enriched.json 的 genre 與 musicnn 標籤（外部獨立）
-
-⚠ 判讀注意：四模型皆與同一份事後參考畫像比較。exp_04（No-LTP）未接收該畫像，
-   其一致率只代表偶然／先驗一致的負向對照，不是輸入支持率。
-
-統計：
-  claim 巢套於樣本之中，故一律採**樣本層級叢集拔靴法**（resample 樣本而非 claim），
-  否則 CI 會因忽略樣本內相關而過窄。
-
-輸出（results/analysis/path_level_generation/）：
-  path_level_metrics.csv          四個模型 × 全部指標
-  path_level_contrasts.csv        模型兩兩差異 + 叢集拔靴 95% CI
-  path_level_claims_sample.csv    分類結果抽樣（供人工查核）
-  path_level_summary.json / .md   論文用表格（§4.3 路徑分工）
-  path_level_generation.log
-
-使用方式：
-  VSCode 直接 Run，或：
-    python scripts/analysis/path_level_generation_analysis.py
-
-  需要 numpy。
-"""
 
 import csv
 import datetime as _dt

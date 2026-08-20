@@ -1,18 +1,8 @@
 """
-Stage 2: PersonaX Balanced History Selection
-功能：根據目標音樂，從資料庫中選出具代表性的歷史序列 (Core/Exploratory/Negative)。
-特點：
-1. 支援 PersonaX 平衡採樣 (K-Means + Scoring)
-2. 支援消融實驗策略切換 (Top-N, Random, Full)
-3. 自動讀取 Stage 1 產出的語義 metadata
-
-修正項目：
-1. 輸出檔名改為使用 Target Music ID (避免 top1_music 覆蓋問題)
-2. 根據 Sampling Strategy 自動建立子資料夾
-3. 輸出結果增加 similarity 與 personax_score 欄位
-
-1. 修正負向樣本 (Negative SBS) 選到 Target 本身的問題。
-2. 修正 top_n 與 random 策略中的負樣本排除邏輯。
+用途：執行使用者偏好建模流程中的資料處理或分析。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json
@@ -88,7 +78,7 @@ class PersonaXSelector:
                                      sims[core_indices], sims[explor_indices], sims[neg_indices])
 
         elif strategy == 'random':
-            # Ablation-1b variant: Random
+            # Ablation-1b 版本：隨機條件
             all_indices = np.arange(len(self.music_ids))
             all_indices = all_indices[all_indices != target_idx] # 排除自己
             

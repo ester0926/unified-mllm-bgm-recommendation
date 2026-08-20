@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：使用較相似的 hard negative 候選音樂執行 500-pool 評估。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -9,38 +15,6 @@ for _p in [str(PROJECT_ROOT), str(DIAGNOSTICS_DIR)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-"""
-Hard-negative 500-pool evaluation for exp_01 (best checkpoint).
-
-Instead of randomly sampling 499 distractors, this script builds a pool of
-the 499 acoustically hardest negatives — music tracks whose AST-CLS features
-are most similar (cosine similarity) to the GT music for each query video.
-Hard negatives are pairs that sound similar to the correct answer, making the
-retrieval task genuinely harder than the random-distractor baseline.
-
-pair_key structure (MuseChat):
-  pair_key = {target_music_id(11)}_{candidate_music_id(11)}
-    • pair_key[:11] = target_music_id  = the GT music (= video_id)
-    • pair_key[12:] = candidate_music_id = training negative (not used in eval pool)
-
-Design notes:
-  • Similarity is computed over `song_bank.npy` (target_music_all_cls features,
-    768-dim, one entry per pair_key).
-  • A pair_key entry is excluded from the hard-negative pool if:
-      (a) Its pair_key == the GT pair_key (same pair), OR
-      (b) Its pair_key[:11] == GT target_music_id (same GT music, different
-          training candidate) — these have identical song_bank features and
-          would be equivalent correct answers in the pool.
-  • If the pool of valid hard negatives is smaller than pool_size - 1 (which is
-    extremely rare given 84k entries), random fill-in is used and flagged.
-  • The model loading and scoring are identical to run_eval_500pool_detailed.py.
-  • Outputs are saved under results/main_eval/exp_01/hardneg_eval/ so they sit
-    alongside but do not overwrite the random-pool results.
-
-Usage:
-  Open in VSCode and click Run, or:
-    python scripts/eval_main/run_eval_500pool_hardneg.py
-"""
 
 import csv
 import datetime as _dt
@@ -60,7 +34,7 @@ import torch
 
 
 # =============================================================================
-# PATH CONFIGURATION  — edit only this block if your layout differs
+# 路徑設定：若資料夾位置不同，只需要調整本區塊
 # =============================================================================
 
 BASE_DIR    = str(PROJECT_ROOT)
@@ -72,19 +46,19 @@ LLAMA_MODEL = "meta-llama/Llama-2-7b-hf"
 SPECIAL_TOKENS = ["[VIDEO]", "[MUSIC]", "[LTP]", "[TEXT_CLIP]", "[RANK]"]
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 #
-# EXP_NAME:      Which experiment checkpoint to evaluate ("exp_01" recommended;
-#                hard-negative analysis is most meaningful for the best model).
-# POOL_SIZE:     Total pool size = 1 GT + (POOL_SIZE - 1) hard negatives. 500.
-# TOP_K_HARD:    Number of acoustically nearest neighbours to draw from.
-#                Set > POOL_SIZE - 1 if you want to subsample from the top-K
-#                (e.g. TOP_K_HARD = 1000, POOL_SIZE = 500 samples 499 from
-#                the top-1000).  Set equal to POOL_SIZE - 1 for strict top-N.
-# HARDNEG_SEED:  If TOP_K_HARD > POOL_SIZE - 1, this seed controls which 499
-#                are drawn from the top-K. Ignored when TOP_K_HARD == POOL_SIZE-1.
-# MAX_SAMPLES:   None = full test set. Small integer for a smoke test.
+# EXP_NAME：要評估的實驗 checkpoint，通常使用 exp_01。
+# hard-negative 分析通常以最佳模型最有參考價值。
+# POOL_SIZE：候選池大小，包含 1 首 GT 與其餘 hard negatives；論文設定為 500。
+# TOP_K_HARD：先取音訊特徵最相近的前 K 首音樂。
+# 若 TOP_K_HARD 大於 POOL_SIZE - 1，會從前 K 首中抽樣。
+# 例如 TOP_K_HARD=1000、POOL_SIZE=500 時，會從前 1000 首抽 499 首。
+# 若要嚴格使用前 N 首，請設為 POOL_SIZE - 1。
+# HARDNEG_SEED：當需要抽樣時，用此 seed 固定抽樣結果。
+# 若 TOP_K_HARD 等於 POOL_SIZE - 1，這個 seed 不會影響結果。
+# MAX_SAMPLES：None 表示跑完整測試集；小數字可用於快速檢查。
 # =============================================================================
 
 EXP_NAME             = "exp_01"
@@ -144,11 +118,11 @@ def setup_logger(log_path: str):
 
 
 # =============================================================================
-# SONG BANK + HARD-NEGATIVE INDEX
+# 音樂特徵庫與 hard-negative 索引
 # =============================================================================
 
 def load_song_bank_normed(cache_dir: str, logger):
-    """Load song_bank.npy and return L2-normalised features for cosine similarity."""
+    """讀取 song_bank.npy，並回傳 L2 正規化後的音樂特徵。"""
     npy = os.path.join(cache_dir, "song_bank.npy")
     ids = os.path.join(cache_dir, "song_bank_ids.json")
     if not os.path.exists(npy) or not os.path.exists(ids):
@@ -176,45 +150,45 @@ def build_hardneg_pool(
     hardneg_rng: random.Random,
 ) -> tuple[list[int], bool]:
     """
-    Return pool_size - 1 hard-negative indices (pool_idx list, WITHOUT gt_idx prepended).
+    回傳 pool_size - 1 個 hard-negative 索引；回傳清單不包含 gt_idx。
 
-    Args:
-        gt_idx          : Index of the GT pair in song_bank.
-        video_id        : Query video_id (pair_key[:11] of the test sample).
-        song_bank_normed: L2-normalised song bank features, shape (N, 768).
-        pair_keys       : List of pair_key strings aligned with song_bank rows.
-        top_k           : How many nearest neighbours to retrieve before filtering.
-        pool_size       : Total pool size (1 GT + (pool_size-1) hard negatives).
-        hardneg_rng     : Random generator used when subsampling from top_k.
+    參數：
+        gt_idx：GT pair 在 song_bank 中的索引。
+        video_id：查詢影片 ID，也就是測試樣本 pair_key[:11]。
+        song_bank_normed：L2 正規化後的 song bank 特徵，形狀為 (N, 768)。
+        pair_keys：與 song_bank 列順序對齊的 pair_key 字串清單。
+        top_k：過濾前先取出的最近鄰數量。
+        pool_size：包含 1 首 GT 與其餘 hard negatives 的候選池大小。
+        hardneg_rng：從 top_k 抽樣時使用的隨機產生器。
 
-    Returns:
+    回傳：
         (neg_indices, used_random_fill)
-          neg_indices      : list of int, length == pool_size - 1
-          used_random_fill : True if valid hard negatives were fewer than needed.
+        neg_indices：長度為 pool_size - 1 的負樣本索引清單。
+        used_random_fill：有效 hard negatives 不足時為 True。
     """
     n_neg_needed     = pool_size - 1
     gt_target_mid    = pair_keys[gt_idx][:11]   # pair_key[:11] = target_music_id = GT = video_id
 
-    # Cosine similarity: dot product with L2-normalised vectors
+    # Cosine similarity：L2 正規化後以內積計算相似度
     query_vec = song_bank_normed[gt_idx]    # (768,)
     sims      = song_bank_normed @ query_vec  # (N,)
 
-    # Sort descending by similarity (most similar first, skipping the GT itself)
-    ranked = np.argsort(sims)[::-1]         # descending
+    # 依相似度由高到低排序，並跳過 GT 自己
+    ranked = np.argsort(sims)[::-1]         # 由高到低
 
-    # Collect top_k valid hard negatives
-    # Exclusion rules (pair_key = {target_music_id}_{candidate_music_id}):
-    #   (a) same pair (i == gt_idx)
-    #   (b) same target_music_id as GT (pk[:11] == gt_target_mid == video_id)
-    #       These pairs have IDENTICAL song_bank features; they would be
-    #       alternative pair_keys for the same GT music → must exclude.
+    # 收集前 top_k 個有效 hard negatives
+    # 排除規則（pair_key = {target_music_id}_{candidate_music_id}）：
+    #   (a) 與 GT 完全相同的 pair
+    #   (b) target_music_id 與 GT 相同的 pair
+    #       這些 pair 的 song_bank 特徵相同，
+    #       只是同一首 GT 音樂的不同 pair_key，因此必須排除。
     valid_hard = []
     for i in ranked:
         if len(valid_hard) >= top_k:
             break
         pk = pair_keys[i]
         if i == gt_idx:
-            continue                         # (a) same pair
+            continue                         # (a) 與 GT 完全相同的 pair
         if pk[:11] == gt_target_mid:
             continue                         # (b) same target_music (same GT, different candidate)
         valid_hard.append(int(i))
@@ -225,11 +199,11 @@ def build_hardneg_pool(
         if top_k == n_neg_needed:
             selected = valid_hard[:n_neg_needed]
         else:
-            # Subsample pool_size-1 from the top_k hard negatives
+            # 從 top_k hard negatives 中抽出 pool_size-1 首
             selected = hardneg_rng.sample(valid_hard, n_neg_needed)
     else:
-        # Fallback: use all valid hard negatives + random fill from remainder
-        # (should be extremely rare given 84k entries)
+        # 備用處理：使用有效 hard negatives，不足時以其他候選補齊
+        # 以目前資料量來看，這種補候選情況應該很少發生
         used_as_hard = set(valid_hard)
         fill_pool = [
             int(i) for i in range(len(pair_keys))
@@ -271,7 +245,7 @@ def load_ltp_dict(h5_path, mode, cache_path=None, logger=None):
 
 
 # =============================================================================
-# DATASET + MODEL (identical to run_eval_500pool_detailed.py)
+# 資料集與模型載入，與 run_eval_500pool_detailed.py 相同
 # =============================================================================
 
 def build_test_data(model_config, train_config, tokenizer, ltp_dict, logger):
@@ -328,7 +302,7 @@ def load_model(ckpt_dir, model_config, tokenizer, logger):
     base.resize_token_embeddings(len(tokenizer))
     peft_llama = PeftModel.from_pretrained(base, ckpt_dir, torch_dtype=torch.bfloat16)
     peft_llama.eval()
-    # getattr avoids Pylance's type-narrowing failure on hasattr()
+    # 使用 getattr 避免型別檢查工具對 hasattr 的誤判
     _disable_gc = getattr(peft_llama, "gradient_checkpointing_disable", None)
     if callable(_disable_gc):
         _disable_gc()
@@ -379,7 +353,7 @@ def load_model(ckpt_dir, model_config, tokenizer, logger):
 
 
 # =============================================================================
-# PROMPT HELPERS  (same as detailed eval, preserved for completeness)
+# Prompt 輔助函式，保留與 detailed eval 一致的版本
 # =============================================================================
 
 def sample_prompt_tensors(sample, device):
@@ -397,7 +371,7 @@ def sample_prompt_tensors(sample, device):
 
 
 # =============================================================================
-# RANKING EVALUATION WITH HARD-NEGATIVE POOL
+# 使用 hard-negative 候選池進行 ranking 評估
 # =============================================================================
 
 def rank_from_scores(scores, add_noise=True, rng=None, noise_scale=1e-6):
@@ -458,8 +432,8 @@ def eval_ranking_hardneg(
         ltp_feat   = sample["ltp_feat"].unsqueeze(0).to(device)
         text_feat  = sample["text_feat"].unsqueeze(0).to(device)
 
-        # Prompt — use the pre-tokenised prompt from the dataset (no title injection
-        # during ranking, matching the convention in run_eval_500pool_detailed.py).
+        # Ranking 階段使用 dataset 已 tokenize 的 prompt，不注入歌名；
+        # 這與 run_eval_500pool_detailed.py 的設定一致。
         t3_text = conv_t3.get(video_id, "")   # kept for future generation step
         _ = conv_t4.get(video_id, "")         # t4_ref unused in ranking; silence lint
         input_ids, attention_mask = sample_prompt_tensors(sample, device)
@@ -469,9 +443,9 @@ def eval_ranking_hardneg(
             logger.warning("GT pair_key not found in song bank: %s (skipping)", gt_pair_key)
             continue
 
-        # --- Hard-negative pool construction ---
-        # video_id = pair_key[:11] = target_music_id (the GT music)
-        # build_hardneg_pool will exclude all pairs whose target_music_id == video_id
+        # 建立 hard-negative 候選池
+        # video_id = pair_key[:11] = target_music_id，也就是 GT 音樂
+        # build_hardneg_pool 會排除 target_music_id 與 video_id 相同的 pair
         neg_indices, used_fill = build_hardneg_pool(
             gt_idx           = gt_global_idx,
             video_id         = video_id,  # = target_music_id = pair_key[:11]
@@ -487,7 +461,7 @@ def eval_ranking_hardneg(
                 "Sample %d (video=%s): not enough hard negatives; used random fill.", idx, video_id
             )
 
-        # GT goes to index 0 (same convention as random-pool eval)
+        # GT 固定放在 index 0，與 random-pool 評估一致
         pool_idx   = [gt_global_idx] + neg_indices
         pool_feats = all_music_features[pool_idx].to(device)
 
@@ -513,12 +487,12 @@ def eval_ranking_hardneg(
 
         top1_global_idx = pool_idx[top1_pool_idx]
 
-        # Nearest-neighbour rank of the GT in the hard-neg pool
-        # (how far the GT is from the most similar distractor by cosine sim)
+        # GT 在 hard-negative 候選池中的最近鄰排名
+        # 用來表示 GT 與最相似干擾候選之間的距離
         gt_vec = song_bank_normed[gt_global_idx]
         neg_sims = song_bank_normed[neg_indices] @ gt_vec   # (499,)
-        # What fraction of hard negatives are more similar than the GT itself?
-        # (GT sim to itself = 1.0; any neg sim closer to 1.0 is a "very hard" negative)
+        # 有多少比例的 hard negatives 比 GT 更接近查詢特徵
+        # 越接近 1.0 的負樣本代表越困難。
         avg_neg_sim = float(neg_sims.mean())
         max_neg_sim = float(neg_sims.max())
 
@@ -583,7 +557,7 @@ def eval_ranking_hardneg(
 
 
 # =============================================================================
-# REFERENCE CONVERSATION MAP
+# 參考對話對照表
 # =============================================================================
 
 def load_reference_maps():
@@ -605,20 +579,20 @@ def load_reference_maps():
 
 
 # =============================================================================
-# COMPARISON WITH EXISTING RANDOM-POOL RESULTS
+# 與既有 random-pool 結果比較
 # =============================================================================
 
 def load_random_pool_summary(base_dir: str, exp_name: str, ckpt: str, pool_size: int) -> dict:
     """
-    Try to load the existing random-pool summary JSON for comparison.
-    Returns {} if not found.
+    嘗試讀取既有 random-pool summary JSON，用於結果比較。
+    若找不到檔案則回傳空字典。
     """
-    # Standard path written by run_eval_500pool_detailed.py
+    # run_eval_500pool_detailed.py 的標準輸出路徑
     summary_path = os.path.join(
         base_dir, "checkpoints", exp_name, "detailed_eval",
         f"{exp_name}_{ckpt}_{pool_size}pool_summary.json",
     )
-    # Also check results/main_eval (run_eval_500pool.py output location)
+    # 也檢查 results/main_eval，也就是 run_eval_500pool.py 的輸出位置
     alt_path = os.path.join(
         base_dir, "results", "main_eval", exp_name, "detailed_eval",
         f"{exp_name}_{ckpt}_{pool_size}pool_ranking_samples.csv",
@@ -628,7 +602,7 @@ def load_random_pool_summary(base_dir: str, exp_name: str, ckpt: str, pool_size:
             data = json.load(f)
         return data.get("ranking", {})
 
-    # Fallback: compute from CSV if summary JSON absent
+    # 備用處理：若沒有 summary JSON，改從 CSV 計算
     if os.path.exists(alt_path):
         import csv as _csv
         r1, r5, r10, ranks = [], [], [], []
@@ -668,7 +642,7 @@ def write_csv(path, rows):
 
 
 # =============================================================================
-# MAIN
+# 主程式入口
 # =============================================================================
 
 def main():
@@ -676,7 +650,7 @@ def main():
     ltp_mode       = EXP_TO_LTP_MODE[exp_name]
     active_mods    = EXP_TO_MODALITIES[exp_name]
 
-    # Output directory
+    # 輸出資料夾
     out_dir = os.path.join(BASE_DIR, "results", "main_eval", exp_name, "hardneg_eval")
     os.makedirs(out_dir, exist_ok=True)
     logger = setup_logger(os.path.join(out_dir, f"{exp_name}_hardneg_eval.log"))
@@ -716,10 +690,10 @@ def main():
     if not os.path.isdir(ckpt_dir):
         raise FileNotFoundError(f"Checkpoint not found: {ckpt_dir}")
 
-    # Load song bank (L2-normed) for cosine similarity
+    # 載入已 L2 正規化的 song bank，用於 cosine similarity
     song_bank_normed, sb_pair_keys = load_song_bank_normed(CACHE_DIR, logger)
 
-    # Load tokenizer, LTP, test dataset
+    # 載入 tokenizer、LTP 與測試資料集
     tokenizer = LlamaTokenizer.from_pretrained(LLAMA_MODEL)
     tokenizer.pad_token = tokenizer.eos_token
     ltp_dict = load_ltp_dict(
@@ -730,9 +704,9 @@ def main():
         model_cfg, train_cfg, tokenizer, ltp_dict, logger
     )
 
-    # Verify that song_bank_normed is aligned with all_music_ids
+    # 確認 song_bank_normed 與 all_music_ids 順序一致
     if sb_pair_keys != list(all_music_ids):
-        # Rebuild normed matrix in the order of all_music_ids
+        # 依 all_music_ids 順序重建正規化矩陣
         logger.warning(
             "song_bank_normed order differs from all_music_ids; re-indexing."
         )
@@ -766,7 +740,7 @@ def main():
         logger              = logger,
     )
 
-    # --- Comparison with random-pool baseline ---
+    # 與 random-pool baseline 比較
     random_summary = load_random_pool_summary(BASE_DIR, exp_name, CKPT_NAME, POOL_SIZE)
 
     comparison = {}
@@ -806,7 +780,7 @@ def main():
             comparison["delta_R@10_hardneg_minus_random"],
         )
 
-    # --- Save outputs ---
+    # 儲存輸出
     prefix        = f"{exp_name}_{CKPT_NAME}_{POOL_SIZE}pool_hardneg_top{TOP_K_HARD}"
     ranking_csv   = os.path.join(out_dir, f"{prefix}_ranking_samples.csv")
     summary_path  = os.path.join(out_dir, f"{prefix}_summary.json")

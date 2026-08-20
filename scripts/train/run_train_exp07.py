@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：設定並啟動 exp_07 的訓練流程。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,24 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_train_exp07.py — 模態消融：w/o Music (AST Acoustic)
-
-移除候選音樂聲學特徵（AST CLS 768D）。
-prefix 縮減為 [VIDEO][LTP][TEXT_CLIP]（3 tokens）。
-music_proj 投影層不被呼叫。
-build_prompt() 移除 "Candidate: [MUSIC]" 行。
-
-學術意義：
-  驗證候選音樂聲學特徵的必要性。
-  [RANK] token 在消融後只能透過 video / ltp / text 三個模態做排序，
-  無法感知候選音樂的聲學內容。
-  這個設定預期是所有消融中排序指標最差的（因為連被推薦的音樂自身特徵都沒有）。
-
-  注意：ranking 仍然有效——模型依然為每首 candidate 產生不同的 score，
-  但此 score 僅來自 query（video + ltp + text）與 [RANK] 的交互，
-  不含 candidate 本身的音樂特徵，等同於「根據 query 直接排序，不看候選」。
-"""
 
 import os, sys, json, logging
 import numpy as np

@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理實驗輸出並產生論文分析用表格或圖表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,53 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-candidate_difficulty_stratification.py
-======================================
-B1：候選聲學相似度分層（Easy / Medium / Hard）— 離線重新彙整，不需 GPU、不需重跑模型
-
-實驗目的（對應指導教授 0723 建議 §六「補充低成本分析」與假設 H4）：
-  既有 500-pool 結果只報整體平均，無法回答「LTP 增益是否隨候選音樂聲學相似度下降」。
-  本腳本在**不重跑任何推論**的前提下，重建每個測試樣本的候選池、計算 GT 與 499 個
-  負例之間的 AST 聲學相似度，將樣本切成 Easy / Medium / Hard 三層，再把既有的逐樣本
-  排序結果依層彙整，得到「LTP 增益 vs 候選相似度」的連續難度軸。
-
-為什麼不需要 GPU：
-  run_eval_500pool_detailed.py 的候選池建構是完全決定性的（第 505-510 行）：
-
-      excluded   = {i : song_ids[i][:11] == video_id}
-      candidates = [i for i in range(total_music) if i != gt_global_idx and i not in excluded]
-      rng_pool   = random.Random(CANDIDATE_POOL_SEED + idx)
-      negatives  = rng_pool.sample(candidates, pool_size - 1)
-
-  只要 (a) song bank 的 id 順序、(b) candidate_pool_seed、(c) 樣本索引 idx 三者相同，
-  就能在 CPU 上完整重建當初評估時用的那 499 個負例。本腳本原封不動複製這段邏輯，
-  並以「既有 CSV 記錄的 top1_music_id 必須落在重建出來的池內」作為正確性驗證。
-
-分層規則（事前定義，避免事後挑閾值）：
-  • 主指標 = max_neg_cosim（GT 與池中「最像的那一個」負例的餘弦相似度）
-    選 max 而非 mean，是因為它與 Hard-Negative 池的建構準則同構（取最相似的 K 個），
-    可讓「隨機池 Easy → Medium → Hard → Hard-Negative」構成同一條難度軸。
-  • 切點 = 全體 4,205 個測試樣本 max_neg_cosim 的 33.3 / 66.7 百分位（三等分）。
-  • 關鍵性質：分層只由「候選池幾何」決定，與任何模型的表現無關，因此四個模型
-    （exp_01/02/03/04）共用同一組分層標籤，不存在資料窺探（data snooping）。
-  • 次指標 avg_neg_cosim 的分層一併輸出，作為敏感度檢查（見 summary JSON 的
-    sensitivity_by_avg_cosim 欄位）。
-
-輸出（results/analysis/candidate_difficulty/）：
-  candidate_difficulty_per_sample.csv   每個樣本的 avg/max/top10 相似度與難度層標籤
-  candidate_difficulty_by_bin.csv       各模型 × 各難度層的 R@1/R@5/R@10/MRR/nDCG@10/MedR
-  candidate_difficulty_gain.csv         Matched(exp_01) − No-LTP(exp_04) 之逐層增益 + bootstrap 95% CI
-  candidate_difficulty_summary.json     完整結果（含 Hard-Negative 對照與敏感度分析）
-  candidate_difficulty_summary.md       論文用表格（§4.5 何時失效）
-  candidate_difficulty.log
-
-使用方式：
-  VSCode 直接 Run，或：
-    python scripts/analysis/candidate_difficulty_stratification.py
-
-  只需要 numpy（不需 torch / h5py / pandas）。
-"""
 
 import csv
 import datetime as _dt

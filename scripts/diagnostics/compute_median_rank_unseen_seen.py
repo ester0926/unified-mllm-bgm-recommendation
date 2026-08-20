@@ -1,13 +1,8 @@
 """
-compute_median_rank_unseen_seen.py
-==================================
-重新計算「候選池記憶效應敏感度」分析中
-Unseen / Seen 兩組的 Median Rank（原始分析只有 Mean Rank）。
-
-結果用於更新論文表 4-33 的 Median Rank 欄位。
-
-執行方式：
-    python scripts/diagnostics/compute_median_rank_unseen_seen.py
+用途：執行模型訓練與評估結果的診斷檢查。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 from __future__ import annotations

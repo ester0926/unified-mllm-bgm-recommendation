@@ -1,8 +1,8 @@
-"""Prepare a reproducible, model-stratified blind audit packet for preference claims.
-
-The packet hides experiment names and rule labels.  It is intentionally left
-with blank adjudication fields so a human coder can calibrate the polarity-aware
-rule without being cued by its prediction.
+"""
+用途：準備偏好 claim 人工盲審資料。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 from pathlib import Path
@@ -32,8 +32,8 @@ def main():
         by_label = {}
         for row in pool:
             by_label.setdefault(row["verification"], []).append(row)
-        # Cover every observed rule stratum first, then fill at random.  The
-        # released packet does not expose either stratum or experiment.
+        # 先覆蓋所有已觀察到的規則分層，再隨機補足樣本。
+        # 釋出的審查包不會揭露分層或實驗條件。
         chosen = []
         labels = sorted(by_label)
         base = max(1, PER_EXPERIMENT // max(len(labels), 1))

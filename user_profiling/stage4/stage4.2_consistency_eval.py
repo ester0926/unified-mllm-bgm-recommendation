@@ -1,18 +1,8 @@
 """
-Stage 4.2: User Profile Consistency Evaluation (LLM-as-a-Judge)
-目的：使用 LLM (Gemma 3) 作為裁判，評估生成的用戶畫像與原始對話的一致性。
-檢查重點：
-1. 幻覺 (Hallucination): 是否捏造了不存在的偏好？
-2. 遺漏 (Omission): 是否漏掉了關鍵的用戶需求？
-3. 準確度 (Accuracy): 綜合評分 (1-5)
-
-輸入：
-- Stage 3 對話數據 (原始輸入)
-- Stage 4 生成結果 (待測對象)
-
-輸出：
-- data/user_profiling/long_term_preference/stage4_recLLM/stage4.2_eval/eval_results.json
-- data/user_profiling/long_term_preference/stage4_recLLM/stage4.2_eval/evaluation_report.md
+用途：建立或評估 Stage 4 使用者 profile 表示。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json
@@ -149,18 +139,18 @@ def build_judge_prompt(dialogue_text: str, profile_json: Dict) -> str:
 You are an expert data quality evaluator. 
 Your task is to verify if the GENERATED USER PROFILE is factually consistent with the SOURCE DIALOGUES.
 
-### SOURCE DIALOGUES (Ground Truth):
+### 來源對話（ground truth）：
 {dialogue_text}
 
-### GENERATED USER PROFILE (Target to Evaluate):
+### 產生的使用者 profile（待評估）：
 {json.dumps(profile_summary, indent=2, ensure_ascii=False)}
 
-### EVALUATION CRITERIA:
+### 評估標準：
 1. **Hallucination Check**: Does the profile invent preferences not mentioned or implied in the dialogues? (e.g., Profile says "Likes Jazz" but user never mentioned Jazz).
 2. **Consistency**: Does the profile contradict the dialogues? (e.g., User said "I hate rock", Profile says "Loves rock").
 3. **Completeness**: Does the profile capture the main musical preferences expresssed by the user?
 
-### OUTPUT FORMAT (JSON Only):
+### 輸出格式（僅 JSON）：
 {{
     "accuracy_score": <int, 1-5>,  // 5 = Perfect, 1 = Major Hallucinations/Errors
     "hallucination_detected": <bool>, // true if generated facts are NOT in dialogue

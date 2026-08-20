@@ -1,27 +1,8 @@
 """
-dataset_overlap_analysis.py  —  MuseChat pair_key 結構正確版本
-==============================================================
-
-pair_key 格式（23碼）：{target_music_id}_{candidate_music_id}
-  • pair_key[:11]  = target_music_id  = GT 音樂 ID（也等於 video_id）
-  • pair_key[12:]  = candidate_music_id = 訓練時的負例音樂 ID
-
-MuseChat 資料來自 YouTube 音樂影片，影片本身的原始音軌即為 GT，
-故 video_id == target_music_id。Group split 以 pair_key[:11] 為單位，
-因此 GT 在 train/test 間的重疊率在任何層級均應為 0。
-
-任務：
-  Task 1  — GT（target music）重疊驗證：
-              Item / Title / Artist / Album 四層級皆應為 0%。
-  Task 2  — Candidate music 重疊率：
-              item / title / artist / album 四層級（預期約 82%）。
-  Task 3  — Candidate-disjoint 敏感度分析：
-              將 4,205 筆測試樣本依 candidate_music_id 是否在訓練集中
-              出現過，分為兩組並比對 R@1 / R@10。
-
-輸出：
-  results/diagnostics/dataset_overlap_analysis.json
-  results/diagnostics/dataset_overlap_analysis.md
+用途：檢查訓練、驗證與測試資料之間的重疊情形。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 from __future__ import annotations
@@ -48,7 +29,7 @@ OUT_DIR          = PROJECT_ROOT / "results" / "diagnostics"
 
 
 def _find_user_profiling_root(project_root: Path) -> Path:
-    """Return the release-layout location for User Profiling metadata."""
+    """回傳 release 版中 User Profiling metadata 的位置。"""
     candidates = [
         project_root / "data" / "user_profiling",
     ]
@@ -99,9 +80,10 @@ def load_music_meta(path: Path) -> Dict[str, dict]:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def split_by_video_id(pair_index, train_ratio=0.90, val_ratio=0.05, seed=42):
-    """Exact replica of dataset.py split_by_video_id().
+    """
+    與 dataset.py 的 split_by_video_id() 保持一致。
 
-    Group key = pair_key[:11] = target_music_id.
+    分組鍵為 pair_key[:11]，也就是 target_music_id。
     """
     vid_to_pairs = defaultdict(list)
     for item in pair_index:
@@ -157,7 +139,7 @@ def compute_overlap(
     music_meta: dict,
     label: str,
 ) -> dict:
-    """Compute item / title / artist / album overlap for a given id_extractor."""
+    """依指定 id_extractor 計算 item、title、artist、album 重疊率。"""
 
     tr_ids = set(id_extractor(p) for p in train_pairs)
     te_ids = set(id_extractor(p) for p in test_pairs)
@@ -219,11 +201,10 @@ def load_eval_csv(path: Path) -> list:
 
 def candidate_disjoint_analysis(train_pairs: list, eval_rows: list) -> dict:
     """
-    Split the 4,205 test rows by whether their candidate_music_id was ever
-    seen as a training candidate.
+    依 candidate_music_id 是否曾出現在訓練候選中，切分 4,205 筆測試資料。
 
-    candidate_music_id of a test sample = row['gt_music_id'][12:]
-      (gt_music_id == pair_key = {target_music_id}_{candidate_music_id})
+    測試樣本的 candidate_music_id = row['gt_music_id'][12:]。
+    gt_music_id 實際上是 pair_key，格式為 {target_music_id}_{candidate_music_id}。
     """
     import numpy as np
 
@@ -434,7 +415,7 @@ def main():
           f"ΔR@5={sens['gap_R@5_A_minus_B']:+.2f}pp  "
           f"ΔR@10={sens['gap_R@10_A_minus_B']:+.2f}pp")
 
-    # ── Save ─────────────────────────────────────────────────────────────
+    # ── 儲存結果 ───────────────────────────────────────────────────────────
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_json = OUT_DIR / "dataset_overlap_analysis.json"
     out_md   = OUT_DIR / "dataset_overlap_analysis.md"

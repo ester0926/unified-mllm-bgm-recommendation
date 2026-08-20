@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理不同隨機種子設定下的 Top-1 robustness 結果。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,29 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Summarize random-seed robustness under the formal Top-1 end-to-end setting.
-
-Usage:
-  1. Make sure these ranking runs have completed:
-       run_eval_500pool_seed42.py
-       run_eval_500pool_seed12345.py
-       run_eval_500pool_seed987654.py
-  2. Make sure these Top-1 generation runs have completed:
-       run_eval_500pool_top1_seed42.py
-       run_eval_500pool_top1_seed12345.py
-       run_eval_500pool_top1_seed987654.py
-  3. Open this file in VSCode and click Run.
-
-Outputs:
-  checkpoints/robustness_analysis_top1/seed_robustness_top1.csv
-  checkpoints/robustness_analysis_top1/seed_robustness_top1_summary.json
-  checkpoints/robustness_analysis_top1/seed_robustness_top1_summary.md
-
-This script intentionally uses the revised, well-separated seeds
-42 / 12345 / 987654 rather than the earlier adjacent seeds
-20260315 / 20260316 / 20260317.
-"""
 
 import csv
 import json

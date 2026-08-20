@@ -1,4 +1,10 @@
-# Auto-added: allow VSCode Run from subfolders.
+"""
+用途：使用 persona 條件執行 500-pool 評估。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -8,43 +14,6 @@ for _p in [str(PROJECT_ROOT), str(DIAGNOSTICS_DIR)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-"""
-run_eval_500pool_persona.py
-===========================
-B5 步驟 5：Persona 條件下的 500-pool 排序評估（推論期抽換 LTP，不重新訓練）
-
-沿用 run_eval_500pool_ltp_control.py 的模型載入、資料建置、評分與排序邏輯，
-只更動兩處：
-  1. LTP 來源改為 results/analysis/b5_personas/persona_ltp.npz 的 Persona 向量
-  2. 每個 Persona 只配對其「內容情境」對應叢集（B4 k=4）中的查詢影片
-
-評估條件（8 組）：
-  matched          該 Persona 自身的 LTP 向量
-  shuffled         換成另一個 Persona 的向量（保留分布、破壞配對語義）
-  random           標準高斯雜訊（與 ltp_control 的 random 條件一致）
-  cf_tempo         ┐
-  cf_energy        │ 五種**向量層級**反事實：翻轉單一屬性後重建歷史再平均
-  cf_vocal         │ （補上 B3-2 只能做 prompt 層級反事實的缺口）
-  cf_popularity    │
-  cf_consistency   ┘
-
-規模：24 Persona × N_QUERIES 支影片 × 8 條件。
-  預設 N_QUERIES=20 → 3,840 次排序，依實測約 5.5 秒/次 ≈ 5.9 小時。
-
-⚠ 範圍限制（須寫入論文）：
-  Persona LTP 由既有 LTP 向量組合並經偏差尺度校正而得，未走完整 Stage 3–5 管線
-  （原因見 results/analysis/b5_smoketest/wout_recovery_report.md）。
-  故本實驗驗證的是「模型對偏好向量條件的反應與可控性」，
-  而非「合成畫像流程能產生有效偏好表示」。
-
-輸出：results/main_eval/exp_01/persona_eval/
-  persona_ranking_{condition}.csv    逐條件逐樣本結果（可斷點續跑）
-  persona_eval_summary.json
-  persona_eval.log
-
-執行（需 CUDA）：
-  <user_home>/anaconda3\\envs\\ollama\\python.exe scripts/eval_main/run_eval_500pool_persona.py
-"""
 
 import csv
 import datetime as _dt

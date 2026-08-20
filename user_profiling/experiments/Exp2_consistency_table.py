@@ -1,21 +1,8 @@
 """
-實驗二：LLM 偏好萃取的邏輯與一致性驗證
-========================================================
-目標：展示 RecLLM (Gemma) 能從 Positive/Exploratory/Negative 三類對話
-      中正確識別衝突標籤並生成一致的用戶偏好畫像。
-
-輸出：
-  exp2_consistency_table.png — 1~2 位用戶的輸入/標籤/輸出對照表
-
-流程：
-1. 從 Stage 3 對話資料讀取三類對話節錄
-2. 從 Stage 4 profiles.jsonl 讀取對應的 conflict_tags + summary_text
-3. 自動選取最適合展示的用戶（三種標籤都有、summary 完整）
-4. 繪製對照表圖片
-
-使用方式：
-  cd "<repo_root>"
-  python exp2_consistency_table.py
+用途：整理 synthetic preference 的一致性檢查表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import json

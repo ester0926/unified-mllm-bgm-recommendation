@@ -1,9 +1,8 @@
 """
-Cliff's Delta Effect Size + Wilcoxon Signed-Rank Test
-with Holm-Bonferroni correction
-
-Compares exp_01 (full model) vs ablation variants on rank-based metrics.
-Output: CSV + Markdown table for thesis §4.3 / §4.4.
+用途：計算統計檢定與效果量。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import os
@@ -23,7 +22,7 @@ CKPT = BASE / "checkpoints"
 OUT_DIR = BASE / "checkpoints" / "significance_analysis"
 OUT_DIR.mkdir(exist_ok=True)
 
-# ── experiment metadata ───────────────────────────────────────────────────────
+# ── 實驗資訊 ─────────────────────────────────────────────────────────────────
 EXPERIMENTS = {
     "exp_01": {"label": "Full Model (hybrid LTP, all modalities)",    "ablation": None},
     "exp_02": {"label": "wo_implicit (explicit LTP only)",           "ablation": "wo_implicit"},
@@ -34,13 +33,13 @@ EXPERIMENTS = {
     "exp_07": {"label": "wo_music (no music feature)",                "ablation": "wo_music"},
 }
 
-# Comparisons: (exp_01 vs each ablation)
+# 比較方式：exp_01 對各消融實驗
 COMPARISONS = ["exp_02", "exp_03", "exp_04", "exp_05", "exp_06", "exp_07"]
 
-# ── helpers ───────────────────────────────────────────────────────────────────
+# ── 工具函式 ─────────────────────────────────────────────────────────────────
 
 def load_ranks(exp_name: str) -> np.ndarray:
-    """Load per-sample ranks from the 500-pool ranking CSV."""
+    """從 500-pool ranking CSV 讀取逐筆排名。"""
     if exp_name == "musechat_light":
         csv_path = CKPT / "musechat_light" / "detailed_eval" / "musechat_light_500pool_ranking_samples.csv"
     else:
@@ -55,12 +54,12 @@ def load_ranks(exp_name: str) -> np.ndarray:
 
 def cliffs_delta(x: np.ndarray, y: np.ndarray) -> float:
     """
-    Cliff's delta: proportion of (x_i < y_j) minus (x_i > y_j), for all pairs.
-    Positive value → x tends to have smaller values than y (x is better for rank).
-    Here x = exp_01 ranks, y = ablation ranks → positive δ means full model ranks lower (better).
+    計算 Cliff's delta：所有成對樣本中 (x_i < y_j) 比例減去 (x_i > y_j) 比例。
+    正值表示 x 通常比 y 小；在 rank 指標中代表 x 較好。
+    此處 x 為 exp_01 排名，y 為消融實驗排名，因此正值代表完整模型排名較前。
     """
     n, m = len(x), len(y)
-    # vectorised: compare all pairs
+    # 向量化比較所有成對樣本
     dom = np.sum(x[:, None] < y[None, :]) - np.sum(x[:, None] > y[None, :])
     return float(dom) / (n * m)
 
@@ -78,7 +77,7 @@ def delta_magnitude(d: float) -> str:
 
 
 def holm_bonferroni(p_values: list[float]) -> list[float]:
-    """Return Holm-Bonferroni adjusted p-values (same length as input)."""
+    """回傳 Holm-Bonferroni 校正後的 p-value，長度與輸入相同。"""
     n = len(p_values)
     indexed = sorted(enumerate(p_values), key=lambda x: x[1])
     adjusted = [None] * n
@@ -103,7 +102,7 @@ def format_p(p: float) -> str:
         return f"= {p:.3f}"
 
 
-# ── main ──────────────────────────────────────────────────────────────────────
+# ── 主程式入口 ────────────────────────────────────────────────────────────────
 
 def main():
     print("Loading exp_01 ranks...")
@@ -118,22 +117,22 @@ def main():
         print(f"Processing {exp}...")
         ranks_ab = load_ranks(exp)
 
-        # align sample count (should be same, but be safe)
+        # 對齊樣本數，避免輸入檔列數不同
         min_n = min(len(ranks_01), len(ranks_ab))
         r1 = ranks_01[:min_n]
         ra = ranks_ab[:min_n]
 
-        # Cliff's delta (exp_01 vs ablation)
+        # Cliff's delta：exp_01 對消融實驗
         delta = cliffs_delta(r1, ra)
         mag = delta_magnitude(delta)
 
-        # Wilcoxon signed-rank test (two-tailed)
-        # For tied differences, use zero_method='zsplit'
+        # Wilcoxon 符號等級檢定，雙尾檢定
+        # 差值為 0 時使用 zero_method='zsplit'
         diffs = r1 - ra  # negative = exp_01 ranks lower (better)
         try:
             stat, p_raw = wilcoxon(diffs, zero_method="zsplit", alternative="two-sided")
         except ValueError as e:
-            # all zeros case
+            # 差值全為 0 的情況
             stat, p_raw = 0.0, 1.0
 
         raw_p_values.append(p_raw)
@@ -148,13 +147,13 @@ def main():
             "p_raw": p_raw,
         })
 
-    # Holm-Bonferroni correction
+    # Holm-Bonferroni 多重比較校正 多重比較校正
     adj_ps = holm_bonferroni(raw_p_values)
     for i, r in enumerate(results):
         r["p_adj"] = adj_ps[i]
         r["sig"] = "***" if r["p_adj"] < 0.001 else ("**" if r["p_adj"] < 0.01 else ("*" if r["p_adj"] < 0.05 else "ns"))
 
-    # ── also compute R@k means ──────────────────────────────────────────────
+    # ── 同時計算 R@k 平均值 ─────────────────────────────────────────────────
     def load_recall_columns(exp_name):
         if exp_name == "musechat_light":
             csv_path = CKPT / "musechat_light" / "detailed_eval" / "musechat_light_500pool_ranking_samples.csv"
@@ -184,7 +183,7 @@ def main():
         r["delta_R@5"] = r["R@5_full"] - r["R@5_abl"]
         r["delta_R@10"]= r["R@10_full"] - r["R@10_abl"]
 
-    # ── save CSV ────────────────────────────────────────────────────────────
+    # ── 儲存 CSV ────────────────────────────────────────────────────────────
     csv_path = OUT_DIR / "cliffs_delta_results.csv"
     fields = ["exp", "ablation", "label", "n",
               "R@1_full", "R@1_abl", "delta_R@1",
@@ -197,7 +196,7 @@ def main():
         writer.writerows(results)
     print(f"\nSaved CSV → {csv_path}")
 
-    # ── print Markdown table ────────────────────────────────────────────────
+    # ── 印出 Markdown 表格 ─────────────────────────────────────────────────
     md_lines = []
     md_lines.append("## Cliff's Delta + Wilcoxon Significance Analysis (500-pool, n=4205)\n")
     md_lines.append("Baseline: **exp_01** (Full Model, hybrid LTP, all modalities)  ")
@@ -220,12 +219,12 @@ def main():
     md_path.write_text(md_text, encoding="utf-8")
     print(f"Saved Markdown → {md_path}")
 
-    # ── print to stdout ─────────────────────────────────────────────────────
+    # ── 印出執行摘要 ────────────────────────────────────────────────────────
     print("\n" + "="*80)
     print(md_text)
     print("="*80)
 
-    # ── thesis-ready summary ────────────────────────────────────────────────
+    # ── 論文用摘要 ──────────────────────────────────────────────────────────
     print("\n\n=== THESIS TEXT FRAGMENT ===\n")
     for r in results:
         print(f"exp_01 vs {r['ablation']} ({r['exp']}): "
@@ -233,7 +232,7 @@ def main():
               f"δ={r['delta']:+.3f} ({r['magnitude']}), "
               f"W={r['W_stat']:.0f}, p_adj {format_p(r['p_adj'])} {r['sig']}")
 
-    # ── JSON summary ─────────────────────────────────────────────────────────
+    # ── 儲存 JSON 摘要 ───────────────────────────────────────────────────────
     json_path = OUT_DIR / "cliffs_delta_results.json"
     json_path.write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nSaved JSON → {json_path}")

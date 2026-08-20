@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：訓練 MuseChat light generator baseline。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,24 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Train the MuseChat-light Sentence Generator on the unified thesis data split.
-
-Open this file in VSCode and click Run. This is intentionally not a CLI script.
-
-Design alignment with MuseChat:
-  - Train only Vicuna LoRA weights and the 768->4096 music projection layer.
-  - Use the MuseChat training prompt without music title injection:
-      ### Recommender: Music feature: <Music> [music_token] </Music>; Generate Recommendation:
-  - Use target music AST CLS features averaged across 12 segments as the music
-    soft token input, and t4 as the reference recommendation reason.
-
-Data alignment with this thesis:
-  - Uses run_eval_500pool_detailed.H5_DIR and JSON_DIR.
-  - Uses the main project's video-level split_by_video_id(seed=42).
-  - Saves checkpoints under external/musechat\\checkpoints so
-    run_musechat_light_eval_500pool.py can auto-detect generator_epoch*.
-"""
 
 import datetime as _dt
 import gc
@@ -51,7 +39,7 @@ from dataset import build_pair_index, split_by_video_id
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 MUSECHAT_DIR = r"external/musechat"
@@ -64,7 +52,7 @@ GRAD_ACCUM_STEPS = 1
 LEARNING_RATE = 5e-4
 WEIGHT_DECAY = 1e-4
 MAX_SEQ_LEN = 128
-MAX_TRAIN_SAMPLES = None  # e.g. 200 for smoke test; None for full train split
+MAX_TRAIN_SAMPLES = None  # 例如 200 可快速檢查；None 表示完整訓練集
 
 LORA_R = 32
 LORA_ALPHA = 64

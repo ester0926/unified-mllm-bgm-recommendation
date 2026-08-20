@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：設定並啟動 exp_04 的訓練流程。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,18 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_train_exp04.py — 模態消融：w/o P_ltp
-
-移除 P_ltp（長期偏好）模態。
-prefix 從 [VIDEO][LTP][TEXT_CLIP][MUSIC] 縮減為 [VIDEO][TEXT_CLIP][MUSIC]（3 tokens）。
-ltp_proj 投影層不被呼叫（但仍存在 checkpoint，方便復原）。
-build_prompt() 移除 "User preference: [LTP]" 行。
-
-學術意義：
-  驗證 P_ltp 的貢獻。若 exp_01(hybrid) 顯著優於 exp_04，
-  代表長期偏好建模是本研究的有效貢獻。
-"""
 
 import os, sys, json, logging
 import numpy as np
@@ -58,7 +52,7 @@ model_cfg = ModelConfig(
     num_candidates=1,
     lora_rank=32, lora_alpha=16,
     lambda_rank=0.5, lambda_gen=0.5,
-    # ★ active_modalities 驅動 projectors.py 和 unified_mllm.py 的動態行為
+    # active_modalities 驅動 projectors.py 和 unified_mllm.py 的動態行為
     active_modalities     = ACTIVE_MODALITIES,
     # multimodal_prefix_len 由 active_modalities 自動計算（= 3）
     rank_special_token    = "[RANK]",

@@ -1,1 +1,4 @@
-"""Script package for the GitHub release layout."""
+"""
+用途：讓 scripts 資料夾可以被其他程式匯入。
+"""
+

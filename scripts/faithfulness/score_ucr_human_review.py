@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理人工複查用資料與 UCR 錯誤來源分析結果。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,24 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-score_ucr_human_review.py
-=========================
-讀入標註完成的 human_review_workbook.xlsx，計算：
-
-  1. 規則式判定 vs 人工判定的一致率與 Cohen's κ（八類 + 二元「是否真實錯誤」）
-  2. 混淆矩陣：規則把哪一類判錯成哪一類
-  3. **UCR 定點估計**：以人工標註取代規則判定後的 UCR 與 Wilson 95% CI
-     （full 條件為全數普查，非抽樣；其他條件為分層抽樣，另行標示）
-
-執行前提：
-  已用 make_ucr_review_workbook.py 產生活頁簿，並在「標註」工作表填好
-  「人工判定代碼」與「是否真實錯誤(1/0)」兩欄。未填的列自動略過。
-
-使用方式：
-  VSCode 直接 Run，或：
-    python scripts/faithfulness/score_ucr_human_review.py
-"""
 
 import csv
 import datetime as _dt
@@ -88,7 +76,7 @@ def pabak(observed_agreement: float) -> float:
 
 
 def cohen_kappa(pairs):
-    """pairs = [(rater_a_label, rater_b_label), ...]"""
+    """計算兩位標註者標籤序列的 Cohen kappa。"""
     n = len(pairs)
     if n == 0:
         return float("nan"), float("nan")

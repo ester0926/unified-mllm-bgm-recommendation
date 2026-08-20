@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行模型訓練與評估結果的診斷檢查。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,30 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-diagnose_exp07_scores.py — exp_07「R@1=R@5=R@10=99.64%」異常結果診斷腳本
-
-【診斷目的】
-  驗證 exp_07 (w/o Music) 評估時，500-pool 內所有候選音樂是否取得
-  完全相同的 ranking score，從而導致 argsort 的 GPU 排序副作用
-  讓 GT（固定在 index 0）被誤判為第一名。
-
-【驗證方法】
-  1. 取少量測試樣本（預設 100 筆）
-  2. 對每筆樣本計算 500 首候選的 ranking scores
-  3. 檢查 score 是否全等（std == 0 或 max-min < 1e-5）
-  4. 若全等：以隨機打亂排名重算 R@1/R@5/R@10（揭示真實性能）
-  5. 對比：
-       - 原始 argsort 排名（顯示異常高值）
-       - Random tie-breaking 排名（顯示真實隨機基線 ≈ 1/500）
-
-執行：
-  python diagnose_exp07_scores.py
-
-輸出：
-  checkpoints/exp_07/diagnose_scores_result.json
-  checkpoints/exp_07/diagnose_scores_detail.csv
-"""
 
 import os, sys, json, logging, random
 import numpy as np

@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：分析影片群集與分層抽樣設定。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,41 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-video_cluster_profile.py
-========================
-B4 的人工命名輔助工具：把「盲看 280 支影片」變成「看一張輪廓表 + 每叢集 12 支代表影片」。
-
-為什麼需要這支：
-  video_cluster_naming_sheet.csv 是每叢集**隨機**抽 40 支。隨機樣本適合驗證分布，
-  但不適合命名——命名需要的是「這一叢集跟別的叢集差在哪」。而且輪廓係數僅 0.06，
-  盲看隨機樣本很可能看完仍講不出區別，白花半天。
-
-本腳本改為提供三種可直接判讀的證據：
-
-  1. 叢集輪廓卡（量化）
-     各叢集在下列面向與「其餘叢集」的對比：
-       • 影片標題關鍵詞的富集比（rate ratio）—— 例如 official / live / lyric / audio
-       • musicnn 曲風與標籤的富集比
-       • 影片長度、觀看數的中位數
-     富集比 = 該詞在本叢集出現率 ÷ 在其他叢集出現率；> 1.5 即為該叢集的特徵詞。
-
-  2. 質心代表樣本（最典型）
-     取離叢集質心最近的 12 支 —— 這些最能代表「這一叢集長什麼樣」。
-
-  3. 判別性樣本（最不像其他叢集）
-     取「離本叢集質心距離 − 離最近的其他質心距離」差距最大的 12 支 ——
-     這些最能凸顯叢集之間的差異，是命名時最該看的。
-
-輸出（results/analysis/video_clusters/）：
-  cluster_profile.md              叢集輪廓卡（先讀這份）
-  cluster_naming_worksheet.xlsx   命名工作表：每叢集一張分頁，含代表與判別樣本的可點連結
-  cluster_profile.json
-
-使用方式：
-  python scripts/analysis/video_cluster_profile.py
-  （需要 cache/test_video_features.npz 與 B4 的叢集結果；不需 GPU、不需讀 F: 磁碟）
-"""
 
 import csv
 import datetime as _dt

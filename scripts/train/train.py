@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行主要訓練流程，包含資料載入、模型建立、訓練迴圈與 checkpoint 輸出。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,23 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-train.py — Unified MLLM 訓練主程式（Pointwise v2）
-
-主要改動（相比 Listwise v1）：
-  1. train_one_step：接收 pos_music_feat + neg_music_feat，
-     分別跑 forward，計算 BPR loss
-  2. Generation loss 只在 positive sample forward 時計算
-  3. Validation 改用 pointwise_pool_scoring（見 evaluate.py）
-
-BPR Loss 數學：
-  score_pos = ranking_head([RANK]_token_pos)
-  score_neg = ranking_head([RANK]_token_neg)
-  L_bpr = -mean( log( sigmoid(score_pos - score_neg) ) )
-
-（排序讀取點已由早期版本的 MUSIC token 改為 [RANK] token，
-  詳見 models/unified_mllm.py 檔頭說明與論文第 3.3.3 節。）
-"""
 
 import os
 import sys
@@ -97,7 +86,7 @@ def train_one_step(model, batch, device, scaler, use_bf16, model_config, train_c
     amp_dtype = torch.bfloat16 if use_bf16 else torch.float16
 
     with autocast(dtype=amp_dtype):
-        # Forward 1：pos（算 ranking + gen loss）
+        # 前向傳播 1：pos（算 ranking + gen loss）
         out_pos = model(
             video_feat=video_feat, music_candidates=pos_music,
             ltp_feat=ltp_feat, text_feat=text_feat,
@@ -107,7 +96,7 @@ def train_one_step(model, batch, device, scaler, use_bf16, model_config, train_c
         score_pos = out_pos["ranking_score"]   # (B,)
         loss_gen  = out_pos["loss_gen"]
 
-        # Forward 2：mc Hard Negative（同影片，不算 gen loss）
+        # 前向傳播 2：mc Hard Negative（同影片，不算 gen loss）
         out_neg_mc = model(
             video_feat=video_feat, music_candidates=neg_mc,
             ltp_feat=ltp_feat, text_feat=text_feat,
@@ -116,7 +105,7 @@ def train_one_step(model, batch, device, scaler, use_bf16, model_config, train_c
         )
         score_neg_mc = out_neg_mc["ranking_score"]   # (B,)
 
-        # Forward 3：Cross-video Negative（跨影片，不算 gen loss）
+        # 前向傳播 3：Cross-video Negative（跨影片，不算 gen loss）
         out_neg_cross = model(
             video_feat=video_feat, music_candidates=neg_cross,
             ltp_feat=ltp_feat, text_feat=text_feat,

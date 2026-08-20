@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：建立或分析 persona 條件下的 LTP 與評估結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,46 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-b5_build_persona_specs.py
-=========================
-B5 第一步：產生 24 個結構化 Persona 規格，並檢查每一個在真實曲庫中的可行性。
-
-【結構】6 種偏好原型 × 4 種內容情境 = 24 個 Persona（依教授建議 §七）
-
-【與教授原案的兩處調整，皆有資料依據】
-
-  1. 內容情境改用 B4 的影片語意叢集，而非「旅遊／美食／知識教學／日常生活」。
-     原因：B4 已證實本資料集的「影片」就是音樂自身的 YouTube 影片，
-     切出的是音樂類型與影片形式，無法操作化為創作者拍攝的內容類型。
-     改用 B4 叢集後，情境軸可直接由 `video_cluster_assignments_named.csv` 取得，
-     且與 B4、B6 連成同一條分析線。
-     情境的作用是**決定該 Persona 配對哪些查詢影片**，不限制其歷史曲目來源。
-
-  2. 節奏維度以 musicnn 的 fast / slow 標籤定義，不使用 BPM（2026-07-26 定案）。
-     規格中註明此為標籤式定義而非物理量測。
-
-【可操作化與否，逐欄標示】
-  本資料集的標籤詞彙共 80 個，其中：
-    • 可用：fast(55.0%)、slow(5.8%)、loud(32.0%)、male vocal(39.8%)、
-            female vocalists(25.3%)、guitar(38.2%)、drums(38.3%)、synth(17.7%)
-            及各曲風標籤；熱門度以 youtube view_count 分位數操作化
-    • 過於稀疏，不可作為主要條件：instrumental(0.49%)、quiet(0.18%)、
-            soft(0.08%)、no vocals(1 首)、classical(0.59%)、piano(2.3%)
-      → 「純音樂背景型」改以「無顯著人聲標籤」的補集定義，而非要求 instrumental 標籤
-    • **完全無對應標籤：情緒價向（valence）**
-      → 該欄標為 operationalizable=false，僅出現在自然語言描述中，不參與曲目篩選
-
-  每個欄位皆帶 `operationalizable` 旗標，未可操作化者不得用於後續評分，
-  以免論文宣稱超出資料所能支持的範圍。
-
-【輸出】results/analysis/b5_personas/
-  persona_specs.json        機器可讀規格（供曲目篩選模組使用）
-  persona_specs.md          人類可讀規格表（可作為論文附錄）
-  persona_feasibility.csv   每個 Persona 的候選曲目數與可行性判定
-
-【執行】python scripts/analysis/b5_build_persona_specs.py
-"""
 
 import csv
 import datetime as _dt

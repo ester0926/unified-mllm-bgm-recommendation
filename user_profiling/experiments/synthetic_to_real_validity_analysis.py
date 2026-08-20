@@ -1,33 +1,8 @@
 """
-Synthetic-to-real validity analysis for synthetic long-term music preferences.
-
-This script is intentionally independent from Stage 3/4/5 training code. It reads
-existing artifacts and produces a reproducible validity report:
-
-1. Profile-metadata grounding
-2. Positive-sample alignment
-3. Negative-sample discrimination
-4. Synthetic preference structure vs. metadata background
-5. Optional multi-generator stability
-6. Human annotation packet and optional human-rating aggregation
-
-VSCode Run:
-  1. Open this file in VSCode.
-  2. Edit RUN_CONFIG below if needed.
-  3. Click Run Python File, or choose "Run Synthetic Validity Analysis"
-     from VSCode Run and Debug.
-
-Optional generator stability:
-  Put two or more existing profile paths in RUN_CONFIG["profile_files"].
-  Set RUN_CONFIG["generate_stability_profiles"] = True only if you intentionally
-  want this script to call Ollama and generate extra Stage 4 profiles.
-
-Optional human ratings aggregation:
-  Put the filled CSV path in RUN_CONFIG["human_ratings"].
-
-Optional recommendation-grounding audit:
-  Put a recommendation output CSV/JSON/JSONL path in RUN_CONFIG["recommendation_file"].
-  The script will attach recommendation reasons to the expert annotation packet.
+用途：比較 synthetic proxy 與真實偏好資料的可用性指標。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 from __future__ import annotations
@@ -55,40 +30,39 @@ DEFAULT_DIALOGUES = BASE_DIR / "long_term_preference/stage3_dialogues/diverse_te
 DEFAULT_OUT_DIR = BASE_DIR / "experiments/synthetic_validity_outputs"
 
 
-# Edit this block when running from VSCode. The command-line options below still
-# work, but VSCode Run does not require typing any command.
+# 使用前可調整下列設定；也可以改用命令列參數覆蓋。
 RUN_CONFIG = {
     "profile_files": [DEFAULT_PROFILE],
     "history_dir": DEFAULT_HISTORY_DIR,
     "metadata": DEFAULT_METADATA,
     "dialogues": DEFAULT_DIALOGUES,
     "out_dir": DEFAULT_OUT_DIR,
-    # Set to None or 0 to analyze every profile. Use 500/1000 for a thesis-table
-    # run, or 50 for a quick smoke test.
+    # 設為 None 或 0 會分析全部 profile；500/1000 適合產生論文表格。
+    # 若只想快速檢查，可設為 50。
     "sample_size": 1000,
     "seed": 20260523,
     "background_max_items": 10000,
     "human_packet_size": 30,
-    # Optional file with recommendation reasons. Supported formats: .csv, .json,
-    # .jsonl. The loader looks for music_id/target_music and reason/rationale/
-    # explanation/generated_reason fields.
+    # 可選：推薦理由檔，支援 .csv、.json、.jsonl。
+    # 讀取時會尋找 music_id/target_music 與 reason/rationale/
+    # explanation/generated_reason 等欄位。
     "recommendation_file": None,
-    # Existing generated profile files to include in multi-generator stability.
-    # This lets you keep the completed Gemma output and rerun only llama3:8b.
+    # 可加入既有產生的 profile 檔，用於 multi-generator 穩定性分析。
+    # 這樣可以保留已完成的 Gemma 輸出，只重跑 llama3:8b。
     "existing_stability_profile_files": [
         DEFAULT_OUT_DIR / "stage4_profiles_gemma3_12b.jsonl",
     ],
-    # Use the first valid IDs from the existing Gemma stability profile file.
-    # This guarantees llama3:8b is generated on cases that already have Gemma
-    # profiles, so the stability comparison has the intended sample size.
+    # 從既有 Gemma 穩定性 profile 檔取前面的有效 ID。
+    # 這可確保 llama3:8b 產生的是已有 Gemma profile 的案例，
+    # 讓穩定性比較維持預期樣本數。
     "stability_sample_from_existing": True,
-    # Full multi-generator stability mode. This calls Ollama once per case per
-    # model, but supports checkpoint/resume through the output JSONL files.
+    # 完整 multi-generator 穩定性模式會對每個案例、每個模型呼叫一次 Ollama，
+    # 並透過輸出 JSONL 支援中斷續跑。
     "generate_stability_profiles": True,
     "stability_generation_sample_size": 300, #1000
     "stability_generators": [
-        # Gemma was already generated. Keep this block commented so reruns start
-        # directly from llama3:8b.
+        # Gemma 已經產生過，因此預設註解此區塊，
+        # 讓重跑時直接從 llama3:8b 開始。
         # {
         #     "model": "gemma3:12b",
         #     "output_file": DEFAULT_OUT_DIR / "stage4_profiles_gemma3_12b.jsonl",
@@ -98,7 +72,7 @@ RUN_CONFIG = {
         #     "json_format": True,
         # },
         {
-            # Change this model name if your local Ollama uses another LLaMA/Qwen tag.
+            # 若本機 Ollama 使用不同 LLaMA/Qwen 模型名稱，請改這裡。
             "model": "llama3:8b",
             "output_file": DEFAULT_OUT_DIR / "stage4_profiles_llama3_8b.jsonl",
             "temperature": 0.1,
@@ -107,13 +81,13 @@ RUN_CONFIG = {
             "json_format": True,
         },
     ],
-    # After experts fill human_annotation_template.csv, set this to that file.
+    # 專家填完 human_annotation_template.csv 後，請將此處指向該檔。
     "human_ratings": None,
 }
 
 
-# A deliberately transparent music-attribute lexicon. Keep this auditable for a
-# thesis appendix. Add domain terms if your dataset contains recurring tags.
+# 這是一份刻意保持透明的音樂屬性詞表，方便附錄與人工檢查。
+# 若資料集中有反覆出現的領域詞，可在此補充。
 ATTRIBUTE_LEXICON: Dict[str, List[str]] = {
     "pop": ["pop"],
     "rock": ["rock", "guitar", "riff", "headbang", "gritty"],

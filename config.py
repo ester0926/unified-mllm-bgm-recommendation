@@ -1,21 +1,8 @@
 """
-config.py — Unified MLLM 超參數與架構配置
-Pointwise 版本（v2）Plan B：新增 [RANK] token 作為 ranking readout
-
-Plan B 主要變更（相比原 Pointwise v2）：
-  - prefix 順序：[VIDEO, MUSIC, LTP, TEXT_CLIP] → [VIDEO, LTP, TEXT_CLIP, MUSIC]
-  - 新增 [RANK] token：放在 prompt 末尾，作為 ranking readout token
-  - special_tokens：5 個（加入 [RANK]），vocab = 32000 + 5 = 32005
-
-消融實驗擴充（v3）：
-  - 新增 active_modalities：控制哪些模態注入 prefix
-  - multimodal_prefix_len 由 __post_init__ 自動從 active_modalities 推導
-    完整實驗 = 4；w/o 任一模態 = 3
-  - exp_01 hybrid（全模態）：active_modalities=["video","ltp","text","music"]
-  - exp_04 w/o P_ltp：      active_modalities=["video","text","music"]
-  - exp_05 w/o Video：      active_modalities=["ltp","text","music"]
-  - exp_06 w/o Text：       active_modalities=["video","ltp","music"]
-  - exp_07 w/o Music：      active_modalities=["video","ltp","text"]
+用途：集中定義模型、訓練與資料路徑設定。
+輸入：依程式內路徑設定讀取本專案資料或前一階段輸出。
+輸出：依程式內 OUTPUT_DIR、results 或 checkpoints 設定寫出結果。
+執行：建議在 repo 根目錄執行，避免相對路徑錯誤。
 """
 
 from dataclasses import dataclass, field
@@ -60,7 +47,7 @@ class ModelConfig:
     lambda_rank: float = 0.5
     lambda_gen: float = 0.5
 
-    # ── ★ 消融實驗：模態選擇 ───────────────────────────────────────────────────
+    # ── 消融實驗：模態選擇 ───────────────────────────────────────────────────
     # 控制哪些模態注入 prefix，決定 multimodal_prefix_len。
     # __post_init__ 會將此列表正規化（保持 video→ltp→text→music 順序），
     # 並自動設定 multimodal_prefix_len = len(active_modalities)。
@@ -72,7 +59,7 @@ class ModelConfig:
     #   exp_06 w/o Text：      ["video", "ltp", "music"]          → prefix_len=3
     #   exp_07 w/o Music：     ["video", "ltp", "text"]           → prefix_len=3
     #
-    # ⚠️ 勿直接設定 multimodal_prefix_len；它由 __post_init__ 自動推導
+    # 注意：勿直接設定 multimodal_prefix_len；它由 __post_init__ 自動推導
     active_modalities: List[str] = field(
         default_factory=lambda: ["video", "ltp", "text", "music"]
     )
@@ -89,7 +76,7 @@ class ModelConfig:
 
     def __post_init__(self):
         """
-        ★ 自動從 active_modalities 推導 multimodal_prefix_len。
+        自動從 active_modalities 推導 multimodal_prefix_len。
 
         同時正規化 active_modalities：
           1. 過濾非法模態名稱
@@ -164,7 +151,7 @@ class TrainConfig:
 
     # ── Tokenizer 特殊 Token ──────────────────────────────────────────────────
     # Plan B：5 個 token（加入 [RANK]），vocab = 32000 + 5 = 32005
-    # ⚠️ 消融實驗（exp_04~07）的 special_tokens 與主實驗完全相同：
+    # 注意：消融實驗（exp_04~07）的 special_tokens 與主實驗完全相同：
     #   移除模態 ≠ 移除 special token（避免 vocab 大小不一致）
     special_tokens: List[str] = field(default_factory=lambda: [
         "[VIDEO]", "[MUSIC]", "[LTP]", "[TEXT_CLIP]", "[RANK]"

@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理實驗輸出並產生論文分析用表格或圖表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,43 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-b6_preference_video_conflict.py
-===============================
-B6：偏好與影片情境的一致／衝突分析（教授建議 §九）
-
-教授的問題：「當影片需求與長期偏好一致或衝突時，模型如何取捨？」
-
-【衝突程度由資料決定，不由研究者指派】
-  B5 的 24 個 Persona ＝ 6 偏好原型 × 4 影片語意叢集（B4）。
-  每一格的「相容度」定義為：**該叢集的影片其 GT 音樂中，符合此原型核心規格的比例**
-  （沿用 b5_build_persona_specs.matches_core，與 Persona 曲目篩選同一套判準）。
-  再依相容度三等分為 高度一致 / 部分一致 / 明顯衝突。
-  如此分組完全可重現，且與「原型偏好什麼」「叢集實際是什麼音樂」兩者的真實分布掛鉤。
-
-【資料來源】
-  results/main_eval/exp_01/persona_eval_v2/persona_v2_matched.csv
-  （480 筆＝24 Persona × 20 支查詢；含 top-10 清單與說明文字）
-  另讀 no_ltp 條件作為對照，檢視衝突組的差異是否僅來自影片本身難度。
-
-【報告指標】（對應教授 §九 所列）
-  R@1 / MRR                GT 檢索（操作檢查，非主指標）
-  Persona-fit@1 / ACR      推薦是否符合「偏好」
-  Video-fit                推薦是否符合「影片」：top-1 與該影片 GT 音樂的標籤 Jaccard
-  推薦清單多樣性            top-10 兩兩標籤 Jaccard 的補數（1 − 平均相似度）
-  說明衝突承認率            說明文字是否使用讓步／對比語（although / while / however …）
-  偏向指標 lean             Persona-fit 與 Video-fit 的差；正值＝偏向偏好，負值＝偏向影片
-
-【統計】以 Persona 為叢集重抽單位（同一 Persona 的 20 支查詢彼此相關）。
-
-【輸出】results/analysis/b6_conflict/
-  conflict_cell_compatibility.csv   24 格的相容度與分組
-  conflict_group_metrics.csv        三組 × 各指標
-  conflict_by_prototype.csv         逐原型的偏向指標
-  conflict_summary.json / .md
-
-【執行】python scripts/analysis/b6_preference_video_conflict.py   （純 CPU）
-"""
 
 import csv
 import datetime as _dt

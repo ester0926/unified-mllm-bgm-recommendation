@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：產生 counterfactual 條件下的推薦解釋，用於後續 faithfulness 分析。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,37 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_preference_counterfactual_by_path.py
-========================================
-B3 的 GPU 部分：對 exp_02 / exp_03 / exp_04 補做偏好反事實生成
-（exp_01 已於 2026-06-04 完成，輸出即 results/faithfulness/preference_counterfactual_generations_top1.csv）
-
-目的：
-  claim 層級的偏好主張驗證只能看「說明有沒有提到偏好、提得對不對」，
-  無法回答教授問的「**偏好反事實改變後，說明方向是否同步改變**」。
-  本腳本對每個路徑變體各跑一次偏好反事實生成，之後即可逐路徑比較方向敏感度。
-
-做法：
-  完全沿用既有的 run_preference_counterfactual_generation_top1.py，
-  只在匯入後覆寫 EXP_NAME 與輸出路徑（與 faithfulness_claim_judge_top1_v2.py 相同的包裝寫法），
-  不修改原始腳本，確保與 exp_01 既有結果的產生條件完全一致：
-    N_SAMPLES=200、SAMPLE_SEED=20260516、PROMPT_VARIANT="original"、
-    三個偏好變體 original / cf_upbeat_electronic / cf_lyrical_piano
-
-輸出（results/faithfulness/preference_counterfactual_by_path/）：
-  {exp}_preference_counterfactual_generations_top1.csv / .jsonl / _summary.json / .log
-
-使用方式（每個模型一個獨立行程，避免連續載入三次 LLaMA 造成顯存碎片）：
-    python scripts/faithfulness/run_preference_counterfactual_by_path.py exp_02
-    python scripts/faithfulness/run_preference_counterfactual_by_path.py exp_03
-    python scripts/faithfulness/run_preference_counterfactual_by_path.py exp_04
-
-  未帶參數時使用下方 DEFAULT_EXP。VSCode Run 亦可（改 DEFAULT_EXP 即可）。
-
-預估耗時：每個模型約 30–40 分鐘（載入與建測試集約 15 分鐘 + 200×3 生成約 16 分鐘），
-三個合計約 1.5–2 小時；需要 CUDA。
-"""
 
 from scripts.faithfulness import run_preference_counterfactual_generation_top1 as runner
 

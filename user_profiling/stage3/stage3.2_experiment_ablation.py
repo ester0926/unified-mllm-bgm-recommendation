@@ -1,7 +1,10 @@
 """
-Ablation Experiment: Prompt Components Verification
-論文實驗專用：驗證 CoT (Chain-of-Thought) 與 Reflection 機制的個別貢獻
+用途：產生或評估 Stage 3 的合成使用者偏好對話。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
+
 import time
 import json
 import pandas as pd

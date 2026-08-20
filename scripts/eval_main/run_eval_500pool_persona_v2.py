@@ -1,4 +1,10 @@
-# Auto-added: allow VSCode Run from subfolders.
+"""
+用途：使用 persona 條件執行 500-pool 評估。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -8,39 +14,6 @@ for _p in [str(PROJECT_ROOT), str(DIAGNOSTICS_DIR)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-"""
-run_eval_500pool_persona_v2.py
-==============================
-B5 補跑：一次補齊第一版評估的三個缺口
-
-  缺口 1：只存了 top-1 → 無法計算 Persona-fit@K 與 nDCG@5/@10
-          本版保存 **top-10** 推薦清單（分數已算出，argsort 即可，不增加 GPU 時間）
-
-  缺口 2：缺 No-LTP 條件（教授 §七 明列的五組比較之一）
-          本版以 **exp_04**（重新訓練且無 LTP 的模型）在同一批查詢上執行，
-          需另建其 dataset 與模型（active_modalities 不含 ltp，prompt 結構不同）
-
-  缺口 3：缺兩個生成側指標（Persona 屬性說明支持率、Unsupported Persona Claim Rate）
-          本版對 matched / shuffled / random / no_ltp 四組**同時產生說明文字**，
-          在排序完成後沿用同一 sample 與 LTP 向量呼叫既有的 generate_top1()
-
-其餘設定與第一版完全相同（候選池種子 20260315、同一批查詢影片、同樣 8 個 LTP 條件），
-故兩版結果可直接比對。
-
-規模與預估：
-  排序 8 條件 × 480 = 3,840 次 ≈ 5.9 h
-  No-LTP        480 次 ≈ 0.8 h（含 exp_04 資料與模型建置）
-  生成 4 條件 × 480 = 1,920 次 ≈ 2.1 h
-  合計 ≈ 8.8 小時（支援斷點續跑，中斷後重跑會跳過已完成條件）
-
-輸出：results/main_eval/exp_01/persona_eval_v2/
-  persona_v2_{condition}.csv        逐樣本結果（含 top10_pair_keys 與 generated_text）
-  persona_eval_v2_summary.json
-  persona_eval_v2.log
-
-執行（需 CUDA）：
-  <user_home>/anaconda3\\envs\\ollama\\python.exe scripts/eval_main/run_eval_500pool_persona_v2.py
-"""
 
 import csv
 import datetime as _dt

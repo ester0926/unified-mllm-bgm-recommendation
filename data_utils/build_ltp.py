@@ -1,31 +1,7 @@
 """
-data_utils/build_ltp.py — 長期偏好向量 (P_ltp) 建構工具
-
-P_ltp 建構策略（融合 PersonaX + RecLLM）：
-
-  P_ltp = 隱性行為嵌入 ⊕ 顯性語義特徵
-         ────────────────────────────────
-         implicit_vec (768) + explicit_vec (512)
-                     ↓  Linear(1280, 512)
-                  P_ltp (512)
-
-步驟：
-  1. [PersonaX] 從用戶歷史中抽取「原型性-多樣性平衡」的代表曲目
-  2. [PersonaX] 對代表曲目做加權聚合，得到 implicit_vec (768)
-  3. [RecLLM] 用 LLM 生成用戶偏好文字描述（自然語言 Persona）
-  4. [RecLLM] 用 CLIP Text Encoder 編碼偏好文字，得到 explicit_vec (512)
-  5. 拼接 [implicit; explicit]，透過 MLP 壓縮至 512 維
-  6. 寫入 HDF5 作為訓練/推論的輸入特徵
-
-PersonaX 原型性-多樣性平衡採樣（Shi et al., 2025）：
-  - 原型性：用 K-Means 找到距離歷史中心最近的 K_proto 首曲目
-  - 多樣性：在 K-Means 各 cluster 中再抽取 K_div 首，增加覆蓋範圍
-  - 目的：過濾噪音（偶然收聽），保留真正代表品味的行為
-
-RecLLM 自然語言 Persona（Friedman et al., 2023）：
-  - 從代表曲目的 metadata（genre, tempo, mood 等）歸納偏好特徵
-  - 處理偏好衝突（例：平時偏 Lo-fi，但也有 EDM 曲目）
-  - 輸出：可供 LLaMA 推理的文字描述，強化情境調節能力
+用途：建立、讀取與檢查 LTP 偏好向量。
+輸入：使用者 profile、metadata 或已整理好的偏好資料。
+輸出：LTP 向量與相關索引檔。
 """
 
 import os

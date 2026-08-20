@@ -1,19 +1,8 @@
 """
-Stage 2: Prompt Builder V3 (CoT + Ablation Edition) - 完整版
-負責構建包含 Chain-of-Thought (CoT) 指令的 Prompt。
-
-包含：
-1. 完整 System Prompts 定義
-2. 完整 Few-shot Examples (Positive, Exploratory, Negative)
-3. 支援消融實驗參數 (use_cot, use_reflection)
-
-改進：
-1. 新增 user_dislikes 支援，強化負向偏好的一致性。
-2. 保留完整的 Few-shot Examples 以確保生成品質。
-
-修正：
-1. 防止 Turn 10 輸出引號和機器人指令複誦
-2. 增強 Negative 情境的 Prompt 引導
+用途：建立 Stage 3 產生合成對話時使用的 prompt。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 from typing import Dict, List, Optional
@@ -94,7 +83,7 @@ Recommender: Understood, focusing on high-energy tracks."""
         
         system_prompt = self.system_prompts.get(dialogue_type, self.system_prompts["Positive"])
         
-        # Context Construction
+        # 建立 prompt 上下文
         history_text = "None"
         if search_history:
             history_text = "\n".join([f"- {i.get('title')} ({i.get('genre')})" for i in search_history[:3]])

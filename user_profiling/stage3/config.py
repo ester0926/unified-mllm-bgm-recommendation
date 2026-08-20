@@ -1,7 +1,10 @@
 """
-config.py
-全局配置檔：包含路徑、模型參數、演算法參數、消融實驗開關以及全域模型載入。
+用途：產生或評估 Stage 3 的合成使用者偏好對話。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
+
 import os
 from pathlib import Path
 import torch
@@ -50,7 +53,7 @@ class ModelConfig:
     LLM_MODEL_NAME = "gemma3:4b"
     LLM_TEMP = 0.7
     
-    # Embedding Models
+    # Embedding 模型設定
     TEXT_ENCODER = "all-mpnet-base-v2"
     AUDIO_DIM = 768
 
@@ -58,7 +61,7 @@ class ModelConfig:
 # 3. 演算法參數 (AlgoConfig)
 # ================================
 class AlgoConfig:
-    # Stage 2: PersonaX
+    # Stage 2：PersonaX 設定
     POOL_SIZE = 2000
     N_CLUSTERS = 6
     ALPHA = 0.6

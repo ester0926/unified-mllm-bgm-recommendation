@@ -1,14 +1,8 @@
 """
-Stage 4.1: Multi-Model Pilot Experiment (Fixed Evaluation Logic)
-目的：比較不同 LLM 在用戶畫像萃取任務上的表現
-修正重點：
-1. 修正評分公式 Bug
-2. 加入「空事實檢查」(Empty Facts Check)，確保模型真的有在萃取
-3. 調整權重，優先考慮任務完成度與文本品質，而非單純速度
-
-輸出：
-- data/user_profiling/long_term_preference/stage4.1_pilot_results.json
-- data/user_profiling/long_term_preference/stage4.1_comparison_report.md
+用途：建立或評估 Stage 4 使用者 profile 表示。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json
@@ -210,7 +204,7 @@ def extract_profile_with_model(music_id: str, dialogues: List[Dict], model_name:
             
         except json.JSONDecodeError:
             if attempt == PILOT_CONFIG["MAX_RETRIES"] - 1:
-                # Fallback: Check if we can at least find the summary
+                # 備用處理：至少嘗試讀取 summary
                 summary_match = re.search(r'"summary_text"\s*:\s*"([^"]+)"', raw_text)
                 if summary_match:
                      return {

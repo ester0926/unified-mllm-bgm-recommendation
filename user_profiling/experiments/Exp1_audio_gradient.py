@@ -1,38 +1,8 @@
 """
-實驗一（新版）：Stage 1 三類音樂的聲學語義梯度驗證
-========================================================
-核心問題：
-  Stage 2 收集了 Core / Exploratory / Negative 三種音樂，
-  這三類音樂在 AST 聲學空間中是否對 Target Music 呈現正確的距離梯度？
-
-  預期：
-    sim(Core, Target)        >  sim(Exploratory, Target)  >  sim(Negative, Target)
-    （核心偏好最接近目標）     （探索性音樂次之）             （排斥音樂最遠）
-
-  若成立，代表 Stage 2 的三類音樂採樣設計在聲學層面是有語義意義的，
-  為 P_ltp implicit 的加權基礎提供了資料品質保證。
-
-方法論優點（vs 舊版 t-SNE）：
-  - 舊版：把 CLIP text 和 AST audio 強行放入同一 t-SNE 空間，異質空間無法比距離
-  - 新版：完全在 AST 768D 音訊空間內計算，cosine similarity 有明確語義意義
-  - 完全不依賴降維，方法論無瑕疵
-
-佈局：1 行 3 欄
-  Panel 1  Violin + Boxplot（三類音樂 vs Target Music 的 cosine sim 分布）
-           + Mann-Whitney U 顯著性標注
-  Panel 2  梯度一致率（per-user 梯度是否符合預期順序）
-           + Stacked Bar Chart：core>exp>neg 各種排列的用戶比例
-  Panel 3  Per-User 散點圖（每個用戶的三類均值，用折線連接）
-           直覺呈現梯度在個別用戶層面的一致性
-
-終端機輸出：
-  - 三類音樂的 cosine sim 均值 / 標準差
-  - Mann-Whitney U p-value（Core vs Explore，Explore vs Negative）
-  - 梯度一致率（% users where core > explore > negative）
-
-使用方式：
-  cd "<repo_root>"
-  python experiments/Exp1_audio_gradient_v1.py
+用途：分析音訊特徵變化與偏好表示的關係。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 import json
@@ -361,7 +331,7 @@ def plot_all(sims: Dict):
         ranking = sorted([('Core', cm), ('Exp', em), ('Neg', nm)],
                           key=lambda x: -x[1])
         key = '>'.join(r[0] for r in ranking).lower().replace('exp', 'exp').replace('neg', 'neg')
-        # map to standard keys
+        # 對應到標準欄位名稱
         simple = f"{ranking[0][0].lower()}>{ranking[1][0].lower()}>{ranking[2][0].lower()}"
         for k in orders:
             if k.replace('core','Core').replace('exp','Exp').replace('neg','Neg') \

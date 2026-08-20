@@ -1,3 +1,10 @@
+"""
+用途：整理 v21 實驗輸出清單與可重現性紀錄。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import csv
 import json

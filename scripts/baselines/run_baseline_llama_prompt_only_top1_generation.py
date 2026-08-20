@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行只使用提示文字的 LLaMA baseline Top-1 生成評估。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,19 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-VSCode-run baseline: LLaMA/Vicuna prompting-only generation.
-
-This baseline removes learned multimodal projectors, LTP vectors, and model-side
-recommendation reasoning. It reuses an existing Top-1 recommendation list only
-to decide which song title/artist is shown to the base LLM, then asks the base
-LLM to generate a recommendation reason from text prompt + selected song
-metadata.
-
-Use this as an LLM-only explanation baseline. It is not a full 500-candidate
-LLM retrieval baseline, because scoring 500 candidates with a 7B LLM for every
-test sample would be prohibitively slow and difficult to keep comparable.
-"""
 
 import csv
 import json

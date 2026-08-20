@@ -1,16 +1,8 @@
 """
-model_service.py — FastAPI XAI inference backend（Plan B）
-
-Plan B 主要變更（相比原版）：
-  Bug 1 (Option B): _gate_value() 回傳 -1.0
-  Bug 2: gt_pair_key 改為 23 碼
-  Bug 3: user_text 優先於 conv_map
-  Bug 4: dtype 統一 bfloat16
-  Bug 5: O(1) song_id_to_idx
-  Plan B: SPECIAL_TOKENS 加入 [RANK]，vocab = 32005
-  Plan B: build_prompt() 末尾加 [RANK]
-
-  用法：uvicorn model_service:app --host 0.0.0.0 --port 8000
+用途：啟動 FastAPI 後端服務，載入模型與測試樣本並提供推薦推論 API。
+輸入：依照程式內設定讀取模型 checkpoint、metadata、cache 與測試樣本。
+輸出：提供本機介面或 API 回傳推薦分數、候選清單與文字解釋。
+執行：請先依 README 與 ZENODO.md 放好資料，再從 repo 根目錄啟動。
 """
 
 from __future__ import annotations
@@ -74,7 +66,7 @@ tokenizer   = None
 ltp_dict:   dict[str, np.ndarray] = {}
 song_bank_arr: np.ndarray = None
 song_ids:   list[str] = []
-song_id_to_idx: dict[str, int] = {}   # ★ Bug 5：O(1) 反查字典
+song_id_to_idx: dict[str, int] = {}   # 建立 O(1) 反查字典
 mc_neg_dict: dict[str, np.ndarray] = {}
 conv_map:   dict[str, tuple[str, str]] = {}
 test_pair_keys: list[str] = []
@@ -211,7 +203,7 @@ def _load_song_bank():
         with open(str(ids), "w") as f:
             json.dump(song_ids, f)
         logger.info("[song_bank] 建立完成：%d 首", len(song_ids))
-    # ★ Bug 5：O(1) 反查字典
+    # 建立 O(1) 反查字典
     song_id_to_idx = {sid: i for i, sid in enumerate(song_ids)}
 
 
@@ -291,14 +283,14 @@ def _read_features(pair_key: str) -> dict:
 
 def _build_query_tensors(pair_key: str, user_text: str) -> dict:
     """
-    ★ Bug 3 修正：user_text 優先於 conv_map t3
+    使用者輸入文字優先於 conv_map 中的 t3。
     ★ Plan B：build_prompt() 末尾含 [RANK]
     """
     video_id = pair_key[:11]
     feats    = _read_features(pair_key)
     ltp_vec  = ltp_dict.get(video_id, np.zeros(256, dtype=np.float32))
 
-    # ★ Bug 3：user_text 優先
+    # 使用者輸入文字優先於資料表中的原始 prompt
     if user_text.strip():
         prompt_text = user_text.strip()
     elif video_id in conv_map:
@@ -419,7 +411,7 @@ def _modality_contrib(ablation: dict) -> dict:
 
 
 def _gate_value() -> float:
-    """★ Bug 1 Option B：架構尚未加入 gate_scalar，回傳 -1.0"""
+    """目前模型架構沒有 gate_scalar，固定回傳 -1.0。"""
     return -1.0
 
 
@@ -481,9 +473,9 @@ def _case_status(rank: int, gap: float) -> tuple[str, str]:
 @torch.no_grad()
 def _contrastive(query_t: dict, top1_pair_key: str) -> dict:
     """
-    ★ Bug 2：gt_pair_key 用 pair_key_full（23碼）
-    ★ Bug 4：零向量 dtype 統一 bfloat16
-    ★ Bug 5：O(1) 查找
+    gt_pair_key 使用完整 pair_key（23 碼）。
+    零向量統一使用 bfloat16。
+    使用 O(1) 查找降低候選音樂查詢時間。
     """
     gt_feat  = query_t["gt_music_feat"]
     top1_idx = song_id_to_idx.get(top1_pair_key, 0)
@@ -493,7 +485,7 @@ def _contrastive(query_t: dict, top1_pair_key: str) -> dict:
         base = _score_music(query_t, music_feat_np)
         def _z(key, shape):
             qt = {k: v for k, v in query_t.items()}
-            qt[key] = torch.zeros(shape, dtype=torch.bfloat16, device=DEVICE)   # ★ Bug 4
+            qt[key] = torch.zeros(shape, dtype=torch.bfloat16, device=DEVICE)   # 使用統一 dtype
             return _score_music(qt, music_feat_np)
         return {
             "完整模型":   round(base, 4),
@@ -509,7 +501,7 @@ def _contrastive(query_t: dict, top1_pair_key: str) -> dict:
     dom = lambda p: max(p.items(), key=lambda x: x[1])[0] if p else "未知"
     gt_dom, t1_dom = dom(gt_pct), dom(top1_pct)
     return {
-        "gt_pair_key":         query_t.get("pair_key_full", query_t.get("video_id_str", "")),   # ★ Bug 2
+        "gt_pair_key":         query_t.get("pair_key_full", query_t.get("video_id_str", "")),   # 使用完整 pair_key
         "model_top1_pair_key": top1_pair_key,
         "gt_contrib_pct":      gt_pct,
         "top1_contrib_pct":    top1_pct,
@@ -604,7 +596,7 @@ async def infer(req: InferRequest):
         raise HTTPException(404, str(e))
 
     query_t["video_id_str"]  = req.pair_key[:11]
-    query_t["pair_key_full"] = req.pair_key   # ★ Bug 2
+    query_t["pair_key_full"] = req.pair_key   # 使用完整 pair_key
 
     pool_result = _pool_500(query_t, req.pair_key, req.pool_seed_idx)
     ablation_res = _ablation(query_t)
@@ -619,7 +611,7 @@ async def infer(req: InferRequest):
     contrastive  = _contrastive(query_t, top1_pk)
     cfs          = _counterfactuals(query_t, pool_result["bpr_score"], pool_result["pool_rank"])
 
-    # ★ Bug 3：prompt_source 追蹤與 _build_query_tensors 邏輯一致
+    # prompt_source 需與 _build_query_tensors 的選擇邏輯一致
     if req.user_text.strip():
         prompt_source = "user_text"
     elif req.pair_key[:11] in conv_map:

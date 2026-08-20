@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：設定並啟動 exp_06 的訓練流程。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,19 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_train_exp06.py — 模態消融：w/o Text (TEXT_CLIP)
-
-移除對話文字特徵（CLIP Text 512D）。
-prefix 縮減為 [VIDEO][LTP][MUSIC]（3 tokens）。
-text_proj 投影層不被呼叫。
-build_prompt() 移除 "Context: [TEXT_CLIP] {user_text}" 行（即不使用 t3）。
-
-學術意義：
-  驗證對話文字（用戶在推薦對話中的文字表達）的必要性。
-  預期：移除文字後推薦指標下降，但因還有 P_ltp 補足部分用戶偏好信號，
-  降幅可能小於 MuseChat w/o Text。
-"""
 
 import os, sys, json, logging
 import numpy as np

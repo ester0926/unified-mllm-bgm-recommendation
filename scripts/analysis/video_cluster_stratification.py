@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：分析影片群集與分層抽樣設定。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,56 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-video_cluster_stratification.py
-===============================
-B4：短影音內容分層（CLIP 語意叢集 k = 3–4）
-
-對應指導教授 0723 建議 §八，並依 2026-07-26 定案調整方法：
-
-  教授原本設想依「旅遊／美食／知識教學／產品商業／娛樂舞蹈…」等內容類型分層。
-  但 MuseChat 的「影片」其實就是**音樂自身的 YouTube 影片**（video_id == target_music_id），
-  並非創作者拍攝的短影音，內容分布高度集中於 MV／演出／歌詞影片，硬套七類會切不出來。
-  因此改為：對影片 CLIP 影像嵌入做**無監督語意叢集（k = 3–4）**，事後人工檢視命名，
-  並在限制章明確說明資料性質。
-
-為什麼可以直接叢集：
-  影片特徵是 CLIP ViT-L/14 影像嵌入（768 維，12 幀），與模型實際看到的輸入完全相同
-  （評估模式為 12 幀平均，見 dataset.py 第 390 行）。因此叢集切出的是
-  「模型眼中的影片語意分群」，而非另一套與模型無關的標籤。
-
-流程：
-  1. 依測試集 4,205 筆的 gt_music_id（= pair_key）自 H5 取出 video_features_all，
-     12 幀平均 → 768 維，L2 正規化。特徵快取於 cache/test_video_features.npz，
-     之後重跑不需再讀 F: 磁碟。
-  2. k-means 叢集；k = 2…6 皆計算輪廓係數（silhouette）作為選 k 依據，
-     主結果報 k = 3 與 k = 4 兩種切法。
-  3. 以 sample_idx 併回既有逐樣本結果，分層報告：
-       樣本數、R@1 / R@5 / MRR / nDCG@10（exp_01 與 exp_04）
-       LTP 增益（exp_01 − exp_04）+ 配對拔靴 95% CI
-       Hard-Negative 下降幅度
-       UCR（子句層級 L1 與母句校正 L2，沿用 B2 定義）
-       B1 難度層（Easy/Medium/Hard）分布 —— 用以檢查叢集是否只是換個方式表達聲學難度
-  4. 產出人工命名工作表：每叢集抽樣 40 支影片，附 YouTube 連結與標題供檢視命名。
-
-⚠ 判讀限制（必須寫進論文）：
-  叢集名稱由人工事後檢視得出，屬探索性分群，不等同於獨立標註的內容類型標籤；
-  且此資料集的影片並非創作者拍攝之短影音，分層結果不可外推到真實短影音情境。
-
-輸出（results/analysis/video_clusters/）：
-  video_cluster_assignments.csv     逐樣本叢集標籤（k=3 與 k=4）
-  video_cluster_quality.csv         k = 2…6 的輪廓係數與各叢集大小
-  video_cluster_metrics.csv         各叢集 × 各模型的排序與生成指標
-  video_cluster_gain.csv            LTP 增益逐叢集 + 拔靴 CI
-  video_cluster_naming_sheet.csv    人工命名用抽樣清單（含 YouTube 連結）
-  video_cluster_summary.json / .md
-  video_cluster.log
-
-使用方式：
-  第一次執行需讀取 F: 磁碟的 H5，請用有 h5py 的環境：
-    <user_home>/anaconda3\\envs\\ollama\\python.exe scripts/analysis/video_cluster_stratification.py
-  特徵快取建立後，之後可改用 base 環境重跑分析。
-"""
 
 import csv
 import datetime as _dt

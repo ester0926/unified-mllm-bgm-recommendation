@@ -1,3 +1,10 @@
+"""
+用途：評估固定 hybrid component 條件下的推薦表現。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -5,14 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""Fixed-model Hybrid LTP component intervention for the v21 supplement.
-
-The three Stage-5 caches share an index.  A linear decomposition first verifies
-that the Hybrid vector is reconstructable from Explicit-only and Implicit-only
-vectors.  We then keep the trained exp_01 checkpoint fixed and subtract either
-component at inference time.  This is an exploratory representation-level
-intervention; it does not claim causal identifiability outside this model.
-"""
 
 import csv
 import datetime as dt
@@ -95,8 +94,8 @@ def fit_decomposition(logger):
             f"Hybrid decomposition validation failed: relative_mae={relative_mae:.3e}, R2={r2:.8f}"
         )
 
-    # The held-out reconstruction is already effectively exact; retain this
-    # independently validated map instead of fitting a second time on all rows.
+    # held-out reconstruction 已足夠精準，因此保留這份
+    # 獨立驗證過的對照表，不再用全部資料重新擬合。
     w = w_val
     exp_part = explicit.astype(np.float64) @ w[:LTP_DIM]
     imp_part = implicit.astype(np.float64) @ w[LTP_DIM:2 * LTP_DIM]
@@ -104,8 +103,8 @@ def fit_decomposition(logger):
     reconstructed = exp_part + imp_part + bias
     residual = hybrid.astype(np.float64) - reconstructed
 
-    # Ill-conditioned random Stage-5 maps can still be numerically stable when
-    # solved in float64.  Verify the component split against a disjoint fit.
+    # random Stage-5 map 即使條件數較差，使用 float64 求解時仍可能穩定。
+    # 因此需用不重疊資料擬合結果確認 component split。
     alt_train = order[n_train + n_holdout:n_train + n_holdout + n_train]
     if len(alt_train) < n_train:
         alt_train = order[-n_train:]

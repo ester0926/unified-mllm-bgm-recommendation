@@ -1,14 +1,8 @@
 """
-dataset.py — Unified MLLM 資料集（Pointwise v2 Plan B）
-
-Plan B 主要改動（相比原 Pointwise v2）：
-  1. build_prompt() 在 [/INST] 後加入 [RANK] token
-     → [RANK] 作為 ranking readout token，可 attend 所有 prefix 模態 + t3 文字
-  2. prompt_len_for_generate 修正為純文字長度（含 [RANK]）
-     → 不加 MULTIMODAL_PREFIX_LEN（prefix 不在 input_ids 中）
-     → 這同時修正了先前 generation loss offset bug
-  3. labels mask 到 prompt_token_len（含 [RANK]），response 才計算 loss
-  4. MULTIMODAL_PREFIX_LEN 注解更新：新 prefix 順序 [VIDEO, LTP, TEXT_CLIP, MUSIC]
+用途：讀取 MuseChat 特徵與標註資料，建立訓練和評估時使用的資料集。
+輸入：依程式內路徑設定讀取本專案資料或前一階段輸出。
+輸出：依程式內 OUTPUT_DIR、results 或 checkpoints 設定寫出結果。
+執行：建議在 repo 根目錄執行，避免相對路徑錯誤。
 """
 
 import json
@@ -81,7 +75,7 @@ def build_prompt(active_modalities=None, music_title=None, music_artist=None) ->
     """
     Plan B prompt：在 [/INST] 後加入 [RANK] token。
 
-    ★ 推論階段標題注入（對應 MuseChat 論文的 Inference 設計）：
+    推論階段標題注入（對應 MuseChat 論文的 Inference 設計）：
       訓練時：music_title=None → 只有聲學特徵，無歌名
       推論時：music_title="Song Name" → 在 prompt 中注入歌名行
       原因：模型無法從聲學 embedding 得知歌名，需要外部注入
@@ -90,10 +84,10 @@ def build_prompt(active_modalities=None, music_title=None, music_artist=None) ->
         訓練 prompt：只有 Music feature token
         推論 prompt：Music title: [title]; Music feature: [token]
 
-    ★ 消融實驗：active_modalities 控制哪些模態行出現
+    消融實驗：active_modalities 控制哪些模態行出現
       None = 全模態（向後相容）。
 
-    ⚠️ train.py 呼叫此函式時永遠不傳 music_title（None），
+    注意：train.py 呼叫此函式時永遠不傳 music_title（None），
        generate_recommendation.py / run_eval_500pool_v3.py 推論時才傳入。
     """
     if active_modalities is None:
@@ -105,7 +99,7 @@ def build_prompt(active_modalities=None, music_title=None, music_artist=None) ->
         parts.append("Video: [VIDEO]\n")
 
     if "music" in active_modalities:
-        # ★ 推論階段：若有歌名，先寫出來再放音樂特徵 token
+        # 推論階段：若有歌名，先寫出來再放音樂特徵 token
         if music_title:
             if music_artist:
                 parts.append(f"Candidate: {music_title} by {music_artist}; [MUSIC]\n")
@@ -320,7 +314,7 @@ class UnifiedMLLMDataset(Dataset):
         ltp_dim: int = 256,
         seed: int = 42,
         mc_neg_cache_dir: Optional[str] = None,
-        active_modalities: Optional[List[str]] = None,  # ★ 消融實驗
+        active_modalities: Optional[List[str]] = None,  # 消融實驗
     ):
         self.pairs          = pairs
         self.tokenizer      = tokenizer
@@ -334,7 +328,7 @@ class UnifiedMLLMDataset(Dataset):
         self.ltp_dim        = ltp_dim
         self._eval_rng      = random.Random(seed)
 
-        # ★ active_modalities 控制消融；訓練時永遠不注入 music_title
+        # active_modalities 控制消融；訓練時永遠不注入 music_title
         if active_modalities is None:
             active_modalities = ["video", "ltp", "text", "music"]
         self.active_modalities = active_modalities
@@ -344,7 +338,7 @@ class UnifiedMLLMDataset(Dataset):
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
-        # ★ 載入 mc Hard Negative 快取
+        # 載入 mc Hard Negative 快取
         self.mc_neg_dict: Dict[str, np.ndarray] = {}
         if mc_neg_cache_dir:
             mc_npy = os.path.join(mc_neg_cache_dir, "mc_neg_bank.npy")
@@ -423,7 +417,7 @@ class UnifiedMLLMDataset(Dataset):
         full_text = full_prompt + response_text + self.tokenizer.eos_token
 
         # prompt_token_len：純文字序列長度，含 [RANK]，不含 multimodal prefix
-        # ★ Plan B / bug fix：不加 MULTIMODAL_PREFIX_LEN
+        # Plan B：prefix 不在 input_ids 中，因此不加 MULTIMODAL_PREFIX_LEN
         #   因為 prefix 不在 input_ids 中，input_ids 只是文字部分
         prompt_token_len = len(self.tokenizer.encode(full_prompt, add_special_tokens=False))
 
@@ -441,7 +435,7 @@ class UnifiedMLLMDataset(Dataset):
         #   - prompt（含 [RANK]）→ -100（不計算 generation loss）
         #   - response（t4）→ 計算 generation loss
         #   - padding → -100
-        # ★ Plan B / bug fix：只用 prompt_token_len，不加 MULTIMODAL_PREFIX_LEN
+        # Plan B：labels 只依 prompt_token_len 對齊，不加 MULTIMODAL_PREFIX_LEN
         labels = input_ids.clone()
         labels[:prompt_token_len] = -100
         labels[attention_mask == 0] = -100

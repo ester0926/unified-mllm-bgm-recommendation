@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：設定並啟動 指定實驗 的訓練流程。
+輸入：data/、cache/ 與 checkpoints/ 中的特徵、LTP 向量和資料切分。
+輸出：新的訓練 checkpoint、log 與必要的中間結果。
+執行：建議在 repo 根目錄執行，並先確認 config.py 的資料路徑。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,20 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_train.py — Unified MLLM 訓練啟動（Pointwise v2）
-
-修改路徑設定後直接執行：
-    python run_train.py
-
-Pointwise v2 主要設定變更（相比 Listwise v1）：
-  - LTP_H5 / LTP_MODE：與 v1 完全相同
-  - lambda_rank = 0.5（從 0.3 提升，加強 ranking 監督）
-  - lambda_gen  = 0.5
-  - best_model_metric = "recall@1"（從 recall@10，50-pool 有鑑別力）
-  - num_candidates = 1（ModelConfig 設定）
-  - ⚠️ 新的 checkpoint 與 v1 不相容，必須從頭訓練
-"""
 
 import os
 import sys

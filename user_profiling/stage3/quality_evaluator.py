@@ -1,13 +1,8 @@
 """
-Quality Evaluator V2 (Literature-Aligned LLM-as-a-Judge)
-功能：
-1. 使用較強的 LLM (Judge Model) 對生成的對話進行多維度評分 (1-5分)。
-2. 評估維度依據：
-   - Coherence (G-Eval)
-   - Consistency (RoleLLM)
-   - Naturalness (Human-likeness)
-   - Instruction Following (MT-Bench)
-3. 保留 SBERT 做為輔助的客觀語意指標 (LTP Coverage)。
+用途：檢查 Stage 3 合成對話品質。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json

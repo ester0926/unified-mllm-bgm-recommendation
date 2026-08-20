@@ -1,3 +1,10 @@
+"""
+用途：執行 LTP baseline 的 500-pool 評估。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 # ⚠️ 此腳本已更名為 run_musechat_ltp_eval_500pool.py
 # 請改用新腳本：scripts/baselines/run_musechat_ltp_eval_500pool.py
 #
@@ -10,7 +17,6 @@ raise SystemExit(
     "  python scripts/baselines/run_musechat_ltp_eval_500pool.py"
 )
 
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
 from pathlib import Path
 import sys
 
@@ -18,40 +24,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-exp_08（MVTFusionWithLTP）完整 500-pool 評估腳本。
-
-這是 exp_08 論文最終數字的來源，與以下腳本使用完全相同的評估協定：
-  - run_musechat_light_eval_500pool.py  （MuseChat-light 基準線）
-  - run_eval_500pool_detailed.py        （exp_01~07 統一 MLLM）
-
-相同之處：
-  - CANDIDATE_POOL_SEED = 20260315（per-query 固定候選池）
-  - TIEBREAK_NOISE = True / TIEBREAK_SEED = 42
-  - split_by_video_id()（與所有實驗相同的測試集）
-  - 輸出相同格式的 per-sample CSV（供 Wilcoxon 配對檢定使用）
-
-唯一差異（exp_08 特有）：
-  - 載入 MVTFusionWithLTP 而非 MVTFusionModule
-  - encode_query 時額外傳入 ltp_feat
-
-2×2 比較對照：
-  ┌──────────────┬──────────────────┬──────────────────┐
-  │              │   無 LTP         │   有 LTP         │
-  ├──────────────┼──────────────────┼──────────────────┤
-  │ Non-unified  │ MuseChat-light   │ exp_08（本腳本） │
-  │ Unified      │ exp_04           │ exp_01           │
-  └──────────────┴──────────────────┴──────────────────┘
-
-執行方式：
-    在 VSCode 開啟本檔案後直接 Run，或：
-    python scripts/baselines/run_exp08_ltp_eval_500pool.py
-
-輸出：
-    checkpoints/exp_08_ltp/detailed_eval/
-      exp_08_ltp_500pool_ranking_samples.csv   ← Wilcoxon 檢定輸入
-      exp_08_ltp_500pool_summary.json          ← 指標摘要
-"""
 
 import csv
 import datetime as _dt
@@ -77,7 +49,7 @@ from dataset import build_pair_index, build_song_bank, extract_music_title, spli
 
 
 # =============================================================================
-# USER SETTINGS（通常只需要改 MVT_LTP_CKPT_PATH）
+# 使用前可調整的設定（通常只需要改 MVT_LTP_CKPT_PATH）
 # =============================================================================
 
 MUSECHAT_DIR       = r"external/musechat"
@@ -144,7 +116,7 @@ def write_jsonl(path, rows):
 
 
 # =============================================================================
-# Model Loading
+# 模型載入
 # =============================================================================
 
 def load_musechat_modules():

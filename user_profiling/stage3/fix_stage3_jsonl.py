@@ -1,3 +1,10 @@
+"""
+用途：修補 Stage 3 合成對話輸出中的缺漏或格式問題。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
+"""
+
 import json
 from pathlib import Path
 

@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：計算主要評估結果的顯著性檢定與統計摘要。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,20 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Paired statistical tests for detailed 500-pool evaluation outputs.
-
-Usage:
-  Open this file in VSCode, edit USER SETTINGS if needed, then click Run.
-
-Inputs:
-  checkpoints/exp_XX/detailed_eval/exp_XX_best_500pool_samples_merged.csv
-
-Outputs:
-  checkpoints/significance_analysis/significance_results.csv
-  checkpoints/significance_analysis/significance_summary.md
-  checkpoints/significance_analysis/significance_results.json
-"""
 
 import csv
 import json
@@ -31,14 +23,14 @@ import numpy as np
 
 
 # =============================================================================
-# USER SETTINGS
+# 使用前可調整的設定
 # =============================================================================
 
 BASE_DIR = str(PROJECT_ROOT)
 CHECKPOINT_NAME = "best"
 POOL_SIZE = 500
 
-# Positive improvement means FOCAL_EXP is better than COMPARE_EXPS.
+# improvement 為正表示 FOCAL_EXP 優於 COMPARE_EXPS。
 FOCAL_EXP = "exp_01"
 COMPARE_EXPS = ["exp_02", "exp_03", "exp_04", "exp_05", "exp_06", "exp_07"]
 
@@ -46,13 +38,13 @@ BOOTSTRAP_N = 10000
 BOOTSTRAP_SEED = 20260512
 ALPHA = 0.05
 
-# If scipy is available, the script uses scipy.stats.wilcoxon.
-# Otherwise it falls back to a normal-approximation signed-rank test.
+# 若 scipy 可用，使用 scipy.stats.wilcoxon。
+# 若 scipy 不可用，改用常態近似的符號等級檢定。
 USE_SCIPY_IF_AVAILABLE = True
 
 
 METRICS = [
-    # name, higher_is_better, paper label
+    # 指標名稱、是否越高越好、論文顯示名稱
     ("R@1", True, "R@1"),
     ("R@5", True, "R@5"),
     ("R@10", True, "R@10"),
@@ -198,7 +190,7 @@ def wilcoxon_normal_approx(diffs):
 
     mean_w = n * (n + 1) / 4.0
 
-    # Tie correction for variance.
+    # 變異數的 tie correction。
     _, counts = np.unique(abs_d, return_counts=True)
     tie_term = float(np.sum(counts * (counts + 1) * (2 * counts + 1)))
     var_w = (n * (n + 1) * (2 * n + 1) - tie_term / 2.0) / 24.0
@@ -236,7 +228,7 @@ def holm_bonferroni(rows, alpha=0.05):
         running_max = max(running_max, adj)
         adjusted[original_i] = running_max
 
-    # Step-down rejection rule.
+    # step-down 拒絕規則。
     still_rejecting = True
     for rank0, (original_i, p) in enumerate(sorted_items):
         threshold = alpha / (m - rank0)

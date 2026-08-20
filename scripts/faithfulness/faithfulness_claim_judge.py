@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：將推薦解釋切成 claim，並依規則標註每個 claim 的支持來源。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,26 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Rule-based claim-level judge for explanation faithfulness.
-
-Usage:
-  1. Run run_faithfulness_counterfactual.py first.
-  2. Open this file in VSCode and click Run.
-
-This deterministic judge is designed as a first-pass annotation tool. It splits
-generated explanations into claim-level units, assigns each claim to a likely
-support source, and marks claims as unsupported when they rely on a modality
-removed by the counterfactual condition.
-
-The output can be manually audited or replaced later with LLM-as-a-Judge labels
-without changing analyze_faithfulness.py.
-
-目前 faithfulness_claim_judge.py 是「規則式 first-pass judge」，
-優點是可重現、不需要外部 API，可以先跑出完整分析表；
-但最終論文若要更強，建議人工抽查一部分，或之後把 judge 換成 LLM-as-a-Judge。
-這樣比較符合老師說的「人工抽樣或 LLM-as-a-Judge 輔助完成」。
-"""
 
 import csv
 import json
@@ -132,7 +118,7 @@ def split_claims(text):
     if not text:
         return []
 
-    # First split by sentence boundaries, then split long sentences by clauses.
+    # 先依句子邊界切分，再將過長句子切成子句。
     sentence_parts = re.split(r"(?<=[.!?])\s+", text)
     claims = []
     for sent in sentence_parts:
@@ -156,8 +142,8 @@ def keyword_hit(text, keywords):
 def classify_claim(claim):
     lower = claim.lower()
 
-    # Preference claims are prioritized because they often include audio words
-    # such as genre names while still making a user-preference assertion.
+    # 偏好 claim 優先處理，因為這類句子常包含音訊詞，
+    # 例如曲風名稱，同時又是在描述使用者偏好。
     if keyword_hit(lower, PREFERENCE_KEYWORDS):
         return SOURCE_PREF, "preference"
     if keyword_hit(lower, PROMPT_KEYWORDS):

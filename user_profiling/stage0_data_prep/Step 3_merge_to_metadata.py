@@ -1,4 +1,11 @@
-# file: merge_to_metadata.py
+"""
+用途：合併 MusicNN、YouTube 與人工整理欄位，產生統一 metadata。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
+"""
+
+# 原始檔名：merge_to_metadata.py
 import json
 import jsonlines
 from collections import defaultdict

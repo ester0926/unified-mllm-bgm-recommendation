@@ -1,7 +1,10 @@
 """
-mc_neg_bank.py — 預計算 candidate music CLS mean pool 並存成快取
-執行一次後，dataset.py 改為從快取讀取，避免每次讀 28MB HDF5
+用途：建立或讀取 MuseChat 候選音樂負樣本快取。
+輸入：依程式內路徑設定讀取本專案資料或前一階段輸出。
+輸出：依程式內 OUTPUT_DIR、results 或 checkpoints 設定寫出結果。
+執行：建議在 repo 根目錄執行，避免相對路徑錯誤。
 """
+
 import glob, json, os
 from pathlib import Path
 import h5py

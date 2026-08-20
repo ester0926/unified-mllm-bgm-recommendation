@@ -1,10 +1,8 @@
 """
-Stage 3 失敗案例診斷工具
-功能：
-1. 統計每首歌的對話完整性（應有3種對話）
-2. 找出缺失的 music_id + dialogue_type 組合
-3. 分析失敗原因分布
-4. 生成補齊任務清單
+用途：診斷 Stage 3 產生失敗或品質不足的原因。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import jsonlines

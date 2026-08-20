@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理實驗輸出並產生論文分析用表格或圖表。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,58 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-preference_counterfactual_by_path_analysis.py
-=============================================
-B3 第二部分：偏好反事實的**方向敏感度**逐路徑比較
-
-對應教授建議 §四所列的最後一項生成側指標：
-  「偏好反事實改變後，說明方向是否同步改變」
-
-資料來源（四個模型各 200 樣本 × 3 變體 = 600 列，0 fallback）：
-  exp_01  results/faithfulness/preference_counterfactual_generations_top1.csv（2026-06-04 既有）
-  exp_02  ┐
-  exp_03  ├ results/faithfulness/preference_counterfactual_by_path/{exp}_..._top1.csv（2026-07-26 補跑）
-  exp_04  ┘
-
-三個變體：
-  original              使用原始對話文字 t3
-  cf_upbeat_electronic  換成「輕快電子、明亮、節奏清楚、有活力、現代舞曲流行」
-  cf_lyrical_piano      換成「抒情鋼琴、慢速、柔和原音、旋律溫柔、平靜感傷」
-
-⚠ 兩個必須寫進論文的範圍限制（取自資料本身的 scope_note）：
-  1. `top1_generation_prompt_text_changed_only_precomputed_text_feature_unchanged`
-     —— 只換了 prompt 的文字，[TEXT_CLIP] 預算特徵與 [LTP] 向量都沒有重算。
-     因此本分析測的是「**模型對提示詞中偏好敘述的反應**」，
-     **不是**對 LTP 向量本身的反應；不可宣稱為 LTP 路徑的因果證據。
-  2. top-1 曲目沿用既有排序結果，三個變體完全相同。
-     這是設計上的優點：曲目沒變，說明卻改變的部分即可歸因於提示詞。
-
-四項指標：
-  1. 方向命中率 Direction Accuracy
-     反事實目標詞彙數是否上升（相對 original）。
-  2. 淨方向命中率 Net Direction Accuracy
-     目標詞彙上升 **且** 相反方向詞彙未上升，較嚴格。
-  3. 提示詞複誦率 Prompt Echo Rate
-     生成文中出現的目標詞彙，有多少比例是提示詞裡原本就有的字詞。
-     此值偏高代表「方向改變」只是把提示詞抄回來，而非真的改變對音樂的描述。
-  4. 曲名漂移率 Title Drift Rate
-     三個變體的 top-1 曲目**完全相同**，因此模型提到的曲名理應不變。
-     以既有欄位 generated_mentions_top1_title 判定：original 提到正確曲名、
-     但反事實條件下不再提到者，即為漂移（無關屬性受偏好提示詞污染）。
-
-統計：樣本層級配對拔靴（同一批 200 個 sample_idx），2000 次。
-
-輸出（results/analysis/preference_counterfactual_by_path/）：
-  cf_direction_by_model.csv      四模型 × 兩個反事實方向的全部指標
-  cf_direction_contrasts.csv     模型兩兩差異 + 95% CI
-  cf_direction_samples.csv       逐樣本判定結果（供人工查核）
-  cf_direction_summary.json / .md
-  cf_direction.log
-
-使用方式：
-  python scripts/analysis/preference_counterfactual_by_path_analysis.py
-"""
 
 import csv
 import datetime as _dt

@@ -1,18 +1,8 @@
 """
-Stage 5: Core Set Preference Representation (Enhanced Version)
-功能：
-1. 從 Stage 4 提取顯性偏好（summary_text + salient_facts）
-2. 從 Stage 2 提取隱性偏好（PersonaX 採樣音樂）
-3. 使用 CLIP-T 編碼顯性偏好，AST 編碼隱性偏好
-4. 語義相似度加權融合
-5. 支援消融實驗（Explicit Only / Implicit Only / Hybrid）
-6. 輸出 HDF5 格式供 Stage 6 使用
-
-更新日誌：
-- 整合舊版本 (stage5_fusion.py) 的消融實驗支援
-- 保留新版本的 CLIP-T 編碼器與語義加權
-- 改進 Stage 4 輸出相容性
-- 完整的 salient_facts 處理邏輯
+用途：將使用者 profile 轉成 Stage 5 LTP 偏好向量。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json
@@ -45,7 +35,7 @@ class PathConfig:
 
 class ModelConfig:
     """模型配置"""
-    # CLIP Text Encoder
+    # CLIP 文字編碼器
     CLIP_MODEL = "openai/clip-vit-base-patch32"
     CLIP_DIM = 512
     EXPLICIT_PROJ_DIM = 256
@@ -159,7 +149,7 @@ class CrossModalAligner:
         logger.info(f"收集到 {len(text_list)} 個訓練配對")
         return np.array(text_list, np.float32), np.array(audio_list, np.float32)
 
-    # ── InfoNCE Loss ─────────────────────────────────────────
+    # ── InfoNCE 損失 ─────────────────────────────────────────
     def info_nce_loss(self, text_proj: torch.Tensor,
                             audio_proj: torch.Tensor) -> torch.Tensor:
         """
@@ -190,7 +180,7 @@ class CrossModalAligner:
             logger.warning("⚠️ 無訓練資料，跳過預對齊")
             return {}
 
-        # Dataset → DataLoader
+        # Dataset 轉為 DataLoader
         dataset = torch.utils.data.TensorDataset(
             torch.from_numpy(text_all),
             torch.from_numpy(audio_all)

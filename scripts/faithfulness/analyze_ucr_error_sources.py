@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：整理人工複查用資料與 UCR 錯誤來源分析結果。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,70 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-analyze_ucr_error_sources.py
-============================
-B2：把 UCR 拆解成具體錯誤來源 —— 離線重新彙整，不需 GPU、不需重跑生成
-
-對應指導教授 0723 建議 §十「建議補充」：
-  「將 UCR 13.1% 的案例分成：偏好不支持／音樂元資料不支持／影片內容不支持／
-    一般性空泛描述／多來源無法區分／可能幻覺。」
-同時回應第二位口委「自訂驗證指標缺少判讀基準」的要求。
-
-現況問題：
-  faithfulness_claim_judge_v2.py 的 classify_claim() 是「首次命中即回傳」的規則串接，
-  沒有命中任何字典的 claim 一律標成 support_source=unsupported、
-  unsupported_reason=no_detected_support_source。full 條件下共 143 條（UCR = 143/1090 = 13.1%），
-  但它們全部擠在同一個原因碼裡，無法回答教授的問題。
-
-本腳本的三層分析（全部沿用既有規則字典，不修改任何既有檔案）：
-
-  L1 歸屬層級（clause vs sentence）
-     v2 的 split_claims() 會在 " and " / "," 等處把句子切成子句，導致像
-     「The song has a soulful」這種**被切斷的殘句**失去可歸屬的關鍵詞。
-     本層把每條 claim 還原回它所屬的**原始句子**，再用同一支 classify_claim() 重判：
-       • 母句可歸屬 → 該 claim 的 unsupported 是「切分造成的標註假影」
-       • 母句仍不可歸屬 → 才是真正無法歸屬的主張
-     由此得到 UCR 的**上下界**：
-       上界 = 子句層級 UCR（現行報告值，偏嚴）
-       下界 = 句子層級 UCR（偏寬，因為整句只要有任一來源詞就算可歸屬）
-     真值介於兩者之間，需人工複核定點估計（本腳本一併產出複核樣板）。
-
-  L2 錯誤來源分類（教授指定的六類 + 一類方法學假影）
-     E0 clause_split_artifact      斷句碎片（標註流程假影，非模型錯誤）
-     E0b rule_miss_verified        規則漏判但有證據支持（例如曲風敘述可對照 musicnn 標籤）
-     E1 preference_unsupported     偏好主張但無偏好證據
-     E2 metadata_unsupported       音樂元資料主張但查無支持
-     E3 video_unsupported          影片內容主張但無影片證據
-     E4 vague_generic              一般性空泛描述／主觀不可驗證陳述
-     E5 multi_source_ambiguous     單一子句同時混合多個來源，無法歸屬
-     E6 likely_hallucination       具體且可查證，但查無任何支持證據
-
-  L3 可查證性驗證（區分「不支持」與「可能幻覺」）
-     對含曲風／標籤／專輯主張的 claim，比對兩種證據：
-       (a) 管線內證據：top1_reference_text + music_title + music_artist（與
-           analyze_metadata_consistency.py 相同的證據定義）
-       (b) 獨立外部證據：music_metadata_enriched.json 的 genre + musicnn 標籤
-     判定：supported / not_found / no_evidence_source
-     ⚠ musicnn 標籤本身有雜訊，「標籤中沒有」不等於「事實錯誤」，因此
-       查無支持一律歸為 E2「不支持」，只有**具體且應可查證卻完全無跡可循**
-       （如專輯／mixtape 名稱）才升級為 E6「可能幻覺」，並標記需人工複核。
-
-輸出（results/faithfulness/ucr_error_sources/）：
-  ucr_error_source_claims.csv        逐條 claim 的三層標註結果
-  ucr_error_source_composition.csv   各條件 × 各錯誤來源的組成表
-  ucr_bounds.csv                     各條件的 UCR 上下界
-  ucr_error_source_summary.json      完整結果
-  ucr_error_source_summary.md        論文用表格（§4.6 / 指標判讀基準）
-  human_review_template.csv          人工複核樣板（full 條件全數 + 其他條件分層抽樣）
-  ucr_error_sources.log
-
-使用方式：
-  VSCode 直接 Run，或：
-    python scripts/faithfulness/analyze_ucr_error_sources.py
-
-  只需要標準函式庫（不需 numpy / torch）。
-"""
 
 import csv
 import datetime as _dt

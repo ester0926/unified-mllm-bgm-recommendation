@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：彙整 claim 標註結果，計算解釋 faithfulness 指標。
+輸入：主評估輸出的推薦解釋、metadata、counterfactual 或人工複查檔。
+輸出：claim 標註、faithfulness 指標、UCR 摘要或人工檢查表。
+執行：通常需先完成主評估或 Top-1 生成，再執行本檔。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,26 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-Analyze explanation faithfulness metrics.
-
-Usage:
-  1. Run run_faithfulness_counterfactual.py
-  2. Run faithfulness_claim_judge.py
-  3. Open this file in VSCode and click Run
-
-Metrics:
-  UCR: unsupported claim rate
-  MAA: modality attribution accuracy, approximated as supported claims among
-       claims that map to a modality source
-  ESS: explanation sensitivity score, computed as Jaccard distance between
-       full and counterfactual generated explanations
-  PCR: preference claim reduction after w/o z_ltp
-
-The audio counterfactual is reported in two forms:
-  wo_audio_feature_only: zero music embedding but keep title/artist metadata
-  wo_audio_all: zero music embedding and disable title/artist metadata injection
-"""
 
 import csv
 import json

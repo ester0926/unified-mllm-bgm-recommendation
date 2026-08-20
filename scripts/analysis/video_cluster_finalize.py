@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：分析影片群集與分層抽樣設定。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,28 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-video_cluster_finalize.py
-=========================
-B4 收尾：把人工命名結果併回叢集分析，產出論文可直接引用的表格。
-
-輸入：
-  cluster_naming_worksheet.xlsx      人工填寫的叢集名稱（每分頁 B5 儲存格）
-  video_cluster_metrics.csv          B4 的分層指標
-  video_cluster_gain.csv             逐叢集 LTP 增益 + 拔靴 CI
-  video_cluster_homogeneity.csv      增益同質性檢定（含置換檢定 p）
-  video_cluster_quality.csv          各 k 的輪廓係數
-  video_cluster_assignments.csv      逐樣本叢集標籤
-  cluster_profile.json               特徵詞富集比
-
-輸出（results/analysis/video_clusters/）：
-  video_cluster_named_metrics.csv    含叢集名稱的完整指標表
-  video_cluster_assignments_named.csv 逐樣本標籤 + 名稱（供後續 B6 使用）
-  B4_論文表格.md                      §4.7 可直接引用的表格與建議敘述
-
-使用方式：
-  python scripts/analysis/video_cluster_finalize.py
-"""
 
 import csv
 import datetime as _dt

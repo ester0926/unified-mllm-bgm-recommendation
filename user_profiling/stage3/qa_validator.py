@@ -1,10 +1,10 @@
 """
-Stage 2: QA Validator V3 - 改進版 (Final Fix)
-修正：
-1. 增強 Role 識別 (User/Assistant/Recommender)
-2. 優化空回應檢測邏輯
-3. 支援重試時的動態閾值調整
+用途：檢查 Stage 3 合成對話品質。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
+
 import re
 from typing import Dict, List, Tuple
 import numpy as np
@@ -42,11 +42,11 @@ class QAValidatorV3:
         self.threshold = 0.05 * (0.8 ** retry_attempt) # 簡單的動態閾值
     
     def validate_turn(self, turn, content, dtype, ltp_text):
-        # 1. Length Check
+        # 1. 長度檢查
         if len(content.split()) < 2: 
             return {"valid": False, "failure_type": "format", "reason": "Too short"}
         
-        # 2. Turn 10 Check
+        # 2. 第 10 輪對話檢查
         if turn == 10:
             # 移除引號再檢查
             clean_content = content.replace('"', '').replace("'", "")
@@ -54,7 +54,7 @@ class QAValidatorV3:
             if len(sentences) > 3: # 放寬到 3 句
                 return {"valid": False, "failure_type": "format", "reason": "Turn 10 too long"}
         
-        # 3. LTP Consistency (Simple)
+        # 3. LTP 一致性檢查（簡化版）
         if ltp_text:
             try:
                 emb1 = self.sbert.encode(content, show_progress_bar=False)

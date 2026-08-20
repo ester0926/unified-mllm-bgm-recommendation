@@ -1,18 +1,7 @@
 """
-models/unified_mllm.py — Unified MLLM 核心模型（Pointwise v2 Plan B）
-
-Plan B 主要改動（相比原 Pointwise v2）：
-  - ranking readout 從「MUSIC token（pos1）」改為「[RANK] token」
-    原因：causal mask 讓 MUSIC(pos1) 只能看到 VIDEO，P_ltp/文字模態完全看不到
-    修正：[RANK] 放在 prompt 末尾，可 attend 所有 prefix 模態 + tokenized t3
-  - prefix 順序改為 [VIDEO:0][LTP:1][TEXT_CLIP:2][MUSIC:3]（配合 projectors.py）
-  - __init__ 新增 rank_token_id：從 tokenizer 讀取 [RANK] 的 token id
-  - forward() Step 7：改為在 input_ids 中找 [RANK] 位置，讀取其 hidden state
-  - generate() 不需要改：input_ids（prompt-only）末尾已包含 [RANK]，生成從其後開始
-
-XAI 影響：
-  修正後 XAI 消融中 P_ltp 和文字的 Δ 應從 0 變為非零正值，
-  表示模型真正使用了這兩個模態來計算 ranking score。
+用途：定義多模態推薦模型，整合影片、音訊、文字與 LTP 偏好表示。
+輸入：訓練或推論程式傳入的多模態特徵與 LTP 表示。
+輸出：推薦分數、投影後特徵或生成模型需要的表示。
 """
 
 import logging
@@ -41,7 +30,7 @@ class UnifiedMLLM(nn.Module):
         self.config = model_config
         self.tokenizer = tokenizer
         self.num_candidates = 1
-        # ★ 消融實驗：prefix 長度由 active_modalities 動態決定
+        # 消融實驗：prefix 長度由 active_modalities 動態決定
         # 完整實驗 = 4；w/o 任一模態 = 3
         self.active_modalities = getattr(
             model_config, "active_modalities",
@@ -123,7 +112,7 @@ class UnifiedMLLM(nn.Module):
         logger.info(f"可訓練參數: {trainable:,} / {total:,} ({100*trainable/total:.2f}%)")
 
     # ──────────────────────────────────────────────────────────────────────────
-    # Forward
+    # 前向傳播
     # ──────────────────────────────────────────────────────────────────────────
 
     def forward(
@@ -150,7 +139,7 @@ class UnifiedMLLM(nn.Module):
         device = video_feat.device
 
         # ── Step 1：投影多模態特徵 → prefix (B, n_active, 4096) ─────────────
-        # ★ 消融實驗：只注入 active_modalities 中的模態
+        # 消融實驗：只注入 active_modalities 中的模態
         # 完整實驗 prefix 長度 = 4；w/o 任一模態 = 3
         multimodal_prefix = self.projectors(
             video_feat=video_feat,
@@ -214,7 +203,7 @@ class UnifiedMLLM(nn.Module):
         rank_pos_text = rank_mask.long().argmax(dim=1)                   # (B,)
         rank_pos_full = actual_prefix_len + rank_pos_text                # (B,) ★ 動態
 
-        # fallback：找不到 [RANK] 的樣本改用 MUSIC token 位置
+        # 備用處理：找不到 [RANK] 的樣本改用 MUSIC token 位置
         fallback_pos = torch.full_like(
             rank_pos_full, self.config.music_token_offset
         )

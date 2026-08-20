@@ -1,16 +1,8 @@
 """
-Stage 4: Full Scale User Profile Generation (RecLLM)
-目的：基於 Stage 3 的對話數據，大規模生成用戶長期偏好畫像 (User Profiles)。
-
-核心邏輯：
-1. 讀取 Stage 3 的對話數據 (dialogues.jsonl)。
-2. 按 music_id 聚合三種對話類型 (Positive, Exploratory, Negative)。
-3. 使用 Gemma 3 12B 進行偏好萃取 (Extraction)。
-4. 執行嚴格的品質檢查 (拒絕空內容)。
-5. 寫入 profiles.jsonl。
-
-輸入：data/user_profiling/long_term_preference/stage3_dialogues/diverse_template/dialogues.jsonl
-輸出：data/user_profiling/long_term_preference/stage4_recLLM/profiles.jsonl
+用途：建立或評估 Stage 4 使用者 profile 表示。
+輸入：原始 metadata、音訊特徵、合成對話或前一階段輸出。
+輸出：偏好 profile、LTP 向量、品質檢查結果或修補後資料。
+執行：依 stage 編號順序執行，缺資料時請先看 DATA.md 與 LTP_PIPELINE.md。
 """
 
 import json

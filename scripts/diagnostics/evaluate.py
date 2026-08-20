@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：提供評估指標、ranking 計算與生成評估共用函式。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,20 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-evaluate.py — 評估模組（Pointwise v2 Plan B）
-
-Plan B 主要改動（相比原 Pointwise v2）：
-  - evaluate_with_music_pool：改用 prompt-only input_ids（含 [RANK]）
-    原版直接傳整段 full input_ids，[RANK] 不在正確位置（在 response 中間）
-    修正後用 sample["prompt_len"] 截到 [RANK] 結尾，與 validation 邏輯一致
-  - pointwise_pool_evaluate_loader：新增 [RANK] sanity check
-  - pointwise_pool_scoring：不需修改，模型 forward 自己找 [RANK] 位置
-
-ranking score 路徑（Plan B）：
-  input_ids（含 [RANK]）→ LLaMA → last_hidden → [RANK] hidden → ranking_head → score
-  [RANK] 在 causal mask 下可看到 prefix 全部模態 + tokenized t3 prompt 文字
-"""
 
 import logging
 import random
@@ -179,7 +171,7 @@ def evaluate_with_music_pool(
         pool_idx  = [gt_global_idx] + negatives
         pool_feats = all_music_features[pool_idx].to(device)
 
-        # ── Pointwise scoring ──────────────────────────────────────────────────
+        # ── Pointwise 評分 ──────────────────────────────────────────────────────
         scores = pointwise_pool_scoring(
             model=model,
             video_feat=video_feat,
@@ -241,7 +233,7 @@ def pointwise_pool_evaluate_loader(
     Plan B 不需修改 prompt-only 邏輯，因為 prompt_len 已包含 [RANK]，
     截出的 prompt_ids 末尾自然是 [RANK]，model.forward() 會正確找到它。
 
-    額外加入 [RANK] 存在性檢查，方便 debug tokenizer 設定。
+    額外加入 [RANK] 存在性檢查，方便 檢查 tokenizer 設定。
     """
     import hashlib
     from collections import defaultdict
@@ -306,7 +298,7 @@ def pointwise_pool_evaluate_loader(
             # ── O(1) 查找 GT index ─────────────────────────────────────────
             gt_global_idx = music_id_to_idx.get(gt_music_id, 0)
 
-            # ── stable hash ───────────────────────────────────────────────
+            # ── 穩定雜湊值 ─────────────────────────────────────────────────
             stable_key  = f"{video_id}__{gt_music_id}".encode("utf-8")
             stable_hash = int(hashlib.md5(stable_key).hexdigest()[:8], 16)
             stable_seed = val_seed + (stable_hash % 10 ** 6)

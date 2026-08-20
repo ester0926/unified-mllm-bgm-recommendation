@@ -1,4 +1,10 @@
-# Auto-added: allow VSCode Run from subfolders.
+"""
+用途：比較 matched、shuffled 與 random LTP 設定對推薦表現的影響。
+輸入：已訓練 checkpoint、測試集特徵、候選 pool 與 LTP/cache 資料。
+輸出：ranking、generation、指標摘要或逐筆評估檔。
+執行：建議在 repo 根目錄執行，必要資料請先由 Zenodo 解壓到對應資料夾。
+"""
+
 from pathlib import Path
 import sys
 
@@ -8,38 +14,6 @@ for _p in [str(PROJECT_ROOT), str(DIAGNOSTICS_DIR)]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
-"""
-run_eval_500pool_ltp_control.py
-================================
-Matched / Shuffled / Random LTP 對照實驗（inference-time，無需重新訓練）
-
-實驗目的（對應 TISMIR 補強事項 RQ5）：
-  驗證 Long-Term Preference（LTP）對排序效能的貢獻是否真實有效，
-  而非模型忽略 LTP token 或對任意輸入給出相同分數。
-
-三組條件（同一模型 exp_01、同一 500-pool 種子）：
-  matched  — 正常使用每個 video 對應的 LTP 向量（= 標準 exp_01）
-  shuffled — 將測試集內所有 video 的 LTP 指派隨機打亂
-             （video A 拿到 video B 的 LTP；保留向量分布但破壞配對語義）
-  random   — 每個 sample 使用獨立的標準高斯雜訊向量
-             （完全無使用者偏好資訊的 baseline）
-
-解讀：
-  matched >> shuffled ≈ random → LTP 確實傳遞了語義偏好資訊（最佳結果）
-  matched ≈ shuffled > random  → 模型利用了 LTP 分布特性而非語義內容
-  matched ≈ shuffled ≈ random  → 模型未有效使用 LTP（需進一步檢查）
-
-輸出：
-  results/main_eval/exp_01/ltp_control/
-    ltp_matched_ranking.csv
-    ltp_shuffled_ranking.csv
-    ltp_random_ranking.csv
-    ltp_control_summary.json   ← 三組比較摘要表
-
-使用方式：
-  VSCode Run 或：
-  python scripts/eval_main/run_eval_500pool_ltp_control.py
-"""
 
 import csv
 import datetime as _dt
@@ -81,7 +55,7 @@ RANDOM_SEED          = 1234
 POINTWISE_BATCH_SIZE = 16
 TIEBREAK_NOISE       = True
 TIEBREAK_SEED        = 42
-MAX_SAMPLES: int | None = None    # None = 全測試集；整數 = smoke test
+MAX_SAMPLES: int | None = None    # None = 全測試集；整數 = 快速檢查筆數
 
 LTP_H5 = {
     "hybrid":        str(PROJECT_ROOT / "data" / "user_profiling" / "stage5_output" / "preference_vectors.h5"),
@@ -222,7 +196,7 @@ def get_ltp_feat(
         vec = ltp_dict_shuffled.get(video_id, np.zeros(ltp_dim, dtype=np.float32))
         return torch.from_numpy(vec).unsqueeze(0).to(device)
 
-    # condition == "random"
+    # random 條件需使用隨機 LTP
     vec = random_rng.standard_normal(ltp_dim).astype(np.float32)
     return torch.from_numpy(vec).unsqueeze(0).to(device)
 
@@ -392,7 +366,7 @@ def eval_one_condition(
     random_rng = np.random.default_rng(random_seed)
 
     id_to_index: dict = {sid: i for i, sid in enumerate(all_music_ids)}
-    # map: target_music_id (11 chars) → set of global indices sharing that target
+    # 對照表：target_music_id（11 碼）→ 使用同一 target 的全域索引集合
     vid_to_indices: dict = {}
     for i, sid in enumerate(all_music_ids):
         vid_to_indices.setdefault(sid[:11], set()).add(i)

@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行或整理消融實驗診斷結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,27 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_ablation_50.py — 50 樣本多模態消融實驗（Round 3 分析用）
-
-分析目標：
-  1. P_ltp 正負比例（跨樣本的系統性統計）
-  2. Δ magnitude 分佈（各模態的貢獻強度分佈）
-  3. 與 rank 的 correlation（P_ltp 干擾是否影響推薦品質）
-
-執行：
-  python run_ablation_50.py
-
-輸出：
-  checkpoints/exp_01/ablation_50_results.json   ← 原始數據
-  checkpoints/exp_01/ablation_50_summary.txt    ← 統計摘要（直接可讀）
-
-設計說明：
-  - 從 test split 中取前 50 筆（固定順序，可重現）
-  - 每筆樣本對 GT music 做 4 次消融 forward（4 × 1 forward per sample）
-  - 同時計算 500-pool rank（與 XAI 介面一致，pool seed = 20260315 + 0）
-  - 不使用 DataLoader，逐筆串行推論，避免 batch collate 問題
-"""
 
 import os, sys, json, logging, random, hashlib
 from pathlib import Path
@@ -155,7 +140,7 @@ def load_resources():
                 ltp_dict[k] = grp[k][:].astype(np.float32)
         logger.info("[ltp] HDF5 載入：%d 筆", len(ltp_dict))
 
-    # song_bank
+    # 音樂特徵庫
     sb_npy = os.path.join(CACHE_DIR, "song_bank.npy")
     sb_ids = os.path.join(CACHE_DIR, "song_bank_ids.json")
     song_bank_arr = np.load(sb_npy)
@@ -181,7 +166,7 @@ def load_resources():
             pass
     logger.info("[conv_map] %d 筆", len(conv_map))
 
-    # test_pairs
+    # 測試 pair 清單
     pair_index_cache = os.path.join(CACHE_DIR, "pair_index.json")
     with open(pair_index_cache) as f:
         pair_index = json.load(f)
@@ -564,7 +549,7 @@ def main():
             # 消融
             abl = ablation_one(model, query_t)
 
-            # 500-pool rank
+            # 500-pool 排名
             rank, bpr, gap = pool_500(model, query_t, pair_key,
                                       song_bank_arr, song_ids, song_id_to_idx)
 

@@ -1,16 +1,8 @@
 """
-app.py — Streamlit XAI 介面（修正版）
-
-修正清單：
-  1. Metric tiles 改用 st.metric()，不再依賴 CSS grid（解決 HTML 顯示原始碼問題）
-  2. 消融 delta 全負值時正確顯示「干擾模態」分析，不再全部顯示 0%
-  3. generate() fallback 不再顯示 "[generate 發生例外...]" 前綴給使用者
-  4. 新增 case_status 推薦品質橫幅
-  5. 新增 Contrastive / Counterfactual 頁籤（對應 backend 新欄位）
-  6. Counterfactual 大 delta 自動突顯為洞察
-  7. top5 欄位對應修正（backend 回傳 top5 list of tuples）
-
-  streamlit run app.py
+用途：啟動 Streamlit 展示介面，用來呼叫後端服務並查看推薦結果與解釋。
+輸入：依照程式內設定讀取模型 checkpoint、metadata、cache 與測試樣本。
+輸出：提供本機介面或 API 回傳推薦分數、候選清單與文字解釋。
+執行：請先依 README 與 ZENODO.md 放好資料，再從 repo 根目錄啟動。
 """
 
 import streamlit as st
@@ -73,7 +65,7 @@ st.markdown("""
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# API helpers
+# API 呼叫相關函式
 # ══════════════════════════════════════════════════════════════════════════════
 
 def call_infer(pair_key: str, user_text: str, pool_seed_idx: int) -> dict | None:
@@ -112,7 +104,7 @@ def get_sample_ids() -> list[str]:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Chart helpers
+# 圖表繪製相關函式
 # ══════════════════════════════════════════════════════════════════════════════
 
 def pool_chart(scores: list, bpr: float) -> go.Figure:
@@ -217,7 +209,7 @@ def clean_nl(text: str) -> tuple[str, bool]:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Sidebar
+# 側邊欄
 # ══════════════════════════════════════════════════════════════════════════════
 
 with st.sidebar:
@@ -294,7 +286,7 @@ if result is None:
     st.info("👈 左側選擇 pair_key 後點擊「執行推論」，介面將呈現真實模型輸出。")
     st.stop()
 
-# ── Unpack ─────────────────────────────────────────────────────────────────
+# ── 取出後端回傳欄位 ─────────────────────────────────────────────────────────
 pair_key      = result["pair_key"]
 video_id      = result["video_id"]
 gt_mid        = result["gt_music_id"]
@@ -333,7 +325,7 @@ st.markdown(f'<div class="{case_cls}">{case_icon} {case_summary}</div>',
             unsafe_allow_html=True)
 
 # ── 4 個關鍵指標（2×2 layout 避免窄螢幕截斷）──────────────────────────────
-# ★ 修正：4 欄在窄視窗截斷 → 改為 2+2 兩行
+# 以 2+2 排列指標，避免窄視窗截斷
 row1_c1, row1_c2 = st.columns(2)
 row2_c1, row2_c2 = st.columns(2)
 
@@ -342,7 +334,7 @@ with row1_c1:
               help="GT 音樂的 Pointwise ranking score（全域可比）。負值代表模型認為 GT 比基準差，是訓練失敗的信號。")
 
 with row1_c2:
-    # ★ 修正：rank > 50 時顯示紅色「後 N 名」而非綠色「前 N 名」
+    # rank 大於 50 時以低信心狀態顯示
     rank_delta = f"前 {rank} 名" if rank <= 50 else f"後 {500 - rank} 名"
     rank_color = "normal" if rank <= 50 else "inverse"
     st.metric("500-pool Rank", f"{rank}",
@@ -350,7 +342,7 @@ with row1_c2:
               help="GT 在 500-pool 中的排名，越小越好。")
 
 with row2_c1:
-    # ★ 修正：Gap 大但 Rank 爛時不應顯示綠色「穩定」
+    # gap 雖大但排名差時仍視為低信心
     if rank > 50 and gap > 0.04:
         gap_label = f"穩定誤推薦（差距 {gap:.4f}）"
         gap_color = "inverse"   # 紅色——穩定是壞事
@@ -373,7 +365,7 @@ with row2_c2:
     st.metric("Gate（P_ltp）", gate_disp,
               help="ltp_gate_scalar 的 sigmoid 值。缺 gate.pt 時顯示 0.500（初始值，不可解讀）。")
 
-# badges
+# 推薦狀態標籤
 st.markdown(
     f'<span class="badge {cc}">{cl}</span>'
     f'<span class="badge badge-gray">pair_key {pair_key}</span>'
@@ -382,7 +374,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# warnings & todos
+# 警告與待確認事項
 for w in warns:
     st.markdown(f'<div class="warn-block">{w}</div>', unsafe_allow_html=True)
 
@@ -405,7 +397,7 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs([
 ])
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Tab 1: 輔助說明（NL explanation）
+# 頁籤 1：推薦文字說明
 # ─────────────────────────────────────────────────────────────────────────────
 with tab1:
     st.markdown("**輔助敘述（non-faithful summary）**")
@@ -418,7 +410,7 @@ with tab1:
         unsafe_allow_html=True,
     )
 
-    # ★ 修正問題三：generate() fallback 不再顯示前綴給使用者
+    # 備用文字只顯示內容，不顯示內部錯誤前綴
     box_cls = "fallback-box" if nl_is_fallback else "nl-box"
     st.markdown(
         f'<div class="xai-card"><div class="{box_cls}">{nl_text}</div>'
@@ -433,13 +425,13 @@ with tab1:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Tab 2: 模態消融（Faithful explanation）
+# 頁籤 2：模態消融與支持來源說明
 # ─────────────────────────────────────────────────────────────────────────────
 with tab2:
     st.markdown("**Faithful explanation：模態消融**")
     st.caption("Δ score = 完整模型分數 - 移除後分數。正值代表該模態支持 GT；**負值代表該模態主動干擾 GT**（失敗案例的核心信號）。")
 
-    # ★ 修正問題二：所有 delta 為負時，不是 bug，是失敗案例的重要信號，要清楚說明
+    # 所有 delta 為負時，代表此案例可作為失敗分析
     all_negative = contrib_signed and all(x["delta"] <= 0 for x in contrib_signed)
 
     if all_negative:
@@ -455,7 +447,7 @@ with tab2:
         st.plotly_chart(signed_contrib_fig(contrib_signed),
                         use_container_width=True, key="signed_contrib")
     else:
-        # Fallback：用 ablation dict 建圖
+        # 備用處理：改用 ablation dict 建圖
         base = abl.get("完整模型", 0)
         fallback_signed = [
             {"name": k, "delta": round(base - v, 4)}
@@ -465,7 +457,7 @@ with tab2:
             st.plotly_chart(signed_contrib_fig(fallback_signed),
                             use_container_width=True, key="signed_contrib_fallback")
 
-    # ★ 修正問題三（cont.）：Contrastive 百分比全 0 時的說明
+    # Contrastive 百分比全為 0 時，改用文字說明原因
     if all_negative:
         st.markdown(
             '<div class="caveat">'
@@ -493,7 +485,7 @@ with tab2:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Tab 3: 對比與反事實（新功能）
+# 頁籤 3：對比與反事實分析
 # ─────────────────────────────────────────────────────────────────────────────
 with tab3:
     c1, c2 = st.columns(2, gap="medium")
@@ -501,7 +493,7 @@ with tab3:
     with c1:
         st.markdown("**Contrastive：GT vs 模型選中的第 1 名候選**")
         if contrastive:
-            # ★ 修正：偵測 GT 是否全模態干擾（all_negative GT case）
+            # 偵測 GT 是否在所有模態下都受到干擾
             gt_pct  = contrastive.get("gt_contrib_pct", {})
             top1_pct = contrastive.get("top1_contrib_pct", {})
             gt_all_zero = all(v == 0 for v in gt_pct.values())
@@ -571,7 +563,7 @@ with tab3:
             st.plotly_chart(counterfactual_fig(cfs),
                             use_container_width=True, key="cf_fig")
 
-            # ★ 修正問題四：自動突顯大 delta 的洞察
+            # 自動突顯 delta 較大的反事實差異
             big_insights = [x for x in cfs if abs(x["delta_score"]) > 0.5 and x["label"] != "原始設定"]
             for ins in big_insights:
                 direction = "上升" if ins["delta_score"] > 0 else "下降"
@@ -592,14 +584,14 @@ with tab3:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Tab 4: 不確定性
+# 頁籤 4：不確定性
 # ─────────────────────────────────────────────────────────────────────────────
 with tab4:
     c1, c2 = st.columns(2, gap="medium")
 
     with c1:
         st.markdown("**不確定性指標**")
-        # ★ 修正問題一（cont.）：全部用 st.metric，不用 CSS grid HTML
+        # 使用 st.metric 顯示不確定性指標
         i1, i2 = st.columns(2)
         with i1:
             st.metric("BPR Score", f"{bpr:.4f}")
@@ -659,7 +651,7 @@ with tab4:
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Tab 5: 候選池比較
+# 頁籤 5：候選池比較
 # ─────────────────────────────────────────────────────────────────────────────
 with tab5:
     c1, c2 = st.columns([1.3, 1], gap="medium")
@@ -689,7 +681,7 @@ with tab5:
 
     with c2:
         st.markdown("**前 5 名候選**")
-        # ★ 修正：表格顯示 BPR Score 欄被截斷 → 縮短 pair_key 顯示
+        # 縮短 pair_key 顯示，避免表格欄位被截斷
         if top5:
             rows = []
             for i, item in enumerate(top5):

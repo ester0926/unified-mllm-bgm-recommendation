@@ -1,10 +1,8 @@
-"""Reuse the Persona-independent No-LTP control and attach v21 pool IDs.
-
-No-LTP uses exp_04 and never receives a Persona vector.  The v2 and v21 runs
-share the same 480 sample indices, ordering, candidate-pool seed and pool size.
-Therefore its existing ranking/generation output is invariant to the rebuilt
-Persona histories.  This helper verifies those invariants row by row and copies
-the v2 output while adding the complete 500-pool IDs retained by v21.
+"""
+用途：建立或分析 persona 條件下的 LTP 與評估結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
 """
 
 from pathlib import Path

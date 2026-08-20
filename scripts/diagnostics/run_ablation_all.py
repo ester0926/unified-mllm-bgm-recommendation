@@ -1,4 +1,10 @@
-# Auto-added after project reorganization: allow VSCode Run from subfolders.
+"""
+用途：執行或整理消融實驗診斷結果。
+輸入：既有實驗輸出、metadata、評估 CSV 或分析用中間檔。
+輸出：論文分析用表格、圖表、摘要 JSON/CSV 或檢查清單。
+執行：請先確認前一階段輸出檔已存在，再從 repo 根目錄執行。
+"""
+
 from pathlib import Path
 import sys
 
@@ -6,24 +12,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-"""
-run_ablation_all_fast.py — 全 test split 多模態消融實驗（加速版 / 可續跑）
-
-相較原版 run_ablation_50.py 的優化：
-  1. 改成跑完整 test split
-  2. 預先建立 pair_key -> h5_path 索引，不再每筆掃全部 H5
-  3. H5 file handle cache，避免重複 open/close
-  4. 支援 resume：若中途中斷，可從既有結果續跑
-  5. 定期輸出 partial json，降低長時間實驗風險
-
-執行：
-  python run_ablation_all_fast.py
-
-輸出：
-  checkpoints/exp_01/ablation_all_results.json
-  checkpoints/exp_01/ablation_all_summary.txt
-  checkpoints/exp_01/ablation_all_partial.json
-"""
 
 import os
 import sys
@@ -60,7 +48,7 @@ POOL_SEED_IDX = 0
 # None = 跑完整 test split
 N_SAMPLES = None
 
-# Resume / partial save
+# 續跑與中途儲存
 SAVE_EVERY = 20
 RESUME = True
 
@@ -182,7 +170,7 @@ def load_resources():
                 ltp_dict[k] = grp[k][:].astype(np.float32)
         logger.info("[ltp] HDF5 載入：%d 筆", len(ltp_dict))
 
-    # song_bank
+    # 音樂特徵庫
     sb_npy = os.path.join(CACHE_DIR, "song_bank.npy")
     sb_ids = os.path.join(CACHE_DIR, "song_bank_ids.json")
     song_bank_arr = np.load(sb_npy)
@@ -208,7 +196,7 @@ def load_resources():
             pass
     logger.info("[conv_map] %d 筆", len(conv_map))
 
-    # test_pairs
+    # 測試 pair 清單
     pair_index_cache = os.path.join(CACHE_DIR, "pair_index.json")
     with open(pair_index_cache, "r", encoding="utf-8") as f:
         pair_index = json.load(f)
@@ -654,7 +642,7 @@ def print_summary(analysis: dict, records: list) -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# Resume / partial save
+# 續跑與中途儲存
 # ══════════════════════════════════════════════════════════════════════════════
 
 def load_existing_partial():
